@@ -53,7 +53,7 @@ Prefer one clear reading path: left-to-right, top-to-bottom, or an explicitly la
 
 ## Define publication aesthetics before drawing
 
-For a publication-facing figure, graphical abstract, style comparison, or any request involving aesthetics, visual quality, or beautification, read [Publication Aesthetic Review](../audit-scientific-figure/references/publication-aesthetic-review.md) completely before freezing the `design_spec`.
+For a publication-facing figure, graphical abstract, style comparison, or any request involving aesthetics, visual quality, or beautification, first read [Fundamental Visual Grammar](references/fundamental-visual-grammar.md) completely and freeze its `visual_grammar_receipt`. Then read [Publication Aesthetic Review](../audit-scientific-figure/references/publication-aesthetic-review.md) completely before freezing the `design_spec`.
 
 When the requested direction is hand-drawn, sketchnote, pencil, doodle, whiteboard, or Excalidraw-like, also read [Hand-drawn Technical Style](references/hand-drawn-technical-style.md) completely. Declare its `style_family`, `imperfection_budget`, typography split, and backend-native drawing strategy in the `design_spec`. For a paper overview, default to restrained technical hand-drawing unless the communication purpose and final display size genuinely support a denser sketchnote or pencil treatment.
 
@@ -96,6 +96,7 @@ Return a `design_spec` containing:
 - grouping and z-order;
 - raster decomposition declarations;
 - artifact mode (`direction_review` or `publication`), final display size, and figure archetype;
+- the frozen `visual_grammar_receipt`, including the primary spine, dominant focal zone, role-to-shape mapping, two connector prominence levels, typography roles, semantic palette, grayscale plan, whitespace functions, forbidden motifs, reference firewall, and review sizes;
 - `style_dna`, focal hierarchy, evidence weighting, and forbidden motifs;
 - for a hand-drawn direction, its style family, controlled-imperfection budget, exact-versus-expressive line split, typography split, native doodle inventory, and style-source firewall;
 - usable canvas bounds, meaningful-content hull, intended canvas-utilization range, and the function of each planned large whitespace region;
@@ -111,7 +112,7 @@ Do not improvise geometry one object at a time after drawing begins.
 
 Hand the design to `$edit-powerpoint-live` or `$recreate-scientific-figure-in-drawio`. After each region, require `$audit-scientific-figure`; when it finds a defect, require `$correct-scientific-figure`, return the object-level plan to the Drawer, rerender, and review again. For an overview, graphical abstract, teaser, final whole figure, or style-direction comparison, require the Reviewer to apply its publication aesthetic reference before approval.
 
-Finish only when every local region and the whole figure have exact readable semantics, full reconstructable editability, no clipping or unintended overlap, layout and connector confidence of at least 0.95, and no unresolved audit finding except documented content ambiguity. For manuscript-derived work, also require complete contract coverage plus positive- and negative-edge reconstruction from a fresh render at the declared publication width and a title-hidden grayscale hierarchy check.
+Finish only when every local region and the whole figure have exact readable semantics, full reconstructable editability, no clipping or unintended overlap, layout and connector confidence of at least 0.95, and no unresolved audit finding except documented content ambiguity. The final publication render must also satisfy the visual-grammar receipt at title-hidden thumbnail, declared publication width, and title-hidden grayscale scale, with no anti-dashboard class-A defect. For manuscript-derived work, also require complete contract coverage plus positive- and negative-edge reconstruction from a fresh render at the declared publication width and a title-hidden grayscale hierarchy check.
 
 ## Delivery
 

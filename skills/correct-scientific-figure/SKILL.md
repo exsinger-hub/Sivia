@@ -9,6 +9,8 @@ Act as the Corrector. Diagnose each Reviewer finding and produce an executable c
 
 When the Reviewer supplies an A/B/C publication-aesthetic finding, read [Publication Aesthetic Review](../audit-scientific-figure/references/publication-aesthetic-review.md) completely before producing corrections.
 
+When a finding concerns the global silhouette, reading spine, focal hierarchy, role-to-shape mapping, connector prominence, anti-dashboard motifs, or a failed visual-grammar receipt, also read [Fundamental Visual Grammar](../design-scientific-figure/references/fundamental-visual-grammar.md) completely. Treat these as upstream design defects. Replace the composition or grammar before changing palette, corner radius, shadow, font family, or decorative finish.
+
 When a finding concerns hand-drawn fidelity, fake sketch effects, handwriting legibility, doodle competition, highlighter use, double outlines, or rough connector geometry, also read [Hand-drawn Technical Style](../design-scientific-figure/references/hand-drawn-technical-style.md) completely. Correct the smallest style layer that caused the defect. Preserve exact semantic connectors and already approved geometry; never answer weak hand-drawn fidelity by adding global random jitter or raster texture.
 
 When a finding concerns manuscript fidelity, equation operands, evidence scope, training/inference boundaries, or visible-edge reconstruction, read [Manuscript-to-Figure Workflow](../design-scientific-figure/references/manuscript-to-figure-workflow.md) completely before producing corrections.
@@ -67,6 +69,8 @@ rollback_signal: evidence that the correction harmed an approved area
 For a manuscript-fidelity finding, also include `earliest_deviation_stage`, the source location or contract id, and the positive or negative relation that must be recoverable from the fresh publication-scale render.
 
 For publication-aesthetic findings, preserve the Reviewer's A/B/C class and add `expected_visual_effect`. Prioritize class A first, then class B that blocks the reading path, then class C. If only three changes can be made, choose the three with the largest combined effect on focal hierarchy, canvas utilization, and visual-language consistency; do not spend those slots on decorative polish.
+
+Order visual corrections by dependency: scientific contract; global silhouette and primary spine; region proportions and whitespace; role-to-shape grammar and connector lanes; typography and semantic color; expressive finish. When an upstream layer changes, rerender before prescribing dependent micro-adjustments.
 
 Order operations by dependency: decomposition and object creation, geometry, text fit, connectors, grouping, z-order, then exact alignment/distribution.
 

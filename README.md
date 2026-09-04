@@ -227,6 +227,7 @@ YOFO 插件本身**没有打包外部向量数据库，也没有默认联网 RAG
 | 角色协议 | 六个 `SKILL.md`，定义设计、复刻、绘制、审稿和纠错职责 | 规定谁在何时做什么 |
 | 稿件到图规则 | [Manuscript-to-Figure Workflow](skills/design-scientific-figure/references/manuscript-to-figure-workflow.md) | 定义 Figure Claim、四类账本、来源绑定、盲测与最终尺寸验证 |
 | 盲画对比协议 | [Blind Figure Gym Protocol](skills/design-scientific-figure/references/blind-figure-gym.md) | 定义目标封存、预揭晓冻结、揭晓后多维比较与规则晋升边界 |
+| 基础视觉语法 | [Fundamental Visual Grammar](skills/design-scientific-figure/references/fundamental-visual-grammar.md) | 冻结单一阅读主线、唯一主焦点、角色形状、两级连线、字体与语义配色，并用反仪表盘门禁阻止“卡片墙” |
 | 出版审美规则 | [Publication Aesthetic Review](skills/audit-scientific-figure/references/publication-aesthetic-review.md) | 定义三尺度审稿、灰度层级、A/B/C 美观缺陷和最终结论 |
 | 手绘技术风格 | [Hand-drawn Technical Style](skills/design-scientific-figure/references/hand-drawn-technical-style.md) | 定义三种手绘风格族、精确/表现双层、风格来源防火墙与对抗性退回条件 |
 | 后端能力 | draw.io、PowerPoint/WPS 在运行时返回的 capability 信息 | 决定哪些对象能原生编辑、哪些需用可编辑组合对象 |
@@ -370,7 +371,8 @@ codex plugin add you-only-figure-once@you-only-figure-once
 2. Paper Figure Signature；
 3. required-node、required-edge、equation-operand、evidence ledgers；
 4. training/inference、updated/frozen 边界和 negative paths；
-5. 两个真正不同的低保真构图方向及取舍。
+5. visual grammar receipt：单一主线、唯一主焦点、角色形状、两级连线、字体、语义配色、灰度计划、留白用途和禁用母题；
+6. 两个真正不同的低保真构图方向及取舍。
 
 我选定方向后再逐区域绘制。每个区域完成后执行结构审计和最新渲染审稿；
 发现问题时用 $correct-scientific-figure 给出对象级修正，再重新渲染。

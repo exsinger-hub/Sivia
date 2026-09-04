@@ -68,6 +68,8 @@ Do not close a presentation unless explicitly requested. Closing and quitting re
 
 If PowerPoint exposes a reconstructable semantic object and the MCP supports it, use it. Never substitute a screenshot.
 
+For a publication-facing figure, read [Fundamental Visual Grammar](../design-scientific-figure/references/fundamental-visual-grammar.md) completely before drawing and implement the frozen `visual_grammar_receipt` as native objects. Do not silently replace a failed composition with cosmetic PowerPoint styling.
+
 When the design selects a hand-drawn, sketchnote, pencil, doodle, whiteboard, or Excalidraw-like direction, read [Hand-drawn Technical Style](../design-scientific-figure/references/hand-drawn-technical-style.md) completely before drawing. Follow its PowerPoint-native mapping. In particular, keep semantic connectors geometrically exact; do not simulate roughness with random endpoint jitter, broad SVG/PNG overlays, or a paper-texture screenshot. If freeform or polyline creation is unavailable, use restrained native primitives, grouped doodles, highlighter shapes, typography contrast, and at most a deliberately specified secondary outline on focal objects.
 
 ## Inventory before drawing

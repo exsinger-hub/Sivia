@@ -19,9 +19,11 @@ When the figure is derived from a manuscript, paper PDF, method section, equatio
 
 ## Apply the publication aesthetic gate
 
-For a paper overview, graphical abstract, teaser, final whole-figure review, or comparison of candidate style directions, read [references/publication-aesthetic-review.md](references/publication-aesthetic-review.md) completely and apply it to the fresh render. This gate is mandatory even when deterministic structure audit reports zero hard failures.
+For a paper overview, graphical abstract, teaser, final whole-figure review, or comparison of candidate style directions, first read [Fundamental Visual Grammar](../design-scientific-figure/references/fundamental-visual-grammar.md) completely and verify the frozen `visual_grammar_receipt`. Then read [references/publication-aesthetic-review.md](references/publication-aesthetic-review.md) completely and apply it to the fresh render. These gates are mandatory even when deterministic structure audit reports zero hard failures.
 
 Review the figure at thumbnail scale for silhouette and focal hierarchy, fit-to-slide scale for composition and rhythm, and readable scale for typography, spacing, connectors, and local finish. When multiple style candidates are presented, compare them together; palette, font, corner-radius, or border changes alone do not constitute different directions.
+
+Treat an equal-weight card wall, nested dashboard panels, repeated UI pills, a competing full-width footer, long dashed skip railways, or an all-caps multi-level hierarchy as a class-A visual-grammar failure when it dominates the silhouette. Require global recomposition; do not accept cosmetic palette, corner, shadow, or font changes as a correction.
 
 For the final whole-figure publication gate, use an independent fresh-eye Reviewer when available. Give it the semantic contract, selected reference and Style DNA, but do not provide the Drawer's defense of the current composition or a list of suspected defects.
 
@@ -109,4 +111,4 @@ Never approve based on the Drawer or Corrector claiming success. Never reuse a s
 
 ## Review report
 
-Return region scores, whole-figure scores, all findings, native/composite/raster counts, every raster declaration, resolved finding ids, unresolved source ambiguities, and the final pass/fail verdict. For the publication aesthetic gate, also answer the four mandatory closing questions from the reference and identify the three changes with the highest visual impact.
+Return region scores, whole-figure scores, all findings, native/composite/raster counts, every raster declaration, resolved finding ids, unresolved source ambiguities, and the final pass/fail verdict. For the publication aesthetic gate, also report whether the `visual_grammar_receipt` survives the title-hidden thumbnail, declared publication width, and title-hidden grayscale render; answer the four mandatory closing questions from the reference; and identify the three changes with the highest visual impact.
