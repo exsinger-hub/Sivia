@@ -38,3 +38,12 @@ test("raster decomposition notes cannot trigger an affirmative composite-raster 
 test("polyline strokes are excluded from repeated-box alignment checks", () => {
   assert.match(bridge, /\$summaries \| Where-Object \{ \[int\]\$_\.type -ne 9 \}/);
 });
+
+test("fixed COM text geometry is reasserted after text formatting", () => {
+  const setShape = extractPowerShellFunction(bridge, "Set-ShapeFromArguments");
+  const firstGeometry = setShape.indexOf("Set-ShapeGeometry $Shape $Arguments");
+  const text = setShape.indexOf("Set-ShapeText $Shape $Arguments");
+  const secondGeometry = setShape.indexOf("Set-ShapeGeometry $Shape $Arguments", firstGeometry + 1);
+  assert.ok(firstGeometry !== -1 && text > firstGeometry && secondGeometry > text);
+  assert.match(setShape, /\$textAutofit\s+-ne\s+"grow_shape"/);
+});

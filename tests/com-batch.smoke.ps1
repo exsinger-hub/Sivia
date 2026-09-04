@@ -95,6 +95,19 @@ try {
     $inspection = Invoke-Bridge "inspect" @{ focus_policy = "preserve"; max_slides = 1; max_shapes_per_slide = 20; include_text = $true }
     $expectedShapeCount = 2 + $ExtraShapeCount
     if ([int]$inspection.slides[0].shape_count -ne $expectedShapeCount) { throw "Expected $expectedShapeCount native objects on the smoke-test slide." }
+    $smokeLabel = @($inspection.slides[0].shapes | Where-Object { $_.name -eq "smoke_label" })[0]
+    if ($null -eq $smokeLabel) { throw "The fixed-geometry smoke label was not found." }
+    foreach ($expectation in @(
+        @{ property = "left"; expected = 84.0 },
+        @{ property = "top"; expected = 92.0 },
+        @{ property = "width"; expected = 120.0 },
+        @{ property = "height"; expected = 30.0 }
+    )) {
+        $actual = [double]$smokeLabel.($expectation.property)
+        if ([math]::Abs($actual - [double]$expectation.expected) -gt 0.1) {
+            throw "Fixed textbox geometry drifted: $($expectation.property)=$actual, expected $($expectation.expected)."
+        }
+    }
     $null = Invoke-Bridge "save" @{ focus_policy = "preserve"; output_path = $outputPath; format = "pptx"; overwrite = $true }
     if (-not (Test-Path -LiteralPath $outputPath -PathType Leaf)) { throw "The smoke-test presentation was not saved." }
 

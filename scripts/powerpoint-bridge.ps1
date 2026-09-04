@@ -849,6 +849,14 @@ function Set-ShapeFromArguments {
     Set-ShapeGeometry $Shape $Arguments
     Set-ShapeAppearance $Shape $Arguments
     Set-ShapeText $Shape $Arguments
+    # PowerPoint may resize an AddTextbox shape while WordWrap/AutoSize and text
+    # metrics are applied, even when fixed bounds were supplied.  Reassert the
+    # caller's explicit geometry after text formatting unless grow_shape was
+    # requested intentionally.
+    $textAutofit = [string](Get-Argument $Arguments "text_autofit" "none")
+    if ($textAutofit -ne "grow_shape") {
+        Set-ShapeGeometry $Shape $Arguments
+    }
 }
 
 function Get-PresentationSummary {

@@ -92,7 +92,7 @@ In Office.js mode, pre-crop every atomic picture before calling `powerpoint_add_
 
 1. Establish slide size, margins, panel bounds, alignment anchors, spacing tokens, z-order, and connector lanes.
 2. Draw one logical region from background to foreground with stable names in one `powerpoint_draw_sequence` call. In Windows COM `preserve` mode, use `fast` by default: the bridge applies the batch in one process without per-object waits or view changes. Use `checkpoint` only when an intermediate renderer gate is useful, and `per_object` only when the user explicitly requests foreground playback. For Office.js, use `per_object` only when visible object-level commits are wanted. For OOXML PowerPoint/WPS, prefer `fast` for a completed region and `checkpoint` for unusually large regions; warn that `per_object` is slower.
-3. Use fixed text geometry, explicit margins, wrapping, alignment, and controlled autofit.
+3. Use fixed text geometry, explicit margins, wrapping, alignment, and controlled autofit. Compare each text object's returned bounds with the requested bounds before adding dependent connectors; if a cached or host-specific backend resized it, restore the exact bounds with `powerpoint_update_shape` first.
 4. Use attached connectors for semantic relationships in COM/OOXML. In Office.js, inspect the reported `connector_mode=geometry_backed`, use exact orthogonal routes and explicit endpoint clearances, and re-run the renderer gate after node movement.
 5. Apply start/end clearance so free arrowheads do not enter rectangles.
 6. Use exact align/distribute and table-layout tools instead of visual guessing.
