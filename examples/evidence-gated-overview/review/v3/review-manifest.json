@@ -1,0 +1,49 @@
+{
+  "source": "D:\\Desktop\\mia\\You-Only-Figure-Once\\examples\\evidence-gated-overview\\review\\v3\\source.pptx",
+  "slide": 1,
+  "slide_part": "ppt/slides/slide1.xml",
+  "publication_width_mm": 170,
+  "renderer_status": "pending",
+  "variants": {
+    "title-hidden.pptx": {
+      "requested_names": [
+        "figure_title"
+      ],
+      "removed_names": [
+        "figure_title"
+      ],
+      "removed_count": 1
+    },
+    "detail-hidden.pptx": {
+      "requested_names": [
+        "figure_title",
+        "detail_ref_a",
+        "detail_ref_b_draft",
+        "detail_ref_b_gate",
+        "detail_separator_a",
+        "detail_separator_b",
+        "detail_a_heading",
+        "detail_a_prepare",
+        "detail_a_online",
+        "detail_b_heading",
+        "detail_b_draft",
+        "detail_b_check"
+      ],
+      "removed_names": [
+        "figure_title",
+        "detail_ref_a",
+        "detail_ref_b_draft",
+        "detail_ref_b_gate",
+        "detail_separator_a",
+        "detail_separator_b",
+        "detail_a_heading",
+        "detail_a_prepare",
+        "detail_a_online",
+        "detail_b_heading",
+        "detail_b_draft",
+        "detail_b_check"
+      ],
+      "removed_count": 12
+    }
+  }
+}

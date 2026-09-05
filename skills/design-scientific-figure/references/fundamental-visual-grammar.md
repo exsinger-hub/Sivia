@@ -4,7 +4,7 @@ Use this reference for every publication-facing scientific overview, architectur
 
 ## First principle
 
-A scientific figure is a visual sentence, not a collection of labeled containers. Its style is the repeated relationship between information roles, visual mass, spacing, line behavior, type, and color. A palette or font change cannot repair a weak sentence.
+A scientific figure expresses an argument through information roles, visual mass, spacing, line behavior, type and color. For overviews, [Overview Narrative](overview-narrative.md) defines how the scientific contract becomes a multi-level explanation. Use that narrative to choose a grammar; the examples below are defaults, not a universal template.
 
 The reader should be able to identify, without the title:
 
@@ -67,9 +67,9 @@ Do not accept placeholders such as “clean,” “modern,” “professional,�
 
 ## Compose one primary sentence
 
-- Use one dominant reading spine: left-to-right, top-to-bottom, or a clearly labeled cycle.
+- Use one dominant organizing logic, such as a reading spine, cycle or parallel comparison, selected from the scientific topology.
 - Give one zone the largest semantic and visual importance. This is normally the novel mechanism, decisive comparison, or principal result—not merely the largest enclosing box.
-- Keep at most three hierarchy levels: primary claim, supporting stages, and annotations or metadata.
+- Organize first-glance, working and technical reading into L1/L2/L3. Interpretation-changing conditions remain L1/L2 even when drawn small.
 - Let secondary branches leave and rejoin the spine locally. Avoid routes that orbit the entire canvas.
 - Size content for the declared publication slot. Large empty regions must separate hierarchy, protect the focal zone, reserve a connector lane, or frame evidence.
 - Use grouping backgrounds only when they express a real scientific boundary. Do not place every stage inside an equal-size card.
@@ -91,21 +91,20 @@ Use a stable role grammar:
 
 A reader should be able to distinguish “something happens,” “a representation exists,” and “this is evidence” before reading the labels. Do not encode every noun as the same rounded rectangle.
 
-## Use two connector prominence levels
+## Separate connector semantics and prominence
 
 All semantic routes must remain exact even in a hand-drawn direction.
 
-1. **Primary flow** carries the main scientific sentence. Use the strongest solid line and the clearest arrowheads.
-2. **Secondary flow** carries context, skips, supervision, or local returns. Keep it solid unless dashing has an explicit scientific meaning; reduce contrast and visual mass rather than creating a dashed railway.
+Start with two line-weight/contrast levels, primary and secondary; use tertiary prominence only when needed for annotations. Separately assign relation semantics and a visible convention: data flow, supervision, feedback, update, sharing, association or inhibition. A feedback loop can be primary. An inset association should not look like a causal or data arrow.
 
 Color may distinguish semantic families, but line prominence must still work in grayscale. Keep bends few, reserve lanes, enter the destination from the facing side, and maintain arrowhead clearance. A long skip should travel behind or below the main content and re-enter locally. Never route a line through a label, unrelated object, or focal glyph.
 
-Use dashed lines only when the scientific semantics genuinely mean optional, latent, uncertain, proposed, or otherwise non-solid relation. Do not use dashes merely to make a crowded route look lighter.
+Dashed supervision or correspondence, blunt inhibition, brackets for sharing and curved feedback are valid when their meaning is explicit and consistent. Judge exact endpoints and unambiguous interpretation, not whether every line is solid.
 
 ## Limit typography
 
 - Use sentence case for labels and headings unless the source requires an acronym.
-- Use no more than two font weights and three functional sizes: figure/section, operator, and annotation.
+- Start with two font weights and three functional sizes: figure/section, operator and annotation. Derive effective sizes at the physical publication width; adapt to notation and publication requirements.
 - Make hierarchy through position, size, and whitespace before using bold or color.
 - Keep labels short enough to remain readable at the declared publication width. If text does not fit, rewrite or recompose; do not solve the problem by shrinking all type.
 - Avoid all-caps section banners, repeated pill labels, decorative microcopy, and UI-like status chips.
@@ -142,17 +141,17 @@ Reject the composition and return to the Designer when its global silhouette is 
 - an icon swarm with no stable role grammar;
 - a focal point created only by brighter color rather than structure.
 
-These are class-A composition failures. Do not respond by changing palette, corner radius, shadows, font family, or line texture. Replace the silhouette, redistribute visual mass, and remap roles to shapes first.
+Judge the actual reading failure, not motif presence alone. Scope containers, balanced experiment arms and a bottom evidence/training strip are useful when science requires them. A motif becomes a class-A failure when it obscures the organizing logic or focal hierarchy. Then replace the silhouette, redistribute visual mass and remap roles before surface polish.
 
 ## Review at three scales
 
 Use fresh renders from the selected backend whenever available.
 
 1. **Title-hidden thumbnail**: judge silhouette, first focal point, and reading direction. If the figure reads as a card wall or the first focus is wrong, redesign globally.
-2. **Declared publication width**: use the actual target; use 600 px as a practical fallback when the target is unknown. Verify that every required stage and relation remains legible.
-3. **Title-hidden grayscale, approximately 400 px**: verify hierarchy and primary/secondary routing without color.
+2. **Declared physical publication width**: verify effective type size, main groups and readable expansions. A 600 px screen preview is useful but cannot establish print readability.
+3. **Title-and-L3-hidden grayscale**: verify hierarchy and routing without color. Actually remove the named objects in review copies and export them; a full render with a visible title is not this test.
 
-At readable scale, inspect text fit, connector endpoints, line crossings, repeated alignment, and local finish. Passing object-structure checks does not override a failed thumbnail or grayscale judgment.
+At readable scale, inspect text fit, connector endpoints, line crossings, repeated alignment and local finish. Follow the unprimed review order in Overview Narrative. Passing object-structure checks does not override a failed reading test or supply missing target-renderer evidence.
 
 ## Correct in dependency order
 
@@ -178,4 +177,3 @@ The fundamental grammar passes only when:
 - no anti-dashboard class-A defect remains;
 - the declared publication-width and grayscale renders preserve the intended hierarchy;
 - reference influence is traceable to abstract visual traits and does not copy scientific content or topology.
-

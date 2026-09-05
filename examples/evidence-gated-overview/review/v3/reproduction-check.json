@@ -1,0 +1,86 @@
+{
+  "scope": "Reproducibility only; not another blind reading or independent review.",
+  "baseline": "Frozen v2 before publishing the notes-corrected v3 source.",
+  "pixel_comparisons": [
+    {
+      "view": "full",
+      "baseline": "D:\\Desktop\\mia\\You-Only-Figure-Once\\examples\\evidence-gated-overview\\review\\v3\\baseline-v2.png",
+      "candidate": "D:\\Desktop\\mia\\You-Only-Figure-Once\\examples\\evidence-gated-overview\\review\\v3\\full.png",
+      "pixels": [
+        2040,
+        960
+      ],
+      "pixel_equal": true
+    },
+    {
+      "view": "view-01.png",
+      "baseline": "D:\\Desktop\\mia\\You-Only-Figure-Once\\examples\\evidence-gated-overview\\review\\v2\\view-01.png",
+      "candidate": "D:\\Desktop\\mia\\You-Only-Figure-Once\\examples\\evidence-gated-overview\\review\\v3\\view-01.png",
+      "pixels": [
+        2040,
+        960
+      ],
+      "pixel_equal": true
+    },
+    {
+      "view": "view-02.png",
+      "baseline": "D:\\Desktop\\mia\\You-Only-Figure-Once\\examples\\evidence-gated-overview\\review\\v2\\view-02.png",
+      "candidate": "D:\\Desktop\\mia\\You-Only-Figure-Once\\examples\\evidence-gated-overview\\review\\v3\\view-02.png",
+      "pixels": [
+        2040,
+        960
+      ],
+      "pixel_equal": true
+    },
+    {
+      "view": "view-01-gray.png",
+      "baseline": "D:\\Desktop\\mia\\You-Only-Figure-Once\\examples\\evidence-gated-overview\\review\\v2\\view-01-gray.png",
+      "candidate": "D:\\Desktop\\mia\\You-Only-Figure-Once\\examples\\evidence-gated-overview\\review\\v3\\view-01-gray.png",
+      "pixels": [
+        2040,
+        960
+      ],
+      "pixel_equal": true
+    },
+    {
+      "view": "view-02-gray.png",
+      "baseline": "D:\\Desktop\\mia\\You-Only-Figure-Once\\examples\\evidence-gated-overview\\review\\v2\\view-02-gray.png",
+      "candidate": "D:\\Desktop\\mia\\You-Only-Figure-Once\\examples\\evidence-gated-overview\\review\\v3\\view-02-gray.png",
+      "pixels": [
+        2040,
+        960
+      ],
+      "pixel_equal": true
+    },
+    {
+      "view": "view-01-gray-850.png",
+      "baseline": "D:\\Desktop\\mia\\You-Only-Figure-Once\\examples\\evidence-gated-overview\\review\\v2\\view-01-gray-850.png",
+      "candidate": "D:\\Desktop\\mia\\You-Only-Figure-Once\\examples\\evidence-gated-overview\\review\\v3\\view-01-gray-850.png",
+      "pixels": [
+        850,
+        400
+      ],
+      "pixel_equal": true
+    },
+    {
+      "view": "view-02-gray-850.png",
+      "baseline": "D:\\Desktop\\mia\\You-Only-Figure-Once\\examples\\evidence-gated-overview\\review\\v2\\view-02-gray-850.png",
+      "candidate": "D:\\Desktop\\mia\\You-Only-Figure-Once\\examples\\evidence-gated-overview\\review\\v3\\view-02-gray-850.png",
+      "pixels": [
+        850,
+        400
+      ],
+      "pixel_equal": true
+    }
+  ],
+  "native_slide_xml_equal": false,
+  "slide_xml_equal_except_powerpoint_creation_ids": true,
+  "ignored_creation_id_elements": [
+    56,
+    56
+  ],
+  "native_structure_and_text_metrics_equal": true,
+  "native_shape_count": 55,
+  "pptx_notes_attribution_correct": true,
+  "expected_attribution": "synthetic regression brief defined for this plugin test (B1\u2013B6)"
+}

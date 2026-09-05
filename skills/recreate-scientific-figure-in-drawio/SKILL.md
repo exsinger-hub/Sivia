@@ -43,6 +43,8 @@ Never invent a shape name. Unknown or unloaded shape/stencil names are rejected 
 
 ## Inventory before drawing
 
+For a newly designed overview, read [Overview Narrative](../design-scientific-figure/references/overview-narrative.md) and follow its main-group/expansion mapping. Give title and L3 cells stable ids and prepare [disposable review views](../audit-scientific-figure/references/review-copies.md). This does not authorize redesign of a supplied reconstruction reference.
+
 Use the Designer's specification or extract an inventory from the reference. Assign stable ids, bounds, parent group, construction order, and z-order. Classify every item as editable text, shape, free line, connector, table/chart composite, repeated motif, or irreducible raster field.
 
 ## Enforce atomic images
@@ -82,7 +84,7 @@ Do not draw the next region until the Reviewer reports no unresolved finding exc
 
 ## Acceptance gate
 
-Require exact readable semantics, 1.00 reconstructable editability, 1.00 clipping/overlap safety, at least 0.95 layout/alignment confidence, at least 0.95 connector clarity, at least 0.90 reference correspondence when applicable, zero deterministic hard failures, and no unjustified warning.
+Use the Reviewer's evidence gates: correct readable semantics, native reconstructable content, no clipping or ambiguous routing, zero unresolved hard findings and a supported visual verdict. For overviews, coverage spans main groups and linked expansions. Record target-rendering, physical-size legibility and narrative as pass, fail or pending; no self-assigned confidence threshold substitutes for missing renderer evidence.
 
 ## Delivery
 

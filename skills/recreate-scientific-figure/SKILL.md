@@ -86,16 +86,15 @@ After all regions pass locally, repeat the same loop for the complete figure. Ch
 
 Finish only when:
 
-- readable semantic/text accuracy is 1.00;
-- editability coverage of reconstructable content is 1.00;
-- clipping and unintended-overlap safety is 1.00;
-- layout/alignment confidence is at least 0.95;
-- connector clarity confidence is at least 0.95;
-- reference correspondence confidence is at least 0.90;
+- readable semantics and text match the source;
+- every reconstructable element is editable;
+- no clipping or unintended overlap is visible;
+- layout, alignment and connector routes are unambiguous at final size;
+- reference correspondence is supported by the current renderer comparison;
 - deterministic audit reports zero hard failures;
 - no warning remains unless it is an unavoidable, explicitly reported source ambiguity.
 
-Confidence must be justified by current renderer and structure evidence, not successful tool calls.
+Report pass, fail or pending with current renderer and structure evidence. Missing evidence remains pending; successful tool calls or subjective confidence cannot complete a gate.
 
 ## Raster gate
 

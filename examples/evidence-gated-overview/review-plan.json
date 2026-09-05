@@ -1,0 +1,20 @@
+{
+  "slide": 1,
+  "title_names": [
+    "figure_title"
+  ],
+  "detail_names": [
+    "detail_ref_a",
+    "detail_ref_b_draft",
+    "detail_ref_b_gate",
+    "detail_separator_a",
+    "detail_separator_b",
+    "detail_a_heading",
+    "detail_a_prepare",
+    "detail_a_online",
+    "detail_b_heading",
+    "detail_b_draft",
+    "detail_b_check"
+  ],
+  "publication_width_mm": 170
+}

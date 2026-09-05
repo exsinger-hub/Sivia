@@ -49,6 +49,8 @@ For manuscript-derived work, identify the earliest stage at which the correct fa
 
 For a class-A global composition, visual-center, style-mixture, or proportion failure, the smallest sufficient fix may be a region-level or whole-slide re-layout. Do not preserve local geometry when doing so would leave the root cause intact.
 
+For a crowded overview or failed reader reconstruction, read [Overview Narrative](../design-scientific-figure/references/overview-narrative.md). Repair the abstraction map and level assignment before squeezing objects. Move routine operations into linked readable expansions; keep external interfaces, conditions and exact inverse/update semantics visible. For missing renderer or masked-view evidence, prescribe the missing export rather than changing the figure or issuing a pass.
+
 ## Emit an object-level plan
 
 For every finding, return:

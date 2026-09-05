@@ -1,0 +1,59 @@
+{
+  "target_application": "Microsoft PowerPoint",
+  "microsoft_powerpoint_used": true,
+  "backend": "late-bound Windows COM; native object generation",
+  "renderer": "PowerPoint Slide.Export",
+  "application_version": "16.0",
+  "application_build": "19530",
+  "source": "D:\\Desktop\\mia\\You-Only-Figure-Once\\examples\\evidence-gated-overview\\review\\v3\\source.pptx",
+  "full_png": "D:\\Desktop\\mia\\You-Only-Figure-Once\\examples\\evidence-gated-overview\\review\\v3\\full.png",
+  "source_last_write_utc": "2026-09-05T10:13:37.8408764Z",
+  "exported_utc": "2026-09-05T10:13:38.7072506Z",
+  "slide": 1,
+  "slide_count": 1,
+  "publication_width_mm": 170,
+  "publication_height_mm": 80,
+  "export_px": [
+    2040,
+    960
+  ],
+  "process_ids_before": [
+    27216
+  ],
+  "process_ids_after": [
+    27216
+  ],
+  "unrelated_presentations_modified": false,
+  "used_active_window_or_view_api": false,
+  "capability_probe_limitation": "MCP static metadata could not load Office interop assemblies. Actual COM construction and Slide.Export results are recorded here.",
+  "native_shape_count": 55,
+  "picture_count": 0,
+  "text_box_count": 25,
+  "connector_count": 20,
+  "autoshape_count": 10,
+  "text_bounds_findings": [],
+  "variants": [
+    {
+      "source": "D:\\Desktop\\mia\\You-Only-Figure-Once\\examples\\evidence-gated-overview\\review\\v3\\detail-hidden.pptx",
+      "image": "D:\\Desktop\\mia\\You-Only-Figure-Once\\examples\\evidence-gated-overview\\review\\v3\\view-01.png",
+      "kind": "title-and-L3-hidden",
+      "renderer": "Microsoft PowerPoint Slide.Export",
+      "slide": 1,
+      "native_shape_count": 43,
+      "exported_utc": "2026-09-05T10:13:38.2562622Z"
+    },
+    {
+      "source": "D:\\Desktop\\mia\\You-Only-Figure-Once\\examples\\evidence-gated-overview\\review\\v3\\title-hidden.pptx",
+      "image": "D:\\Desktop\\mia\\You-Only-Figure-Once\\examples\\evidence-gated-overview\\review\\v3\\view-02.png",
+      "kind": "title-hidden",
+      "renderer": "Microsoft PowerPoint Slide.Export",
+      "slide": 1,
+      "native_shape_count": 54,
+      "exported_utc": "2026-09-05T10:13:38.3824789Z"
+    }
+  ],
+  "review_copy_manifest": "D:\\Desktop\\mia\\You-Only-Figure-Once\\examples\\evidence-gated-overview\\review\\v3\\review-manifest.json",
+  "independent_review": "pending; separate fresh reviewer to be assigned by main agent",
+  "self_score": null,
+  "source_left_open": true
+}

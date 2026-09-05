@@ -1,7 +1,7 @@
 {
   "name": "you-only-figure-once",
-  "version": "1.5.4+codex.20260905020000",
-  "description": "Design or recreate scientific figures in draw.io, Microsoft PowerPoint, or WPS Presentation with editable objects, background-safe batched drawing, live Office.js support, and one Designer-Drawer-Reviewer-Corrector workflow.",
+  "version": "1.5.4+codex.20260905101256",
+  "description": "Build editable scientific overviews with a clear reading narrative, faithful main-to-detail abstraction, and independent review of actual publication-size renders in draw.io, PowerPoint or WPS.",
   "author": {
     "name": "gatina",
     "url": "https://github.com/exsinger-hub/You-Only-Figure-Once"
@@ -21,7 +21,7 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "You-Only-Figure-Once",
-    "shortDescription": "Build editable figures in draw.io, PowerPoint, or WPS.",
+    "shortDescription": "Create readable, editable scientific overviews.",
     "longDescription": "Uses one backend-neutral four-role workflow with equivalent draw.io and presentation mappings. Windows PowerPoint applies each logical region through one background COM batch. Mac PowerPoint uses an Office.js task pane and context.sync when connected, with native OOXML as a safe fallback. WPS uses an editable OOXML working copy with truthful open-state reporting and checkpointed application refresh. Presentation drawing preserves the user's foreground application by default. The Designer specifies layout and routing, the Drawer builds editable objects panel by panel, the Reviewer checks renderer fidelity and editability, and the Corrector returns object-level repairs.",
     "developerName": "gatina",
     "category": "Productivity",
@@ -31,9 +31,9 @@
     ],
     "websiteURL": "https://github.com/exsinger-hub/You-Only-Figure-Once",
     "defaultPrompt": [
-      "在 PowerPoint 或 WPS 中分面板复刻这张参考图，优先使用原生可编辑对象，并反复检查修正后保存。",
-      "在 draw.io 中逐步复刻这张参考图，保持文字、图形、表格、图表和连接线可编辑。",
-      "根据研究内容选择 draw.io 或 PowerPoint，设计一张布局整齐、箭头清晰的可编辑科学插图。"
+      "\u5728 PowerPoint \u6216 WPS \u4e2d\u5206\u9762\u677f\u590d\u523b\u8fd9\u5f20\u53c2\u8003\u56fe\uff0c\u4f18\u5148\u4f7f\u7528\u539f\u751f\u53ef\u7f16\u8f91\u5bf9\u8c61\uff0c\u5e76\u53cd\u590d\u68c0\u67e5\u4fee\u6b63\u540e\u4fdd\u5b58\u3002",
+      "\u5728 draw.io \u4e2d\u9010\u6b65\u590d\u523b\u8fd9\u5f20\u53c2\u8003\u56fe\uff0c\u4fdd\u6301\u6587\u5b57\u3001\u56fe\u5f62\u3001\u8868\u683c\u3001\u56fe\u8868\u548c\u8fde\u63a5\u7ebf\u53ef\u7f16\u8f91\u3002",
+      "\u6839\u636e\u7814\u7a76\u5185\u5bb9\u8bbe\u8ba1\u53ef\u7f16\u8f91\u79d1\u7814 Overview\uff1a\u5148\u786e\u5b9a\u4e09\u4e2a\u9605\u8bfb\u5c42\u7ea7\uff0c\u5c06\u5b8c\u6574\u79d1\u5b66\u5408\u540c\u6620\u5c04\u5230\u4e3b\u56fe\u4e0e\u5c40\u90e8\u5c55\u5f00\u56fe\uff0c\u518d\u4ee5\u771f\u5b9e\u76ee\u6807\u5e94\u7528\u6e32\u67d3\u548c\u65e0\u63d0\u793a\u7070\u5ea6\u590d\u8ff0\u9a8c\u6536\u3002"
     ],
     "brandColor": "#F08705"
   },

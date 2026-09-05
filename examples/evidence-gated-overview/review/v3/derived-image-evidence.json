@@ -1,0 +1,32 @@
+[
+  {
+    "source": "D:\\Desktop\\mia\\You-Only-Figure-Once\\examples\\evidence-gated-overview\\review\\v3\\view-01.png",
+    "grayscale": "D:\\Desktop\\mia\\You-Only-Figure-Once\\examples\\evidence-gated-overview\\review\\v3\\view-01-gray.png",
+    "screen_preview": "D:\\Desktop\\mia\\You-Only-Figure-Once\\examples\\evidence-gated-overview\\review\\v3\\view-01-gray-850.png",
+    "native_pixels": [
+      2040,
+      960
+    ],
+    "preview_pixels": [
+      850,
+      400
+    ],
+    "publication_width_mm": 170,
+    "method": "Pillow luminance conversion of actual PowerPoint Slide.Export PNG"
+  },
+  {
+    "source": "D:\\Desktop\\mia\\You-Only-Figure-Once\\examples\\evidence-gated-overview\\review\\v3\\view-02.png",
+    "grayscale": "D:\\Desktop\\mia\\You-Only-Figure-Once\\examples\\evidence-gated-overview\\review\\v3\\view-02-gray.png",
+    "screen_preview": "D:\\Desktop\\mia\\You-Only-Figure-Once\\examples\\evidence-gated-overview\\review\\v3\\view-02-gray-850.png",
+    "native_pixels": [
+      2040,
+      960
+    ],
+    "preview_pixels": [
+      850,
+      400
+    ],
+    "publication_width_mm": 170,
+    "method": "Pillow luminance conversion of actual PowerPoint Slide.Export PNG"
+  }
+]

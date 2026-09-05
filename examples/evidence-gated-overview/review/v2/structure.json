@@ -1,0 +1,933 @@
+{
+  "text": [
+    {
+      "name": "figure_title",
+      "text": "Evidence-gated retrieval agent",
+      "font_pt": 13.0,
+      "box_width_pt": 320.3149719238281,
+      "box_height_pt": 18.141733169555664,
+      "rendered_width_pt": 192.8750457763672,
+      "rendered_height_pt": 15.600000381469727,
+      "exceeds_box": false
+    },
+    {
+      "name": "frozen_weights",
+      "text": "All model weights frozen",
+      "font_pt": 8.0,
+      "box_width_pt": 133.2283477783203,
+      "box_height_pt": 14.17322826385498,
+      "rendered_width_pt": 96.75,
+      "rendered_height_pt": 9.600000381469727,
+      "exceeds_box": false
+    },
+    {
+      "name": "evidence_boundary",
+      "text": "Retrieved text is evidence.\nNever instructions or weight updates.",
+      "font_pt": 7.400000095367432,
+      "box_width_pt": 170.0787353515625,
+      "box_height_pt": 25.511810302734375,
+      "rendered_width_pt": 123.75,
+      "rendered_height_pt": 17.760000228881836,
+      "exceeds_box": false
+    },
+    {
+      "name": "question_label",
+      "text": "User\nquestion",
+      "font_pt": 8.5,
+      "box_width_pt": 45.354331970214844,
+      "box_height_pt": 25.511810302734375,
+      "rendered_width_pt": 34.625038146972656,
+      "rendered_height_pt": 20.399999618530273,
+      "exceeds_box": false
+    },
+    {
+      "name": "retrieve_label",
+      "text": "Retrieve",
+      "font_pt": 9.0,
+      "box_width_pt": 62.362205505371094,
+      "box_height_pt": 17.00787353515625,
+      "rendered_width_pt": 38.0,
+      "rendered_height_pt": 10.800000190734863,
+      "exceeds_box": false
+    },
+    {
+      "name": "draft_label",
+      "text": "Draft / revise",
+      "font_pt": 8.5,
+      "box_width_pt": 59.527557373046875,
+      "box_height_pt": 17.00787353515625,
+      "rendered_width_pt": 50.75,
+      "rendered_height_pt": 10.199999809265137,
+      "exceeds_box": false
+    },
+    {
+      "name": "source_spans_label",
+      "text": "Source spans",
+      "font_pt": 8.0,
+      "box_width_pt": 68.031494140625,
+      "box_height_pt": 14.17322826385498,
+      "rendered_width_pt": 51.5,
+      "rendered_height_pt": 9.600000381469727,
+      "exceeds_box": false
+    },
+    {
+      "name": "gate_label",
+      "text": "Evidence check",
+      "font_pt": 10.0,
+      "box_width_pt": 85.03936767578125,
+      "box_height_pt": 14.17322826385498,
+      "rendered_width_pt": 77.25,
+      "rendered_height_pt": 12.0,
+      "exceeds_box": false
+    },
+    {
+      "name": "gate_claim_text",
+      "text": "claim",
+      "font_pt": 7.5,
+      "box_width_pt": 31.181102752685547,
+      "box_height_pt": 11.055118560791016,
+      "rendered_width_pt": 21.25,
+      "rendered_height_pt": 9.0,
+      "exceeds_box": false
+    },
+    {
+      "name": "gate_span_text",
+      "text": "span",
+      "font_pt": 7.5,
+      "box_width_pt": 31.181102752685547,
+      "box_height_pt": 11.055118560791016,
+      "rendered_width_pt": 19.62504005432129,
+      "rendered_height_pt": 9.0,
+      "exceeds_box": false
+    },
+    {
+      "name": "answer_label",
+      "text": "Answer\n+ citations",
+      "font_pt": 8.600000381469727,
+      "box_width_pt": 59.527557373046875,
+      "box_height_pt": 25.511810302734375,
+      "rendered_width_pt": 45.0,
+      "rendered_height_pt": 20.639999389648438,
+      "exceeds_box": false
+    },
+    {
+      "name": "abstain_label",
+      "text": "Abstain",
+      "font_pt": 8.600000381469727,
+      "box_width_pt": 53.85826873779297,
+      "box_height_pt": 17.00787353515625,
+      "rendered_width_pt": 33.874961853027344,
+      "rendered_height_pt": 10.319999694824219,
+      "exceeds_box": false
+    },
+    {
+      "name": "supported_condition",
+      "text": "All cited claims\nsupported",
+      "font_pt": 7.199999809265137,
+      "box_width_pt": 62.362205505371094,
+      "box_height_pt": 22.677165985107422,
+      "rendered_width_pt": 49.75,
+      "rendered_height_pt": 17.280000686645508,
+      "exceeds_box": false
+    },
+    {
+      "name": "retry_condition",
+      "text": "Unsupported, attempt < 3",
+      "font_pt": 7.5,
+      "box_width_pt": 138.89764404296875,
+      "box_height_pt": 12.755905151367188,
+      "rendered_width_pt": 86.75,
+      "rendered_height_pt": 9.0,
+      "exceeds_box": false
+    },
+    {
+      "name": "retry_action",
+      "text": "Retrieve more evidence, then revise",
+      "font_pt": 7.300000190734863,
+      "box_width_pt": 164.40945434570312,
+      "box_height_pt": 12.755905151367188,
+      "rendered_width_pt": 117.5,
+      "rendered_height_pt": 8.760000228881836,
+      "exceeds_box": false
+    },
+    {
+      "name": "abstain_condition",
+      "text": "Unsupported\nat attempt 3",
+      "font_pt": 7.199999809265137,
+      "box_width_pt": 70.86614227294922,
+      "box_height_pt": 22.677165985107422,
+      "rendered_width_pt": 43.25,
+      "rendered_height_pt": 17.280000686645508,
+      "exceeds_box": false
+    },
+    {
+      "name": "detail_ref_a",
+      "text": "a",
+      "font_pt": 7.199999809265137,
+      "box_width_pt": 8.503936767578125,
+      "box_height_pt": 10.204724311828613,
+      "rendered_width_pt": 6.0,
+      "rendered_height_pt": 8.640000343322754,
+      "exceeds_box": false
+    },
+    {
+      "name": "detail_ref_b_draft",
+      "text": "b",
+      "font_pt": 7.199999809265137,
+      "box_width_pt": 8.503936767578125,
+      "box_height_pt": 10.204724311828613,
+      "rendered_width_pt": 6.0,
+      "rendered_height_pt": 8.640000343322754,
+      "exceeds_box": false
+    },
+    {
+      "name": "detail_ref_b_gate",
+      "text": "b",
+      "font_pt": 7.199999809265137,
+      "box_width_pt": 8.503936767578125,
+      "box_height_pt": 10.204724311828613,
+      "rendered_width_pt": 6.0,
+      "rendered_height_pt": 8.640000343322754,
+      "exceeds_box": false
+    },
+    {
+      "name": "detail_a_heading",
+      "text": "a  Retrieval",
+      "font_pt": 8.0,
+      "box_width_pt": 215.43307495117188,
+      "box_height_pt": 12.472440719604492,
+      "rendered_width_pt": 45.25,
+      "rendered_height_pt": 9.600000381469727,
+      "exceeds_box": false
+    },
+    {
+      "name": "detail_a_prepare",
+      "text": "Prepare: chunk → embed → index",
+      "font_pt": 7.5,
+      "box_width_pt": 215.43307495117188,
+      "box_height_pt": 11.905511856079102,
+      "rendered_width_pt": 116.75,
+      "rendered_height_pt": 9.0,
+      "exceeds_box": false
+    },
+    {
+      "name": "detail_a_online",
+      "text": "Online: index lookup → rerank → passages",
+      "font_pt": 7.5,
+      "box_width_pt": 215.43307495117188,
+      "box_height_pt": 11.905511856079102,
+      "rendered_width_pt": 146.1250457763672,
+      "rendered_height_pt": 9.0,
+      "exceeds_box": false
+    },
+    {
+      "name": "detail_b_heading",
+      "text": "b  Drafting and checking",
+      "font_pt": 8.0,
+      "box_width_pt": 218.26771545410156,
+      "box_height_pt": 12.472440719604492,
+      "rendered_width_pt": 95.87503814697266,
+      "rendered_height_pt": 9.600000381469727,
+      "exceeds_box": false
+    },
+    {
+      "name": "detail_b_draft",
+      "text": "Assemble prompt → generate → parse claims",
+      "font_pt": 7.5,
+      "box_width_pt": 218.26771545410156,
+      "box_height_pt": 11.905511856079102,
+      "rendered_width_pt": 155.0,
+      "rendered_height_pt": 9.0,
+      "exceeds_box": false
+    },
+    {
+      "name": "detail_b_check",
+      "text": "Each cited claim + source span → support check",
+      "font_pt": 7.5,
+      "box_width_pt": 218.26771545410156,
+      "box_height_pt": 11.905511856079102,
+      "rendered_width_pt": 164.0,
+      "rendered_height_pt": 9.0,
+      "exceeds_box": false
+    }
+  ],
+  "connectors": [
+    {
+      "name": "glyph_claim_span_link",
+      "begin_connected": false,
+      "end_connected": false,
+      "begin_x_pt": 289.13385009765625,
+      "begin_y_pt": 98.92913055419922,
+      "width_pt": 0.0,
+      "height_pt": 13.0393705368042
+    },
+    {
+      "name": "glyph_check_short",
+      "begin_connected": false,
+      "end_connected": false,
+      "begin_x_pt": 301.03936767578125,
+      "begin_y_pt": 102.61417388916016,
+      "width_pt": 7.08661413192749,
+      "height_pt": 6.5196852684021
+    },
+    {
+      "name": "glyph_check_long",
+      "begin_connected": false,
+      "end_connected": false,
+      "begin_x_pt": 308.1259765625,
+      "begin_y_pt": 95.24409484863281,
+      "width_pt": 13.889763832092285,
+      "height_pt": 13.889763832092285
+    },
+    {
+      "name": "question_to_retrieve",
+      "begin_connected": true,
+      "end_connected": true,
+      "begin_x_pt": 62.362205505371094,
+      "begin_y_pt": 104.88188934326172,
+      "width_pt": 19.842519760131836,
+      "height_pt": 0.0
+    },
+    {
+      "name": "passages_to_draft",
+      "begin_connected": true,
+      "end_connected": true,
+      "begin_x_pt": 150.23622131347656,
+      "begin_y_pt": 104.88188934326172,
+      "width_pt": 22.677165985107422,
+      "height_pt": 0.0
+    },
+    {
+      "name": "claims_to_gate",
+      "begin_connected": true,
+      "end_connected": true,
+      "begin_x_pt": 240.94488525390625,
+      "begin_y_pt": 104.88188934326172,
+      "width_pt": 31.181102752685547,
+      "height_pt": 0.0
+    },
+    {
+      "name": "retrieve_to_spans__1",
+      "begin_connected": false,
+      "end_connected": false,
+      "begin_x_pt": 116.22047424316406,
+      "begin_y_pt": 65.19685363769531,
+      "width_pt": 0.0,
+      "height_pt": 22.677165985107422
+    },
+    {
+      "name": "retrieve_to_spans__2",
+      "begin_connected": false,
+      "end_connected": false,
+      "begin_x_pt": 116.22047424316406,
+      "begin_y_pt": 65.19685363769531,
+      "width_pt": 117.6377944946289,
+      "height_pt": 0.0
+    },
+    {
+      "name": "retrieve_to_spans__3",
+      "begin_connected": false,
+      "end_connected": false,
+      "begin_x_pt": 233.85826110839844,
+      "begin_y_pt": 59.527557373046875,
+      "width_pt": 0.0,
+      "height_pt": 5.6692914962768555
+    },
+    {
+      "name": "spans_to_gate__1",
+      "begin_connected": false,
+      "end_connected": false,
+      "begin_x_pt": 272.1259765625,
+      "begin_y_pt": 46.77165222167969,
+      "width_pt": 90.70866394042969,
+      "height_pt": 0.0
+    },
+    {
+      "name": "spans_to_gate__2",
+      "begin_connected": false,
+      "end_connected": false,
+      "begin_x_pt": 362.83465576171875,
+      "begin_y_pt": 46.77165222167969,
+      "width_pt": 0.0,
+      "height_pt": 24.0944881439209
+    },
+    {
+      "name": "spans_to_gate__3",
+      "begin_connected": false,
+      "end_connected": false,
+      "begin_x_pt": 303.3070983886719,
+      "begin_y_pt": 70.86614227294922,
+      "width_pt": 59.527557373046875,
+      "height_pt": 0.0
+    },
+    {
+      "name": "spans_to_gate__4",
+      "begin_connected": false,
+      "end_connected": false,
+      "begin_x_pt": 303.3070983886719,
+      "begin_y_pt": 70.86614227294922,
+      "width_pt": 0.0,
+      "height_pt": 2.8346457481384277
+    },
+    {
+      "name": "supported_branch",
+      "begin_connected": true,
+      "end_connected": false,
+      "begin_x_pt": 334.4881896972656,
+      "begin_y_pt": 104.88188934326172,
+      "width_pt": 70.86614227294922,
+      "height_pt": 0.0
+    },
+    {
+      "name": "unsupported_stem",
+      "begin_connected": false,
+      "end_connected": false,
+      "begin_x_pt": 303.3070983886719,
+      "begin_y_pt": 136.06298828125,
+      "width_pt": 0.0,
+      "height_pt": 14.17322826385498
+    },
+    {
+      "name": "retry_branch__1",
+      "begin_connected": false,
+      "end_connected": false,
+      "begin_x_pt": 116.22047424316406,
+      "begin_y_pt": 150.23622131347656,
+      "width_pt": 187.08660888671875,
+      "height_pt": 0.0
+    },
+    {
+      "name": "retry_branch__2",
+      "begin_connected": false,
+      "end_connected": false,
+      "begin_x_pt": 116.22047424316406,
+      "begin_y_pt": 121.88976287841797,
+      "width_pt": 0.0,
+      "height_pt": 28.34645652770996
+    },
+    {
+      "name": "abstain_branch",
+      "begin_connected": false,
+      "end_connected": false,
+      "begin_x_pt": 303.3070983886719,
+      "begin_y_pt": 150.23622131347656,
+      "width_pt": 102.0472412109375,
+      "height_pt": 0.0
+    },
+    {
+      "name": "detail_separator_a",
+      "begin_connected": false,
+      "end_connected": false,
+      "begin_x_pt": 11.338582992553711,
+      "begin_y_pt": 172.91339111328125,
+      "width_pt": 215.43307495117188,
+      "height_pt": 0.0
+    },
+    {
+      "name": "detail_separator_b",
+      "begin_connected": false,
+      "end_connected": false,
+      "begin_x_pt": 252.28346252441406,
+      "begin_y_pt": 172.91339111328125,
+      "width_pt": 218.26771545410156,
+      "height_pt": 0.0
+    }
+  ],
+  "native_objects": [
+    {
+      "name": "figure_title",
+      "type": 17,
+      "is_connector": false,
+      "left_pt": 11.338582992553711,
+      "top_pt": 7.653543472290039,
+      "width_pt": 320.3149719238281,
+      "height_pt": 18.141733169555664
+    },
+    {
+      "name": "frozen_weights",
+      "type": 17,
+      "is_connector": false,
+      "left_pt": 337.3228454589844,
+      "top_pt": 9.921259880065918,
+      "width_pt": 133.2283477783203,
+      "height_pt": 14.17322826385498
+    },
+    {
+      "name": "evidence_boundary",
+      "type": 17,
+      "is_connector": false,
+      "left_pt": 11.338582992553711,
+      "top_pt": 34.0157470703125,
+      "width_pt": 170.0787353515625,
+      "height_pt": 25.511810302734375
+    },
+    {
+      "name": "question",
+      "type": 1,
+      "is_connector": false,
+      "left_pt": 11.338582992553711,
+      "top_pt": 87.87401580810547,
+      "width_pt": 51.02362060546875,
+      "height_pt": 34.0157470703125
+    },
+    {
+      "name": "question_label",
+      "type": 17,
+      "is_connector": false,
+      "left_pt": 14.17322826385498,
+      "top_pt": 91.27558898925781,
+      "width_pt": 45.354331970214844,
+      "height_pt": 25.511810302734375
+    },
+    {
+      "name": "retrieve",
+      "type": 1,
+      "is_connector": false,
+      "left_pt": 82.20472717285156,
+      "top_pt": 87.87401580810547,
+      "width_pt": 68.031494140625,
+      "height_pt": 34.0157470703125
+    },
+    {
+      "name": "retrieve_label",
+      "type": 17,
+      "is_connector": false,
+      "left_pt": 85.03936767578125,
+      "top_pt": 96.3779525756836,
+      "width_pt": 62.362205505371094,
+      "height_pt": 17.00787353515625
+    },
+    {
+      "name": "draft",
+      "type": 1,
+      "is_connector": false,
+      "left_pt": 172.91339111328125,
+      "top_pt": 85.03936767578125,
+      "width_pt": 68.031494140625,
+      "height_pt": 39.68503952026367
+    },
+    {
+      "name": "draft_label",
+      "type": 17,
+      "is_connector": false,
+      "left_pt": 175.74803161621094,
+      "top_pt": 96.3779525756836,
+      "width_pt": 59.527557373046875,
+      "height_pt": 17.00787353515625
+    },
+    {
+      "name": "source_spans",
+      "type": 1,
+      "is_connector": false,
+      "left_pt": 195.59054565429688,
+      "top_pt": 34.0157470703125,
+      "width_pt": 76.53543090820312,
+      "height_pt": 25.511810302734375
+    },
+    {
+      "name": "source_spans_label",
+      "type": 17,
+      "is_connector": false,
+      "left_pt": 198.42520141601562,
+      "top_pt": 39.68503952026367,
+      "width_pt": 68.031494140625,
+      "height_pt": 14.17322826385498
+    },
+    {
+      "name": "evidence_gate",
+      "type": 1,
+      "is_connector": false,
+      "left_pt": 272.1259765625,
+      "top_pt": 73.70079040527344,
+      "width_pt": 62.362205505371094,
+      "height_pt": 62.362205505371094
+    },
+    {
+      "name": "gate_label",
+      "type": 17,
+      "is_connector": false,
+      "left_pt": 274.3937072753906,
+      "top_pt": 53.85826873779297,
+      "width_pt": 85.03936767578125,
+      "height_pt": 14.17322826385498
+    },
+    {
+      "name": "gate_claim_strip",
+      "type": 1,
+      "is_connector": false,
+      "left_pt": 280.91339111328125,
+      "top_pt": 86.17322540283203,
+      "width_pt": 36.0,
+      "height_pt": 12.188976287841797
+    },
+    {
+      "name": "gate_claim_text",
+      "type": 17,
+      "is_connector": false,
+      "left_pt": 283.4645690917969,
+      "top_pt": 86.59842681884766,
+      "width_pt": 31.181102752685547,
+      "height_pt": 11.055118560791016
+    },
+    {
+      "name": "gate_span_strip",
+      "type": 1,
+      "is_connector": false,
+      "left_pt": 280.91339111328125,
+      "top_pt": 113.38582611083984,
+      "width_pt": 36.0,
+      "height_pt": 12.188976287841797
+    },
+    {
+      "name": "gate_span_text",
+      "type": 17,
+      "is_connector": false,
+      "left_pt": 283.4645690917969,
+      "top_pt": 113.6692886352539,
+      "width_pt": 31.181102752685547,
+      "height_pt": 11.055118560791016
+    },
+    {
+      "name": "glyph_claim_span_link",
+      "type": 1,
+      "is_connector": true,
+      "left_pt": 289.13385009765625,
+      "top_pt": 98.92913055419922,
+      "width_pt": 0.0,
+      "height_pt": 13.0393705368042
+    },
+    {
+      "name": "glyph_check_short",
+      "type": 1,
+      "is_connector": true,
+      "left_pt": 301.03936767578125,
+      "top_pt": 102.61417388916016,
+      "width_pt": 7.08661413192749,
+      "height_pt": 6.5196852684021
+    },
+    {
+      "name": "glyph_check_long",
+      "type": 1,
+      "is_connector": true,
+      "left_pt": 308.1259765625,
+      "top_pt": 95.24409484863281,
+      "width_pt": 13.889763832092285,
+      "height_pt": 13.889763832092285
+    },
+    {
+      "name": "supported_answer",
+      "type": 1,
+      "is_connector": false,
+      "left_pt": 405.3543395996094,
+      "top_pt": 82.20472717285156,
+      "width_pt": 65.19685363769531,
+      "height_pt": 42.519683837890625
+    },
+    {
+      "name": "answer_label",
+      "type": 17,
+      "is_connector": false,
+      "left_pt": 408.18896484375,
+      "top_pt": 87.87401580810547,
+      "width_pt": 59.527557373046875,
+      "height_pt": 25.511810302734375
+    },
+    {
+      "name": "abstain",
+      "type": 1,
+      "is_connector": false,
+      "left_pt": 405.3543395996094,
+      "top_pt": 136.06298828125,
+      "width_pt": 65.19685363769531,
+      "height_pt": 28.34645652770996
+    },
+    {
+      "name": "abstain_label",
+      "type": 17,
+      "is_connector": false,
+      "left_pt": 411.02362060546875,
+      "top_pt": 141.73228454589844,
+      "width_pt": 53.85826873779297,
+      "height_pt": 17.00787353515625
+    },
+    {
+      "name": "question_to_retrieve",
+      "type": 1,
+      "is_connector": true,
+      "left_pt": 62.362205505371094,
+      "top_pt": 104.88188934326172,
+      "width_pt": 19.842519760131836,
+      "height_pt": 0.0
+    },
+    {
+      "name": "passages_to_draft",
+      "type": 1,
+      "is_connector": true,
+      "left_pt": 150.23622131347656,
+      "top_pt": 104.88188934326172,
+      "width_pt": 22.677165985107422,
+      "height_pt": 0.0
+    },
+    {
+      "name": "claims_to_gate",
+      "type": 1,
+      "is_connector": true,
+      "left_pt": 240.94488525390625,
+      "top_pt": 104.88188934326172,
+      "width_pt": 31.181102752685547,
+      "height_pt": 0.0
+    },
+    {
+      "name": "retrieve_to_spans__1",
+      "type": 1,
+      "is_connector": true,
+      "left_pt": 116.22047424316406,
+      "top_pt": 65.19685363769531,
+      "width_pt": 0.0,
+      "height_pt": 22.677165985107422
+    },
+    {
+      "name": "retrieve_to_spans__2",
+      "type": 1,
+      "is_connector": true,
+      "left_pt": 116.22047424316406,
+      "top_pt": 65.19685363769531,
+      "width_pt": 117.6377944946289,
+      "height_pt": 0.0
+    },
+    {
+      "name": "retrieve_to_spans__3",
+      "type": 1,
+      "is_connector": true,
+      "left_pt": 233.85826110839844,
+      "top_pt": 59.527557373046875,
+      "width_pt": 0.0,
+      "height_pt": 5.6692914962768555
+    },
+    {
+      "name": "spans_to_gate__1",
+      "type": 1,
+      "is_connector": true,
+      "left_pt": 272.1259765625,
+      "top_pt": 46.77165222167969,
+      "width_pt": 90.70866394042969,
+      "height_pt": 0.0
+    },
+    {
+      "name": "spans_to_gate__2",
+      "type": 1,
+      "is_connector": true,
+      "left_pt": 362.83465576171875,
+      "top_pt": 46.77165222167969,
+      "width_pt": 0.0,
+      "height_pt": 24.0944881439209
+    },
+    {
+      "name": "spans_to_gate__3",
+      "type": 1,
+      "is_connector": true,
+      "left_pt": 303.3070983886719,
+      "top_pt": 70.86614227294922,
+      "width_pt": 59.527557373046875,
+      "height_pt": 0.0
+    },
+    {
+      "name": "spans_to_gate__4",
+      "type": 1,
+      "is_connector": true,
+      "left_pt": 303.3070983886719,
+      "top_pt": 70.86614227294922,
+      "width_pt": 0.0,
+      "height_pt": 2.8346457481384277
+    },
+    {
+      "name": "supported_branch",
+      "type": 1,
+      "is_connector": true,
+      "left_pt": 334.4881896972656,
+      "top_pt": 104.88188934326172,
+      "width_pt": 70.86614227294922,
+      "height_pt": 0.0
+    },
+    {
+      "name": "supported_condition",
+      "type": 17,
+      "is_connector": false,
+      "left_pt": 340.4409484863281,
+      "top_pt": 79.6535415649414,
+      "width_pt": 62.362205505371094,
+      "height_pt": 22.677165985107422
+    },
+    {
+      "name": "unsupported_stem",
+      "type": 1,
+      "is_connector": true,
+      "left_pt": 303.3070983886719,
+      "top_pt": 136.06298828125,
+      "width_pt": 0.0,
+      "height_pt": 14.17322826385498
+    },
+    {
+      "name": "unsupported_junction",
+      "type": 1,
+      "is_connector": false,
+      "left_pt": 301.6062927246094,
+      "top_pt": 148.53543090820312,
+      "width_pt": 3.4015748500823975,
+      "height_pt": 3.4015748500823975
+    },
+    {
+      "name": "retry_branch__1",
+      "type": 1,
+      "is_connector": true,
+      "left_pt": 116.22047424316406,
+      "top_pt": 150.23622131347656,
+      "width_pt": 187.08660888671875,
+      "height_pt": 0.0
+    },
+    {
+      "name": "retry_branch__2",
+      "type": 1,
+      "is_connector": true,
+      "left_pt": 116.22047424316406,
+      "top_pt": 121.88976287841797,
+      "width_pt": 0.0,
+      "height_pt": 28.34645652770996
+    },
+    {
+      "name": "abstain_branch",
+      "type": 1,
+      "is_connector": true,
+      "left_pt": 303.3070983886719,
+      "top_pt": 150.23622131347656,
+      "width_pt": 102.0472412109375,
+      "height_pt": 0.0
+    },
+    {
+      "name": "retry_condition",
+      "type": 17,
+      "is_connector": false,
+      "left_pt": 133.2283477783203,
+      "top_pt": 135.2126007080078,
+      "width_pt": 138.89764404296875,
+      "height_pt": 12.755905151367188
+    },
+    {
+      "name": "retry_action",
+      "type": 17,
+      "is_connector": false,
+      "left_pt": 131.81101989746094,
+      "top_pt": 153.9212646484375,
+      "width_pt": 164.40945434570312,
+      "height_pt": 12.755905151367188
+    },
+    {
+      "name": "abstain_condition",
+      "type": 17,
+      "is_connector": false,
+      "left_pt": 331.6535339355469,
+      "top_pt": 125.29133605957031,
+      "width_pt": 70.86614227294922,
+      "height_pt": 22.677165985107422
+    },
+    {
+      "name": "detail_ref_a",
+      "type": 17,
+      "is_connector": false,
+      "left_pt": 141.73228454589844,
+      "top_pt": 76.53543090820312,
+      "width_pt": 8.503936767578125,
+      "height_pt": 10.204724311828613
+    },
+    {
+      "name": "detail_ref_b_draft",
+      "type": 17,
+      "is_connector": false,
+      "left_pt": 232.44094848632812,
+      "top_pt": 73.70079040527344,
+      "width_pt": 8.503936767578125,
+      "height_pt": 10.204724311828613
+    },
+    {
+      "name": "detail_ref_b_gate",
+      "type": 17,
+      "is_connector": false,
+      "left_pt": 353.7637939453125,
+      "top_pt": 49.606300354003906,
+      "width_pt": 8.503936767578125,
+      "height_pt": 10.204724311828613
+    },
+    {
+      "name": "detail_separator_a",
+      "type": 1,
+      "is_connector": true,
+      "left_pt": 11.338582992553711,
+      "top_pt": 172.91339111328125,
+      "width_pt": 215.43307495117188,
+      "height_pt": 0.0
+    },
+    {
+      "name": "detail_separator_b",
+      "type": 1,
+      "is_connector": true,
+      "left_pt": 252.28346252441406,
+      "top_pt": 172.91339111328125,
+      "width_pt": 218.26771545410156,
+      "height_pt": 0.0
+    },
+    {
+      "name": "detail_a_heading",
+      "type": 17,
+      "is_connector": false,
+      "left_pt": 11.338582992553711,
+      "top_pt": 175.74803161621094,
+      "width_pt": 215.43307495117188,
+      "height_pt": 12.472440719604492
+    },
+    {
+      "name": "detail_a_prepare",
+      "type": 17,
+      "is_connector": false,
+      "left_pt": 11.338582992553711,
+      "top_pt": 189.9212646484375,
+      "width_pt": 215.43307495117188,
+      "height_pt": 11.905511856079102
+    },
+    {
+      "name": "detail_a_online",
+      "type": 17,
+      "is_connector": false,
+      "left_pt": 11.338582992553711,
+      "top_pt": 204.094482421875,
+      "width_pt": 215.43307495117188,
+      "height_pt": 11.905511856079102
+    },
+    {
+      "name": "detail_b_heading",
+      "type": 17,
+      "is_connector": false,
+      "left_pt": 252.28346252441406,
+      "top_pt": 175.74803161621094,
+      "width_pt": 218.26771545410156,
+      "height_pt": 12.472440719604492
+    },
+    {
+      "name": "detail_b_draft",
+      "type": 17,
+      "is_connector": false,
+      "left_pt": 252.28346252441406,
+      "top_pt": 189.9212646484375,
+      "width_pt": 218.26771545410156,
+      "height_pt": 11.905511856079102
+    },
+    {
+      "name": "detail_b_check",
+      "type": 17,
+      "is_connector": false,
+      "left_pt": 252.28346252441406,
+      "top_pt": 204.094482421875,
+      "width_pt": 218.26771545410156,
+      "height_pt": 11.905511856079102
+    }
+  ]
+}

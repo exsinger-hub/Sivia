@@ -70,6 +70,8 @@ If PowerPoint exposes a reconstructable semantic object and the MCP supports it,
 
 For a publication-facing figure, read [Fundamental Visual Grammar](../design-scientific-figure/references/fundamental-visual-grammar.md) completely before drawing and implement the frozen `visual_grammar_receipt` as native objects. Do not silently replace a failed composition with cosmetic PowerPoint styling.
 
+For overviews, follow [Overview Narrative](../design-scientific-figure/references/overview-narrative.md): build the selected main groups and readable expansions from the abstraction map. Give title and L3 annotations stable names for [real review copies](../audit-scientific-figure/references/review-copies.md). Keep boundary cues and claim-critical operations outside the hidden set. Export each review copy through the target application before asking for visual approval.
+
 When the design selects a hand-drawn, sketchnote, pencil, doodle, whiteboard, or Excalidraw-like direction, read [Hand-drawn Technical Style](../design-scientific-figure/references/hand-drawn-technical-style.md) completely before drawing. Follow its PowerPoint-native mapping. In particular, keep semantic connectors geometrically exact; do not simulate roughness with random endpoint jitter, broad SVG/PNG overlays, or a paper-texture screenshot. If freeform or polyline creation is unavailable, use restrained native primitives, grouped doodles, highlighter shapes, typography contrast, and at most a deliberately specified secondary outline on focal objects.
 
 ## Inventory before drawing
@@ -96,6 +98,7 @@ In Office.js mode, pre-crop every atomic picture before calling `powerpoint_add_
 2. Draw one logical region from background to foreground with stable names in one `powerpoint_draw_sequence` call. In Windows COM `preserve` mode, use `fast` by default: the bridge applies the batch in one process without per-object waits or view changes. Use `checkpoint` only when an intermediate renderer gate is useful, and `per_object` only when the user explicitly requests foreground playback. For Office.js, use `per_object` only when visible object-level commits are wanted. For OOXML PowerPoint/WPS, prefer `fast` for a completed region and `checkpoint` for unusually large regions; warn that `per_object` is slower.
 3. Use fixed text geometry, explicit margins, wrapping, alignment, and controlled autofit. Compare each text object's returned bounds with the requested bounds before adding dependent connectors; if a cached or host-specific backend resized it, restore the exact bounds with `powerpoint_update_shape` first.
 4. Use attached connectors for semantic relationships in COM/OOXML. In Office.js, inspect the reported `connector_mode=geometry_backed`, use exact orthogonal routes and explicit endpoint clearances, and re-run the renderer gate after node movement.
+   Connection-site numbering depends on the AutoShape family. A rectangle's left-site index may attach to a polygon's right edge. Verify the rendered endpoint on document, polygon and custom shapes; use the correct site or a declared geometry-backed route with explicit boundary coordinates. A text-fit pass does not detect lines crossing text.
 5. Apply start/end clearance so free arrowheads do not enter rectangles.
 6. Use exact align/distribute and table-layout tools instead of visual guessing.
 7. Group a region only after its internal objects remain individually editable and its local gate passes.
@@ -115,7 +118,7 @@ Do not draw the next region until the Reviewer reports no unresolved finding exc
 
 ## Acceptance gate
 
-Require exact readable semantics, 1.00 reconstructable editability, 1.00 clipping/overlap safety, at least 0.95 layout/alignment confidence, at least 0.95 connector clarity, at least 0.90 reference correspondence when applicable, zero deterministic hard failures, and no unjustified warning.
+Use the Reviewer's evidence gates: correct readable semantics, native reconstructable content, no clipping or ambiguous routing, zero unresolved hard findings and a supported visual verdict. For overviews, coverage spans main groups and linked expansions. Record target-rendering, physical-size legibility and narrative as pass, fail or pending; no self-assigned confidence threshold substitutes for missing renderer evidence.
 
 ## Delivery
 

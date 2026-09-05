@@ -69,7 +69,7 @@ For every proposed raster or empirical result, record producer/model stage, samp
 
 When alternatives are useful, keep them low fidelity. Compare equal-size, title-hidden grayscale skeletons. Directions must differ structurally as required by the main design skill; do not build full presentation pages for candidates that can be rejected from a skeleton.
 
-For every candidate considered selectable, map every required node and edge to a visible object or route. The selected direction must reach complete required-node and required-edge coverage before the Drawer begins publication-fidelity work. Do not replace a missing edge with nearby prose.
+For overviews, read [Overview Narrative](overview-narrative.md) and map every required node and edge through its `abstraction_map` to a visible main object, composite, linked readable inset, textual relation or source-grounded permitted omission. Internal repeated operations may share a composite with a faithful expansion. Preserve external ports, branch conditions, inverse order and parameter ownership. Complete contract coverage spans these levels; it is not one-box-per-node direct visibility. A data-flow edge cannot be replaced with nearby prose.
 
 Derive the canvas ratio and type/evidence budgets from the intended publication slot. Do not default to 16:9. Record the final display width used for review. Any minimum text or evidence size is task-specific and must be declared in the design spec; do not reuse a pixel threshold from another paper without justification.
 
@@ -81,13 +81,13 @@ The final review needs both current structure evidence and a fresh renderer expo
 
 At the declared publication display width:
 
-1. identify every required node from the render;
-2. reconstruct every required positive edge from visible endpoints, direction, and route;
+1. identify every required main group and its linked expansions from the render;
+2. reconstruct each positive relation at its assigned level from visible endpoints, direction and route, using the abstraction map for internal composite relations;
 3. test declared negative paths, including misleading shared containment or leader lines;
 4. verify that text and evidence meet their declared minimum size;
 5. verify that training/inference and update/freeze semantics do not depend on color alone.
 
-Then inspect an equal-size title-hidden grayscale thumbnail for silhouette, first focal point, hierarchy, and overview/detail separation. A connector id, correct source/target metadata, or zero deterministic findings is supporting evidence, not a substitute for visible-edge reconstruction.
+For overview review, first obtain an unprimed reading of an actual title-and-L3-hidden grayscale render, before revealing the Figure Claim or contract. Then inspect the full publication-size render and expansions. A connector id, correct source/target metadata, or zero deterministic findings is supporting evidence, not a substitute for visible-edge reconstruction. Record physical width and effective type size; a pixel thumbnail alone does not verify print readability.
 
 Re-run the affected scale tests after every structural correction. Do not upgrade a verdict from a local geometry fix without refreshing the same evidence that originally failed.
 

@@ -40,7 +40,7 @@ Select a direction by its fit to the Figure Claim and publication slot. Reject a
 
 The artifact may be frozen only when all of the following are true:
 
-- every required node and relation is visible or has a source-grounded permitted omission;
+- every required node and relation maps to a visible main group, linked readable expansion or source-grounded permitted omission; grouping preserves external interfaces and internal order through the overview abstraction map;
 - positive relations and negative paths can be reconstructed from a fresh renderer export at the declared display width;
 - no hard semantic, clipping, text-fit, connector, or raster-atomicity defect remains;
 - the editable source exists and its object structure has been inspected;

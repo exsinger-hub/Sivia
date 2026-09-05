@@ -38,6 +38,8 @@ Do not inspect the target figure, its caption, alt text, layout description, or 
 
 ## Build the layout system
 
+For an overview, graphical abstract or dense method figure, read [Overview Narrative](references/overview-narrative.md) completely first. Freeze a `narrative_map` for first-glance, working and technical reading, plus an `abstraction_map` linking the complete scientific contract to main groups and readable expansions. Coverage spans the main figure and linked detail panels; it does not require every implementation node to be directly visible in the overview. Preserve all interpretation-changing boundaries and operations at L1/L2.
+
 Specify before drawing:
 
 - outer margins, panel grid, gutters, and shared alignment anchors;
@@ -49,7 +51,7 @@ Specify before drawing:
 - legend, annotation, table, chart, and raster-evidence locations;
 - z-order and meaningful grouping.
 
-Prefer one clear reading path: left-to-right, top-to-bottom, or an explicitly labeled cycle. Use no more than three primary hierarchy levels.
+Choose a dominant organizing logic from the science: a spine, loop, parallel comparison or another justified composition. Use L1/L2/L3 for reading depth; a focal region may contain several objects.
 
 ## Define publication aesthetics before drawing
 
@@ -73,11 +75,11 @@ When proposing multiple style directions, compare their `style_dna` before drawi
 
 ## Design connectors
 
-- Route process flow through reserved orthogonal lanes with few bends.
+- Route process flow through reserved lanes with few bends; choose orthogonal or curved routes appropriate to the scientific grammar.
 - Connect from the side facing the destination and avoid immediate backtracking.
 - Keep arrows outside unrelated shapes and labels.
 - Separate parallel routes by a consistent lane gap.
-- Avoid crossings; if scientific topology makes one unavoidable, redesign the node placement before accepting it.
+- Avoid ambiguous crossings. For unavoidable network crossings, use clear separation, ports or bridges without changing topology.
 - Distinguish process, inhibition, feedback, grouping, and association with consistent conventions.
 - Reserve endpoint clearance so arrowheads touch a boundary without covering the target fill or text.
 
@@ -93,6 +95,7 @@ Return a `design_spec` containing:
 - region and object ids with bounds and styles;
 - exact text and scientific topology;
 - connector source, target, sites, waypoints, lanes, and arrow convention;
+- for overviews, `narrative_map`, node-and-edge `abstraction_map`, independent edge `semantics`/`prominence`, physical publication width, effective font sizes, and named title/L3 objects for real review variants;
 - grouping and z-order;
 - raster decomposition declarations;
 - artifact mode (`direction_review` or `publication`), final display size, and figure archetype;
@@ -112,7 +115,7 @@ Do not improvise geometry one object at a time after drawing begins.
 
 Hand the design to `$edit-powerpoint-live` or `$recreate-scientific-figure-in-drawio`. After each region, require `$audit-scientific-figure`; when it finds a defect, require `$correct-scientific-figure`, return the object-level plan to the Drawer, rerender, and review again. For an overview, graphical abstract, teaser, final whole figure, or style-direction comparison, require the Reviewer to apply its publication aesthetic reference before approval.
 
-Finish only when every local region and the whole figure have exact readable semantics, full reconstructable editability, no clipping or unintended overlap, layout and connector confidence of at least 0.95, and no unresolved audit finding except documented content ambiguity. The final publication render must also satisfy the visual-grammar receipt at title-hidden thumbnail, declared publication width, and title-hidden grayscale scale, with no anti-dashboard class-A defect. For manuscript-derived work, also require complete contract coverage plus positive- and negative-edge reconstruction from a fresh render at the declared publication width and a title-hidden grayscale hierarchy check.
+Require source-faithful readable semantics at each assigned level, full reconstructable editability, no clipping or unintended overlap, and unambiguous routing in the current target-renderer evidence. Apply the Reviewer's `pass | fail | pending` evidence gates; self-assigned confidence thresholds are not acceptance evidence. For overviews, the actual title-hidden and title/L3-hidden grayscale views must support the intended reading logic. Complete contract coverage includes visible main groups and linked readable expansions; check positive and negative relations at their declared level. Missing target-renderer evidence leaves publication approval pending.
 
 ## Delivery
 

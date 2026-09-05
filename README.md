@@ -6,11 +6,11 @@
 
 维护者：**gatina**
 
-[手绘 LLM 实操](#案例近期-llm-手绘语言但不复制任何原图) · [盲画对比](#案例盲画后再揭晓对比) · [如何画 Overview](#一张-overview-是怎么画出来的) · [知识库](#知识库用了什么) · [质量判断](#怎么判断效果是否好) · [安装](#安装) · [使用](#五分钟上手)
+[新版实操](#案例多层叙事与真实审稿) · [手绘 LLM 实操](#案例近期-llm-手绘语言但不复制任何原图) · [盲画对比](#案例盲画后再揭晓对比) · [如何画 Overview](#一张-overview-是怎么画出来的) · [知识库](#知识库用了什么) · [质量判断](#怎么判断效果是否好) · [安装](#安装) · [使用](#五分钟上手)
 
-![Blindly designed Segment Anything overview](assets/examples/segment-anything-blind-overview.png)
+![Evidence-gated retrieval agent overview](assets/examples/evidence-gated-overview.png)
 
-上图不是照着论文原图临摹的。我们选取 CCF-A 会议 ICCV 2023 的 [*Segment Anything*](https://openaccess.thecvf.com/content/ICCV2023/html/Kirillov_Segment_Anything_ICCV_2023_paper.html)，在封存其 overview、caption 和衍生图的前提下，只读摘要与官方实现，先独立画完、审完并冻结源文件，最后才揭晓官方图进行正面对比。
+上图是新版流程的真实 PowerPoint 实操：证据核验决定返回答案、重试或弃答，技术细节放在关联展开区。它来自插件测试用的合成研究简述，不冒充论文结果。下文还保留了 [Segment Anything 盲画对比](#案例盲画后再揭晓对比)，用于区分“机制解释完整”和“首页传播简洁”这两种不同目标。
 
 ## 为什么需要 YOFO
 
@@ -21,6 +21,8 @@
 - PNG 很漂亮，但整页被扁平化，文字、连接线和面板无法继续编辑；
 - 多个候选只换了颜色、字体和圆角，实际构图与阅读路径完全相同；
 - 自动检查没有报错，却仍然具有拥挤、重心失衡、廉价 PPT 感等视觉问题。
+
+现在的 Overview 工作流先组织三个阅读深度：第一眼看到输入、核心变换与结果；继续阅读理解关键分支和条件；在关联的局部展开图中检查精确操作。完整合同通过 `abstraction_map` 映射到这三个层级，允许多个实现节点合并为一个语义组。训练边界、逆变换次序和参数归属始终保留，避免用缩小字号换取“全部直接展开”。具体规则见 [Overview Narrative](skills/design-scientific-figure/references/overview-narrative.md)。
 
 YOFO 用四个角色拆开这些职责：
 
@@ -40,6 +42,24 @@ flowchart LR
 | Drawer | 在 PowerPoint、WPS 或 draw.io 中按区域创建文字、形状、线、表格、图表和原子图片 | 可编辑 `.pptx` 或 `.drawio` |
 | Reviewer | 同时检查对象结构和最新渲染，不把工具调用成功当成图形正确 | 审稿记录、通过/失败结论 |
 | Corrector | 将缺陷翻译成按对象、按顺序、可回归验证的修正 | 最小修改计划 |
+
+## 案例：多层叙事与真实审稿
+
+这次优化先阅读用户指定的协作对话，再通过反例审查修正规则：不能把 overview 画成节点清单；不能默认反馈线都弱化；不能用去掉细节后的好看掩盖完整图的拥挤。
+
+| 本例的设计决定 | 可检查的结果 |
+| --- | --- |
+| 主图只解释核验如何决定结果 | 深色核验节点、右侧两个终点、带次数条件的回路 |
+| 完整操作映射到不同阅读层级 | `a` 展开检索，`b` 展开生成与核验；条件、证据权限和冻结边界留在主图 |
+| 关系含义与视觉轻重分开 | 核心反馈保持主线权重；源片段输入是更轻的数据线 |
+| 按实际论文尺寸绘制 | 170 × 80 mm；有效字号 7.2–13 pt，而非仅凭 PNG 分辨率判断 |
+| 用真正的 PowerPoint 检查 | 55 个原生对象：25 个文本框、20 段连接线、10 个形状，0 个图片对象 |
+
+第一轮真实导出发现了错误的八边形端口及两处穿字连线；对象级修正后重新导出。审稿副本实际移除了标题与指定 L3 对象，分别生成简化、完整密度灰度图。两次无提示阅读的原始回答先保存，再揭晓设计主张进行比对，不能倒改读图记录。
+
+[可编辑 PPTX](assets/examples/evidence-gated-overview.pptx) · [设计与复现](examples/evidence-gated-overview/README.md) · [原始读图记录](examples/evidence-gated-overview/review/independent-reading.md) · [最终审计](examples/evidence-gated-overview/audit-report.md) · [工作流前后对比](examples/overview-workflow-validation.md)
+
+本例证明的是这一张图的绘制与审稿过程。它不证明所有科研领域都已达到相同水平，也没有准确率或论文质量分数。
 
 ## 案例：近期 LLM 手绘语言，但不复制任何原图
 
@@ -210,11 +230,11 @@ Reviewer 发现问题后，Corrector 只给出最小对象级修改，例如“�
 
 最终需要同时完成：
 
-- 在声明的论文宽度下识别全部必需节点；
-- 从可见端点、方向和路线重建全部正向关系；
+- 在声明的论文宽度下，从主图和明确关联的展开区识别全部必需节点；
+- 从可见端点、方向和路线，以及对应展开区的内部顺序重建全部关系；
 - 验证所有 negative paths 没有被视觉上误连；
 - 检查文字、证据、箭头和间距达到设计规范；
-- 查看隐藏标题的灰度缩略图，确认第一焦点与层级仍成立；
+- 分别读取隐藏标题与 L3、仅隐藏标题的灰度图，先保存无提示读图结果，再对照主张；
 - 对整页再做一次结构审计与出版美感审稿。
 
 ## 知识库用了什么
@@ -227,7 +247,9 @@ YOFO 插件本身**没有打包外部向量数据库，也没有默认联网 RAG
 | 角色协议 | 六个 `SKILL.md`，定义设计、复刻、绘制、审稿和纠错职责 | 规定谁在何时做什么 |
 | 稿件到图规则 | [Manuscript-to-Figure Workflow](skills/design-scientific-figure/references/manuscript-to-figure-workflow.md) | 定义 Figure Claim、四类账本、来源绑定、盲测与最终尺寸验证 |
 | 盲画对比协议 | [Blind Figure Gym Protocol](skills/design-scientific-figure/references/blind-figure-gym.md) | 定义目标封存、预揭晓冻结、揭晓后多维比较与规则晋升边界 |
-| 基础视觉语法 | [Fundamental Visual Grammar](skills/design-scientific-figure/references/fundamental-visual-grammar.md) | 冻结单一阅读主线、唯一主焦点、角色形状、两级连线、字体与语义配色，并用反仪表盘门禁阻止“卡片墙” |
+| 基础视觉语法 | [Fundamental Visual Grammar](skills/design-scientific-figure/references/fundamental-visual-grammar.md) | 根据科学结构选择主导阅读逻辑、焦点层级、角色形状、线条轻重、字体与语义配色 |
+| 多尺度科研叙事 | [Overview Narrative](skills/design-scientific-figure/references/overview-narrative.md) | 把完整合同映射到主图与可读展开图，分离关系含义与视觉轻重，以物理尺寸和无提示阅读检验效果 |
+| 真实审稿副本 | [Review Copies](skills/audit-scientific-figure/references/review-copies.md) · [准备脚本](scripts/prepare-overview-review.py) | 按对象名生成隐藏标题、隐藏标题与 L3 的 PPTX 副本，等待目标应用实际渲染后审阅 |
 | 出版审美规则 | [Publication Aesthetic Review](skills/audit-scientific-figure/references/publication-aesthetic-review.md) | 定义三尺度审稿、灰度层级、A/B/C 美观缺陷和最终结论 |
 | 手绘技术风格 | [Hand-drawn Technical Style](skills/design-scientific-figure/references/hand-drawn-technical-style.md) | 定义三种手绘风格族、精确/表现双层、风格来源防火墙与对抗性退回条件 |
 | 后端能力 | draw.io、PowerPoint/WPS 在运行时返回的 capability 信息 | 决定哪些对象能原生编辑、哪些需用可编辑组合对象 |
@@ -251,16 +273,16 @@ YOFO 插件本身**没有打包外部向量数据库，也没有默认联网 RAG
 
 | 项目 | 通过条件 |
 | --- | --- |
-| 必需节点与关系 | 所有不可省略项 `100%` 覆盖 |
-| 语义和文字准确 | `1.00` |
-| 可重建编辑性 | `1.00` |
-| 裁切、越界和意外重叠安全 | `1.00` |
-| 几何与对齐 | `>= 0.95` |
-| 连接线清晰度 | `>= 0.95` |
-| 有参考图时的对应关系 | `>= 0.90` |
+| 必需节点与关系 | 所有不可省略项经主图和关联展开图完整映射，边界与顺序不变 |
+| 语义和文字准确 | 在各自阅读层级与来源一致，可从图上复述 |
+| 可重建编辑性 | 文字、算子、连线和可重建图表保持原生可编辑 |
+| 裁切、越界和意外重叠 | 目标应用最新渲染中不存在 |
+| 几何与对齐 | 重复基线、间距和区域关系清晰；以具体观察说明 |
+| 连接线清晰度 | 端点、方向、条件与线型含义可辨，没有歧义穿越 |
+| 有参考图时的对应关系 | 用当前渲染与参考逐区域比较，明确实际差异 |
 | 硬错误 | `0` |
 
-硬错误包括错误文字、错误方向、箭头穿过标签或无关对象、可拆内容被整块栅格化、裁切、非原子图片以及无关连线交叉。硬错误不会被平均分抵消。
+硬错误包括错误文字、错误方向、箭头穿过标签或无关对象、可拆内容被整块栅格化、裁切、非原子图片以及歧义连线交叉。用 `pass / fail / pending` 分别记录科学、可编辑性、目标渲染、物理尺寸可读性和视觉叙事；不再把未标定的 `0.95` 自评分当作门槛。
 
 ### 2. 最新渲染在三个尺度可读
 
@@ -270,11 +292,13 @@ YOFO 插件本身**没有打包外部向量数据库，也没有默认联网 RAG
 | 整页 | 构图、模块比例、节奏、功能性留白、主次关系 |
 | 可读尺度 | 字体、换行、局部间距、箭头端点、边框和证据细节 |
 
-还要查看同尺寸灰度图。若去除颜色后训练/推理边界、主流程或第一焦点消失，说明层级依赖颜色，仍然不能通过。
+先给独立 Reviewer 看实际隐藏标题和 L3 信息的灰度图，让它复述入口、核心变换、结果和主方向，再揭晓完整彩色图与 Figure Claim，最后检查合同和对象。保留 Reviewer 的原始复述与不确定性；同一作者已知主张的复查标为自审。标题仍可见的截图不能被称为“隐藏标题版”。
+
+以最终插入宽度计算 `有效字号 = 源字号 × 最终宽度 / 源画布宽度`。600 px 是屏幕预览尺寸，不能证明印刷可读性；提高导出 DPI 也不能补救过小的有效字号。
 
 ### 3. 出版美感通过人工判断
 
-数值门禁覆盖可测结构，不代表“顶级论文美感”。出版审稿还要求：
+结构数据不能代替视觉判断。出版审稿要求：
 
 - 没有破坏专业性的 class-A 问题；
 - 没有阻断阅读路径的 class-B 问题；
@@ -286,10 +310,10 @@ YOFO 插件本身**没有打包外部向量数据库，也没有默认联网 RAG
 一份诚实的阶段报告应当像这样：
 
 ```text
-source contract: PASS — 36/36 required nodes, 41/41 required edges mapped
+source contract: PASS — required nodes/edges mapped across overview and linked insets
 editable structure: PENDING — must inspect the actual PPTX/draw.io object graph
 fresh render: PENDING — must export from the selected backend at publication width
-grayscale hierarchy: PENDING
+masked grayscale: PENDING — prepare copies, export them, record an unprimed reading
 publication aesthetic verdict: PENDING
 final verdict: NOT YET APPROVED
 ```
@@ -371,12 +395,14 @@ codex plugin add you-only-figure-once@you-only-figure-once
 2. Paper Figure Signature；
 3. required-node、required-edge、equation-operand、evidence ledgers；
 4. training/inference、updated/frozen 边界和 negative paths；
-5. visual grammar receipt：单一主线、唯一主焦点、角色形状、两级连线、字体、语义配色、灰度计划、留白用途和禁用母题；
-6. 两个真正不同的低保真构图方向及取舍。
+5. visual grammar receipt：主导阅读逻辑、焦点层级、角色形状、连线含义和轻重、字体、语义配色、灰度计划与留白用途；
+6. narrative_map 和 abstraction_map：第一眼、工作理解、技术展开；节点与关系如何分组且保持关键条件；
+7. 物理版位与有效字号，真正不同的低保真构图方向及取舍。
 
 我选定方向后再逐区域绘制。每个区域完成后执行结构审计和最新渲染审稿；
 发现问题时用 $correct-scientific-figure 给出对象级修正，再重新渲染。
-最终必须在论文宽度、灰度缩略图和可读尺度同时通过。
+最终导出完整彩色、隐藏标题、隐藏标题与 L3、对应灰度图；先做无提示阅读再检查合同。
+目标应用无法渲染时把对应门禁标为 pending，交付候选源文件，不能用同坐标 SVG 或对象数自证通过。
 ```
 
 ### 复刻现有方法图
@@ -399,7 +425,7 @@ negative paths 和 style-source firewall；采用 restrained_technical_handdrawn
 
 在 Microsoft PowerPoint 的隔离新文件中实画，所有可重建内容保留为原生对象。
 逐区域导出、审稿和修正；最终交付 PPTX、PowerPoint 渲染 PNG、对象审计、
-520 px 缩略图与灰度判断。分别报告科学正确性和手绘风格忠实度。
+声明论文插入宽度下的有效字号、简化与完整密度灰度审阅。分别报告科学正确性和手绘风格忠实度。
 ```
 
 ### 只审阅当前 PowerPoint
@@ -444,6 +470,7 @@ node scripts/officejs-setup.mjs sideload
 ├── .agents/plugins/marketplace.json # Git marketplace 清单
 ├── .mcp.json                        # 本地 MCP 服务入口
 ├── assets/examples/                 # README 实际渲染案例
+├── examples/evidence-gated-overview/ # 多层叙事、真实 PowerPoint 副本与独立读图
 ├── examples/llm-agent-handdrawn/    # 手绘 LLM 合同、设计规范与实操审计
 ├── examples/segment-anything-blind/ # 盲画合同、设计规范与揭晓后对比
 ├── skills/                          # Designer / Drawer / Reviewer / Corrector
@@ -458,6 +485,7 @@ node scripts/officejs-setup.mjs sideload
 
 ```bash
 node --test tests/focus-policy.contract.test.mjs tests/payload-layering.contract.test.mjs
+python -B -m unittest discover -s tests -p test_prepare_overview_review.py -v
 ```
 
 在 Windows 上执行真实 PowerPoint COM 烟雾测试：

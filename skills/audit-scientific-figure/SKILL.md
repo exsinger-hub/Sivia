@@ -1,6 +1,6 @@
 ---
 name: audit-scientific-figure
-description: Review and score an existing scientific illustration in visible draw.io, Microsoft PowerPoint, or WPS Presentation without hiding defects through flattening. Use for publication-quality aesthetic review, style-direction comparison, reference fidelity, layout and whitespace cleanup, connector review, text fit, deep editability, raster atomicity, local-region gates, or repeated verification in a Designer-Drawer-Reviewer-Corrector loop.
+description: Review a scientific figure or overview in draw.io, PowerPoint or WPS for readable scientific narrative, source fidelity, publication-size layout, routing and editability. Use for independent visual review, candidate comparison or verification after corrections.
 ---
 
 # Audit Scientific Figure
@@ -23,9 +23,11 @@ For a paper overview, graphical abstract, teaser, final whole-figure review, or 
 
 Review the figure at thumbnail scale for silhouette and focal hierarchy, fit-to-slide scale for composition and rhythm, and readable scale for typography, spacing, connectors, and local finish. When multiple style candidates are presented, compare them together; palette, font, corner-radius, or border changes alone do not constitute different directions.
 
-Treat an equal-weight card wall, nested dashboard panels, repeated UI pills, a competing full-width footer, long dashed skip railways, or an all-caps multi-level hierarchy as a class-A visual-grammar failure when it dominates the silhouette. Require global recomposition; do not accept cosmetic palette, corner, shadow, or font changes as a correction.
+Judge containers, bottom strips and line styles by their scientific role and effect on the reading logic. Treat an equal-weight card wall or decorative hierarchy as class A only when it obscures the intended focal hierarchy. Require recomposition for that failure; useful scope containers and parallel study arms remain valid.
 
-For the final whole-figure publication gate, use an independent fresh-eye Reviewer when available. Give it the semantic contract, selected reference and Style DNA, but do not provide the Drawer's defense of the current composition or a list of suspected defects.
+For overviews, read [Overview Narrative](../design-scientific-figure/references/overview-narrative.md) completely. First give an independent Reviewer only the title/L3-hidden grayscale view and physical size, record their reading, then show the full-density title-hidden grayscale view and save that reading too. Freeze both original responses before revealing the full color image and Figure Claim, then the contract, abstraction map and structure evidence. Withhold object counts and previous verdicts until after the visual readings. Record prior exposure: same-context judgment is `self_review`; an independent Reviewer already told the story is `informed_review`, not unprimed evidence.
+
+Require actual exported review views. For saved PPTX sources, use [prepare-overview-review.py](../../scripts/prepare-overview-review.py) as described in [Review Copies](references/review-copies.md). The helper creates editable copies, not rendered images. The Drawer renders these copies; the Reviewer remains read-only.
 
 When the declared style is hand-drawn, sketchnote, pencil, doodle, whiteboard, or Excalidraw-like, also read [Hand-drawn Technical Style](../design-scientific-figure/references/hand-drawn-technical-style.md) completely. Review scientific clarity and hand-drawn fidelity as separate questions. A clean diagram can pass semantics yet miss the requested style; a visibly rough diagram fails when its jitter, texture, font, or doodles reduce publication-width legibility or make topology ambiguous. Do not reward noise as authenticity.
 
@@ -42,7 +44,7 @@ Review every region and the whole figure for:
 7. arrowhead clearance, connector path-through-object, label intersection, backtracking, and route crossings;
 8. reference correspondence or no-reference design consistency.
 
-For manuscript-derived figures, additionally require 100% coverage of non-omissible required nodes and edges. From a fresh render at the declared publication display width, reconstruct the positive edge table and every declared negative path. Check operands, axis scope, inverse/alignment operations, producer/model scope, training versus inference, and update/freeze ownership wherever they affect the scientific argument. Object ids and connector metadata are supporting evidence only; fail any route whose visible geometry changes or obscures the relation.
+For manuscript-derived figures, require complete coverage of non-omissible nodes and edges across the main view and linked readable expansions. Use the abstraction map to reconstruct internal grouped relations at their declared level and external relations from visible ports and routes. Check operands, inverse order, producer scope, training/inference and update/freeze ownership wherever they affect the claim. These critical cues must survive L3 removal. Object ids alone do not establish correct visible relations.
 
 Inspect a title-hidden grayscale thumbnail at the declared review size. Confirm that the Figure Claim's mechanism or result is the first focal point and that overview/detail hierarchy survives without color. Re-run the affected render-scale checks after each structural correction.
 
@@ -73,31 +75,24 @@ severity: hard | warning
 evidence: measurable structure or renderer observation
 correction: required outcome, not vague advice
 acceptance: condition the next audit can verify
-confidence: 0..1 with evidence basis
+evidence_status: measured | observed | inferred | pending
 ```
 
-Hard failures override averages. Treat wrong text, wrong direction, reconstructable content inside a picture, a non-atomic picture, clipping, arrow intrusion, a route through a label/object, and an unrelated connector crossing as hard failures.
+Treat wrong text/direction, reconstructable content inside a picture, a non-atomic picture, clipping, arrow intrusion, a route through an unrelated label/object and ambiguous connector crossings as hard failures. A necessary network crossing with clear ports or bridges is not automatically a defect.
 
 For aesthetic findings, use the A/B/C classification and the location, defect, cognitive impact, severity, exact correction, and expected-effect fields required by the publication aesthetic reference. Do not hide a concrete aesthetic defect behind an averaged score.
 
-## Scorecard
+## Evidence verdict
 
-Score the affected region and whole figure from 0 to 1 for:
+Report `pass | fail | pending` separately for scientific reconstruction, editability, target rendering, physical-size legibility and visual narrative. Each verdict names the concrete artifact or observation that supports it. Use counts for measured coverage and object inventory; do not invent calibrated confidence or derive beauty from object count.
 
-- semantic/text accuracy;
-- editability coverage;
-- geometry/alignment;
-- spacing/whitespace;
-- connector clarity;
-- typography/color consistency;
-- clipping/overlap safety;
-- reference correspondence when applicable.
+Pass requires correct readable semantics at the assigned levels, reconstructable native content, no clipping or ambiguous routes, zero unresolved hard findings, no class-A failure and no class-B issue that blocks reading. A local geometry check can pass while publication approval is pending. An unavailable target renderer, missing masked view or unperformed review remains `pending`; a same-coordinate SVG is a design preview, not a PPTX render.
 
-Pass only when readable semantics, reconstructable editability, and clipping/overlap safety equal 1.00; geometry and connector clarity are at least 0.95; reference correspondence is at least 0.90; deterministic audit has zero hard failures; and no warning remains except an explicitly documented source ambiguity. For manuscript-derived work, all non-omissible contract items and declared negative-path checks must also pass at the stated publication scale.
-
-These numeric checks cover measurable structure, not publication beauty. A publication-aesthetic review passes only when no class-A issue remains, no class-B issue blocks the intended reading path, every large whitespace region has a clear compositional function, the primary content is not visibly underscaled, and the figure has one dominant focal hierarchy. Do not claim top-tier visual quality from numeric scores alone.
+When the user explicitly asks for ratings, label subjective ratings as such and keep them separate from evidence gates. No numeric average can cancel a real defect or missing evidence.
 
 ## Review loop
+
+While construction is partial, scope local checks to completed objects and their boundary interfaces. Mark whole-figure narrative and final masked-view checks pending until the relevant content exists; this is not a local defect or a reason to prevent the next planned region. Apply the staged overview reading test to a complete candidate, before overall approval.
 
 1. Review one completed region in whole-slide/canvas context.
 2. Send findings to `$correct-scientific-figure`.
@@ -111,4 +106,4 @@ Never approve based on the Drawer or Corrector claiming success. Never reuse a s
 
 ## Review report
 
-Return region scores, whole-figure scores, all findings, native/composite/raster counts, every raster declaration, resolved finding ids, unresolved source ambiguities, and the final pass/fail verdict. For the publication aesthetic gate, also report whether the `visual_grammar_receipt` survives the title-hidden thumbnail, declared publication width, and title-hidden grayscale render; answer the four mandatory closing questions from the reference; and identify the three changes with the highest visual impact.
+Return the evidence verdicts, observed findings, native/composite/raster counts, raster declarations and any unresolved source ambiguity. For overviews include the recorded unprimed reading (or self-review disclosure), actual review-image paths and hidden object sets, physical size and comparison with the intended narrative. Identify up to three changes with the highest real visual impact; do not invent defects to fill a quota.
