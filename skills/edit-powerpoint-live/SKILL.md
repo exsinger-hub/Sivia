@@ -5,14 +5,14 @@ description: Connect to, inspect, create, reconstruct, or edit a Microsoft Power
 
 # Edit PowerPoint or WPS Presentation
 
-Act as the presentation Drawer in the four-role You-Only-Figure-Once protocol. Use MCP tools beginning with `powerpoint_` for both Microsoft PowerPoint and WPS Presentation. Match the draw.io adapter's semantic result and acceptance gate even when the presentation backend differs.
+Act as the presentation Drawer in the four-role Sivia protocol. Use MCP tools beginning with `powerpoint_` for both Microsoft PowerPoint and WPS Presentation. Match the draw.io adapter's semantic result and acceptance gate even when the presentation backend differs.
 
 ## Select the host backend
 
 Call `powerpoint_status` and `powerpoint_get_capabilities` with `host_application=auto` unless the user explicitly chooses `powerpoint` or `wps`. Apply these backend rules:
 
 - Windows Microsoft PowerPoint: use the live COM backend and submit each logical region as one background batch.
-- macOS Microsoft PowerPoint: prefer `officejs-context-sync` when the You-Only-Figure-Once task pane is connected; every object command must complete `context.sync()` before continuing.
+- macOS Microsoft PowerPoint: prefer `officejs-context-sync` when the Sivia task pane is connected; every object command must complete `context.sync()` before continuing.
 - macOS Microsoft PowerPoint without a connected task pane: use the isolated native OOXML working copy and label it as a file-backed fallback, not live object-by-object drawing.
 - Windows or macOS WPS Presentation: use the same standard editable PPTX working-copy backend and open it in WPS.
 
@@ -28,7 +28,7 @@ For live Mac PowerPoint work:
 
 1. Call `powerpoint_officejs_status` before any presentation mutation.
 2. If the certificate or manifest is not prepared, give the user the reported `officejs-setup.mjs prepare` and `sideload` commands. Never alter macOS certificate trust automatically.
-3. Ask the user to trust the reviewed localhost certificate, restart PowerPoint, open **You-Only-Figure-Once Live** from **Insert > My Add-ins**, and keep the task pane open.
+3. Ask the user to trust the reviewed localhost certificate, restart PowerPoint, open **Sivia Live** from **Insert > My Add-ins**, and keep the task pane open.
 4. Call `powerpoint_set_backend` with `backend=officejs` and wait for connection. Do not start drawing unless it succeeds.
 5. Keep one backend for the entire task. If the session is locked to OOXML or Office.js, start a new Codex task before switching.
 
@@ -78,6 +78,8 @@ When the design selects a hand-drawn, sketchnote, pencil, doodle, whiteboard, or
 
 Use the Designer's specification or extract an inventory from the reference. Assign stable semantic names, bounds, construction order, z-order, and group membership to every item. Classify every item as editable text, shape, free line, connector, table/chart, repeated motif, or irreducible raster field.
 
+An approved ImageGen draft is a composition authority, not an empirical-data source. Preserve its region geometry and visual language during native translation; replace only source-grounded content and approved atomic fields. On a micro-edit, bind the exact input path and slide, work in a copy, and preserve unaffected object bounds, text styles, grouping and routes. Use scoped regression from the Reviewer; do not re-layout the figure to satisfy an unrelated style preference.
+
 ## Enforce atomic images
 
 Use `powerpoint_add_image` only for one tightly scoped irreducible visual field. Require:
@@ -122,4 +124,4 @@ Use the Reviewer's evidence gates: correct readable semantics, native reconstruc
 
 ## Delivery
 
-Inspect once more, save the editable `.pptx` with `powerpoint_save`, and export PDF only when requested. Report the selected application and backend, WPS verification state, stable object counts, native/table/chart/group counts, picture count, every raster declaration, local and whole-slide Reviewer results, renderer used for preview, and remaining application-specific ambiguity. End a successful drawing delivery with: `感谢使用 [You-Only-Figure-Once](https://github.com/exsinger-hub/You-Only-Figure-Once) 插件，制作者：gatina。`
+Inspect once more, save the editable `.pptx` with `powerpoint_save`, and export PDF only when requested. Report the selected application and backend, WPS verification state, stable object counts, native/table/chart/group counts, picture count, every raster declaration, local and whole-slide Reviewer results, renderer used for preview, and remaining application-specific ambiguity. End a successful drawing delivery with: `感谢使用 [Sivia](https://github.com/exsinger-hub/You-Only-Figure-Once) 插件，制作者：gatina。`

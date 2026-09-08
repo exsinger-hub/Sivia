@@ -1,526 +1,347 @@
-# You-Only-Figure-Once
+# Sivia
 
-> 把研究简述、论文稿件或参考图，转换为可编辑、可审阅、面向发表的科学插图。
+**Scientific Illustration & Visual Intelligence Assistant · 科研绘图与图形审稿助手**
 
-**You-Only-Figure-Once（YOFO）** 是一个 Codex 科学作图插件，适用于方法 Overview、机制图、模型架构图、图形摘要和多面板示意图。它不只“生成一张看起来像论文图的图片”，而是把科学合同、版式设计、原生对象绘制、渲染审阅和对象级纠错放入同一条闭环。
+由 **gatina** 制作。项目与安装标识保留为 `You-Only-Figure-Once` / `you-only-figure-once`，插件界面名称为 **Sivia**。
 
-维护者：**gatina**
+Sivia 将论文、方法说明和参考图转成科研 Overview、架构图、机制图及可编辑的 PowerPoint / draw.io 文件。当前优先工作流是：
 
-[新版实操](#案例多层叙事与真实审稿) · [手绘 LLM 实操](#案例近期-llm-手绘语言但不复制任何原图) · [盲画对比](#案例盲画后再揭晓对比) · [如何画 Overview](#一张-overview-是怎么画出来的) · [知识库](#知识库用了什么) · [质量判断](#怎么判断效果是否好) · [安装](#安装) · [使用](#五分钟上手)
+**论文事实 → 知识库视觉语法 → 精细化 Prompt → ImageGen 视觉稿 → 确认版式 → 原生 PPT 复刻 → 真实素材替换 → 渲染验收。**
+
+论文决定画什么，参考决定如何表达；ImageGen负责视觉原型，PPT负责忠实转译，真实数据负责证据性内容。
+
+[工作流](#工作流) · [Prompt硬性要求](#prompt硬性要求) · [真实数据替换](#真实数据替换) · [图片案例](#图片案例) · [知识库](#知识库) · [安装](#安装) · [使用](#使用) · [开发与验证](#开发与验证)
+
+![Sivia 手绘技术风格 LLM agent overview](assets/examples/llm-agent-handdrawn-overview.png)
+
+[下载可编辑PPTX](assets/examples/llm-agent-handdrawn-overview.pptx) · [设计说明](examples/llm-agent-handdrawn/design-spec.md) · [案例审阅记录](examples/llm-agent-handdrawn/audit-report.md)
+
+## 作图范式
+
+### 把变化画出来，不把模块名堆起来
+
+一张图首先回答一个主要问题。Overview说明系统与关键创新；机制图展开一个重要操作；结果图比较真实测量。是否需要多个面板或多张图，取决于科学叙事，而不是固定的三排模板。
+
+例如，“空间对齐”不只是一个写着 `Alignment` 的方框。可以让读者看到：两条相反顺序的序列，经过顺序恢复和逆映射，返回相应网格位置，之后才进行逐位置融合。网格、位置标记、token和分支真正承担解释，短标签负责命名。
+
+### 紧凑，但不杂糅
+
+- 让网格、特征堆叠、序列、实际图像和局部展开占据有意义的面积。
+- 用分组、间距、线型和稳定的颜色语义组织阅读，不靠大量段落说明。
+- 把常规实现细节放到合适层级，不让辅助损失、状态清单或大幅曲线抢走方法主线。
+- 有用的留白服务于分组和连线；无用的空白不能靠装饰、重复文字或虚构实验填满。
+
+### 认可版式后，微调不等于重设计
+
+已确认参考的画布比例、分区、对象尺度、字体、配色和主要连线是约束。纠正文字、替换图片或修复局部间距，不授权重新分栏、合并面板或改成另一种流程图。
+
+若论文实际尺寸下存在可读性问题，应说明具体问题并另提结构调整方案，不能借“优化”覆盖用户认可的构图。
+
+## 工作流
+
+```mermaid
+flowchart TD
+    A[手稿、公式、代码与真实素材] --> B[科学主张与可见场景]
+    K[知识库、完整模板与参考成图] --> C[视觉语法与精细化 Prompt]
+    B --> C
+    C --> D{长度和细节满足要求?}
+    D -->|否| C
+    D -->|是| E[ImageGen 生成并检查实际成图]
+    E --> F{用户认可视觉稿?}
+    F -->|否| C
+    F -->|是| G[锁定版式并忠实复刻为原生 PPT]
+    G --> H[在原位置替换真实图像和计算数据]
+    H --> I[结构、最新渲染与论文尺寸验收]
+    I -->|局部缺陷| J[授权范围内的对象级修正]
+    J --> I
+    I -->|通过| L[可编辑源文件与论文用导出图]
+```
+
+| 阶段 | 关键动作 | 产物 |
+| --- | --- | --- |
+| 提炼事实 | 阅读相关方法、公式和代码；核对方向、维度、参数归属与素材来源 | 精简的科学内容说明 |
+| 分配图意 | 每张图写一句读者必须理解的主张；决定主图与展开图的边界 | Figure Claim、场景说明 |
+| 提炼风格 | 同时看参考图片和完整prompt，提取比例、密度、图形载体与连线语法 | 构图规范、模板绑定 |
+| 编写prompt | 逐区域描述对象、位置、动作、标签、公式、素材和保留项 | 完整prompt及长度检查结果 |
+| 视觉定稿 | 生成并查看实际图片；修正科学或构图偏差，等待用户认可 | 已确认视觉稿 |
+| 原生复刻 | 保持参考版式，将可重建内容转成可编辑对象 | PPTX或draw.io |
+| 数据替换 | 在已有位置装配适当的真实图像、路径、表格和曲线 | 来源落实的图 |
+| 验证交付 | 检查科学正确性、参考一致性、可编辑性及实际插入尺寸 | 源文件、导出图、简短制作记录 |
+
+真实素材在第一阶段就应查找和确认，后期才正式装配。不能先生成“实验效果”，再寻找看起来相近的数据。
+
+若已有认可参考，直接进入复刻或局部编辑，不重新生成候选。明确要求纯原生绘图、只写prompt或只审阅时，保持用户指定路线。
+
+完整规则：[ImageGen-first工作流](skills/design-scientific-figure/references/imagegen-first-workflow.md)。
+
+## Prompt硬性要求
+
+### 完整prompt不得短于对应模板
+
+模板驱动的生成与修改都必须满足：
+
+```text
+实际提交给ImageGen的完整prompt长度 ≥ 对应模板的完整prompt长度
+```
+
+默认按**去除空格、制表符和换行后的Unicode字符数**计算，而不是文件大小、行数或模型token数。
+
+1. 先绑定用户指定的模板，不用摘要、较短版本或修改便条替换基准。
+2. Fig.1、Fig.2分别达标，不能把两张图的长度相加。
+3. 从一个合并模板拆图时，每张独立prompt仍需达到完整模板长度；除非用户明确指定不同基准，不能自行减半。
+4. 微调也保存并提交完整更新版prompt，不能检查长文件后只给ImageGen一句修改指令。
+5. 不得使用重复句、空泛形容词、无关材料或虚构科学内容凑长度。
+
+长度是下限，不是质量分数。精细化要求同时覆盖：
+
+| 指令层 | 必须交代的细节 |
+| --- | --- |
+| 图意 | 核心科学主张、阅读路径、主图与细节图的分工 |
+| 画布 | 比例、区域面积、边距、分栏、间距和对齐 |
+| 每个区域 | 具体对象、数量或重复方式、相对大小、位置、短标签 |
+| 操作关系 | 什么发生变化、什么保持对应，箭头起止、分支、汇合和操作顺序 |
+| 科学文字 | 符号、维度、公式、索引约定、指标定义和参数关系 |
+| 视觉语言 | 语义配色、字体层级、线型、边框、深度与图文比例 |
+| 真实素材 | 每个字段的角色、来源、配对、裁剪/显示方式和后期替换位置 |
+| 修改边界 | 哪些地方允许变化，哪些对象、样式和结构必须保留 |
+
+**长的是绘图指令，不是图内文字。** 只有明确指定的标签进入成图；制作说明、长度报告和审阅记录留在工作文件中。
+
+在仓库根目录运行：
+
+```bash
+python skills/design-scientific-figure/scripts/check_prompt_length.py --template template.txt --prompt fig1-prompt.txt
+python skills/design-scientific-figure/scripts/check_prompt_length.py --template template.txt --prompt fig2-prompt.txt
+```
+
+脚本输出模板长度、prompt长度、比例与`length_pass`。退出码`0`表示长度达标，`1`表示不足，`2`表示输入缺失、不可读或为空。Skill要求长度失败时不得调用ImageGen，补足具体绘图指令后重新检查。
+
+规则与实现：[详细约束](skills/design-scientific-figure/references/imagegen-prompt-detail.md) · [检查脚本](skills/design-scientific-figure/scripts/check_prompt_length.py) · [行为测试](tests/test_prompt_length.py)
+
+## 真实数据替换
+
+不是“全部换成真实照片”，而是选择更准确的表达载体。
+
+| 图中内容 | 是否替换 | 原则 |
+| --- | --- | --- |
+| MRI、CT、显微图、预测结果 | 适合 | 使用来源明确的原始字段；比较图保持样本配对和适当的显示方式 |
+| 扫描路径、置换表、匹配快照 | 适合 | 从实际算法和设置计算，原生绘制在原有框内 |
+| FFT、频谱与量化曲线 | 适合 | 从绑定图像/数据计算，不用生成式效果图当结果 |
+| 学习特征图 | 有条件 | 必须有对应样本、模型阶段与真实张量，比较时使用一致投影和色标 |
+| token、Flip和坐标标记 | 通常保留示意 | 它们解释顺序与位置；坐标相同不代表特征值相同 |
+| 大脑等语境图标 | 可选 | 真实图片只有在帮助理解、且不混淆输入与学习特征时才更好 |
+
+可重建文字、箭头、边框、坐标轴、网格、表格和规则曲线保持原生可编辑。不可再分解的医学图像或谱图按**一个独立视觉字段一个图片对象**处理，不把整排图像或整块面板作为一个PNG粘贴。
+
+## 图片案例
+
+下面是仓库已有的原生绘图案例，展示视觉语言、编辑对象和审阅方式。它们保留原始制作记录，不能被改称为新ImageGen-first路线的生成实测。
+
+### 1. 手绘技术风格的LLM agent
+
+页首案例用人物、文档片段、控制器和有界循环表达任务。手绘感来自局部图形语言，语义箭头与文字仍保持精确；不是给普通流程图换手写字体。
+
+[PPTX](assets/examples/llm-agent-handdrawn-overview.pptx) · [科学内容](examples/llm-agent-handdrawn/source-contract.md) · [设计规范](examples/llm-agent-handdrawn/design-spec.md) · [审阅](examples/llm-agent-handdrawn/audit-report.md)
+
+### 2. 方法主线与关联展开
 
 ![Evidence-gated retrieval agent overview](assets/examples/evidence-gated-overview.png)
 
-上图是新版流程的真实 PowerPoint 实操：证据核验决定返回答案、重试或弃答，技术细节放在关联展开区。它来自插件测试用的合成研究简述，不冒充论文结果。下文还保留了 [Segment Anything 盲画对比](#案例盲画后再揭晓对比)，用于区分“机制解释完整”和“首页传播简洁”这两种不同目标。
+这是合成研究简述的原生PowerPoint示例。主线解释证据核验如何决定回答、重试或弃答；关联展开区解释检索和核验操作。用来观察层次是否清楚，而不是将原生对象数量作为“美观分数”。
 
-## 为什么需要 YOFO
+[PPTX](assets/examples/evidence-gated-overview.pptx) · [复现说明](examples/evidence-gated-overview/README.md) · [独立读图记录](examples/evidence-gated-overview/review/independent-reading.md) · [审阅](examples/evidence-gated-overview/audit-report.md)
 
-科研作图常见的失败并不是“不会画圆角矩形”，而是以下要求没有同时成立：
+### 3. Segment Anything：机制展开与官方总览对比
 
-- 图看起来完整，但漏掉了公式中的条件、逆变换、监督关系或参数冻结边界；
-- 对象结构正确，但缩到论文栏宽后文字、箭头和局部证据无法阅读；
-- PNG 很漂亮，但整页被扁平化，文字、连接线和面板无法继续编辑；
-- 多个候选只换了颜色、字体和圆角，实际构图与阅读路径完全相同；
-- 自动检查没有报错，却仍然具有拥挤、重心失衡、廉价 PPT 感等视觉问题。
+**Sivia盲画稿：**
 
-现在的 Overview 工作流先组织三个阅读深度：第一眼看到输入、核心变换与结果；继续阅读理解关键分支和条件；在关联的局部展开图中检查精确操作。完整合同通过 `abstraction_map` 映射到这三个层级，允许多个实现节点合并为一个语义组。训练边界、逆变换次序和参数归属始终保留，避免用缩小字号换取“全部直接展开”。具体规则见 [Overview Narrative](skills/design-scientific-figure/references/overview-narrative.md)。
+![Sivia blind Segment Anything overview](assets/examples/segment-anything-blind-overview.png)
 
-YOFO 用四个角色拆开这些职责：
+**官方总览：**
 
-```mermaid
-flowchart LR
-    A[Brief / Manuscript / Reference] --> B[Designer<br/>科学合同、版式、路由]
-    B --> C[Drawer<br/>原生可编辑对象]
-    C --> D[Reviewer<br/>结构审计 + 最新渲染审稿]
-    D -->|有缺陷| E[Corrector<br/>最小对象级修正]
-    E --> C
-    D -->|通过| F[Editable PPTX / draw.io<br/>PNG / PDF]
-```
+![Official Segment Anything overview](https://raw.githubusercontent.com/facebookresearch/segment-anything/main/assets/model_diagram.png)
 
-| 角色 | 负责什么 | 主要产物 |
+官方图来自[Segment Anything官方仓库](https://github.com/facebookresearch/segment-anything/blob/main/assets/model_diagram.png)，以远程链接展示；其许可见[官方LICENSE](https://github.com/facebookresearch/segment-anything/blob/main/LICENSE)。
+
+| 观察 | Sivia盲画稿 | 官方总览 |
 | --- | --- | --- |
-| Designer | 从来源中冻结科学主张、节点、关系、公式操作数、证据范围和版式系统 | `source contract`、`design spec` |
-| Drawer | 在 PowerPoint、WPS 或 draw.io 中按区域创建文字、形状、线、表格、图表和原子图片 | 可编辑 `.pptx` 或 `.drawio` |
-| Reviewer | 同时检查对象结构和最新渲染，不把工具调用成功当成图形正确 | 审稿记录、通过/失败结论 |
-| Corrector | 将缺陷翻译成按对象、按顺序、可回归验证的修正 | 最小修改计划 |
+| 主要任务 | 展开提示、特征交换和mask生成机制 | 快速建立图像、提示与分割结果的关系 |
+| 内容载体 | 可编辑算子、双通道、局部细节 | 真实输入、提示示例和分割输出 |
+| 本例启发 | 精确关系适合技术展开 | 清楚的输入输出与真实图像更利于第一眼理解 |
 
-## 案例：多层叙事与真实审稿
+结论不是“越复杂越好”或“越简单越好”，而是**按图的任务分配信息层级**。盲画时封存目标图，冻结后再比较，原始结果不倒改。
 
-这次优化先阅读用户指定的协作对话，再通过反例审查修正规则：不能把 overview 画成节点清单；不能默认反馈线都弱化；不能用去掉细节后的好看掩盖完整图的拥挤。
+[可编辑draw.io](assets/examples/segment-anything-blind-overview.drawio) · [盲画内容依据](examples/segment-anything-blind/source-contract.md) · [揭晓后对比](examples/segment-anything-blind/post-reveal-comparison.md)
 
-| 本例的设计决定 | 可检查的结果 |
+## 知识库
+
+Sivia使用版本控制的Markdown规则、案例和用户指定的本地图像/prompt库，**没有内置外部向量数据库或自动联网RAG**。
+
+用户可以提供知识库文件夹。制作时查看相关图片及其prompt，从中提炼构图、机制表达和证据整合方式；只记录实际检查过的来源，不宣称整库已完成索引。私有知识库不随插件发布。
+
+| 知识层 | 用途 |
 | --- | --- |
-| 主图只解释核验如何决定结果 | 深色核验节点、右侧两个终点、带次数条件的回路 |
-| 完整操作映射到不同阅读层级 | `a` 展开检索，`b` 展开生成与核验；条件、证据权限和冻结边界留在主图 |
-| 关系含义与视觉轻重分开 | 核心反馈保持主线权重；源片段输入是更轻的数据线 |
-| 按实际论文尺寸绘制 | 170 × 80 mm；有效字号 7.2–13 pt，而非仅凭 PNG 分辨率判断 |
-| 用真正的 PowerPoint 检查 | 55 个原生对象：25 个文本框、20 段连接线、10 个形状，0 个图片对象 |
+| [ImageGen-first工作流](skills/design-scientific-figure/references/imagegen-first-workflow.md) | 串联事实提炼、视觉定稿、复刻与数据装配 |
+| [Prompt细节与长度](skills/design-scientific-figure/references/imagegen-prompt-detail.md) | 完整模板绑定、逐区指令与长度硬下限 |
+| [稿件到图](skills/design-scientific-figure/references/manuscript-to-figure-workflow.md) | 从科学论点转成可见对象和关系 |
+| [基础视觉语法](skills/design-scientific-figure/references/fundamental-visual-grammar.md) | 构图、密度、视觉载体、线型与认可版式保护 |
+| [Overview叙事](skills/design-scientific-figure/references/overview-narrative.md) | 第一眼、工作理解、技术展开的层次 |
+| [手绘技术语言](skills/design-scientific-figure/references/hand-drawn-technical-style.md) | 克制的手绘表达与精确科学连线 |
+| [出版审阅](skills/audit-scientific-figure/references/publication-aesthetic-review.md) | 真实渲染、阅读逻辑和论文尺寸检查 |
+| [盲画对比](skills/design-scientific-figure/references/blind-figure-gym.md) | 独立设计、目标封存与揭晓后比较 |
 
-第一轮真实导出发现了错误的八边形端口及两处穿字连线；对象级修正后重新导出。审稿副本实际移除了标题与指定 L3 对象，分别生成简化、完整密度灰度图。两次无提示阅读的原始回答先保存，再揭晓设计主张进行比对，不能倒改读图记录。
+参考图提供表达方式，不能覆盖论文事实。用户明确认可某张图时，其构图也是本任务约束；不能把这条保真要求误用于复制无关论文的内容。
 
-[可编辑 PPTX](assets/examples/evidence-gated-overview.pptx) · [设计与复现](examples/evidence-gated-overview/README.md) · [原始读图记录](examples/evidence-gated-overview/review/independent-reading.md) · [最终审计](examples/evidence-gated-overview/audit-report.md) · [工作流前后对比](examples/overview-workflow-validation.md)
+## 六个Skill如何协作
 
-本例证明的是这一张图的绘制与审稿过程。它不证明所有科研领域都已达到相同水平，也没有准确率或论文质量分数。
-
-## 案例：近期 LLM 手绘语言，但不复制任何原图
-
-下面这张图不是拿某篇文章已有的 overview 临摹。YOFO 只从近期 LLM 手绘内容中提取**视觉语言**，再从独立的科学合同重新设计节点、关系和构图：
-
-![YOFO hand-drawn LLM agent overview](assets/examples/llm-agent-handdrawn-overview.png)
-
-可直接检查：[可编辑 PowerPoint](assets/examples/llm-agent-handdrawn-overview.pptx) · [source contract](examples/llm-agent-handdrawn/source-contract.md) · [design spec](examples/llm-agent-handdrawn/design-spec.md) · [fresh audit](examples/llm-agent-handdrawn/audit-report.md)
-
-### 参考了什么，没有参考什么
-
-| 风格来源 | 只迁移的视觉特征 | 明确禁止迁移 |
-| --- | --- | --- |
-| [Vicky：LLM hand-drawn explainer（2026）](https://medium.com/@vicky01010110/not-a-lecture-from-the-man-on-the-hill-61bcb6c4c66b) | 单色技术涂鸦、短手写标签、留白 | 原图布局、节点和措辞 |
-| [Karina Lewis：Context Windows sketchnotes（2025）](https://medium.com/@karinasketchesthings/context-windows-5-perspectives-on-gen-ai-c9dddb9fe45e) | 克制高亮、区域节奏、人的笔记感 | 五主题结构和隐喻 |
-| [Maarten Grootendorst：A Visual Guide to LLM Agents（2025）](https://newsletter.maartengrootendorst.com/p/a-visual-guide-to-llm-agents) | 模块化视觉语法、清楚分块 | 具体 diagram、icon 和构图 |
-| [Henrik Kniberg：Generative AI in a Nutshell（2024）](https://www.youtube.com/watch?v=2IK3DFHRFfw) | 选择性荧光笔和紧凑 doodle | 海报密度与原作者绘画 |
-
-这条 **style-source firewall** 很关键：参考图只能回答“线条和气质可以怎样表达”，不能替代“系统实际上有哪些节点和关系”。本例的内容合同单独冻结为 11 个节点、12 条关系和 5 条 negative paths。
-
-### 对抗性设计：故意尝试把图读错
-
-| 容易出现的漂亮但错误的画法 | 本图的处理 |
+| Skill | 职责 |
 | --- | --- |
-| 把手绘理解成箭头端点随机抖动 | 只有标题、标签、人物和强调线允许轻微偏移；语义连接线全部保持精确 |
-| 看起来像 LLM 自己调用外部 API | 在 proposal 与 tool 之间显式加入 `AGENT CONTROLLER` |
-| 让循环暗示每次都必须调用工具 | 工具路径使用虚线并标注 `optional tool-use loop` |
-| 让 observation 回流看起来像训练模型 | 回流文字明确写 `model weights stay frozen` |
-| 让 next-token prediction 看起来等于事实验证 | 核心区写明 `prediction ≠ verification`，答案侧保留 S1–S3 来源 ID |
-| 只换手写字体，骨架仍是普通流程图 | 使用原生人物、文档叠片、highlighter、次轮廓和非对称主脊柱形成完整风格语法 |
+| [design-scientific-figure](skills/design-scientific-figure/SKILL.md) | 从手稿提炼科学场景，组织完整prompt、视觉定稿与设计说明 |
+| [recreate-scientific-figure](skills/recreate-scientific-figure/SKILL.md) | 从认可参考进入忠实重建，协调内容适配与局部替换 |
+| [edit-powerpoint-live](skills/edit-powerpoint-live/SKILL.md) | PowerPoint/WPS原生对象绘制、编辑和导出 |
+| [recreate-scientific-figure-in-drawio](skills/recreate-scientific-figure-in-drawio/SKILL.md) | draw.io原生图元和连接线绘制 |
+| [audit-scientific-figure](skills/audit-scientific-figure/SKILL.md) | 只读审稿，区分整图验收与局部回归 |
+| [correct-scientific-figure](skills/correct-scientific-figure/SKILL.md) | 将真实缺陷转成授权范围内的对象级修正计划 |
 
-### Microsoft PowerPoint 实操结果
+四个逻辑角色是 **Designer → Drawer → Reviewer → Corrector**。同一代理可以顺序承担这些角色，但审稿不能偷偷修改、纠错计划不能自称已执行。
 
-这不是概念稿，而是在隔离的新演示文稿中通过 Windows PowerPoint COM 实际绘制并由 PowerPoint 重新导出的结果。最终页包含 `99` 个原生可编辑对象、`0` 个图片对象；`11/11` 个必需节点和 `12/12` 条关系可以从成图重建；整页结构审计为 `0` 个硬错误、`0` 个 warning，520 px 缩略图与灰度层级也通过。
+## 如何判断效果
 
-实操还暴露了一个后端真问题：部分 Windows 环境中 PowerPoint COM 可用，但 Office Interop 枚举程序集不可加载，导致 `rectangle` 这样的友好形状名失效。桥接层现已加入一组稳定的原生 AutoShape 回退值，烟雾测试也改为直接用友好名称，防止以后只测试数字 ID 而漏掉回归。
+科学正确性、视觉质量、可编辑性分别判断，不合成一个掩盖问题的总分。
 
-## 案例：盲画后再揭晓对比
+- **科学：**从成图能否复述正确关系？条件、逆变换、参数归属、数据来源是否准确？
+- **视觉：**与认可参考相比是否保留构图和内容密度？箭头、层级、短标签和证据是否清楚？
+- **编辑：**文字、连线和可重建图形是否真能单独修改？真实图像是否按字段拆分？
+- **尺寸：**在论文最终插入宽度下是否可读？提高PNG分辨率不能补救过小字号。
 
-### 为什么选这篇论文
+新成图的完整验收需要源文件结构与目标应用的最新渲染，并按需要检查隐藏标题、灰度和技术展开。局部微调只对改动、关联接口和整图回归做针对性验证，不因一个标签改动重启全部构图。
 
-[*Segment Anything*](https://openaccess.thecvf.com/content/ICCV2023/html/Kirillov_Segment_Anything_ICCV_2023_paper.html) 发表于 ICCV 2023；ICCV 在 [CCF 人工智能领域推荐目录](https://www.ccf.org.cn/Academic_Evaluation/AI/)中属于 A 类会议。这个案例适合检验 Overview 能力，因为它同时包含“图像只编码一次”“多种提示”“双向特征交互”“多候选 mask 与质量预测”四层信息，既能画得极简，也能画得足够技术化。
-
-### 实验协议：先画，后看
-
-1. 用稳定论文 id `arXiv:2304.02643` 建立排除清单，封存论文全部图、caption、官方 `model_diagram.png` 及描述其布局的 README 段落。
-2. 盲画阶段只允许读取论文摘要，以及官方实现中的 `sam.py`、`image_encoder.py`、`prompt_encoder.py`、`mask_decoder.py` 和 `transformer.py`。
-3. 先冻结一句 Figure Claim、17 个必需节点、18 条必需关系、negative paths 与公式操作数，再比较两个低保真骨架。
-4. 选择“上下双通道汇入中央 decoder，再向右展开候选 mask”的 **converge-and-fan** 方向；完成可编辑 draw.io、最新 PNG 和结构审计后写入 freeze receipt。
-5. 只有预揭晓门禁通过后，才打开官方 overview；盲画稿不再倒改，差异另写为 post-reveal comparison。
-
-完整过程可审阅：[source contract](examples/segment-anything-blind/source-contract.md) · [design spec](examples/segment-anything-blind/design-spec.md) · [post-reveal comparison](examples/segment-anything-blind/post-reveal-comparison.md) · [可编辑 draw.io 源文件](assets/examples/segment-anything-blind-overview.drawio)
-
-### A. YOFO 盲画稿（揭晓前冻结）
-
-![YOFO blind Segment Anything overview](assets/examples/segment-anything-blind-overview.png)
-
-这版把“昂贵图像编码一次、轻量提示可重复输入”做成上下双通道；中央深色模块是第一焦点，明确展示 token → image 与 image → token 的双向交换；右侧把 upscaled image embedding 与 mask-token MLPs 的乘积、三个候选 mask 及 predicted IoU 分开表达；底部虚线只表示可选的低分辨率 logits 反馈。
-
-预揭晓审计结果：`17/17` 个必需节点和 `18/18` 条语义关系均可从图中重建；draw.io 中共有 `102` 个可编辑对象（`80` 个顶点、`22` 条原生边）、`0` 个图片对象、`0` 个硬错误、`0` 个 warning。原生边数与语义关系数不同，是因为双向交换与复合乘积关系需要拆成多条可见连接。
-
-### B. 冻结后揭晓的官方图
-
-![Official Segment Anything model diagram](https://raw.githubusercontent.com/facebookresearch/segment-anything/main/assets/model_diagram.png)
-
-官方图来自 [Segment Anything 官方仓库](https://github.com/facebookresearch/segment-anything/blob/main/assets/model_diagram.png)，以远程链接原样展示，本仓库不复制该二进制资产；仓库采用 [Apache License 2.0](https://github.com/facebookresearch/segment-anything/blob/main/LICENSE)。它用真实剪刀照片和三张有效分割结果，把 image encoder、image embedding、mask prompt 的卷积注入、points/box/text prompt encoder、mask decoder 与 score 压缩成一条 `2412 × 514` 的横向叙事。
-
-### 正面对比
-
-| 维度 | YOFO 盲画稿 | 官方 overview | 结论 |
-| --- | --- | --- | --- |
-| 第一任务 | 解释可提示分割器内部如何交换和生成信息 | 让读者立刻理解“图像 + 提示 → 多个有效 mask” | 两图优化的是不同沟通目标，不应以像素相似度判输赢 |
-| 抽象层级 | 展开 sparse/dense embeddings、mask/IoU tokens、two-way attention、upscale 与 hypernetwork | 只保留 image encoder、prompt encoder、mask decoder 三个主模块 | 盲画稿更适合方法架构解读；官方图更适合论文首页快速传播 |
-| 提示表达 | 跟随公开实现，画 point、box、mask，并区分稀疏与稠密路径 | points、box、text 进入 prompt encoder；mask 经 conv 后加到 image embedding | 差异来自允许证据范围，也提醒图中必须声明“论文概念范围”还是“公开代码范围” |
-| 歧义输出 | 三个候选 mask 配 predicted-IoU bars，并把质量预测与 mask 生成分开 | 三张真实分割结果分别配 score | 官方结果证据更直观；盲画稿的因果归属更明确 |
-| 反馈与交互 | 显式标出 low-resolution logits 的可选反馈，虚线避免误读为必经环 | 不画迭代反馈 | 盲画稿覆盖实现语义更多，官方图保持主叙事更干净 |
-| 视觉策略 | `1600 × 903`、双通道汇聚、矢量符号、中央 decoder 强焦点 | 超宽单链路、真实输入/输出照片、极少文字 | 官方图在“少即是多”上更强；盲画稿在层级和可教学性上更强 |
-| 可编辑性 | 文字、形状、glyph、连接线均为原生 draw.io 对象 | README 中只提供扁平 PNG | 盲画稿可以继续改标签、布局和路由；这不意味着其传播效率自动更高 |
-
-这次对比带来的工作流改进不是“以后都画成 SAM 配色”，而是三条可迁移规则：先声明证据范围；在揭晓前冻结可审计成品；揭晓后分别判断科学语义、抽象层级、真实证据、阅读效率与可编辑性。官方图可以在极简传播上胜出，独立设计也可以在机制解释上胜出，两者都应被如实保留。
-
-## 一张 Overview 是怎么画出来的
-
-以下流程适用于 manuscript-driven Figure 1，而不只适用于上面的示例。
-
-### 1. 先声明事实来源
-
-记录稿件或 PDF 的准确版本、允许使用的图表和补充材料、目标期刊版位、最终显示宽度及交付格式。用户提供的稿件、公式和证据是科学事实来源；现有参考图可以帮助诊断，但不能擅自覆盖正文。
-
-如果是盲测设计，还要在设计冻结前排除目标论文图及其衍生图片，防止“独立设计”退化为临摹。
-
-### 2. 写一句 Figure Claim
-
-Figure Claim 不是模块清单，而是读者看完必须理解的一句话。例如：
-
-> 相邻切片经过共享 2-D 编码，中心深层特征由 Fermat 序列化与双向 Mamba 建模，A2 只修正最深层 decoder skip，而频谱目标只在训练阶段生效。
-
-后续每个面板、箭头和强调色都应服务于这句话。
-
-### 3. 冻结科学合同
-
-YOFO 在选版式之前建立四类账本：
-
-| 账本 | 必须记录 | 防止什么问题 |
-| --- | --- | --- |
-| Required-node ledger | 稳定 id、精确标签、类型、来源位置、条件、是否允许省略 | 模块或变量被漏画 |
-| Required-edge ledger | 起点、终点、方向、关系类型、条件、可视编码 | 箭头方向错误或监督边混入推理 |
-| Equation-operand ledger | 输出、全部操作数、索引/轴、共享关系、训练/推理状态 | 公式被缩成一个含糊模块名 |
-| Evidence ledger | 生产者、样本/论文层级、允许主张、裁剪与原子性 | 图片位置暗示了并不存在的证据关系 |
-
-还会记录 **negative paths**：例如训练目标不得连接到推理模块、reverse branch 必须先 flip-back 再恢复空间位置。不存在的关系同样需要验证，否则一条误连线就会改变科学含义。
-
-在上面的 Segment Anything 盲画合同中，`17` 个必需节点和 `18` 条必需关系都已映射到设计对象，即 `17/17` 与 `18/18`。这只证明设计规范覆盖完整；最终图仍必须经过可见渲染和对象结构审稿，不能把覆盖率当作美观或成图通过证明。
-
-### 4. 从论文版位反推画布
-
-先确定论文中实际插入宽度，再决定画布比例、字号预算和证据预算。YOFO 不默认使用 16:9，也不会沿用另一篇论文的像素阈值。
-
-例如，若最终以约 `0.95\textwidth` 插入：
-
-- 设计规范要记录最终审阅宽度；
-- 正文、公式和图片证据分别声明最小可读尺寸；
-- 所有最终审稿都在该尺寸重做，而不是只看 PowerPoint 全屏。
-
-### 5. 先比低保真骨架，再画成品
-
-候选方向先做同尺寸、隐藏标题、去色的骨架比较。每个可选方向必须完成全部节点与关系映射，并在以下至少一个方面真正不同：
-
-- 构图骨架或阅读路径；
-- 第一视觉焦点；
-- 方法机制与真实证据的视觉权重；
-- 形状、线条或连接语法。
-
-只有被选中的方向进入出版级绘制，避免把时间浪费在三个“换皮版本”上。
-
-### 6. 预留连接线路由
-
-在放对象前定义主干、skip、监督和关联关系的通道：
-
-- 主流程尽量走少转折的正交路径；
-- 平行关系保持固定间距；
-- 箭头从朝向目标的一侧出发；
-- 线不穿过文字、无关对象或证据图；
-- training-only 和 inference 路径不能只靠颜色区分。
-
-### 7. 分区域绘制原生对象
-
-Drawer 按区域构建，而不是一次性生成整页位图：
-
-1. 输入和编码区；
-2. 核心机制区；
-3. 解码和输出区；
-4. 训练专用区；
-5. 跨区域 connector lanes。
-
-文字、形状、箭头、表格、坐标轴和图例优先保持原生可编辑。只有显微图、医学影像等不可再分解的视觉场才保留为原子栅格，并且每张图片单独裁剪、单独声明。
-
-### 8. 每画完一个区域就审稿
-
-每轮都收集两路证据：
-
-- **结构证据**：对象类型、名称、边界、层级、连接端点、可编辑性和栅格声明；
-- **渲染证据**：由当前目标应用重新导出的最新 PNG，而不是旧截图。
-
-Reviewer 发现问题后，Corrector 只给出最小对象级修改，例如“将 `edge_a2_decoder` 的目标端点改到 decoder 左侧中部，并把标签上移 6 pt”，而不是“把箭头调好看一点”。修改后必须重新导出并复查同一项证据。
-
-### 9. 在最终尺寸做整图验收
-
-最终需要同时完成：
-
-- 在声明的论文宽度下，从主图和明确关联的展开区识别全部必需节点；
-- 从可见端点、方向和路线，以及对应展开区的内部顺序重建全部关系；
-- 验证所有 negative paths 没有被视觉上误连；
-- 检查文字、证据、箭头和间距达到设计规范；
-- 分别读取隐藏标题与 L3、仅隐藏标题的灰度图，先保存无提示读图结果，再对照主张；
-- 对整页再做一次结构审计与出版美感审稿。
-
-## 知识库用了什么
-
-YOFO 插件本身**没有打包外部向量数据库，也没有默认联网 RAG**。它使用的是可读、可审阅、可版本控制的本地知识层：
-
-| 知识层 | 内容 | 在流程中的权威性 |
-| --- | --- | --- |
-| 用户来源 | 稿件、公式、caption、参考图、证据素材和出版要求 | 科学事实的第一权威 |
-| 角色协议 | 六个 `SKILL.md`，定义设计、复刻、绘制、审稿和纠错职责 | 规定谁在何时做什么 |
-| 稿件到图规则 | [Manuscript-to-Figure Workflow](skills/design-scientific-figure/references/manuscript-to-figure-workflow.md) | 定义 Figure Claim、四类账本、来源绑定、盲测与最终尺寸验证 |
-| 盲画对比协议 | [Blind Figure Gym Protocol](skills/design-scientific-figure/references/blind-figure-gym.md) | 定义目标封存、预揭晓冻结、揭晓后多维比较与规则晋升边界 |
-| 基础视觉语法 | [Fundamental Visual Grammar](skills/design-scientific-figure/references/fundamental-visual-grammar.md) | 根据科学结构选择主导阅读逻辑、焦点层级、角色形状、线条轻重、字体与语义配色 |
-| 多尺度科研叙事 | [Overview Narrative](skills/design-scientific-figure/references/overview-narrative.md) | 把完整合同映射到主图与可读展开图，分离关系含义与视觉轻重，以物理尺寸和无提示阅读检验效果 |
-| 真实审稿副本 | [Review Copies](skills/audit-scientific-figure/references/review-copies.md) · [准备脚本](scripts/prepare-overview-review.py) | 按对象名生成隐藏标题、隐藏标题与 L3 的 PPTX 副本，等待目标应用实际渲染后审阅 |
-| 出版审美规则 | [Publication Aesthetic Review](skills/audit-scientific-figure/references/publication-aesthetic-review.md) | 定义三尺度审稿、灰度层级、A/B/C 美观缺陷和最终结论 |
-| 手绘技术风格 | [Hand-drawn Technical Style](skills/design-scientific-figure/references/hand-drawn-technical-style.md) | 定义三种手绘风格族、精确/表现双层、风格来源防火墙与对抗性退回条件 |
-| 后端能力 | draw.io、PowerPoint/WPS 在运行时返回的 capability 信息 | 决定哪些对象能原生编辑、哪些需用可编辑组合对象 |
-
-六个可调用 skill 为：
-
-- [`design-scientific-figure`](skills/design-scientific-figure/SKILL.md)：从 brief 或稿件设计新图；
-- [`recreate-scientific-figure`](skills/recreate-scientific-figure/SKILL.md)：从参考图重建；
-- [`recreate-scientific-figure-in-drawio`](skills/recreate-scientific-figure-in-drawio/SKILL.md)：在可见 draw.io 画布中绘制；
-- [`edit-powerpoint-live`](skills/edit-powerpoint-live/SKILL.md)：在 PowerPoint/WPS 中创建和编辑原生对象；
-- [`audit-scientific-figure`](skills/audit-scientific-figure/SKILL.md)：只读审稿，不在审稿阶段偷偷修改；
-- [`correct-scientific-figure`](skills/correct-scientific-figure/SKILL.md)：把 finding 转换为精确修正计划。
-
-如果用户明确要求检索外部参考，Codex 可以另行使用获准的搜索或连接器；检索结果只是设计参考，不能自动取代稿件事实。
-
-## 怎么判断效果是否好
-
-“效果好”不是一个总分，也不能由“导出成功”推出。YOFO 要求三类证据同时成立。
-
-### 1. 科学与结构正确
-
-| 项目 | 通过条件 |
-| --- | --- |
-| 必需节点与关系 | 所有不可省略项经主图和关联展开图完整映射，边界与顺序不变 |
-| 语义和文字准确 | 在各自阅读层级与来源一致，可从图上复述 |
-| 可重建编辑性 | 文字、算子、连线和可重建图表保持原生可编辑 |
-| 裁切、越界和意外重叠 | 目标应用最新渲染中不存在 |
-| 几何与对齐 | 重复基线、间距和区域关系清晰；以具体观察说明 |
-| 连接线清晰度 | 端点、方向、条件与线型含义可辨，没有歧义穿越 |
-| 有参考图时的对应关系 | 用当前渲染与参考逐区域比较，明确实际差异 |
-| 硬错误 | `0` |
-
-硬错误包括错误文字、错误方向、箭头穿过标签或无关对象、可拆内容被整块栅格化、裁切、非原子图片以及歧义连线交叉。用 `pass / fail / pending` 分别记录科学、可编辑性、目标渲染、物理尺寸可读性和视觉叙事；不再把未标定的 `0.95` 自评分当作门槛。
-
-### 2. 最新渲染在三个尺度可读
-
-| 尺度 | 看什么 |
-| --- | --- |
-| 缩略图 | 外轮廓、视觉重心、第一焦点、三秒阅读路径 |
-| 整页 | 构图、模块比例、节奏、功能性留白、主次关系 |
-| 可读尺度 | 字体、换行、局部间距、箭头端点、边框和证据细节 |
-
-先给独立 Reviewer 看实际隐藏标题和 L3 信息的灰度图，让它复述入口、核心变换、结果和主方向，再揭晓完整彩色图与 Figure Claim，最后检查合同和对象。保留 Reviewer 的原始复述与不确定性；同一作者已知主张的复查标为自审。标题仍可见的截图不能被称为“隐藏标题版”。
-
-以最终插入宽度计算 `有效字号 = 源字号 × 最终宽度 / 源画布宽度`。600 px 是屏幕预览尺寸，不能证明印刷可读性；提高导出 DPI 也不能补救过小的有效字号。
-
-### 3. 出版美感通过人工判断
-
-结构数据不能代替视觉判断。出版审稿要求：
-
-- 没有破坏专业性的 class-A 问题；
-- 没有阻断阅读路径的 class-B 问题；
-- 大块留白都能解释为层级、分组、连接通道或焦点保护；
-- 主体没有为了空白或装饰而被明显缩小；
-- 全图只有一个占主导地位的视觉层级；
-- 图更接近论文插图，而不是工程架构图、产品宣传图或普通 PPT 示意图。
-
-一份诚实的阶段报告应当像这样：
-
-```text
-source contract: PASS — required nodes/edges mapped across overview and linked insets
-editable structure: PENDING — must inspect the actual PPTX/draw.io object graph
-fresh render: PENDING — must export from the selected backend at publication width
-masked grayscale: PENDING — prepare copies, export them, record an unprimed reading
-publication aesthetic verdict: PENDING
-final verdict: NOT YET APPROVED
-```
-
-这比只写“score 0.97”更可靠：它清楚说明已经证明了什么、还缺什么。README 中的 PNG 能展示构图和渲染观感，但只有可编辑源文件、对象审计和最新渲染一起通过，才能声称最终验收。
-
-## 工作流怎么选
-
-| 你的输入 | 应使用的工作流 | 关键差异 |
-| --- | --- | --- |
-| brief、方法描述或 manuscript | `design-scientific-figure` | 从科学合同推导全新构图 |
-| PNG、JPEG、SVG、PDF 中的现有科学图 | `recreate-scientific-figure` | 以参考对应关系为约束，尽量恢复深度可编辑性 |
-| 已打开的 draw.io | `recreate-scientific-figure-in-drawio` | 在可见画布中逐区域绘制、截图和复核 |
-| 已打开或指定的 PPTX/WPS 文件 | `edit-powerpoint-live` | 选择 COM、Office.js 或 OOXML 后端进行原生编辑 |
-| 只想审阅现有图 | `audit-scientific-figure` | 只读审稿，不自动实施修改 |
-| 已有审稿 findings | `correct-scientific-figure` | 输出最小对象级纠错顺序和回归条件 |
-
-## 支持的后端
-
-| 目标应用 | 后端 | 工作方式 | 可编辑交付物 |
-| --- | --- | --- | --- |
-| draw.io Desktop | Live graph API | 在可见画布中按区域构建并截图复核 | 原生图元、连接线和组合对象 |
-| PowerPoint on Windows | COM | 后台批量绘制、保存、导出和审计 | 原生 PPT 对象 |
-| PowerPoint on macOS | Office.js | 任务窗格连接后通过 `context.sync()` 写入当前演示文稿 | 原生 Office.js 对象 |
-| PowerPoint on macOS | OOXML fallback | 在隔离工作副本中生成 PPTX，再由应用打开或刷新 | 原生 OOXML 对象 |
-| WPS Presentation | OOXML working copy | 生成并刷新受管理的 PPTX 工作副本 | 原生 PPTX 对象 |
-
-YOFO 会先读取后端能力，再决定对象映射。设计质量门禁不会因为换了后端而降低。
+发现真实的历史问题仍应报告，但与本轮新增问题分开。一个局部修改通过，不等于整张图获得新的出版质量认证。制作和审阅记录留在图外，图内保留必要的算法定义与作用边界。
 
 ## 安装
 
-### 前置条件
+需要支持插件的Codex、PATH中可用的Node.js，以及所选的PowerPoint、WPS或draw.io。ImageGen路线还需要当前会话提供图像生成工具；prompt长度检查需要Python 3。
 
-- 支持插件的 Codex 桌面应用或 Codex CLI；
-- PATH 中可用的 `node`；
-- 根据目标后端安装 draw.io Desktop、Microsoft PowerPoint 或 WPS Presentation。
-
-OOXML 后端还需要 Python 3 与 `python-pptx`：
-
-```bash
-python -m pip install python-pptx
-```
-
-LibreOffice 与 Poppler 只用于部分文件后端的渲染、PDF 转换和预览，不是 Windows PowerPoint COM 绘制的必需项。macOS Office.js 本地任务窗格的证书准备需要 OpenSSL。
-
-### 从 GitHub marketplace 安装
+### GitHub marketplace
 
 ```bash
 codex plugin marketplace add exsinger-hub/You-Only-Figure-Once --ref main
 codex plugin add you-only-figure-once@you-only-figure-once
 ```
 
-安装后重新打开 Codex，启用 **You-Only-Figure-Once**，并在新任务中开始使用。插件结构与 marketplace 规范见 [OpenAI Plugin Packaging](https://developers.openai.com/plugins/build/plugins)。
-
-### 更新
+更新：
 
 ```bash
 codex plugin marketplace upgrade you-only-figure-once
 codex plugin add you-only-figure-once@you-only-figure-once
 ```
 
-更新插件或 MCP 工具后，使用新任务加载最新版 skills 和工具定义。
+更新后在新任务中加载插件。品牌名称为Sivia，安装命令仍使用原标识。
 
-## 五分钟上手
+### 绘制后端
 
-### 直接画一张 manuscript Overview
-
-将稿件或 PDF 放入当前工作区，然后使用下面的提示词：
-
-```text
-使用 $design-scientific-figure，根据 Manuscript.pdf 设计 Figure 1 Overview。
-
-目标：读者在三秒内看懂主要科学主张，再沿箭头理解完整推理路径。
-版位：论文双栏通栏，按最终插入宽度审稿，不默认 16:9。
-后端：Microsoft PowerPoint，交付可编辑 PPTX、PNG 预览和审稿报告。
-
-先输出并冻结：
-1. source authority 和一句 Figure Claim；
-2. Paper Figure Signature；
-3. required-node、required-edge、equation-operand、evidence ledgers；
-4. training/inference、updated/frozen 边界和 negative paths；
-5. visual grammar receipt：主导阅读逻辑、焦点层级、角色形状、连线含义和轻重、字体、语义配色、灰度计划与留白用途；
-6. narrative_map 和 abstraction_map：第一眼、工作理解、技术展开；节点与关系如何分组且保持关键条件；
-7. 物理版位与有效字号，真正不同的低保真构图方向及取舍。
-
-我选定方向后再逐区域绘制。每个区域完成后执行结构审计和最新渲染审稿；
-发现问题时用 $correct-scientific-figure 给出对象级修正，再重新渲染。
-最终导出完整彩色、隐藏标题、隐藏标题与 L3、对应灰度图；先做无提示阅读再检查合同。
-目标应用无法渲染时把对应门禁标为 pending，交付候选源文件，不能用同坐标 SVG 或对象数自证通过。
-```
-
-### 复刻现有方法图
-
-```text
-使用 $recreate-scientific-figure，在 draw.io 中重建 reference.png。
-保持全部可重建文字、形状、表格、图例和连接线可编辑；
-医学影像或显微图按一个不可再分解视觉场一个图片对象处理。
-逐面板绘制、审阅和修正，不要把整张图作为背景描摹。
-```
-
-### 画一张手绘 LLM Overview
-
-```text
-使用 $design-scientific-figure 和 $edit-powerpoint-live，设计一张手绘技术风格的 LLM agent overview。
-
-不要复制任何参考图的布局或语义。先冻结 Figure Claim、required nodes/edges、
-negative paths 和 style-source firewall；采用 restrained_technical_handdrawn，
-明确哪些对象允许轻微偏移，哪些连接必须精确。
-
-在 Microsoft PowerPoint 的隔离新文件中实画，所有可重建内容保留为原生对象。
-逐区域导出、审稿和修正；最终交付 PPTX、PowerPoint 渲染 PNG、对象审计、
-声明论文插入宽度下的有效字号、简化与完整密度灰度审阅。分别报告科学正确性和手绘风格忠实度。
-```
-
-### 只审阅当前 PowerPoint
-
-```text
-使用 $audit-scientific-figure 审阅当前 PowerPoint 的 Figure 1。
-同时运行对象结构审计并导出最新渲染；按论文最终插入宽度检查节点、边、
-negative paths、文字适配、箭头端点、灰度层级和出版美感。
-只报告真实存在的缺陷，并给出最终 pass/fail，不要在审稿阶段修改文件。
-```
-
-## 常用配置
-
-所有配置都是可选项；默认优先自动探测当前平台和应用。
-
-| 环境变量 | 可选值或用途 |
+| 应用 | 后端与方式 |
 | --- | --- |
-| `YOU_ONLY_FIGURE_ONCE_PPT_HOST` | `auto`、`powerpoint`、`wps` |
-| `YOU_ONLY_FIGURE_ONCE_PPT_BACKEND` | `auto`、`com`、`officejs`、`ooxml` |
-| `YOU_ONLY_FIGURE_ONCE_FOCUS_POLICY` | `preserve`（默认）或 `foreground` |
-| `YOU_ONLY_FIGURE_ONCE_PYTHON` | 指定 OOXML 后端使用的 Python 可执行文件 |
-| `YOU_ONLY_FIGURE_ONCE_STATE_DIR` | 指定受管理演示文稿和会话状态目录 |
-| `YOU_ONLY_FIGURE_ONCE_OPEN_VERIFY_TIMEOUT_MS` | 文件后端等待应用打开验证的时间 |
+| Windows PowerPoint | COM后台区域批处理，原生对象，默认不抢焦点 |
+| macOS PowerPoint | 连接任务窗格后使用Office.js；否则为明确标识的OOXML文件后端 |
+| WPS Presentation | 受管理PPTX工作副本，明确报告打开/刷新验证状态 |
+| draw.io Desktop | Live graph API，可编辑图元、连线和组合对象 |
 
-### macOS PowerPoint Office.js
+OOXML模式需要`python-pptx`。LibreOffice和Poppler用于部分文件后端的预览；Windows PowerPoint COM不依赖它们绘制。macOS Office.js设置见[后端skill](skills/edit-powerpoint-live/SKILL.md)。
 
-在插件根目录运行：
+## 使用
 
-```bash
-node scripts/officejs-setup.mjs status
-node scripts/officejs-setup.mjs prepare
-node scripts/officejs-setup.mjs sideload
-```
+以下是发给Codex的任务指令，不是直接提交给ImageGen的完整生成prompt。
 
-`prepare` 只生成待审阅的 localhost 证书，不会自动修改系统信任；`sideload` 在 macOS 上复制加载项清单。信任证书并重启 PowerPoint 后，从 **Insert → My Add-ins → You-Only-Figure-Once Live** 打开任务窗格。
-
-## 仓库结构
+### 从手稿开始
 
 ```text
-.
-├── .codex-plugin/plugin.json        # 插件清单
-├── .agents/plugins/marketplace.json # Git marketplace 清单
-├── .mcp.json                        # 本地 MCP 服务入口
-├── assets/examples/                 # README 实际渲染案例
-├── examples/evidence-gated-overview/ # 多层叙事、真实 PowerPoint 副本与独立读图
-├── examples/llm-agent-handdrawn/    # 手绘 LLM 合同、设计规范与实操审计
-├── examples/segment-anything-blind/ # 盲画合同、设计规范与揭晓后对比
-├── skills/                          # Designer / Drawer / Reviewer / Corrector
-├── scripts/                         # draw.io、PowerPoint、WPS、Office.js 桥接
-├── officejs/                        # PowerPoint Office.js 任务窗格
-└── tests/                           # 契约测试与 Windows COM 烟雾测试
+使用 $design-scientific-figure，根据 Manuscript.pdf 和项目代码制作科研overview。
+参考我提供的知识库文件夹、template.txt及参考图。
+先提炼科学主张和可见场景，再写完整ImageGen prompt。
+每张图的prompt不得短于对应模板，逐区域写清布局、对象、连线、标签和素材位置。
+先向我展示prompt，再生成视觉稿；我认可后再忠实复刻为可编辑PPT。
+适当字段使用项目真实图片和计算数据，保持配对，不虚构效果展示。
+按论文实际插入宽度检查，交付PPTX、导出图和完整prompt。
 ```
 
-## 开发与测试
+### 已有认可的图，直接复刻
 
-运行无界面副作用的契约测试（需要 Node.js 与 PowerShell 7 的 `pwsh`）：
+```text
+使用 $recreate-scientific-figure 和 $edit-powerpoint-live 复刻 approved.png。
+保持原来的分区、比例、密度、字体、配色和主要连线，不重新设计。
+文字、网格、token、公式和箭头使用原生对象。
+先确认真实素材的来源及替换位置；只替换对应原子字段。
+保存新PPTX和最新渲染，不覆盖原文件。
+```
+
+### 只微调
+
+```text
+只修改这几个标签，并替换指定图片，其他布局和样式保持原样。
+先列出受影响对象，再做局部编辑与整图回归。
+若发现需要重排或拆分面板的问题，先提出建议，不自动执行。
+```
+
+### 只审稿
+
+```text
+使用 $audit-scientific-figure 审阅指定图。
+核对科学关系、参考一致性、可编辑对象和论文尺寸可读性。
+只报告真实存在的问题，不修改文件，不用对象数量或主观总分代替判断。
+```
+
+## 开发与验证
+
+仓库结构：
+
+```text
+.codex-plugin/plugin.json           插件清单与Sivia界面信息
+.agents/plugins/marketplace.json    Git marketplace安装入口
+.mcp.json                          本地MCP服务配置
+skills/                            六个角色skill与按需读取的规则
+  design-scientific-figure/
+    references/imagegen-first-workflow.md
+    references/imagegen-prompt-detail.md
+    scripts/check_prompt_length.py
+scripts/                           draw.io / PowerPoint / WPS / Office.js桥接
+officejs/                          PowerPoint任务窗格
+assets/examples/                   公开案例图与可编辑源文件
+examples/                          科学说明、复现和审阅记录
+tests/                             长度门禁、后端契约、审阅副本测试
+```
+
+无界面副作用的测试：
 
 ```bash
+python -B -m unittest discover -s tests -p "test_*.py" -v
 node --test tests/focus-policy.contract.test.mjs tests/payload-layering.contract.test.mjs
-python -B -m unittest discover -s tests -p test_prepare_overview_review.py -v
 ```
 
-在 Windows 上执行真实 PowerPoint COM 烟雾测试：
+Python的审阅副本测试需要`python-pptx`；Node后端契约测试需要PowerShell 7的`pwsh`。Prompt测试覆盖短于/等于/长于模板、空白不能凑长度、中文与符号、UTF-8文本和CLI退出状态。
 
-```powershell
-pwsh -NoProfile -File tests/com-batch.smoke.ps1
-```
-
-COM 烟雾测试会创建临时演示文稿，验证批量绘制与焦点保持。为避免接管用户正在编辑的窗口，只能在没有 PowerPoint 进程运行时执行。
+测试只证明各自的可观察行为。它们不替代实际ImageGen成图检查或PowerPoint渲染审稿。
 
 ## 当前边界
 
-- 公开仓库安装通过 Git marketplace 完成；尚未提交到通用 Plugins Directory。
-- Office.js 实时后端要求任务窗格保持连接；未连接时应明确选择 OOXML 文件后端。
-- WPS 与 OOXML 模式编辑受管理工作副本，不宣称持有活动窗口的内存级自动化连接。
-- PNG/JPEG 只能证明渲染观感，不能证明深度可编辑性；最终验收需要源文件对象审计。
-- 不可再分解的医学影像、显微图等可以保留为原子栅格；可重建文字、箭头、图例、表格或规则图表不能借此整体扁平化。
+- ImageGen来自当前会话的工具能力，插件没有捆绑图像生成服务；不可用时不能宣称已生成。
+- 长度脚本是独立检查器，skill要求调用前执行；它不是拦截所有外部ImageGen调用的服务端钩子，也不自动识别科学错误或凑字数。
+- PNG不证明深度可编辑性；OOXML/LibreOffice预览也不能被称为实际PowerPoint/WPS渲染。
+- 已有案例分别展示原生绘图、风格表达和审阅过程，不代表所有论文都已得到同等质量验证。
+- 本仓库发布插件及已有公开示例，不打包用户私有手稿、知识库或病例数据。
 
 ## English summary
 
-You-Only-Figure-Once is a Codex plugin for turning a research brief, manuscript, or reference figure into an editable, publication-oriented scientific illustration. It uses a **Designer → Drawer → Reviewer → Corrector** loop and supports draw.io, Windows PowerPoint COM, macOS PowerPoint Office.js/OOXML, and WPS Presentation.
+Sivia is a scientific-figure plugin by **gatina**. The preferred manuscript-overview workflow is source-grounded scene design, a detailed template-led ImageGen prompt, visual approval, faithful native PPT reconstruction, selective real-data replacement, and scoped verification. Explicit native-only and review-only requests keep their requested route.
 
-The plugin uses versioned local Markdown protocols rather than a bundled external vector database. It freezes an explicit scientific contract before drawing, preserves native editable objects, and requires both object-structure evidence and a fresh renderer export at the declared publication size. Numeric checks do not replace publication-aesthetic review.
+Each template-led production prompt must be at least as long as its bound template, measured by non-whitespace Unicode characters. The actual submitted text is checked separately for each figure. Length is a floor, not a substitute for precise scene instructions or scientific correctness. Approved layouts remain fixed during micro-edits.
 
-Install from the repository marketplace:
-
-```bash
-codex plugin marketplace add exsinger-hub/You-Only-Figure-Once --ref main
-codex plugin add you-only-figure-once@you-only-figure-once
-```
+The knowledge layer consists of versioned Markdown, examples and user-supplied references, not a bundled vector database. The installation identifier remains `you-only-figure-once`.
 
 ## License
 
-MIT, as declared in `.codex-plugin/plugin.json`.
+MIT, as declared in [.codex-plugin/plugin.json](.codex-plugin/plugin.json). Referenced third-party material retains its own attribution and license.
 
 ---
 
-感谢使用 [You-Only-Figure-Once](https://github.com/exsinger-hub/You-Only-Figure-Once) 插件，制作者：gatina。
+感谢使用 [Sivia](https://github.com/exsinger-hub/You-Only-Figure-Once) 插件，制作者：gatina。

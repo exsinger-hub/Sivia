@@ -24,7 +24,7 @@ const DEFAULT_EDGE_STYLE =
 const tools = [
   {
     name: "drawio_status",
-    description: "Check the draw.io desktop CLI used only for post-live file validation/export/repair and explicit file-only requests. Live You-Only-Figure-Once construction belongs to the drawio_live_* server.",
+    description: "Check the draw.io desktop CLI used only for post-live file validation/export/repair and explicit file-only requests. Live Sivia construction belongs to the drawio_live_* server.",
     inputSchema: { type: "object", properties: {}, additionalProperties: false },
   },
   {
@@ -174,7 +174,7 @@ const tools = [
   {
     name: "drawio_write_xml",
     description:
-      "Validate and write full uncompressed mxGraph XML only for a declared post-live repair or an explicit file-only user request. Never use it as the construction path for a live You-Only-Figure-Once task. Unaudited image cells are rejected.",
+      "Validate and write full uncompressed mxGraph XML only for a declared post-live repair or an explicit file-only user request. Never use it as the construction path for a live Sivia task. Unaudited image cells are rejected.",
     inputSchema: {
       type: "object",
       required: ["output_path", "xml", "workflow_context"],
@@ -614,7 +614,7 @@ function inspectXml(xml) {
           const cropValid = values.every((value) => Number.isFinite(value) && value >= 0 && value <= 99)
             && cell.crop.left + cell.crop.right < 100
             && cell.crop.top + cell.crop.bottom < 100;
-          if (!cropValid) errors.push(`Image vertex '${cell.id}' has invalid You-Only-Figure-Once crop metadata.`);
+          if (!cropValid) errors.push(`Image vertex '${cell.id}' has invalid Sivia crop metadata.`);
           const hasCrop = values.some((value) => value > 0);
           if (cell.sourceTightlyCropped !== "true" && !hasCrop) {
             errors.push(`Image vertex '${cell.id}' must certify a tightly cropped source or record nonzero crop percentages.`);
@@ -908,7 +908,7 @@ async function handleTool(name, args = {}) {
         server_version: SERVER_VERSION,
         server_role: "post-live-file-utilities",
         live_construction_server: "drawio-live",
-        construction_policy: "Use drawio_live_* for visible You-Only-Figure-Once construction. Use this server after live drawing for validation/export/repair, or for an explicitly requested file-only workflow.",
+        construction_policy: "Use drawio_live_* for visible Sivia construction. Use this server after live drawing for validation/export/repair, or for an explicitly requested file-only workflow.",
         node: process.version,
         default_output_directory: path.join(os.homedir(), "Documents"),
         supported_formats: ["drawio", "png", "svg", "pdf", "jpg"],
@@ -1000,7 +1000,7 @@ async function handleMessage(message) {
       protocolVersion,
       capabilities: { tools: { listChanged: false } },
       serverInfo: { name: SERVER_NAME, version: SERVER_VERSION },
-      instructions: "This is the post-live draw.io file-utilities server, not the live drawing backend. For You-Only-Figure-Once work, first use drawio_live_get_capabilities and construct every region visibly with drawio_live_* tools, including local screenshot/correction gates. Use these file utilities only after live cells exist to validate, inspect, export, or repair a saved snapshot, unless the user explicitly requested a non-live file-only workflow. drawio_create_diagram and drawio_write_xml require a declared workflow_context. Never rasterize reconstructable text, shapes, arrows, tables, charts, axes, or legends; every deliverable image cell must be one atomic irreducible raster unit with a specific reason, tight-source/crop audit, contains_reconstructable_content=false, and a decomposition note. Inline HTML/SVG images are rejected because their source and crop cannot be audited. A trace reference overlay is analysis-only and must not remain in the final deliverable.",
+      instructions: "This is the post-live draw.io file-utilities server, not the live drawing backend. For Sivia work, first use drawio_live_get_capabilities and construct every region visibly with drawio_live_* tools, including local screenshot/correction gates. Use these file utilities only after live cells exist to validate, inspect, export, or repair a saved snapshot, unless the user explicitly requested a non-live file-only workflow. drawio_create_diagram and drawio_write_xml require a declared workflow_context. Never rasterize reconstructable text, shapes, arrows, tables, charts, axes, or legends; every deliverable image cell must be one atomic irreducible raster unit with a specific reason, tight-source/crop audit, contains_reconstructable_content=false, and a decomposition note. Inline HTML/SVG images are rejected because their source and crop cannot be audited. A trace reference overlay is analysis-only and must not remain in the final deliverable.",
     });
   }
   if (method === "ping") return rpcResult(id, {});

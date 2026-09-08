@@ -1,7 +1,7 @@
 {
   "name": "you-only-figure-once",
-  "version": "1.5.4+codex.20260905101256",
-  "description": "Build editable scientific overviews with a clear reading narrative, faithful main-to-detail abstraction, and independent review of actual publication-size renders in draw.io, PowerPoint or WPS.",
+  "version": "1.5.4+codex.20260908141821",
+  "description": "Create source-grounded scientific overviews through detailed template-led ImageGen prompts, visual approval, faithful editable reconstruction and selective real-data replacement.",
   "author": {
     "name": "gatina",
     "url": "https://github.com/exsinger-hub/You-Only-Figure-Once"
@@ -20,9 +20,9 @@
   ],
   "skills": "./skills/",
   "interface": {
-    "displayName": "You-Only-Figure-Once",
-    "shortDescription": "Create readable, editable scientific overviews.",
-    "longDescription": "Uses one backend-neutral four-role workflow with equivalent draw.io and presentation mappings. Windows PowerPoint applies each logical region through one background COM batch. Mac PowerPoint uses an Office.js task pane and context.sync when connected, with native OOXML as a safe fallback. WPS uses an editable OOXML working copy with truthful open-state reporting and checkpointed application refresh. Presentation drawing preserves the user's foreground application by default. The Designer specifies layout and routing, the Drawer builds editable objects panel by panel, the Reviewer checks renderer fidelity and editability, and the Corrector returns object-level repairs.",
+    "displayName": "Sivia",
+    "shortDescription": "Scientific Figure Assistant \u2014 design, draw and review.",
+    "longDescription": "Sivia turns manuscripts into concrete scientific scenes, uses detailed template-led ImageGen prompts with a per-figure length floor, then faithfully reconstructs approved visuals as editable PowerPoint or draw.io objects. Real image fields and computed data are inserted from verified sources. Approved layouts stay fixed during micro-edits. Designer, Drawer, Reviewer and Corrector separate scientific content, visual fidelity and editability checks. Windows PowerPoint uses background COM batches; macOS Office.js and PowerPoint/WPS OOXML backends retain their declared capabilities.",
     "developerName": "gatina",
     "category": "Productivity",
     "capabilities": [
@@ -33,7 +33,7 @@
     "defaultPrompt": [
       "\u5728 PowerPoint \u6216 WPS \u4e2d\u5206\u9762\u677f\u590d\u523b\u8fd9\u5f20\u53c2\u8003\u56fe\uff0c\u4f18\u5148\u4f7f\u7528\u539f\u751f\u53ef\u7f16\u8f91\u5bf9\u8c61\uff0c\u5e76\u53cd\u590d\u68c0\u67e5\u4fee\u6b63\u540e\u4fdd\u5b58\u3002",
       "\u5728 draw.io \u4e2d\u9010\u6b65\u590d\u523b\u8fd9\u5f20\u53c2\u8003\u56fe\uff0c\u4fdd\u6301\u6587\u5b57\u3001\u56fe\u5f62\u3001\u8868\u683c\u3001\u56fe\u8868\u548c\u8fde\u63a5\u7ebf\u53ef\u7f16\u8f91\u3002",
-      "\u6839\u636e\u7814\u7a76\u5185\u5bb9\u8bbe\u8ba1\u53ef\u7f16\u8f91\u79d1\u7814 Overview\uff1a\u5148\u786e\u5b9a\u4e09\u4e2a\u9605\u8bfb\u5c42\u7ea7\uff0c\u5c06\u5b8c\u6574\u79d1\u5b66\u5408\u540c\u6620\u5c04\u5230\u4e3b\u56fe\u4e0e\u5c40\u90e8\u5c55\u5f00\u56fe\uff0c\u518d\u4ee5\u771f\u5b9e\u76ee\u6807\u5e94\u7528\u6e32\u67d3\u548c\u65e0\u63d0\u793a\u7070\u5ea6\u590d\u8ff0\u9a8c\u6536\u3002"
+      "\u6839\u636e\u624b\u7a3f\u548c\u53c2\u8003\u6a21\u677f\uff0c\u5148\u5199\u4e0d\u77ed\u4e8e\u6a21\u677f\u7684\u7cbe\u7ec6ImageGen\u63d0\u793a\u8bcd\uff1b\u751f\u6210\u89c6\u89c9\u7a3f\uff0c\u7ecf\u6211\u786e\u8ba4\u540e\u5fe0\u5b9e\u590d\u523b\u4e3a\u53ef\u7f16\u8f91PPT\uff0c\u5e76\u5c40\u90e8\u66ff\u6362\u771f\u5b9e\u6570\u636e\u3002"
     ],
     "brandColor": "#F08705"
   },

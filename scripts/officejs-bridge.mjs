@@ -198,7 +198,7 @@ export class OfficeJsCommandBridge {
     await this.start();
     const status = await this.waitForClient(options.waitForClientMs || 0);
     if (!status.connected || !this.client) {
-      throw new Error("Office.js live backend is not connected. Open the You-Only-Figure-Once task pane in the current PowerPoint deck, then call powerpoint_status again.");
+      throw new Error("Office.js live backend is not connected. Open the Sivia task pane in the current PowerPoint deck, then call powerpoint_status again.");
     }
     const command = {
       id: randomUUID(),
@@ -246,7 +246,7 @@ export class OfficeJsCommandBridge {
     const id = normalizeClientId(clientId);
     const now = Date.now();
     if (this.client && this.client.id !== id && now - this.client.lastSeen <= this.clientTtlMs) {
-      const error = new Error("Another PowerPoint task pane is already connected. Close the other You-Only-Figure-Once Live pane before selecting a different deck.");
+      const error = new Error("Another PowerPoint task pane is already connected. Close the other Sivia Live pane before selecting a different deck.");
       error.statusCode = 409;
       throw error;
     }
@@ -396,7 +396,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   process.stdout.write(`${JSON.stringify(status, null, 2)}\n`);
   if (!status.server_running) process.exitCode = 1;
   else {
-    process.stdout.write(`You-Only-Figure-Once Office.js bridge listening on ${status.origin}. Press Ctrl+C to stop.\n`);
+    process.stdout.write(`Sivia Office.js bridge listening on ${status.origin}. Press Ctrl+C to stop.\n`);
     const stop = async () => { await bridge.close(); process.exit(0); };
     process.once("SIGINT", stop);
     process.once("SIGTERM", stop);

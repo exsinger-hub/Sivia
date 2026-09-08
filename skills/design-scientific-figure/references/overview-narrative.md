@@ -14,6 +14,8 @@ These are reading tasks, not measured timing claims. A comparison may need balan
 
 Every region answers a question: what enters, what changes, what matters, or what follows? A bottom strip or side region is useful when it has a specific role such as training, evidence, stages, variants or downstream use. Include it only when the scientific story needs it. An architecture-only brief may end at an output; do not invent experiments or applications to fill a closure panel.
 
+Write each region as a short visual scene, not a module inventory: the question, the observable change, the objects showing that change, and any asset ids from the existing evidence ledger. For example, an alignment mechanism can preserve position markers while two traversal orders return to matching grid coordinates before fusion. The markers identify positions, not unchanged feature values. An evidence region instead shows the measured difference and its scope. Use problem–mechanism–evidence when the paper supports it, without imposing three rows or repeating the entire pipeline in a diagnosis strip.
+
 ## Make the abstraction explicit
 
 Add `narrative_map` and `abstraction_map` to the existing `design_spec`; reference existing ledgers instead of copying them into more files.
@@ -30,7 +32,12 @@ narrative_map:
     L2: [source_spans, repair_loop, retry_bound, frozen_weights]
     L3: [retrieval_inset, gate_inset]
   regions:
-    - {id: gate_inset, question: "What makes a claim supported?", role: mechanism}
+    - id: gate_inset
+      question: "What makes a claim supported?"
+      role: mechanism
+      visible_change: "A candidate claim is linked to its source span; unmatched claims take the repair path."
+      visual_carriers: [claim_text, source_span, correspondence_link, repair_branch]
+      asset_refs: [] # ids in the existing evidence ledger, not duplicated provenance
   mandatory_visible_cues: [source_to_gate, supported_branch, retry_limit, abstain_branch]
   expected_reading:
     L1: "A question becomes a checked answer or abstention."
@@ -83,7 +90,7 @@ arrow_convention: directed
 
 ## Explore the composition cheaply
 
-For a new overview or rejected global composition, draw a few low-fidelity silhouettes before publication objects. Compare the reading logic, focal mass, evidence placement and available type size. Do not build multiple polished variants unless requested. Select a direction using the user's established preferences; a design handoff does not itself require an approval pause.
+For a new overview or rejected global composition, explore low-fidelity silhouettes before publication objects when useful. Compare the reading logic, focal mass, evidence placement and available type size. Do not build multiple polished variants unless requested. Select a direction using the user's established preferences. In the ImageGen-first route, the actual raster draft must be shown and approved before native reconstruction; a skeleton or design handoff does not substitute for that approval. If an approved reference already exists, continue from it rather than reopening composition selection.
 
 Reference retrieval follows the scientific story. Extract one useful principle from a role-specific reference and record what is actually visible versus inferred. Low-resolution material can support composition analysis, not the reading of scientific labels or edge semantics. Hand-drawn cues are optional and should clarify a mechanism or human role. Do not impose a handwritten style on all scientific figures.
 

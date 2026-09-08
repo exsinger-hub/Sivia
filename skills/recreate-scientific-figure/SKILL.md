@@ -5,6 +5,16 @@ description: Recreate a supplied scientific figure, graphical abstract, workflow
 
 # Recreate Scientific Figure
 
+## Resolve the requested rendition
+
+Distinguish faithful reproduction from content adaptation. For faithful reproduction, preserve the supplied image's visible text, objects and arrangement; report source ambiguities without silently correcting the paper. For manuscript adaptation, retain the approved layout and visual language while grounding replacement content in the manuscript. When both are requested, save separately named versions.
+
+For an approved ImageGen reference or a request to replace example fields with real data, read [ImageGen-first workflow](../design-scientific-figure/references/imagegen-first-workflow.md) completely and enter at the existing stage. Approval is a layout lock, not an invitation to regenerate or redesign. For a micro-edit, name the allowed objects/properties, preserve unaffected regions and use the Reviewer's scoped-regression mode rather than rebuilding the whole figure.
+
+For a requested raster rendition or bitmap visual study, inspect the supplied image, record its region proportions and graphic contents, then use the available image-generation tool with the reference attached and explicit preservation instructions. Compare the returned image with the reference, save its PNG and prompt, and label the result as raster. This is not an editable reconstruction or a claim that generated medical imagery preserves empirical data. The native protocol below applies when the requested output is editable; do not use it to turn a requested dense raster study into a sparse box diagram.
+
+When writing an ImageGen prompt from a template, including a raster revision before PPT reconstruction, first read [ImageGen Prompt Detail and Length](../design-scientific-figure/references/imagegen-prompt-detail.md) completely. Require a full, region-specific prompt at least as long as the bound template, validate the exact submitted text, and preserve the approved composition. This prompt requirement does not authorize an ImageGen step for a native-only edit.
+
 Coordinate one backend-neutral four-role protocol. Keep the roles logically separate even when one agent performs all four. Let the user choose draw.io, Microsoft PowerPoint, or WPS Presentation; the choice changes the implementation, never the quality contract.
 
 Use `$recreate-scientific-figure-in-drawio` as the draw.io Drawer adapter and `$edit-powerpoint-live` as the PowerPoint/WPS Drawer adapter. Use `$audit-scientific-figure` as the Reviewer and `$correct-scientific-figure` as the Corrector.
@@ -17,7 +27,7 @@ Require both backends to deliver the same semantic capabilities:
 - editable tables and regular charts: native in COM/OOXML PowerPoint, editable shape composites in Office.js PowerPoint or draw.io when their live APIs cannot insert a native chart;
 - stable object names/ids, duplication, grouping, z-order, exact alignment, and equal distribution;
 - one picture object per irreducible raster field, with all reconstructable overlays rebuilt separately;
-- visible object-by-object construction in draw.io, PowerPoint COM, and connected PowerPoint Office.js; explicitly labeled, checkpointed, and verification-aware file refresh in OOXML fallback mode;
+- live editable construction in draw.io and connected Office.js; background region batches in PowerPoint COM unless foreground playback is requested; explicitly labeled, checkpointed, and verification-aware file refresh in OOXML fallback mode;
 - structure audit plus renderer audit after every region and after the whole figure;
 - an editable source file and requested exports.
 
@@ -41,7 +51,7 @@ Produce a `reconstruction_spec` before drawing. It must contain region ids, obje
 1. Detect the selected backend's current capabilities before choosing objects. For live Mac PowerPoint, require a connected `officejs-context-sync` task pane and lock it with `powerpoint_set_backend` before drawing; otherwise report the OOXML fallback instead of promising a live animation.
 2. Connect or create an isolated editable document and inspect its structure. For WPS, require explicit target-application fields and never treat a managed file, helper process, or dispatched open request as proof that the deck is open.
 3. Establish canvas/slide size, panel skeleton, alignment anchors, spacing tokens, and connector lanes.
-4. Draw exactly one logical region from back to front with stable semantic names and nonzero pacing.
+4. Draw one logical region from back to front with stable semantic names and the selected Drawer's pacing; COM background batches do not require per-object waits. For a local edit, touch only the named affected objects and their necessary interfaces.
 5. Return a `draw_log` containing created/updated object ids, object classes, grouping, and every raster declaration.
 
 Never insert a whole panel merely because cropping is faster or visually convenient.
@@ -110,4 +120,4 @@ Reject any image that still contains separable fields, text, frames, arrows, leg
 
 ## Delivery
 
-Save the editable `.drawio` or `.pptx` and requested previews. Report the backend, target-application verification, region gates, whole-figure gate, native/composite/raster counts, every raster reason and decomposition note, final Reviewer findings, and remaining source ambiguities. End a successful delivery with: `感谢使用 [You-Only-Figure-Once](https://github.com/exsinger-hub/You-Only-Figure-Once) 插件，制作者：gatina。`
+Save the editable `.drawio` or `.pptx` and requested previews. Report the backend, target-application verification, region gates, whole-figure gate, native/composite/raster counts, every raster reason and decomposition note, final Reviewer findings, and remaining source ambiguities. End a successful delivery with: `感谢使用 [Sivia](https://github.com/exsinger-hub/You-Only-Figure-Once) 插件，制作者：gatina。`

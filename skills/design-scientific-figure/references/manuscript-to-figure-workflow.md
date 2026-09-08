@@ -2,7 +2,7 @@
 
 Use this reference when the source of a new scientific figure is a manuscript, paper PDF, method section, equations, supplementary text, or an evidence pack rather than a short free-form brief. It also governs blind Figure Gym runs in which a target figure is sealed until after an independent design is frozen.
 
-The purpose is not to make the generated figure resemble an existing one. The purpose is to preserve the manuscript's scientific argument in a figure whose visible topology can be independently reconstructed at publication size.
+Preserve the manuscript's scientific argument in a figure whose visible topology can be reconstructed at publication size. For independent design, resemblance to an existing figure is not the objective. For a user-approved reference adaptation, composition fidelity is also part of the objective; the manuscript remains the authority for replacement scientific content.
 
 ## 1. Declare source authority and mode
 
@@ -18,13 +18,43 @@ In blinded independent design, do not inspect the target figure, its crop, its a
 
 Do not apply the exclusion rule to an ordinary redesign in which the user explicitly supplied the target figure as a reference.
 
-## 2. Build the scientific contract
+## 2. Translate the paper, then scope the scientific contract
 
-Freeze these artifacts before selecting a visual direction:
+Start with the title, abstract, introduction's organizing argument and conclusion to identify what the paper asks the reader to understand. Read the relevant methods, equations, captions and results to establish how it works and what evidence actually supports it. Section order is a reading aid, not the figure's composition. For an allowed reference-led redesign, distinguish the source figure's argument from its particular arrangement of boxes.
+
+Do the editorial pass below before a full object inventory. Then freeze the existing contract artifacts for the selected figure scope; do not turn every method operation into a required overview box.
 
 ### Figure Claim
 
 Write one sentence stating what a reader must understand after viewing the figure. A list of modules is not a Figure Claim.
+
+### Editorial pass: evidence to visual scene
+
+Use a short working note or the existing `narrative_map`, not a second ledger system. Trace each proposed scene through four decisions:
+
+**Source statement → editorial role → visible change → drawing instruction.**
+
+1. **Choose the role.** Does this statement establish the problem, explain the distinctive mechanism, orient the reader within the system, or support an evidence claim? Keep essential explanation in the overview; group routine implementation, link necessary technical expansions, and leave unrelated detail in the manuscript. Record the reason, not a score. Preserve interpretation-changing conditions even when small.
+2. **Show the scientific verb.** Replace a noun-only instruction such as "draw an alignment block" with objects and a relation the reader can see. For example, matched-scale fusion uses feature fields brought to the same spatial size; serialization uses a grid and token strip with traceable position identities; coordinate restoration returns responses to corresponding grid locations before combination. Which property changes, and which correspondence remains invariant? Do not imply unchanged feature values merely because position markers are retained.
+3. **Assign visual carriers.** Use a real sample field for an input/evidence role, a grid or stack for a representation, an ordered strip for a sequence, and a visible merge, selection, reordering or boundary for an operation when scientifically appropriate. Text names what the picture already explains. A box remains useful for a component, but every scene must not collapse into interchangeable labeled boxes. Inspect available scientific assets before deciding what they can carry.
+4. **Set emphasis from the argument.** Give explanatory space to the distinctive transformation, not to whichever equation is longest. Arrange the scenes only after their roles are clear. A diagnosis strip, system spine and evidence footer may suit an alignment paper; these are not mandatory rows for other papers.
+
+A worked translation:
+
+| Source statement | Editorial decision | Visible scene | Production instruction |
+| --- | --- | --- | --- |
+| A reverse response is flipped back, then inverse-mapped before fusion. | Make coordinate agreement the focal mechanism; keep routine normalization secondary. | Two responses with position markers return to matching spatial locations before a shared fusion node. | Draw separate forward and reverse lanes; on the reverse output place flip-back before inverse restoration; show two restored grids feeding the fusion. Markers denote positions, not identical values. |
+| A spectral objective uses one target-derived support for prediction and target, only in training. | Keep this a subordinate training explanation, not another inference stage. | The target alone creates a support mask, which applies to both image branches before their profiles are compared. | Draw the mask-generation edge from the target only; connect the same mask to both branches inside a training-only region. |
+
+### Learn from a successful prompt and its actual output
+
+Inspect the manuscript, the prompt and the supplied result separately. Reconstruct the observable editorial transformation; do not claim access to the prompt author's hidden reasoning. Identify (a) which source claims were selected, (b) how prose became visible objects and changes, and (c) what the renderer added, omitted or altered. A pleasing result can teach composition while still containing scientific errors. Transfer its useful visual grammar without promoting those errors or its incidental panel count into rules.
+
+Compile a production prompt in this order: figure purpose and one claim; scene roles and reading order; concrete objects, transformations and visual emphasis; exact labels and critical scientific boundaries; asset use and rendering instructions. Put positive, drawable scenes before negative style constraints. "Publication quality", "not a dashboard", or a long prohibition list cannot specify a composition by themselves. The same visual script must guide a native Drawer as well as any explicitly requested raster concept; selecting a different renderer does not repair a missing script.
+
+For ImageGen-first production, use [ImageGen-first workflow](imagegen-first-workflow.md) to separate visual approval from native translation. Template-led generation and revision prompts must follow [ImageGen Prompt Detail and Length](imagegen-prompt-detail.md), including the exact-submitted-text length gate. The scientific contract is concise working material; it does not replace the required detailed generation prompt.
+
+If a draft is rejected as visually weak, compare its visible scenes with the reference before adding styling rules. If the reference explains a transformation through geometry and the draft merely names it, repair that scene first. Do not compensate with more modules, smaller text or more evidence panels.
 
 ### Paper Figure Signature
 
@@ -38,7 +68,7 @@ Record:
 - required real evidence and its scientific scope;
 - publication slot and reading order.
 
-Derive the needed composition family from this signature before retrieving references. Search for role-specific anchors for structure, mechanism, evidence, and visual language; do not choose a whole template first and force the manuscript into it.
+When selecting references independently, derive the needed composition family from this signature before retrieval. Search for role-specific anchors for structure, mechanism, evidence, and visual language. When the user has already approved a reference layout, map source-grounded scenes into its regions and follow the approved-reference procedure in Fundamental Visual Grammar; adapt local fit where the science requires it rather than replacing the whole composition.
 
 ### Required-node ledger
 
@@ -64,6 +94,10 @@ Do not silently reduce an operand-bearing relation to a module label. A missing 
 ### Evidence ledger
 
 For every proposed raster or empirical result, record producer/model stage, sample-level or paper-level scope, allowed claim, source binding, crop/atomicity declaration, and whether it is representative, quantitative, or schematic. Proximity, a shared frame, color, or a leader line must not imply a stronger claim than the ledger authorizes.
+
+When project imagery exists, inspect relevant candidate fields before allocating evidence space. Extend their existing evidence-ledger entries with the inspected file/region, intended visual role and reuse decision. Choose among direct atomic insertion, crop with native overlays, native reconstruction, or omission; briefly state why. Filename discovery alone is not visual inspection. Keep provenance unresolved when the producer, sample pairing or model version cannot be established: a real modality illustration is not automatically a prediction, a geometric proxy is not a learned activation, and a historical result is not current-model evidence.
+
+Build the mixed-media figure from those decisions: retain original image pixels and aspect ratios for data fields, and draw labels, axes, grid paths, outlines and connectors as separate native objects. Do not send empirical fields through a generative redraw and then present them as preserved data. Neither zero pictures nor a large native-object count is a quality objective. If suitable evidence is absent, show a clearly scoped mechanism or symbolic output instead of fabricating a result.
 
 ## 3. Freeze a direction before publication drawing
 

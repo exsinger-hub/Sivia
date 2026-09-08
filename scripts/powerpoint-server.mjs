@@ -937,7 +937,7 @@ async function resolveBackend(action, args = {}) {
   }
   if (backendPreference === "officejs") {
     const status = await officeJsStatus(Number(args.wait_for_officejs_ms || args.wait_for_connection_ms || 0));
-    if (!status.connected) throw new Error("Office.js was selected but its PowerPoint task pane is not connected. Prepare and trust the localhost certificate, sideload officejs/manifest.xml, open You-Only-Figure-Once Live in the current deck, and retry.");
+    if (!status.connected) throw new Error("Office.js was selected but its PowerPoint task pane is not connected. Prepare and trust the localhost certificate, sideload officejs/manifest.xml, open Sivia Live in the current deck, and retry.");
     return "officejs";
   }
   if (backendPreference === "com") {
@@ -1250,7 +1250,7 @@ async function handleTool(name, args = {}) {
     }
     if (requested === "officejs") {
       const status = await officeJsStatus(Number(args.wait_for_connection_ms || 0));
-      if (!status.connected) throw new Error("Office.js task pane is not connected. Open You-Only-Figure-Once Live in the current PowerPoint deck and retry.");
+      if (!status.connected) throw new Error("Office.js task pane is not connected. Open Sivia Live in the current PowerPoint deck and retry.");
     }
     backendPreference = requested;
     return {

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Cross-platform file-backed PPTX bridge for You-Only-Figure-Once.
+"""Cross-platform file-backed PPTX bridge for Sivia.
 
 The preferred Windows Microsoft PowerPoint backend edits the live COM model.
 This bridge covers Microsoft PowerPoint for Mac and WPS Presentation on Windows

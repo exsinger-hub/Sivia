@@ -325,7 +325,7 @@
         family("table", "ShapeCollection.addTable", supports("1.8"), ["native editable tables"]),
         family("chart", "Editable shape composite", false, ["regular charts when live visibility is more important than embedded chart data"], { fallback_available: true, implementation: "editable_shape_composite" }),
         family("picture_or_svg", "GeometricShape fill.setImage", supports("1.8"), ["atomic microscopy or texture fields"]),
-        family("duplicate", "Reconstruction from You-Only-Figure-Once tags", false, ["basic tagged text and geometric shapes"], { fallback_available: true }),
+        family("duplicate", "Reconstruction from Sivia tags", false, ["basic tagged text and geometric shapes"], { fallback_available: true }),
         family("group", "ShapeCollection.addGroup", supports("1.8"), ["panel-local groups"]),
         family("ungroup", "ShapeGroup.ungroup", supports("1.8"), ["editing grouped members"]),
         family("z_order", "Shape.setZOrder", supports("1.8"), ["layering"]),
@@ -928,7 +928,7 @@
       let duplicate;
       if (shape.type === "TextBox") duplicate = slide.shapes.addTextBox(shape.textFrame.textRange.text || "", options);
       else if (shape.type === "GeometricShape" && !shapeType.isNullObject) duplicate = slide.shapes.addGeometricShape(shapeType.value, options);
-      else throw new Error("Office.js can only duplicate You-Only-Figure-Once text boxes and tagged geometric shapes without flattening. Recreate this object with its original add tool.");
+      else throw new Error("Office.js can only duplicate Sivia text boxes and tagged geometric shapes without flattening. Recreate this object with its original add tool.");
       duplicate.name = String(args.new_name);
       if (shape.fill.type === "Solid") {
         duplicate.fill.setSolidColor(shape.fill.foregroundColor);

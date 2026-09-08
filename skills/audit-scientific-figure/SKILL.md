@@ -7,6 +7,10 @@ description: Review a scientific figure or overview in draw.io, PowerPoint or WP
 
 Act as the Reviewer. Review read-only evidence and issue findings; do not draw during the review phase. A successful MCP call is not evidence that the figure is visually or structurally correct.
 
+## Resolve review scope
+
+Distinguish a new/full-publication review from scoped regression after an approved micro-edit. In scoped regression, inspect changed objects, their interfaces and a fresh whole-figure render for collateral changes; compare unchanged layout and style with the accepted baseline. Apply the categories below to that scope. Do not require fresh masked-view reading of an unchanged narrative just to approve a label or image replacement. Report inherited/out-of-scope defects separately without silently authorizing their repair; a scoped pass is not renewed whole-figure publication approval. A structural change or explicit full-publication review uses all applicable gates below.
+
 ## Collect both evidence channels
 
 For PowerPoint or WPS, inspect the deck, run `powerpoint_audit_figure`, and export the slide through `powerpoint_export_slide_image`. Record whether the renderer is Office.js PowerPoint, COM PowerPoint, or the OOXML fallback. Treat renderer differences as application-specific evidence, not permission to flatten editable content. In Office.js, treat `connector_mode=geometry_backed` and `implementation=officejs_editable_shape_composite` as declared limitations that still require visual routing and editability review.
@@ -23,7 +27,7 @@ For a paper overview, graphical abstract, teaser, final whole-figure review, or 
 
 Review the figure at thumbnail scale for silhouette and focal hierarchy, fit-to-slide scale for composition and rhythm, and readable scale for typography, spacing, connectors, and local finish. When multiple style candidates are presented, compare them together; palette, font, corner-radius, or border changes alone do not constitute different directions.
 
-Judge containers, bottom strips and line styles by their scientific role and effect on the reading logic. Treat an equal-weight card wall or decorative hierarchy as class A only when it obscures the intended focal hierarchy. Require recomposition for that failure; useful scope containers and parallel study arms remain valid.
+Judge containers, bottom strips and line styles by their scientific role and effect on the reading logic. Treat an equal-weight card wall or decorative hierarchy as class A only when it obscures the intended focal hierarchy. Recommend recomposition for that failure, subject to the user's change scope; useful scope containers and parallel study arms remain valid. The user's approved composition cannot be replaced solely because a generic style heuristic prefers another layout.
 
 For overviews, read [Overview Narrative](../design-scientific-figure/references/overview-narrative.md) completely. First give an independent Reviewer only the title/L3-hidden grayscale view and physical size, record their reading, then show the full-density title-hidden grayscale view and save that reading too. Freeze both original responses before revealing the full color image and Figure Claim, then the contract, abstraction map and structure evidence. Withhold object counts and previous verdicts until after the visual readings. Record prior exposure: same-context judgment is `self_review`; an independent Reviewer already told the story is `informed_review`, not unprimed evidence.
 

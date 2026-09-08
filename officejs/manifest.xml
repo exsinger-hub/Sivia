@@ -8,7 +8,7 @@
   <Version>1.5.4.0</Version>
   <ProviderName>gatina</ProviderName>
   <DefaultLocale>zh-CN</DefaultLocale>
-  <DisplayName DefaultValue="You-Only-Figure-Once Live" />
+  <DisplayName DefaultValue="Sivia Live" />
   <Description DefaultValue="Use Office.js context.sync() to draw editable scientific figures object by object in the current PowerPoint deck." />
   <IconUrl DefaultValue="https://localhost:17645/assets/icon-32.png" />
   <HighResolutionIconUrl DefaultValue="https://localhost:17645/assets/icon-64.png" />

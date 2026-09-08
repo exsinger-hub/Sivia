@@ -7,6 +7,10 @@ description: Convert Reviewer findings for a scientific illustration into minima
 
 Act as the Corrector. Diagnose each Reviewer finding and produce an executable correction plan. Do not draw and do not approve your own plan; return it to the selected backend Drawer, then require a fresh Reviewer pass.
 
+## Preserve the agreed change scope
+
+Before applying the recipes below, bind the accepted reference/source and the user's allowed changes. For a micro-edit, list the exact objects and properties to change and the layout/style to preserve. A global finding may justify proposing a redesign, but does not authorize one: put split/merge/re-layout operations in a separate proposal and obtain the user's agreement first. Report source errors even when outside scope, without silently rewriting a faithful reproduction. Use scoped regression for local fixes; do not require unrelated regions to be redesigned before delivering an otherwise verified local correction.
+
 When the Reviewer supplies an A/B/C publication-aesthetic finding, read [Publication Aesthetic Review](../audit-scientific-figure/references/publication-aesthetic-review.md) completely before producing corrections.
 
 When a finding concerns the global silhouette, reading spine, focal hierarchy, role-to-shape mapping, connector prominence, anti-dashboard motifs, or a failed visual-grammar receipt, also read [Fundamental Visual Grammar](../design-scientific-figure/references/fundamental-visual-grammar.md) completely. Treat these as upstream design defects. Replace the composition or grammar before changing palette, corner radius, shadow, font family, or decorative finish.
@@ -47,7 +51,7 @@ Prefer the smallest change set that fixes the root cause and preserves already a
 
 For manuscript-derived work, identify the earliest stage at which the correct fact or relation was lost. If the manuscript extraction or frozen contract is wrong, update that upstream artifact before prescribing slide operations, then rebuild only the affected downstream objects. Do not conceal an upstream omission with a terminal label, color cue, nearby prose, or raster replacement.
 
-For a class-A global composition, visual-center, style-mixture, or proportion failure, the smallest sufficient fix may be a region-level or whole-slide re-layout. Do not preserve local geometry when doing so would leave the root cause intact.
+For a class-A global composition, visual-center, style-mixture, or proportion failure in an authorized redesign, the smallest sufficient fix may be a region-level or whole-slide re-layout. If that exceeds the agreed change scope, propose it separately rather than executing it as a micro-edit.
 
 For a crowded overview or failed reader reconstruction, read [Overview Narrative](../design-scientific-figure/references/overview-narrative.md). Repair the abstraction map and level assignment before squeezing objects. Move routine operations into linked readable expansions; keep external interfaces, conditions and exact inverse/update semantics visible. For missing renderer or masked-view evidence, prescribe the missing export rather than changing the figure or issuing a pass.
 

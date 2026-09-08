@@ -14,9 +14,23 @@ The reader should be able to identify, without the title:
 - which information is supporting context, a skip, evidence, or training-only metadata;
 - where the story ends.
 
-If those answers are unclear at thumbnail scale, redesign the composition. Do not proceed to cosmetic refinement.
+For a new design, if those answers are unclear at thumbnail scale, repair the composition before cosmetic refinement. For an already approved reference or a micro-edit, report the concrete reading problem and propose a separate structural change; the rules below do not override the user's layout lock.
 
 ## Learn rules from references, not templates
+
+### When the user has already approved a reference composition
+
+Treat the selected image's layout as a task constraint, not merely a mood reference. Distinguish faithful reproduction (preserve its visible content) from manuscript adaptation (preserve its composition and visual language, replace content from the paper). If both are requested, deliver separately named artifacts so content corrections are not passed off as faithful copying.
+
+Read its aspect ratio, relative band heights, column widths, exterior padding, gutters, text-to-graphic balance and local object scale. Record these in the existing design or reconstruction specification. Fill each region with the actual scientific objects and transformations before adjusting local fit. Dense feature stacks, grid/sequence correspondences and real evidence fields can carry explanatory content that a few labeled rectangles cannot.
+
+Preserve substantial mechanism regions and populated support panels. Emphasis can come from reading order, typography and contrast; the main pipeline need not occupy the greatest area. If a region feels empty, enlarge or arrange its meaningful objects, reclaim unneeded panel space, or bring an already in-scope explanatory relation into view. Do not fill it with decorative objects, repeated prose or invented experiments. If crowded, shorten repeated wording and adjust local widths while preserving readable scientific relations.
+
+Compare the actual complete render with the approved image at equal display size. An unfilled wireframe cannot establish comparable graphic density. Judge grouping and focal clarity in context: approved dashed panels, balanced columns and narrow bold header bands are not defects merely because a default style heuristic discourages them. Reference-specific proportions belong to this task, not a universal template for every paper.
+
+On a micro-edit, freeze canvas size, region bounds, relative scales, typography, palette, major routes and unaffected objects. Apply only named text/data/asset changes and their necessary local fit. Do not use publication-size concerns, general anti-dashboard rules or an aesthetic finding to split, merge, resize or rearrange approved panels without user agreement. Report real inherited defects separately; a local regression pass does not certify the whole figure for publication.
+
+### When independently selecting references
 
 Retrieve references by communication role rather than by superficial resemblance. Useful roles include:
 

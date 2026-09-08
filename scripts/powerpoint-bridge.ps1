@@ -224,7 +224,7 @@ function Invoke-Capabilities {
         [pscustomobject][ordered]@{ family = "z_order"; powerpoint_api = "Shape.ZOrder"; host_supported = $shapeMethods -contains "ZOrder"; editable = $true; preferred_for = @("layering", "backgrounds", "overlays") },
         [pscustomobject][ordered]@{ family = "align"; powerpoint_api = "ShapeRange.Align"; host_supported = $shapeRangeMethods -contains "Align"; editable = $true; preferred_for = @("shared edges", "shared centers", "regular rows and columns") },
         [pscustomobject][ordered]@{ family = "distribute"; powerpoint_api = "ShapeRange.Distribute"; host_supported = $shapeRangeMethods -contains "Distribute"; editable = $true; preferred_for = @("equal horizontal gaps", "equal vertical gaps", "repeated motifs") },
-        [pscustomobject][ordered]@{ family = "figure_audit"; powerpoint_api = "You-Only-Figure-Once structure and renderer audit"; host_supported = $true; editable = $false; preferred_for = @("text fit", "connector clearance", "repeated layout", "atomic raster review") },
+        [pscustomobject][ordered]@{ family = "figure_audit"; powerpoint_api = "Sivia structure and renderer audit"; host_supported = $true; editable = $false; preferred_for = @("text fit", "connector clearance", "repeated layout", "atomic raster review") },
         [pscustomobject][ordered]@{ family = "media_or_ole"; powerpoint_api = "Shapes.AddMediaObject2/AddOLEObject"; host_supported = (($shapeCollectionMethods -contains "AddMediaObject2") -or ($shapeCollectionMethods -contains "AddOLEObject")); editable = $true; preferred_for = @("embedded media or external objects") }
     )
 

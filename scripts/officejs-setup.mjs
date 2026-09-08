@@ -19,7 +19,7 @@ async function generateCertificate() {
   const common = [
     "req", "-x509", "-newkey", "rsa:2048", "-nodes", "-sha256", "-days", "825",
     "-keyout", paths.private_key_path, "-out", paths.certificate_path,
-    "-subj", "/CN=localhost/O=You-Only-Figure-Once Local Development",
+    "-subj", "/CN=localhost/O=Sivia Local Development",
   ];
   try {
     await execFileAsync("openssl", [...common, "-addext", "subjectAltName=DNS:localhost,IP:127.0.0.1", "-addext", "basicConstraints=critical,CA:TRUE"], { maxBuffer: 4 * 1024 * 1024 });
@@ -27,7 +27,7 @@ async function generateCertificate() {
     const configPath = path.join(paths.state_dir, `openssl-${process.pid}.cnf`);
     const config = [
       "[req]", "distinguished_name=req_dn", "x509_extensions=v3_req", "prompt=no",
-      "[req_dn]", "CN=localhost", "O=You-Only-Figure-Once Local Development",
+      "[req_dn]", "CN=localhost", "O=Sivia Local Development",
       "[v3_req]", "subjectAltName=@alt_names", "basicConstraints=critical,CA:TRUE", "keyUsage=critical,digitalSignature,keyEncipherment,keyCertSign",
       "[alt_names]", "DNS.1=localhost", "IP.1=127.0.0.1", "",
     ].join("\n");
@@ -75,15 +75,15 @@ function nextSteps() {
     return [
       `Review and trust this local certificate in macOS Keychain Access: ${paths.certificate_path}`,
       "Restart Microsoft PowerPoint after trusting the certificate and sideloading the manifest.",
-      "In a new Codex task, select You-Only-Figure-Once and call powerpoint_officejs_status once to start the local bridge.",
-      "Then in PowerPoint, open Insert > My Add-ins > You-Only-Figure-Once Live and keep the task pane open.",
+      "In a new Codex task, select Sivia and call powerpoint_officejs_status once to start the local bridge.",
+      "Then in PowerPoint, open Insert > My Add-ins > Sivia Live and keep the task pane open.",
       "Call powerpoint_officejs_status again; connected must be true before drawing.",
     ];
   }
   return [
     `Trust the localhost certificate for the current user after reviewing it: ${paths.certificate_path}`,
     "Sideload officejs/manifest.xml with the Microsoft Office add-in development procedure for this platform.",
-    "Call powerpoint_officejs_status in a new Codex task to start the bridge, then open You-Only-Figure-Once Live in PowerPoint and check status again.",
+    "Call powerpoint_officejs_status in a new Codex task to start the bridge, then open Sivia Live in PowerPoint and check status again.",
   ];
 }
 

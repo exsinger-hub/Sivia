@@ -1,15 +1,25 @@
 ---
 name: design-scientific-figure
-description: Design a new scientific illustration, graphical abstract, workflow, architecture figure, or mechanism diagram from a brief or manuscript without a reference image, for visible draw.io, Microsoft PowerPoint, or WPS Presentation. Use when a clean editable publication layout, manuscript-to-figure translation, structurally distinct style directions, planned connector lanes, consistent visual grammar, and Designer-to-Drawer-to-Reviewer-to-Corrector quality gates are required.
+description: Translate a research brief or manuscript into an overview, architecture or mechanism figure. Use for source-grounded visual scenes, detailed template-led ImageGen prompts, visual-draft approval and faithful editable PPT reconstruction, or explicitly requested native design in PowerPoint, WPS or draw.io. Existing reference-only reconstruction belongs to recreate-scientific-figure.
 ---
 
 # Design Scientific Figure
 
-Act as the Designer in the four-role You-Only-Figure-Once protocol. Produce a backend-neutral design specification before the Drawer adds any object. The selected backend affects object mapping, not the design quality or acceptance gate.
+Act as the Designer in the four-role Sivia protocol. Produce a backend-neutral design specification before the Drawer adds any object. The selected backend affects object mapping, not the design quality or acceptance gate.
+
+## Bind the requested execution
+
+For new manuscript overviews, prefer the [ImageGen-first workflow](references/imagegen-first-workflow.md) when the image-generation tool is available. Read that reference completely when using this route or continuing an already approved visual draft. Respect explicit native-only, prompt-only, reference-reconstruction and read-only requests; do not insert generation into those tasks. If ImageGen-first is requested but unavailable, continue source/prompt preparation and report the missing rendering capability rather than silently switching production methods.
+
+Record `execution` in the existing `design_spec`: requested deliverable, renderer, output path and whether editability is required. For editable PowerPoint/draw.io requests, use the native Drawer and its fresh renderer export. A PNG, including one inserted into a slide, does not satisfy that contract.
+
+For a requested raster image, ImageGen rendition or bitmap-reference visual study, use the available image-generation tool after the same source-to-scene design work. Inspect local references before passing them to the renderer, preserve the approved composition, save the prompt and actual output, and compare that output with the reference and source. Report it as raster, not native reconstruction or preserved empirical pixels. Reading this skill or writing a prompt without producing and inspecting the requested artifact is not an execution test. In raster mode, the native capability probes, object-level handoff and native editability gates below do not apply; scientific and visible-reference checks still do.
+
+For template-led ImageGen prompts, including the ImageGen-first then editable-PPT workflow, read [ImageGen Prompt Detail and Length](references/imagegen-prompt-detail.md) completely before drafting. Each complete generation or revision prompt must be at least as long as its bound template and specify the figure region by region. Run its length check on the exact text to be submitted; do not generate with a shorter summary or change-only instruction after checking a longer draft.
 
 ## Detect constraints
 
-Read the selected backend's capabilities first. Use `powerpoint_status` then `powerpoint_get_capabilities` for PowerPoint/WPS, or `drawio_live_get_capabilities` for draw.io. When live Mac PowerPoint is requested, also require `powerpoint_officejs_status` to report a connected task pane. Design only with semantic objects the selected adapter can create editably; use declared editable composites when a native monolithic object is unavailable.
+Before native construction, read the selected backend's capabilities. Use `powerpoint_status` then `powerpoint_get_capabilities` for PowerPoint/WPS, or `drawio_live_get_capabilities` for draw.io. When live Mac PowerPoint is requested, also require `powerpoint_officejs_status` to report a connected task pane. Design only with semantic objects the selected adapter can create editably; use declared editable composites when a native monolithic object is unavailable. Raster/prompt preparation does not require launching or connecting a presentation application.
 
 ## Define the message
 
@@ -26,7 +36,9 @@ Record:
 
 When the source is a manuscript, paper PDF, method section, equations, supplementary text, or an evidence pack, read [Manuscript-to-Figure Workflow](references/manuscript-to-figure-workflow.md) completely before freezing the design.
 
-Freeze the Figure Claim, Paper Figure Signature, required-node ledger, required-edge ledger, equation-operand ledger, and evidence ledger before choosing a direction. Derive the publication slot and composition family from that contract before reference retrieval. In blinded independent design, also require a target-paper and derivative-asset exclusion receipt before retrieved assets are materialized.
+First translate the paper into a Figure Claim and source-linked visual scenes using the manuscript workflow's editorial pass. Decide what this figure explains, what belongs in a linked detail, and what stays in the paper before assigning coordinates. A complete module inventory is not this translation.
+
+Then freeze the Paper Figure Signature and the in-scope node, edge, operand and evidence ledgers. Derive the publication slot and composition family from this contract before reference retrieval. In blinded independent design, also require a target-paper and derivative-asset exclusion receipt before retrieved assets are materialized.
 
 Do not enter publication drawing until the selected direction maps every required node and edge or records a source-grounded permitted omission. A missing operand, condition, inverse/alignment step, evidence producer, or update owner is a contract failure rather than a styling choice.
 
@@ -37,6 +49,8 @@ When the user asks to design independently without seeing an existing overview a
 Do not inspect the target figure, its caption, alt text, layout description, or derivative diagram before the editable artifact and fresh review render pass the pre-reveal gate. Record an exclusion receipt and freeze receipt in human-readable form. After reveal, preserve the blind artifact unchanged, compare communication decisions rather than pixel similarity, and put any revised response in a separately identified version.
 
 ## Build the layout system
+
+When the user has selected a supplied image's composition, follow the approved-reference procedure in [Fundamental Visual Grammar](references/fundamental-visual-grammar.md). Preserve its useful region proportions and graphic density while filling it with source-grounded scenes. Default simplicity or focal-point heuristics do not authorize replacing that layout with a sparse pipeline.
 
 For an overview, graphical abstract or dense method figure, read [Overview Narrative](references/overview-narrative.md) completely first. Freeze a `narrative_map` for first-glance, working and technical reading, plus an `abstraction_map` linking the complete scientific contract to main groups and readable expansions. Coverage spans the main figure and linked detail panels; it does not require every implementation node to be directly visible in the overview. Preserve all interpretation-changing boundaries and operations at L1/L2.
 
@@ -96,6 +110,7 @@ Return a `design_spec` containing:
 - exact text and scientific topology;
 - connector source, target, sites, waypoints, lanes, and arrow convention;
 - for overviews, `narrative_map`, node-and-edge `abstraction_map`, independent edge `semantics`/`prominence`, physical publication width, effective font sizes, and named title/L3 objects for real review variants;
+- the requested `execution` binding, and region-level visible changes with references to inspected assets in the existing evidence ledger;
 - grouping and z-order;
 - raster decomposition declarations;
 - artifact mode (`direction_review` or `publication`), final display size, and figure archetype;
