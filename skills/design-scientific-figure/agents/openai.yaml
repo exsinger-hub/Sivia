@@ -1,4 +1,4 @@
 interface:
   display_name: "Scientific Figure Designer"
   short_description: "Turn scientific claims into readable editable overviews"
-  default_prompt: "Use $design-scientific-figure to understand this paper and draw a clear scientific overview highlighting its core contribution, with editable PowerPoint output."
+  default_prompt: "Use $design-scientific-figure to read this PDF, write a detailed template-grounded prompt and generate an overview image; wait for my feedback and explicit PPT request before reconstruction."

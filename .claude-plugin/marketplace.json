@@ -1,0 +1,17 @@
+{
+  "name": "sivia",
+  "owner": {
+    "name": "gatina",
+    "url": "https://github.com/exsinger-hub/Sivia"
+  },
+  "metadata": {
+    "description": "Understand papers and turn their core contributions into scientific overviews, with built-in detailed visual templates and editable figure reconstruction."
+  },
+  "plugins": [
+    {
+      "name": "sivia",
+      "source": "./",
+      "description": "Understand papers and turn their core contributions into scientific overviews, with built-in detailed visual templates and editable figure reconstruction."
+    }
+  ]
+}

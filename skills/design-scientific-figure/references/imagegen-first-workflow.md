@@ -1,6 +1,6 @@
 # ImageGen-first scientific figure workflow
 
-Use for manuscript overviews whose production route is detailed prompt, ImageGen visual draft, user approval, editable reconstruction and local real-data replacement. It is the preferred new-overview route when ImageGen is available. An explicit native-only, prompt-only, read-only or already-approved-reference request keeps its own route. This workflow does not create permission to publish manuscripts or data.
+Use for manuscript overviews whose production route is detailed prompt, ImageGen visual draft, user feedback and optional explicitly requested editable reconstruction with local real-data replacement. It is the preferred new-overview route when ImageGen is available. An explicit native-only, prompt-only, read-only or already-approved-reference reconstruction request keeps its own route. This workflow does not create permission to publish manuscripts or data.
 
 The user-facing entry is the paper plus the desired figure, not a recital of these stages. Do not ask users to write a long ImageGen prompt or find a template as a prerequisite. When no external template is selected, use the [bundled templates](prompt-templates.md) after understanding the paper. Ask only for missing source content or a choice that materially changes the figure.
 
@@ -42,13 +42,15 @@ When the user asks to see prompts first, present the complete prompts before cal
 
 Use the available image-generation tool and its required image skill. Inspect local image references before attaching them. Preserve both the exact prompt and returned image. Review the complete image for scientific topology, reference fidelity, density, hierarchy and label accuracy. Do not claim that saving a prompt or preparing a script is an executed generation test.
 
-Present the visual draft for approval before native reconstruction. If it is rejected, diagnose the concrete scene that failed; refine the full prompt rather than automatically adding modules, plots or smaller text. Use a full revised prompt that still passes the bound length floor, even for a small raster edit.
+Present the actual image, its complete prompt and a concise explanation, then end the turn and ask what should change and whether the user wants editable PPT reconstruction. Do not launch, connect to or write a presentation during this pause. No reply means no next stage. If the user requests image changes, refine only those regions using a full revised prompt that still passes the bound length floor; show the revised image and pause again. Do not automatically add modules, plots or smaller text.
+
+Keep visual approval and reconstruction authorization separate in the existing notes, without introducing a new registry. "This image is good" approves the image only; offer the optional PPT step and stop. "This image is approved; now make an editable PPT" authorizes that step. An earlier wish for an eventual PPT does not bypass this post-image choice. An explicitly supplied approved reference plus a reconstruction request can proceed immediately. If the user wants only an image, deliver the image and full prompt and finish here.
 
 Once approved, record the reference path/version, region bounds, proportions, styles, main routes and permitted content corrections. If the user has already approved an image, reuse that approval and skip regeneration. Visual approval does not validate invented numbers or fabricated data; identify source discrepancies and handle them according to whether faithful copying or scientific adaptation was requested.
 
 ## 5. Reconstruct faithfully as editable objects
 
-Enter `$recreate-scientific-figure` with the approved reference and source-grounded content decisions. The selected native Drawer recreates text, operators, feature stacks, grids, tokens, arrows, tables and reconstructable charts as native objects or editable composites. Each irreducible image field remains a separate picture with native labels and overlays.
+Only after the user explicitly requests reconstruction, enter `$recreate-scientific-figure` with the approved reference and source-grounded content decisions. Keep PowerPoint/WPS work in the background with focus preservation. If the selected backend requires foreground operation, report that limitation and ask for a supported alternative rather than activating the application. The selected native Drawer recreates text, operators, feature stacks, grids, tokens, arrows, tables and reconstructable charts as native objects or editable composites. Each irreducible image field remains a separate picture with native labels and overlays.
 
 Keep canvas ratio, panel proportions, spacing, object scale, palette and connector routes consistent with the accepted image. Compare fresh native-renderer exports with the reference at equal display size. Do not replace dense scientific glyphs with generic empty boxes or treat a whole-slide PNG embedded in PPT as editable reconstruction.
 

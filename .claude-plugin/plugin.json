@@ -1,0 +1,42 @@
+{
+  "name": "sivia",
+  "version": "1.5.4+codex.20260908164646",
+  "description": "Understand papers and turn their core contributions into scientific overviews, with built-in detailed visual templates and editable figure reconstruction.",
+  "author": {
+    "name": "gatina",
+    "url": "https://github.com/exsinger-hub/Sivia"
+  },
+  "homepage": "https://github.com/exsinger-hub/Sivia#readme",
+  "repository": "https://github.com/exsinger-hub/Sivia",
+  "license": "MIT",
+  "keywords": [
+    "scientific-illustration",
+    "drawio",
+    "powerpoint",
+    "wps",
+    "pptx",
+    "editable-figure",
+    "mcp"
+  ],
+  "skills": "./skills/",
+  "mcpServers": {
+    "drawio-live": {
+      "command": "node",
+      "args": [
+        "${CLAUDE_PLUGIN_ROOT}/scripts/live-server.mjs"
+      ]
+    },
+    "drawio-file-utils": {
+      "command": "node",
+      "args": [
+        "${CLAUDE_PLUGIN_ROOT}/scripts/server.mjs"
+      ]
+    },
+    "powerpoint-live": {
+      "command": "node",
+      "args": [
+        "${CLAUDE_PLUGIN_ROOT}/scripts/powerpoint-server.mjs"
+      ]
+    }
+  }
+}

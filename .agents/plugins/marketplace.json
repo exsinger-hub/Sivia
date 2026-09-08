@@ -1,14 +1,14 @@
 {
-  "name": "you-only-figure-once",
+  "name": "sivia",
   "interface": {
-    "displayName": "You-Only-Figure-Once"
+    "displayName": "Sivia"
   },
   "plugins": [
     {
-      "name": "you-only-figure-once",
+      "name": "sivia",
       "source": {
         "source": "url",
-        "url": "https://github.com/exsinger-hub/You-Only-Figure-Once.git",
+        "url": "https://github.com/exsinger-hub/Sivia.git",
         "ref": "main"
       },
       "policy": {

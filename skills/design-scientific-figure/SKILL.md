@@ -9,13 +9,17 @@ Act as the Designer in the four-role Sivia protocol. Produce a backend-neutral d
 
 ## Start from the paper, not a workflow-shaped user prompt
 
-A request such as "Use Sivia to read this paper and draw its overview as editable PowerPoint" is sufficient. Read the paper before choosing a template: identify the research problem, prior limitation, distinctive method, input/output and supporting evidence, then decide what this figure should explain. Users do not have to supply a production prompt, template file, length rule or list of internal stages.
+A request such as "Use Sivia to read this PDF and generate an overview image for me to review" is sufficient. Read the paper before choosing a template: identify the research problem, prior limitation, distinctive method, input/output and supporting evidence, then decide what this figure should explain. Users do not have to supply a production prompt, template file, length rule or list of internal stages.
+
+For a new overview, the default first deliverable is the generated image, its full production prompt and a concise design explanation. Present them and end the turn, asking what should change and whether the user wants editable PPT reconstruction. Do not invoke presentation creation or editing while waiting. Visual approval ("looks good") locks the composition but does not request a PPT. Only an explicit reconstruction request, such as "this version is approved; now make the editable PPT", enters that stage. A previous eventual-PPT goal does not skip this post-image choice. A supplied approved image plus an explicit reconstruction request already satisfies it.
 
 For a new ImageGen-led figure without an explicitly selected template, read [Bundled Prompt Templates](references/prompt-templates.md), choose the role that matches that scientific argument, and read the selected full template. Instantiate it from the paper rather than sending its unfilled slots to ImageGen. Template choice, detailed prompt writing and length validation are internal responsibilities. Preserve an existing bound template and approved layout when continuing a figure; an internal default never overrides either.
 
 ## Bind the requested execution
 
 For new manuscript overviews, prefer the [ImageGen-first workflow](references/imagegen-first-workflow.md) when the image-generation tool is available. Read that reference completely when using this route or continuing an already approved visual draft. Respect explicit native-only, prompt-only, reference-reconstruction and read-only requests; do not insert generation into those tasks. If ImageGen-first is requested but unavailable, continue source/prompt preparation and report the missing rendering capability rather than silently switching production methods.
+
+On either Codex or Claude Code, discover the tools actually available; Sivia does not itself provide a raster-generation model. Do not invent a Codex ImageGen tool in Claude Code or claim that a prompt alone is a generated image. Claude Code exposes the shared skill under `/sivia:design-scientific-figure`; references to other skills below mean the matching installed Sivia skill, not a mandatory Codex-only command syntax.
 
 Record `execution` in the existing `design_spec`: requested deliverable, renderer, output path and whether editability is required. For editable PowerPoint/draw.io requests, use the native Drawer and its fresh renderer export. A PNG, including one inserted into a slide, does not satisfy that contract.
 
@@ -134,7 +138,7 @@ Do not improvise geometry one object at a time after drawing begins.
 
 ## Enter the construction loop
 
-Hand the design to `$edit-powerpoint-live` or `$recreate-scientific-figure-in-drawio`. After each region, require `$audit-scientific-figure`; when it finds a defect, require `$correct-scientific-figure`, return the object-level plan to the Drawer, rerender, and review again. For an overview, graphical abstract, teaser, final whole figure, or style-direction comparison, require the Reviewer to apply its publication aesthetic reference before approval.
+For an ImageGen-led overview, enter this loop only after the user has approved the specific image and explicitly requested editable reconstruction. Raster review and image-only delivery end before this loop. Hand the authorized design to `$edit-powerpoint-live` or `$recreate-scientific-figure-in-drawio`. After each region, require `$audit-scientific-figure`; when it finds a defect, require `$correct-scientific-figure`, return the object-level plan to the Drawer, rerender, and review again. For an overview, graphical abstract, teaser, final whole figure, or style-direction comparison, require the Reviewer to apply its publication aesthetic reference before approval.
 
 Require source-faithful readable semantics at each assigned level, full reconstructable editability, no clipping or unintended overlap, and unambiguous routing in the current target-renderer evidence. Apply the Reviewer's `pass | fail | pending` evidence gates; self-assigned confidence thresholds are not acceptance evidence. For overviews, the actual title-hidden and title/L3-hidden grayscale views must support the intended reading logic. Complete contract coverage includes visible main groups and linked readable expansions; check positive and negative relations at their declared level. Missing target-renderer evidence leaves publication approval pending.
 
