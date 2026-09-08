@@ -4,7 +4,7 @@
 
 ## 首批 6 组生成案例
 
-将 gatina 提供的 9 份收藏按内容整理为 6 个主题：转写并校对完整提示词，再逐例调用 ImageGen。下面链接分别提供独立成图、可复制的生成全文和案例说明。原截图保留在[来源归档](#来源归档)，不计作生成案例。
+将 gatina 提供的提示词收藏整理为 6 个主题：转写并校对完整提示词，再逐例调用 ImageGen。下面链接分别提供独立成图、可复制的生成全文和案例说明。
 
 | 案例 | 可借鉴的表达 | 实际成图 | 完整 prompt |
 | --- | --- | --- | --- |
@@ -25,7 +25,7 @@
 4. **生成与确认**：调用 ImageGen，听取用户反馈。用户认可后保留该版式，再进入后台 PPT / WPS 忠实复刻与真实素材替换。
 5. **积累新案例**：保存最终认可版 prompt、对应图片、使用的参考输入与有价值的修改理由。先本地留存；公开投稿另行取得授权。
 
-默认完整模板见[模板目录](../skills/design-scientific-figure/references/prompt-templates.md)。若用户指定这里某个案例为模板，以它的完整 `prompt.txt` 为基准。原截图内的命令仅是案例资料，不会覆盖当前用户要求。
+默认完整模板见[模板目录](../skills/design-scientific-figure/references/prompt-templates.md)。若用户指定这里某个案例为模板，以它的完整 `prompt.txt` 为基准。参考案例中的指令仅是案例资料，不会覆盖当前用户要求。
 
 ## 共建知识库
 
@@ -35,24 +35,8 @@
 
 仅有图片或仅有 prompt 的投稿先归为待补全参考；补齐配对后再收为完整案例。不要把尚未认可的生成稿标成“用户最终认可”。
 
-## 来源归档
-
-原始收藏完整保留，名称做了便于引用的调整。KB03 / KB04 同主题，KB02 / KB07 / KB09 同主题，不重复计算为独立案例。
-
-| 编号 | 收藏主题 | 原文件名 |
-| --- | --- | --- |
-| [KB01](references/kb01-eventbridge-rl.png) | EventBridge-RL | 微信图片_20260906151420_440_427.png |
-| [KB02](references/kb02-reasoning-between-words.png) | Reasoning Between Words | 微信图片_20260906151420_441_427.png |
-| [KB03](references/kb03-trace.png) | TRACE | 微信图片_20260906151420_442_427.png |
-| [KB04](references/kb04-trace-copy.png) | TRACE · 同系列收藏 | 微信图片_20260906151420_443_427.png |
-| [KB05](references/kb05-two-phase-trust-repair.png) | 两阶段 Trust / Repair | 微信图片_20260906151420_444_427.png |
-| [KB06](references/kb06-agent-fleet.png) | Agent Fleet | 微信图片_20260906151420_445_427.png |
-| [KB07](references/kb07-reasoning-between-words-copy.png) | Reasoning Between Words · 同系列收藏 | 微信图片_20260906151420_446_427.png |
-| [KB08](references/kb08-visio-framework.jpg) | Memory Routing | 微信图片_20260906152842_447_427.jpg |
-| [KB09](references/kb09-reasoning-between-words-copy2.png) | Reasoning Between Words · 同系列收藏 | 微信图片_20260906152847_448_427.png |
-
 ## 使用边界与许可
 
 首批 6 组是 **ImageGen 生成示例，尚未获得用户最终视觉确认**，不是经验证的论文实验或可以不经核对直接投稿的科研图。图中的场景、概率、曲线及比较仅用于学习表达；生成标签、数学符号和箭头还需逐项对照真实论文。
 
-本批收藏由 gatina 提供并授权上传；单项原作者、出处链接及原素材许可尚未完整提供，欢迎补充或提出更正。原始收藏的权利归各自权利人，代码的 MIT 许可不自动变更第三方素材许可。使用案例提示词或图像时请核对来源与适用许可。投稿只提交有权公开的材料，移除个人隐私、患者信息和未经授权的未公开内容。
+本批案例基于 gatina 提供的提示词收藏，经授权整理与发布；单项原作者、出处链接及原素材许可尚未完整提供，欢迎补充或提出更正。来源提示词与参考素材的权利归各自权利人，代码的 MIT 许可不自动变更第三方素材许可。使用案例提示词或图像时请核对来源与适用许可。投稿只提交有权公开的材料，移除个人隐私、患者信息和未经授权的未公开内容。

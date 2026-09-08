@@ -13,20 +13,6 @@
 
 如有偏好的参考图、重点内容或已认可的版式，一并提供即可。无需自己写 ImageGen 提示词或指定内部流程。
 
-## SBF-Mamba作图示例
-
-### Fig.1 · 方法总览
-
-多尺度编码、序列化、空间对齐融合与辅助频谱训练，结合真实医学图像展示。
-
-![SBF-Mamba Fig.1 方法总览](assets/examples/sbf-mamba-fig1.png)
-
-### Fig.2 · 核心机制
-
-有限网格序列化与坐标对齐的双向建模。
-
-![SBF-Mamba Fig.2 核心机制](assets/examples/sbf-mamba-fig2.png)
-
 ## 工作流
 
 1. **理解论文**：读懂研究问题与方法逻辑，选择值得展示的核心贡献，转化为可见的科学场景。
@@ -42,17 +28,41 @@
 
 知识库以 **实际生成图片 + 对应完整 prompt** 为一个案例，首批整理 6 个不同主题，覆盖 LLM 推理、多模态框架、强化学习与多智能体。点击图片下方链接即可取得生成提示词。
 
-### 精选 · 技术手绘与多智能体协作
+### 1. Agent Fleet · 多智能体协作
 
 ![Agent Fleet：多智能体协作技术漫画](knowledge-base/cases/agent-fleet/figure.png)
 
 [完整 prompt](knowledge-base/cases/agent-fleet/prompt.txt) · [案例说明](knowledge-base/cases/agent-fleet/README.md)
 
-### 精选 · LLM 推理与可验证锚点
+### 2. Reasoning Between Words · LLM 潜在推理
 
 ![Reasoning Between Words：潜在推理与符号锚点](knowledge-base/cases/reasoning-between-words/figure.png)
 
-[完整 prompt](knowledge-base/cases/reasoning-between-words/prompt.txt) · [浏览全部 6 组图文案例](knowledge-base/README.md)
+[完整 prompt](knowledge-base/cases/reasoning-between-words/prompt.txt) · [案例说明](knowledge-base/cases/reasoning-between-words/README.md)
+
+### 3. TRACE · 多模态证据路由
+
+![TRACE：多模态证据路由](knowledge-base/cases/trace/figure.png)
+
+[完整 prompt](knowledge-base/cases/trace/prompt.txt) · [案例说明](knowledge-base/cases/trace/README.md)
+
+### 4. EventBridge-RL · 双时间尺度世界模型
+
+![EventBridge-RL：双时间尺度世界模型](knowledge-base/cases/eventbridge-rl/figure.png)
+
+[完整 prompt](knowledge-base/cases/eventbridge-rl/prompt.txt) · [案例说明](knowledge-base/cases/eventbridge-rl/README.md)
+
+### 5. 两阶段 Trust / Repair · 紧凑多智能体框架
+
+![两阶段 Trust / Repair：紧凑多智能体框架](knowledge-base/cases/two-phase-trust-repair/figure.png)
+
+[完整 prompt](knowledge-base/cases/two-phase-trust-repair/prompt.txt) · [案例说明](knowledge-base/cases/two-phase-trust-repair/README.md)
+
+### 6. Memory Routing · 长视频记忆框架
+
+![Memory Routing：长视频记忆框架](knowledge-base/cases/visio-memory-routing/figure.png)
+
+[完整 prompt](knowledge-base/cases/visio-memory-routing/prompt.txt) · [案例说明](knowledge-base/cases/visio-memory-routing/README.md)
 
 以上为参考提示词的 ImageGen 生成示例；用户认可状态与观察记录见各案例说明。
 
