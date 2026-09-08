@@ -1,6 +1,6 @@
 # Sivia
 
-[**Sivia**](https://github.com/exsinger-hub/You-Only-Figure-Once) 是由 **gatina** 制作的科研绘图插件：从手稿提炼核心内容，先用ImageGen确定视觉稿，再忠实复刻为可编辑PPT，并结合项目真实图片与数据完成作图。
+[**Sivia**](https://github.com/exsinger-hub/You-Only-Figure-Once)科研绘图插件：从手稿提炼核心内容，先用ImageGen确定视觉稿，再忠实复刻为可编辑PPT，并结合项目真实图片与数据完成作图。
 
 ## SBF-Mamba作图示例
 
