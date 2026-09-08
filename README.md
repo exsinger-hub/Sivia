@@ -1,6 +1,6 @@
 # Sivia
 
-[**Sivia**](https://github.com/exsinger-hub/You-Only-Figure-Once) 是一款科研绘图插件。提供论文和作图需求，Sivia 会先理解研究问题、核心方法与创新点，再将论文内容组织成清晰、紧凑的科研 Overview，并制作可编辑的 PowerPoint。
+[**Sivia**](https://github.com/exsinger-hub/Sivia) 是一款科研绘图插件。提供论文和作图需求，Sivia 会先理解研究问题、核心方法与创新点，再将论文内容组织成清晰、紧凑的科研 Overview，并制作可编辑的 PowerPoint。
 
 ## 使用
 
@@ -43,7 +43,7 @@
 需要Codex、Node.js及所选的PowerPoint、WPS或draw.io；ImageGen路线需要会话提供图像生成工具，prompt长度检查需要Python 3。
 
 ```bash
-codex plugin marketplace add exsinger-hub/You-Only-Figure-Once --ref main
+codex plugin marketplace add exsinger-hub/Sivia --ref main
 codex plugin add you-only-figure-once@you-only-figure-once
 ```
 
@@ -53,4 +53,4 @@ Sivia 基于 [Scientific Illustrator](https://github.com/icebird1998/scientific-
 
 ---
 
-感谢使用 [Sivia](https://github.com/exsinger-hub/You-Only-Figure-Once) 插件，制作者：gatina。
+感谢使用 [Sivia](https://github.com/exsinger-hub/Sivia) 插件，制作者：gatina。
