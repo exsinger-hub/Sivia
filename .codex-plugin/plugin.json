@@ -1,7 +1,7 @@
 {
   "name": "you-only-figure-once",
-  "version": "1.5.4+codex.20260908141821",
-  "description": "Create source-grounded scientific overviews through detailed template-led ImageGen prompts, visual approval, faithful editable reconstruction and selective real-data replacement.",
+  "version": "1.5.4+codex.20260908144919",
+  "description": "Understand papers and turn their core contributions into scientific overviews, with built-in detailed visual templates and editable figure reconstruction.",
   "author": {
     "name": "gatina",
     "url": "https://github.com/exsinger-hub/You-Only-Figure-Once"
@@ -21,7 +21,7 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Sivia",
-    "shortDescription": "Scientific Figure Assistant \u2014 design, draw and review.",
+    "shortDescription": "Understand papers. Draw clear, editable scientific figures.",
     "longDescription": "Sivia turns manuscripts into concrete scientific scenes, uses detailed template-led ImageGen prompts with a per-figure length floor, then faithfully reconstructs approved visuals as editable PowerPoint or draw.io objects. Real image fields and computed data are inserted from verified sources. Approved layouts stay fixed during micro-edits. Designer, Drawer, Reviewer and Corrector separate scientific content, visual fidelity and editability checks. Windows PowerPoint uses background COM batches; macOS Office.js and PowerPoint/WPS OOXML backends retain their declared capabilities.",
     "developerName": "gatina",
     "category": "Productivity",
@@ -33,7 +33,7 @@
     "defaultPrompt": [
       "\u5728 PowerPoint \u6216 WPS \u4e2d\u5206\u9762\u677f\u590d\u523b\u8fd9\u5f20\u53c2\u8003\u56fe\uff0c\u4f18\u5148\u4f7f\u7528\u539f\u751f\u53ef\u7f16\u8f91\u5bf9\u8c61\uff0c\u5e76\u53cd\u590d\u68c0\u67e5\u4fee\u6b63\u540e\u4fdd\u5b58\u3002",
       "\u5728 draw.io \u4e2d\u9010\u6b65\u590d\u523b\u8fd9\u5f20\u53c2\u8003\u56fe\uff0c\u4fdd\u6301\u6587\u5b57\u3001\u56fe\u5f62\u3001\u8868\u683c\u3001\u56fe\u8868\u548c\u8fde\u63a5\u7ebf\u53ef\u7f16\u8f91\u3002",
-      "\u6839\u636e\u624b\u7a3f\u548c\u53c2\u8003\u6a21\u677f\uff0c\u5148\u5199\u4e0d\u77ed\u4e8e\u6a21\u677f\u7684\u7cbe\u7ec6ImageGen\u63d0\u793a\u8bcd\uff1b\u751f\u6210\u89c6\u89c9\u7a3f\uff0c\u7ecf\u6211\u786e\u8ba4\u540e\u5fe0\u5b9e\u590d\u523b\u4e3a\u53ef\u7f16\u8f91PPT\uff0c\u5e76\u5c40\u90e8\u66ff\u6362\u771f\u5b9e\u6570\u636e\u3002"
+      "\u4f7f\u7528 Sivia \u9605\u8bfb\u8fd9\u7bc7\u8bba\u6587\uff0c\u7406\u89e3\u7814\u7a76\u95ee\u9898\u3001\u6838\u5fc3\u65b9\u6cd5\u548c\u521b\u65b0\u70b9\uff0c\u4e3a\u8bba\u6587\u7ed8\u5236\u4e00\u5f20\u7a81\u51fa\u6838\u5fc3\u8d21\u732e\u7684\u79d1\u7814 Overview\uff0c\u6700\u7ec8\u63d0\u4f9b\u53ef\u7f16\u8f91\u7684 PowerPoint\u3002"
     ],
     "brandColor": "#F08705"
   },

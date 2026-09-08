@@ -7,6 +7,12 @@ description: Translate a research brief or manuscript into an overview, architec
 
 Act as the Designer in the four-role Sivia protocol. Produce a backend-neutral design specification before the Drawer adds any object. The selected backend affects object mapping, not the design quality or acceptance gate.
 
+## Start from the paper, not a workflow-shaped user prompt
+
+A request such as "Use Sivia to read this paper and draw its overview as editable PowerPoint" is sufficient. Read the paper before choosing a template: identify the research problem, prior limitation, distinctive method, input/output and supporting evidence, then decide what this figure should explain. Users do not have to supply a production prompt, template file, length rule or list of internal stages.
+
+For a new ImageGen-led figure without an explicitly selected template, read [Bundled Prompt Templates](references/prompt-templates.md), choose the role that matches that scientific argument, and read the selected full template. Instantiate it from the paper rather than sending its unfilled slots to ImageGen. Template choice, detailed prompt writing and length validation are internal responsibilities. Preserve an existing bound template and approved layout when continuing a figure; an internal default never overrides either.
+
 ## Bind the requested execution
 
 For new manuscript overviews, prefer the [ImageGen-first workflow](references/imagegen-first-workflow.md) when the image-generation tool is available. Read that reference completely when using this route or continuing an already approved visual draft. Respect explicit native-only, prompt-only, reference-reconstruction and read-only requests; do not insert generation into those tasks. If ImageGen-first is requested but unavailable, continue source/prompt preparation and report the missing rendering capability rather than silently switching production methods.

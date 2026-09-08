@@ -1,0 +1,113 @@
+Create a publication-ready scientific overview for “[PAPER_TITLE]”. The figure is titled “[SHORT_FIGURE_TITLE]”. Draw the visual argument specified below as a coherent scientific illustration, with concrete representations and visible transformations rather than an inventory of labeled module boxes.
+
+SCIENTIFIC PURPOSE AND READING DEPTH
+
+The central claim is: [ONE_SENTENCE_FIGURE_CLAIM]. The scientific problem is [RESEARCH_PROBLEM]; the relevant limitation is [SOURCE_SUPPORTED_LIMITATION]; the distinctive method addresses it through [CORE_TRANSFORMATION]. The reader must recognize how the input becomes the output and where the contribution changes that process. Treat the supplied scientific description as the content authority. A style reference supplies visual language, not additional methods, equations or results.
+
+At first glance, the eye should follow [PRIMARY_READING_PATH]. At working reading distance, show [MAIN_STAGES_AND_MECHANISM]. At closer inspection, make [CRITICAL_CORRESPONDENCES_AND_OPERANDS] recoverable from the picture. Give the distinctive transformation the strongest visual mass. Routine preprocessing or standard sublayers can remain compact named operations when expanding them would distract from the main explanation.
+
+This overview explains [OVERVIEW_SCOPE]. A companion figure, if requested, explains [DETAIL_SCOPE]. Keep the overview self-contained at its intended reading depth without copying every technical operation from the companion. A reference to a detail figure can identify where an expanded mechanism appears, but it cannot replace the essential input, output, branch condition or scientific relation needed to understand the overview.
+
+CANVAS AND COMPOSITION
+
+Use [CANVAS_RATIO_AND_PUBLICATION_WIDTH] and a white background. Build [CHOSEN_COMPOSITION] with region bounds [REGION_PROPORTIONS]. These regions follow the paper's argument, not its section order. The main methodological scene is [FOCAL_REGION]; its largest scientific objects and continuous connection path should be apparent even when the image is viewed as a thumbnail. Give it more space than subordinate context or training detail.
+
+Keep exterior margins narrow but deliberate. Within each region, use consistent alignment anchors for headers, operator centers, image fields and connector ports. Gutters separate neighboring scientific scenes; they should not form large unmotivated empty bands. Align the first and last objects of adjacent pathways where that improves comparison. Avoid making every panel equally wide when their explanatory content differs.
+
+The dominant scene should occupy its allocated region with meaningful scientific objects, not a large title, decorative icon or oversized empty frame. Reserve local whitespace for a specific function: separation of representations, a connector lane, formula clearance or an image label. Enlarge undersized representations into unused local space before adding another annotation or an unrelated plot.
+
+When an approved image is attached, use its [LOCKED_REFERENCE_GEOMETRY] as the composition authority. Preserve its canvas silhouette, panel positions, relative widths, object scale, palette and main routes. Apply only [AUTHORIZED_LOCAL_CHANGES]. This restriction covers small edits as well as replacement of example image fields; do not rearrange neighboring modules simply because their new content is easier to draw elsewhere.
+
+INPUTS, OUTPUTS AND THEIR ROLES
+
+Place [INPUT_OBJECTS] at [INPUT_LOCATION]. Represent each input using [INPUT_VISUAL_CARRIER]: an atomic image field, a document excerpt, a spatial grid, a sequence, a graph, a specimen or another scientifically appropriate object. Give each a short visible label and the necessary shape or unit from [INPUT_LABELS_AND_DIMENSIONS]. Do not replace all input types with the same generic document or brain icon.
+
+When the method has multiple inputs, show whether they are parallel modalities, conditioning information, retrieved context or alternative cases. Draw separate incoming edges to the exact operation that consumes each input. Shared enclosure alone does not establish a data dependency. Use a branch junction for one input reused in two streams, and distinct input objects for independently supplied information.
+
+Place [OUTPUT_OBJECTS] at [OUTPUT_LOCATION], using [OUTPUT_VISUAL_CARRIER]. The output role must be clear from its label and connection to the final operation. Distinguish a prediction from a target, an intermediate representation from a final result, and an explanatory example from measured evidence. The output does not bypass later decoding or selection stages merely to keep a line short.
+
+For a paired visual example, maintain matching sample identity, orientation, crop extent and display treatment across [PAIRED_FIELDS]. Place the labels directly beside their respective fields. If an output has multiple channels, alternatives or uncertainty fields, arrange those fields as a compact, explicitly labeled local group rather than an unlabeled collage.
+
+CONTEXT AND PROBLEM SCENE
+
+Use [CONTEXT_SCENE] only for the source-supported limitation relevant to the central claim. Show the limitation as a visible relation or transformation: for example, two genuinely different positions being compared, a missing connection, information lost through a documented reduction, or a dependency unavailable to a stated system. Name the exact objects and what fails in [CONTEXT_OBJECTS_AND_RELATIONS].
+
+When a contrast is needed, hold comparable objects, scales and meanings fixed across the two alternatives. Emphasize the changed relation through a local marker and a short phrase. A cross or warning accent applies to that illustrated operation, not to every previous method. Do not create an implausible baseline just to make the proposed method look necessary.
+
+Keep context subordinate to the proposed mechanism. Its visual job is to make the method's intervention understandable, not to become an introductory paragraph. If the paper already has a clear input-to-output task and no useful local counterexample, adapt this space to a source-grounded representation scene within the chosen composition. Do not manufacture a problem panel to preserve a template row.
+
+MAIN METHOD SCENE
+
+Draw the verified main pathway [EXACT_MAIN_TOPOLOGY] as one continuous visual spine. Place [MAIN_GROUP_1], [MAIN_GROUP_2] and [MAIN_GROUP_3] in the reading order established above, adapting the number of groups to the supplied topology. The groups may contain a stack, graph, sequence, sample field or internal operator chain; they should not all become identical empty rounded rectangles.
+
+Within [MAIN_GROUP_1], draw [GROUP_1_OBJECTS] and show [GROUP_1_TRANSFORMATION]. Specify the entering representation at the left or upstream port, the operation at the center, and its changed representation at the downstream port. Use the short labels [GROUP_1_VISIBLE_TEXT]. Make any scale, token count, coordinate frame or conditioning change visible through the relevant geometry and label.
+
+Within [MAIN_GROUP_2], draw [GROUP_2_OBJECTS] and show [GROUP_2_TRANSFORMATION]. This is [GROUP_2_EDITORIAL_ROLE] in the argument. Reserve space for its distinctive internal relation, with enough separation between the participating objects to see the operation. Show exactly which input is reused, which intermediate is produced and which path carries that intermediate onward.
+
+Within [MAIN_GROUP_3], draw [GROUP_3_OBJECTS] and show [GROUP_3_TRANSFORMATION]. Use the output-side representation to explain the cumulative method, not a decorative copy of the input. Label its interface [GROUP_3_VISIBLE_TEXT]. If this group is routine reconstruction or decoding, give it the size needed for readable merges and skips without making it more visually dominant than the contribution.
+
+At every transition, preserve the source-defined representation type and scale. A tensor stack can indicate channels or resolution only when its annotation says which property is represented. An ordered strip indicates token order; a grid indicates positions; a node-link graph indicates adjacency. Do not silently interchange these meanings because the glyphs have similar colors.
+
+CORE CONTRIBUTION EXPANSION
+
+Expand [NOVEL_OPERATION] at [EXPANSION_LOCATION]. Show a concrete before state [BEFORE_STATE], the operation [OPERATION_SEQUENCE], and the after state [AFTER_STATE]. Let the reader track [PERSISTENT_IDENTITY] through the transformation using a small, consistent set of symbols or position markers. Specify separately which values change, which identities persist and which relationship is newly established.
+
+Use visual correspondence rather than a paragraph to establish the mechanism. For a rearrangement, align a few identifiable elements before and after. For an aggregation, show its operands meeting at the actual merge. For a selection, distinguish candidates from the selected item. For a coordinate restoration, put the responses in matching coordinates before their combination, not after it.
+
+If the mechanism has parallel branches, draw them on separate aligned lanes. Each branch starts at its actual input, passes through its own ordered operations and ends at its own output representation. Label [BRANCH_NAMES] near the respective lanes. A paired-direction glyph must not accidentally turn parallel computation into a serial chain.
+
+When branches share parameters, show [PARAMETER_SHARING_CUE] at the relevant scope. When they are independent, use [INDEPENDENCE_CUE] without assigning contradictory color semantics. Repeated calls and repeated parameter sets are different relationships. Place a compact repetition strip outside an expanded single call and attach it with an explanatory association rather than a false tensor edge.
+
+MERGES, SKIPS AND AUXILIARY INPUTS
+
+Implement [MERGE_AND_SKIP_TOPOLOGY] with distinct junctions. Label addition, concatenation, averaging, attention or selection accurately; these operations are not interchangeable. A concatenation should visibly combine its inputs before any channel compression. An average uses the specified operands and denominator. A residual route reaches the exact operation that consumes the original representation.
+
+Route each skip from its own source representation to its matching downstream junction. Reserve lanes around the main module boundaries and keep the line visually traceable to both endpoints. Do not collect semantically different skips into one common bus if that makes their destinations ambiguous. Use junction dots only for actual branches or joins, never for incidental crossings.
+
+Show conditioning edges [CONDITIONING_EDGES] with their defined role and target. If a condition is available only during training, it cannot feed a deployed prediction path. If retrieval, optimization or iteration returns an updated state, the return edge must land at the exact state or operation that changes. A decorative loop around a group is not a substitute for an update dependency.
+
+OPTIONAL TRAINING OR SUPPORTING SCENE
+
+Include [TRAINING_OR_SUPPORT_SCENE] only when it explains the chosen figure claim. Give it the proportion specified in the composition, with a clear boundary from the primary inference or application pathway. Use concise scientific scope labels such as a named objective or training-only operator when necessary; do not add status boards, pending-work lists or internal production commentary.
+
+For an objective with two operands, draw two distinct operand lanes until the comparison operation. If a mask or support is derived from one operand, draw its construction from that operand alone and branch the resulting support to each true consumer. Keep shared preprocessing, separate calculations and final aggregation visibly distinguishable.
+
+Where spectral fields, spatial supports or distributions explain an objective, show the concrete intermediate representations at [SUPPORT_FIELD_LOCATIONS]. Keep any explanatory profile compact inside its scene. A large line chart is inappropriate merely because the method includes a loss equation; it must earn its space by answering the figure's scientific question.
+
+Use the exact objective [OBJECTIVE_EQUATION] with readable symbols. Connect each term to its actual source and update role. A target, label, teacher or loss may supervise training without becoming an inference input. Draw only [VERIFIED_CROSS_SCOPE_EDGES] between the supporting scene and the main architecture.
+
+If this paper does not need a training or evidence scene in the overview, spend its descriptive detail on the actual method interfaces and transformations. Do not import a spectral objective, geometry audit or experimental comparison from a style example. The generated composition must follow the instantiated figure specification, not retain an unfilled optional panel.
+
+EXACT TEXT, SYMBOLS AND NUMERICAL CONTENT
+
+Typeset only the visible labels listed in [VISIBLE_TEXT_LIST]. Use the manuscript notation [SYMBOL_DICTIONARY] consistently in headings, representations and equations. Preserve subscripts, superscripts, axis conventions and argument order where they determine meaning. A short text label should name what the neighboring graphic already shows.
+
+Use [VERIFIED_DIMENSIONS_AND_VALUES] only in their specified roles. Place a dimension adjacent to the represented tensor or its interface, not on a nearby arrow that could refer to a different object. Do not invent indices or performance numbers to make token strips or small tables look realistic. Abstract identity letters can explain a correspondence without pretending to be measured indices.
+
+Define every displayed quantity through [METRIC_LABELS_AND_UNITS]. An orientation count is not a step distance; a locality fraction is not a reconstruction score. Keep any empirical comparison tied to its actual methods, sample scope and calculation. If a reported value is not central to this overview, leave it to the designated result figure rather than decorating a mechanism with metric cards.
+
+ATOMIZED IMAGE AND DATA FIELDS
+
+Reserve the empirical fields [EMPIRICAL_FIELD_SPECIFICATION] at the declared positions and sizes. Each field has one role, one source binding and one display treatment. The rendering draft may establish its frame and surrounding composition, but generative redraw does not preserve scientific pixels. Final authentic images will be inserted separately during editable reconstruction.
+
+For each field, specify its crop, aspect ratio, orientation and paired neighbors through [FIELD_DISPLAY_RULES]. Keep annotations, arrows, scale bars, masks and labels visually separate from the underlying image. Any overlay must correspond to actual data or an explicitly symbolic position cue, not a generated lesion or an invented activation.
+
+For computed plots or geometry, use [COMPUTED_CONTENT_SPECIFICATION]. Draw their visual carriers within the reserved frames, with axes, units, highlighted steps or index entries matching the supplied calculation. If measured data is unavailable, use the defined mechanism glyph rather than synthesizing an evidence-like chart. Do not fill an empty empirical role with an unrelated available image.
+
+VISUAL GRAMMAR AND COLOR
+
+Use [SEMANTIC_PALETTE] as a small role-based palette: a light fill and deeper outline for each major module family, dark technical text and a consistent inference-arrow color. A restrained blue, amber, teal and violet family is one possible vocabulary, not a requirement for every paper. Preserve the supplied approved palette when it already establishes these roles.
+
+Keep module identity distinct from flow direction. Direction can be carried by lane labels, token order, arrowheads or line styles; it should not reuse a module's color with an unrelated meaning. Use a single local warning accent only for a source-grounded contrast. Grayscale differences in stroke, enclosure and labels should keep the relation readable without hue.
+
+Use modest depth only for representations that benefit from it, such as a few offset feature planes. Keep operator boxes flat, corners restrained and backgrounds untextured. The image should resemble a carefully composed scientific method illustration, not a glossy product diagram. Avoid ornamental icons that add visual mass without conveying a source-defined role.
+
+TYPOGRAPHY, ROUTING AND FINAL APPEARANCE
+
+Set typography according to [TYPE_SCALE_AT_PUBLICATION_SIZE]. Use a short bold title, distinct but compact panel headers, regular technical labels and clean mathematical notation. Long production instructions are not printed text. Make important operator names and representation labels legible before allocating space to secondary annotation.
+
+Route the main path with confident solid arrows, auxiliary dependencies with a distinct lighter or dashed style, and explanatory associations with unobtrusive dotted guides. Keep arrowheads clear of labels and neighboring boundaries. Use aligned ports, short orthogonal turns and reserved lanes. A line passing behind a label is still an ambiguous scientific relation even if it looks tidy.
+
+Maintain [APPROVED_LAYOUT_AND_LOCAL_FIT_RULES] throughout the completed artwork. Check the whole silhouette for undersized content and inspect each scientific scene for exact operand order, visible endpoints and consistent identity markers. The completed image should communicate its main transformation before the reader studies its formulas.
+
+Render one complete visual draft matching this fully instantiated specification. Keep scientific fields atomic in appearance, with separate frames, symbols and connectors suitable for later editable reconstruction. Do not print template section headings, unfilled fields, editing instructions, provenance notes or approval requests inside the image. The final artwork contains the scientific scene and its concise labels only.

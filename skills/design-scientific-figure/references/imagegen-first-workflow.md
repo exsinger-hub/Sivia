@@ -2,10 +2,12 @@
 
 Use for manuscript overviews whose production route is detailed prompt, ImageGen visual draft, user approval, editable reconstruction and local real-data replacement. It is the preferred new-overview route when ImageGen is available. An explicit native-only, prompt-only, read-only or already-approved-reference request keeps its own route. This workflow does not create permission to publish manuscripts or data.
 
+The user-facing entry is the paper plus the desired figure, not a recital of these stages. Do not ask users to write a long ImageGen prompt or find a template as a prerequisite. When no external template is selected, use the [bundled templates](prompt-templates.md) after understanding the paper. Ask only for missing source content or a choice that materially changes the figure.
+
 ## Separate scientific authority from visual authority
 
 - Manuscript, equations and verified implementation establish scientific facts. Resolve substantive disagreements from those sources; an attractive generated label is not a new fact.
-- A supplied knowledge library and role-specific references supply visual grammar. An explicitly approved image additionally fixes composition.
+- Bundled templates, a supplied knowledge library and role-specific references supply visual grammar. An explicitly approved image additionally fixes composition.
 - ImageGen supplies a visual prototype, not measured results or preserved empirical pixels.
 - Native PowerPoint/draw.io supplies editable translation and assembly, not a second opportunity to redesign an accepted composition.
 - Real assets and computed geometry supply the relevant image/data fields. They do not require replacing every schematic with a photograph.
@@ -20,9 +22,9 @@ Inspect candidate real assets now, before allocating space. Establish sample pai
 
 For multiple figures, assign separate questions. An overview can orient the full method; a detail figure can explain a distinctive operation; a results figure can compare measurements. A training strip is appropriate only if it contributes to that figure's purpose. Do not automatically append evidence-status boards, geometry cards or auxiliary losses to every overview. Splitting an already approved figure needs user agreement.
 
-## 2. Extract a style grammar from the supplied library
+## 2. Select a template and extract its style grammar
 
-Inspect relevant images and prompts from the user-designated knowledge folder; record the inspected items, not a claim that the entire folder was indexed. Select by communication role: overall story, mechanism explanation, evidence integration or visual language. Inspect the actual output together with its prompt when both exist.
+After the scientific argument is established, follow [Bundled Prompt Templates](prompt-templates.md) to select a complete overview or mechanism template unless the user already bound one. If a knowledge folder or reference image is supplied, inspect its relevant images and prompts; record the inspected items, not a claim that the entire folder was indexed. Select by communication role: overall story, mechanism explanation, evidence integration or visual language. Inspect the actual output together with its prompt when both exist. An absent local knowledge folder does not block a task that can use the bundled templates.
 
 Translate the useful choices into drawing instructions: relative panel sizes, reading path, object scale, graphic density, typography, semantic color, connector conventions, spacing and visual carriers. A compact grid/sequence correspondence may be transferable; that source's index values, method topology or experimental results are not.
 

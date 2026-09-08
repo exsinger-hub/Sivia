@@ -1,0 +1,141 @@
+Create a publication-ready mechanism figure for “[PAPER_TITLE]”, titled “[SHORT_MECHANISM_TITLE]”. Explain the operation [MECHANISM_NAME] through visible scientific objects, ordered transformations and traceable correspondences. This is a close explanation of one contribution, not a second complete architecture diagram or a page dominated by quantitative charts.
+
+SCIENTIFIC QUESTION AND SCOPE
+
+The question answered by this figure is [MECHANISM_QUESTION]. Its central claim is [ONE_SENTENCE_MECHANISM_CLAIM]. The operation receives [MECHANISM_INPUTS], changes [CHANGED_PROPERTY] and produces [MECHANISM_OUTPUTS], while preserving [PRESERVED_PROPERTY]. These statements define the picture's content. Use the supplied paper and verified implementation for facts; take only visual organization and rendering style from references.
+
+The companion overview explains [OVERVIEW_CONTEXT]. In this figure, show only the compact context needed to locate the mechanism within that system. Allocate most of the space to the transformation that is difficult to understand from a module name. Do not repeat an entire encoder, decoder, input gallery or training objective when those do not answer the selected question.
+
+At first glance, the reader should see [MECHANISM_READING_PATH]. At closer range, the reader should be able to follow [IDENTITY_OR_STATE_TO_TRACK] through the exact operator order. Expose the scientific reason each restoration, selection, conditioning or aggregation step is necessary. A chain of unnamed arrows with a formula underneath does not make that reason visible.
+
+CANVAS AND STRUCTURAL HIERARCHY
+
+Use [CANVAS_RATIO_AND_PUBLICATION_WIDTH] with a white background and [REGION_PROPORTIONS]. The chosen composition is [MECHANISM_COMPOSITION]. It may separate a construction or setup scene from an application scene when the method has that distinction. It may use a matched before/after comparison when the central claim is a corrected relation. Resolve this choice from the paper before drawing.
+
+The dominant region is [FOCAL_MECHANISM_REGION]. Place its most informative representations near the main branch or transformation, not at the far margins. Keep its operation names large enough to read while the whole figure is visible. Secondary lookup tables, parameter strips or local insets fit around that primary scene without interrupting its continuous reading path.
+
+Give adjacent technical scenes the widths their contents require. A small rule can occupy a narrow region while a branching transformation needs a wider one. Align headers and key representation baselines, use narrow gutters and reserve clear lanes between related regions. Dense content means larger meaningful objects and tighter organization, not more lines of explanatory prose.
+
+If [APPROVED_REFERENCE] is provided, preserve [LOCKED_COMPOSITION_PROPERTIES]: canvas ratio, region boundaries, relative area, object positions, dominant routes and palette. Make only [AUTHORIZED_MODIFICATIONS]. Do not add a metric footer, split the figure, enlarge a plot or replace a detailed scene with a simplified pipeline unless that structural change is explicitly requested.
+
+CONTEXT AND INITIAL REPRESENTATION
+
+At [CONTEXT_LOCATION], show [CONTEXT_OBJECT] as a compact cue with label [CONTEXT_LABEL]. Connect it to the mechanism's actual input only if a verified data relation exists. A brain, document or specimen icon can communicate domain context, but it must not imply that a raw sample is identical to a learned feature tensor.
+
+Draw the input representation [INPUT_REPRESENTATION] at [INPUT_POSITION]. Use [INPUT_CARRIER_AND_GEOMETRY] to indicate the properties needed for this operation. A grid can show spatial positions; a strip can show sequence order; a set can show exchangeable candidates; a graph can show adjacency. State which property each carrier encodes through [INPUT_ANNOTATIONS].
+
+Mark a small set of identifiable elements [TRACKING_MARKERS]. Reuse these identities consistently across the picture when their correspondence persists. Labels or border markers encode identity separately from any value-based fill. Matching coordinates, labels or indices do not imply that two processed responses have equal numerical values.
+
+If the input has channels, dimensions or multiple axes, annotate [INPUT_SHAPE_AND_AXIS_ORDER] beside the representation. Make the active operation axis visually apparent. A token-order reversal should not look like a channel reversal; a spatial resize should not look like a permutation; an inverse coordinate map should not appear to invert learned feature values.
+
+CONSTRUCTION OR PREPARATION SCENE
+
+For a mechanism with explicit preparation, show [PREPARATION_TOPOLOGY] in [PREPARATION_REGION]. Separate content-independent construction from sample-dependent application. Place the preparation input, rule and resulting operator in a short readable sequence, with the produced map, index array, parameter object or support visibly handed to its real consumer.
+
+If the preparation uses continuous reference objects, draw [CONTINUOUS_REFERENCE_OBJECTS] with the correct axes and qualitative geometry. Distinguish a guide, target distribution or continuous coordinate from the discrete object ultimately used by the algorithm. Do not connect reference dots into a realized path unless the source defines those connections.
+
+If the preparation selects from candidates, draw [CANDIDATE_SET] and distinguish unselected, previously visited and currently chosen elements. Use neutral candidate marks, a contrasting current reference marker and a clearly outlined selected element. The color of a candidate state must not also mean a different module family without an accompanying label or shape distinction.
+
+Place the exact selection rule [SELECTION_RULE] above or beside the candidate scene. Include the relevant domain, normalization or tie behavior [SELECTION_CONDITIONS] in compact source-grounded notation. Do not change a full-candidate search into a local-neighbor search merely because nearby candidates are easier to draw.
+
+When a sequence of construction states is helpful, show [SNAPSHOT_STEPS] as aligned miniature views of the same domain. Each view retains its orientation, extent and identity system. Show the newly selected element and the accumulated state at that actual step. Ellipses indicate omitted intermediate steps, not a license to invent a different process between snapshots.
+
+If candidate states or a path are to be shown as computed geometry, follow [GEOMETRY_SOURCE_AND_SETTINGS]. Use the real sequence for each highlighted step. Draw only the requested subset at a size that preserves legibility, and keep the context domain visible. A visually smooth spiral or curve cannot stand in for a discrete visiting order whose irregular steps are part of the mechanism.
+
+OPERATOR, INDEX OR CORRESPONDENCE SCENE
+
+Show the constructed operator [OPERATOR_SYMBOL] using [OPERATOR_VISUAL_CARRIER]. For an index map, align the source identities and destination positions in separate rows or coordinated views. A few representative entries should be sufficient to reveal the relation. Keep the index base, row-major or column-major convention, and range consistent with [INDEX_CONVENTIONS].
+
+Draw [FORWARD_MAPPING] with arrows from each displayed source element to its destination. If an inverse operation is part of the method, show [INVERSE_MAPPING] separately and preserve its direction. A permutation list, inverse list and sequence of feature values are different objects. Their row headings and positions must make that distinction clear.
+
+Use [VERIFIED_MAPPING_ENTRIES] when actual entries are supplied. Otherwise use the explicitly defined symbolic identities [SYMBOLIC_MAPPING_EXAMPLE]. A symbolic example must still be internally valid: no duplicated destination in a bijection, no inconsistent inverse and no unexplained index jump. Do not fabricate plausible-looking numerical entries and present them as algorithm output.
+
+If a construction guarantee matters to interpretation, state [RELEVANT_GUARANTEE] next to the operation it qualifies. Do not turn equivalent statements of the same property into multiple achievement badges. Place the visually discriminating relation at the scene's endpoint, such as restored correspondence or an actual selection decision, rather than a wall of generic proof claims.
+
+Connect the prepared operator to each place it is used through [OPERATOR_APPLICATION_ASSOCIATIONS]. Use dotted association guides when these are explanatory links rather than per-sample data edges. The picture must not imply that an input image trains or recomputes a fixed mapping if the verified algorithm applies a precomputed operator.
+
+APPLICATION SCENE AND TOKENIZATION
+
+Draw [APPLICATION_INPUT] entering [APPLICATION_OPERATION_1] and producing [APPLICATION_INTERMEDIATE_1]. Show the transformation through the input and output carriers: for example, tracked grid positions becoming an ordered strip or a candidate set becoming a selected subset. Label the operation with [APPLICATION_VISIBLE_TEXT] and place its representation dimensions at the corresponding interfaces.
+
+Keep the output strip or representation large enough to distinguish its selected identity markers. Use an ellipsis for omitted elements with explicit first/last or range cues when those matter. The visible sample size and the full tensor length are different; indicate the full length in a concise label rather than attempting to draw thousands of cells.
+
+For a serialized representation, distinguish visit step from original position and position from feature value. If both need to be visible, use a label row above the token strip and a source-index row beneath it. Keep these aligned to their own cells. Do not squeeze several meanings into one ambiguous number printed in each colored square.
+
+The next operation receives the actual output of this transformation. Do not move a serialization or restoration outside a repeated block when the implementation applies it inside each call. Keep the source-defined call boundary visible through a restrained enclosure and a short group label.
+
+BRANCHING OR MULTI-PATH PROCESSING
+
+For parallel computation, split [BRANCH_INPUT] at one visible junction and route it into [BRANCH_DEFINITIONS]. Draw each branch as an ordered sequence on its own lane. Align analogous operators vertically or horizontally for comparison while preserving different operation orders when the method requires them.
+
+The first branch is [FIRST_BRANCH_TOPOLOGY], with representations [FIRST_BRANCH_STATES]. The second branch is [SECOND_BRANCH_TOPOLOGY], with representations [SECOND_BRANCH_STATES]. Any additional branch must have a source-grounded role and the appropriate scope. A parallel structure must not become serial simply because the operator boxes are drawn left to right.
+
+Where a reversal or transformation occurs both before processing and after processing, draw two distinct operator objects at those exact positions. Their input and output representations make their roles visible. Combining them into one shorthand badge can obscure which state is restored and when, so retain separate objects when that order is central to the contribution.
+
+Encode [PARAMETER_OWNERSHIP] using short labels or a restrained sharing association at the relevant operations. Similar-looking blocks do not imply shared weights. Repeated use of one module differs from independent modules with the same architecture; show the actual relationship without turning parameter metadata into the primary visual focus.
+
+For iterative processing, show [ITERATION_STATE_AND_UPDATE] with a return edge that lands at the correct state. Label the updated quantity and termination or repetition condition only when those affect the explanation. Do not draw a circular arrow around an entire panel if that could imply that all intermediate quantities are recomputed or updated together.
+
+ALIGNMENT, RESTORATION OR AGGREGATION
+
+Before the merge, display the branch outputs [PRE_MERGE_REPRESENTATIONS] with explicit identity or coordinate cues. Place [RESTORATION_OPERATIONS] in their actual order. The reader should see which correspondence was incompatible, what transformation resolves it and which operands are finally compatible for combination.
+
+For a coordinate-alignment mechanism, show the restored representations in the same coordinate system, with matching selected position labels. Distinguish common spatial coordinates from identical activations. Do not label them as different forward and reverse grids after restoration if the claim is precisely that they now share the grid.
+
+Draw the merge [AGGREGATION_OPERATOR] at the true convergence point. Provide the exact operation [AGGREGATION_EQUATION] and connect its operands to separate ports. Show the output [AGGREGATED_REPRESENTATION] immediately afterward. Averaging, concatenation, addition and learned projection must remain distinct visible operations.
+
+If the merge then combines with an original feature or residual, route [RESIDUAL_SOURCE] around the branch group to [RESIDUAL_DESTINATION]. Preserve this route outside unrelated operators with visible endpoint clearance. Place channel compression or projection after the actual concatenation when that is the source-defined order, with [MERGE_DIMENSIONS] beside the corresponding representations.
+
+Show the final mechanism output [MECHANISM_OUTPUT_REPRESENTATION] at [FINAL_OUTPUT_LOCATION]. Keep its identity and shape consistent with the next system stage named in the companion overview. An output stack, restored grid or selected set should reflect what the operation produces, not merely reuse the input glyph as a visual bookend.
+
+OPTIONAL LOCAL COUNTEREXAMPLE
+
+When the source supports a contrast, draw [COUNTEREXAMPLE_SCENE] adjacent to the corrected operation within the allocated region. Keep the same inputs and selected identities in both views, and change only the relation under discussion. Label the alternative precisely; do not imply that it represents every baseline in the field.
+
+Highlight [CONTRASTED_IDENTITIES_OR_STATES] with a compact marker pair. For a mismatch, show their distinct landing positions or incompatible states visibly, then connect them with a restrained dashed association. For the corrected case, show the restored relation before combination. The contrast must be understandable from its geometry, not only from a red cross and green check.
+
+Do not introduce a counterexample if the task is faithful reconstruction of an approved figure that lacks it and the user has not authorized a structural addition. When the mechanism is sufficiently clear through a single expanded application scene, use that space to improve object scale and traceability instead of inventing an unnecessary wrong branch.
+
+REPETITION, PARAMETERS AND SECONDARY EXPLANATION
+
+If needed, add a small strip [REPETITION_STRIP] showing how one expanded call sits in the larger stack. Preserve exact repetition count, module identity and parameter-sharing relation. Keep the strip subordinate and attach it through a labeled explanatory association. Do not mistake a recurrence reference for another parallel output pathway.
+
+Add [AXIS_OR_OPERATOR_INSET] only if it resolves a real ambiguity, such as which axis is reversed. Use a before/after strip with a few tracked elements and one operation label. Place the inset close to the relevant operator or along a narrow available lane without shifting the approved layout.
+
+Use [PARAMETER_TEXT] at the correct scope. A grid size, sequence length, channel count and state dimension are not interchangeable quantities. Associate each with the object it describes and retain the manuscript symbol. Avoid large parameter cards that compete with the mechanism when a short adjacent label provides the same information.
+
+QUANTITATIVE OR GEOMETRY SUPPORT
+
+Include [QUANTITATIVE_SUPPORT] only if it directly answers the mechanism question and is part of the requested composition. Use the provided values and definitions [VERIFIED_QUANTITIES_AND_UNITS]. A measured geometric property can explain the constructed operator without becoming a claim about learned task performance.
+
+Keep supporting plots compact relative to the main explanatory scene. Use aligned axes, consistent ranges and stable method keys when comparing alternatives. Do not make a line chart the dominant visual object unless the scientific question itself is about that curve. A graph should show computed data, not an ImageGen approximation presented as measurement.
+
+For a path inset, use the actual coordinate sequence with [PATH_CROP_AND_STEP_RANGE], consistent axis orientation and a visible start or direction cue. For an orientation distribution, use the defined bins and normalization. For a locality measurement, state the actual neighborhood or distance criterion. The label must describe what the calculation measures.
+
+Do not append a bottom audit row by default. If quantitative support is outside this figure's scope, leave it to the result figure or caption and use the mechanism area for readable scientific objects. Do not retain empty cards, pending comparisons, proof checklists or a production-status footer to imitate an old reference.
+
+REAL ASSETS AND SCIENTIFIC IMAGE FIELDS
+
+Use [ATOMIC_ASSET_PLAN] for authentic images, learned tensors and calculated fields. A contextual photo or medical slice is appropriate only for its designated role. A real input image is not a substitute for a learned activation merely because it can be resized to the same grid. Token identity cells and coordinate markers often remain clearer as symbolic graphics.
+
+For a real feature field, require the supplied sample, layer or module output and the stated projection [FEATURE_DISPLAY_SPECIFICATION]. Keep comparisons consistent in projection and scale. Separate any coordinate overlay, cell boundaries and labels from the image field so those remain clear and editable later.
+
+Reserve each empirical insert at [ASSET_BOUNDS_AND_CROP_RULES]. Preserve aspect ratio and orientation, and align paired fields by the relevant spatial or semantic frame. Image generation establishes composition, not a guarantee of unchanged empirical pixels. Insert authentic data fields separately in the editable reconstruction; do not treat generated anatomy, spectra or curves as evidence.
+
+Use [MISSING_ASSET_RENDERING_DECISION] when a requested field lacks source data: an appropriate symbolic representation or a deliberately reserved atomic slot, according to the agreed figure scope. Keep source notes outside the artwork. Never fabricate a numerical array, activation or performance image to make a diagram appear complete.
+
+VISUAL LANGUAGE AND TEXT
+
+Use [SEMANTIC_COLOR_AND_STROKE_SYSTEM]. Major roles receive light fills and deeper outlines, while arrows and technical text have strong contrast. Module identity, sequence direction and correctness are separate meanings; use labels, line styles or marker shapes to distinguish them rather than assigning one hue multiple unrelated jobs.
+
+Keep grids geometrically regular, token cells consistently sized, operator boxes aligned and mathematical symbols cleanly typeset. Use modest depth only when it helps represent channels or stacked fields. Avoid decorative brains, calendars or tools unless the object actually clarifies the specified scientific role in this figure.
+
+Typeset [EXACT_VISIBLE_LABELS_AND_EQUATIONS] using [PUBLICATION_TYPE_SCALE]. Keep branch labels, operator names and output symbols closest to their own objects. Use short headers and reserve regular body text for genuinely necessary local definitions. The prose in this specification is drawing guidance and must not become a paragraph inside a panel.
+
+FINAL ROUTING AND PRESERVATION
+
+Use solid directional arrows for actual computation, a distinct style for auxiliary dependencies and dotted guides for explanatory association. Place arrowheads at the receiving boundaries with enough room to identify the destination. Route the original-input bypass, operator-association guides and branch merges in separate lanes so they cannot be mistaken for one another.
+
+Maintain [ALLOWED_CHANGE_BOUNDARIES] in a referenced revision. Preserve neighboring labels, object sizes and routes while replacing only the named image fields or local values. Scientific corrections must follow the supplied updated specification, not an attractive but inconsistent detail generated in the reference.
+
+Render one complete image whose main operation can be followed from input to output through visible state changes and correct endpoints. Keep the scene compact and fully occupied by meaningful representations. Do not print template placeholders, editorial explanations, pending-work statements or production disclaimers. The final artwork consists of the specified mechanism, concise scientific labels and correctly scoped supporting content.
