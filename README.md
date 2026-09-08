@@ -4,7 +4,6 @@
 
 ## 安装
 
-仓库地址是 **https://github.com/exsinger-hub/Sivia**。插件标识和插件市场标识均为小写 `sivia`，因此安装选择器是 `sivia@sivia`：前一个是插件名，后一个是市场名，不是另一个 GitHub 地址。
 
 ### Claude Code
 
