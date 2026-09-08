@@ -14,7 +14,11 @@
 /plugin install sivia@sivia
 ```
 
-安装后重新开启会话。上传 PDF，或提供 Claude Code 可访问的本地文件路径，按下文说明开始。也可用 `/sivia:design-scientific-figure` 显式调用绘图设计 skill。安装方式对应 [Claude Code 官方插件说明](https://code.claude.com/docs/en/plugin-marketplaces)。
+或者直接输入
+
+```text
+请安装[**Sivia**](https://github.com/exsinger-hub/Sivia) 
+```
 
 ### Codex
 
