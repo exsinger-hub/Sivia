@@ -1,0 +1,78 @@
+Create a publication-quality Figure 1 for a hypothetical ICLR paper titled “EventBridge-RL: Uncertainty-Gated Dual-Timescale Imagination for Long-Horizon Reinforcement Learning.” The figure must use a 4:3 landscape aspect ratio, approximately 1600 × 1200 pixels, with a completely pure white outer background. The overall visual language should resemble a polished modern ICLR method overview: mathematically rigorous but visually engaging, combining clean scientific diagrams with playful flat vector icons, thick near-black outlines, pastel yet moderately saturated colors, compact mathematical notation, and a clear visual narrative. The result should look like a figure created by machine learning researchers for the first page of a serious conference paper, not a corporate infographic, not a presentation slide, and not a children's cartoon.
+
+The central scientific idea is an RL agent that learns two complementary forms of imagination. It performs fine-grained, step-by-step prediction near unfamiliar or uncertain transitions, while using event-level temporal jumps when the future is predictable. The agent should segment a continuous trajectory into meaningful events, construct both local and event-level world models, estimate epistemic uncertainty, imagine several counterfactual futures, select a reliable trajectory, act in the real environment, and update its policy through an event-structured replay buffer.
+
+At the very top, place a long horizontal rounded rectangle spanning approximately 94% of the canvas width. Use a white fill, a medium-thick powder-blue outline, and generous internal padding. Add a small flat vector icon on the left showing a tiny robot explorer holding a compass or looking through binoculars. Next to it, render the exact sentence:
+“OBJECTIVE: Reach sparse, distant goals by jumping across predictable events and slowing down near uncertain transitions.”
+Use a scholarly serif typeface resembling Computer Modern or Times New Roman. “OBJECTIVE:” should be bold, underlined, and slightly heavier than the rest of the sentence. Keep this banner visually restrained and highly legible.
+
+Below the objective banner, divide the canvas into one large method area occupying roughly two-thirds of the width and one narrower counterfactual-planning area occupying roughly one-third. Do not copy a circular environment taxonomy, HTTP architecture, browser interface, or server-client diagram. Instead, construct a new composition based on temporal segmentation and branching futures.
+
+The large left and central area should be enclosed in a softly rounded, very light warm-gray container. Place the italicized bold heading “Event-Centric World Model” in its upper-left corner. Inside this container, organize the method from left to right.
+
+On the far left, show a short horizontal filmstrip labeled “Continuous Experience.” The filmstrip should contain five simplified environment frames with consistent black outlines. Depict a small blue agent moving through a sparse-reward navigation environment: initially entering a room, discovering a key, approaching a locked door, crossing a bridge, and seeing a distant golden goal. These should be stylized vector scenes rather than screenshots. Beneath the frames, include compact mathematical tokens such as:
+o_t, a_t, o_{t+1}, a_{t+1}, …
+Use alternating pale-blue observation cards and pale-yellow action cards. Add thin temporal arrows between the cards. The cards should resemble mathematical trajectory tokens rather than interface buttons.
+
+Immediately to the right of the filmstrip, place an “Event Boundary Detector.” Represent it as a compact neural module with a bracket, segmentation marker, or scissors-like scientific icon, but avoid making it overly cartoonish. Show vertical boundary lines splitting the filmstrip into meaningful event groups. Above selected boundaries, place small probability labels b_t. Convert the groups into three large event tokens:
+e_1: Key Acquired
+e_2: Door Opened
+e_3: Goal Revealed
+Represent each event token using a pale-yellow or pale-lavender rounded rectangle containing both a small icon and a concise label. Draw a clean arrow from the continuous observations into these event tokens. Add a small equation beneath the detector:
+b_t = q_ψ(o_{t-k:t}, a_{t-k:t-1})
+Keep the equation compact and correctly typeset.
+
+In the center of the large container, split the flow into two parallel horizontal lanes. The upper lane should be labeled “Local Dynamics” and use powder-blue modules. It should depict precise one-step latent transitions:
+z_t → z_{t+1} → z_{t+2}
+Place the conditional model beneath this lane:
+p_θ(z_{t+1} | z_t, a_t)
+Use three small scene thumbnails to indicate detailed motion, contact, or obstacle avoidance. The local lane should visually communicate careful, short-horizon reasoning.
+
+The lower lane should be labeled “Event Dynamics” and use pale-yellow and lavender modules. Show event-level temporal jumps:
+e_j ⇒ e_{j+1} ⇒ e_{j+2}
+Use elegant curved arrows that skip several intermediate frames. Annotate one curved arrow with Δt and another with “skill c_j.” Place the event-level model beneath the lane:
+p_ϕ(e_{j+1}, Δt | e_j, c_j)
+Visually contrast the two lanes: the local lane contains several small consecutive states, while the event lane contains fewer, larger semantic milestones connected by long arcs. Do not depict the event-level model as simply another sequence of identical boxes.
+
+At the convergence of the two lanes, place a distinctive diamond-shaped or rounded-switch module labeled “Epistemic Gate.” Give it a pale-coral outer region, a small uncertainty meter, and a central pointer. The gate should receive uncertainty signals from both world-model branches. Include the compact formula:
+g_t = σ[κ(τ_u − U_t)]
+From this gate, create two clearly labeled outputs. A lavender curved arrow should say “low uncertainty: jump ahead” and connect to the event-level prediction. A powder-blue arrow should say “high uncertainty: zoom in” and reconnect to the local dynamics lane. The design must make the adaptive temporal-resolution mechanism immediately understandable without requiring a caption.
+
+To the right of the gate, place a compact “Actor-Critic” module with a stylized policy network icon, a small π_φ box, and a value box V_ξ. The actor receives the selected imagined state sequence and outputs the real action a_t. Connect it to a small illustrated “Real Environment” containing the agent, obstacles, a key, a door, and a goal. Use a solid blue-gray arrow for real interaction and a return arrow carrying o_{t+1} back toward the continuous experience stream. Solid arrows must indicate real environment interaction, dashed arrows must indicate imagined rollouts.
+
+The narrower right-hand section should be titled “Counterfactual Futures.” Do not use a circular wheel. Instead, create a vertically oriented branching future tree beginning from one shared current-state node. The current state should show the blue agent at a fork. From it, generate three imagined branches using dashed arrows.
+
+The first branch should be mint green and labeled “Accept.” It should pass through a key and an open door toward a golden goal. Add two small badges: “high return” and “low uncertainty.”
+
+The second branch should be pale yellow and labeled “Refine Locally.” It should approach an uncertain bridge or moving obstacle. Add a small magnifying-glass icon and a badge reading “request local rollout.”
+
+The third branch should be pale coral and labeled “Reject.” It should enter a foggy or visually ambiguous region. Use a dotted boundary, an uncertainty cloud, and a small warning icon. Add the labels “model disagreement” and “high risk.”
+
+At the bottom of this future tree, place a compact scoring equation inside a mint-bordered box:
+S(τ) = R̂(τ) − λ_U U(τ) − λ_C C(τ)
+Show a clear solid arrow from the accepted future back toward the Actor-Critic module. The three branches should feel like scientific counterfactual planning rather than a decorative decision tree.
+
+Across the bottom quarter of the entire figure, create a wide section labeled “Event Replay & Joint Learning.” Use a very pale cream or warm-yellow background with a thin rounded border. On the left, show an event-structured replay trajectory as a horizontal sequence:
+[o_t, a_t] → e_1 → [o_{t+k}, a_{t+k}] → e_2 → … → e_J
+Alternate pale-blue observation groups, pale-yellow event groups, and small action tags. Use vertical event-boundary markers and include one short segment highlighted with a lavender bracket labeled “reusable skill segment.” This should visually communicate that the replay buffer stores both detailed transitions and semantic event chunks.
+
+In the middle of the bottom section, include three enlarged example cards from one training episode. The first card should depict the agent cautiously examining an uncertain bridge and include a small text strip reading “high U_t → local prediction.” The second should show the key acquisition event and read “event boundary detected.” The third should show a confident temporal jump toward the opened door and read “low U_t → event jump.” These cards must be illustrated environment states, not photographic screenshots and not software interfaces.
+
+To the right of the replay sequence, place a rounded lavender panel labeled “Joint Optimization.” Inside, arrange four small white pill-shaped loss boxes:
+L_dyn
+L_event
+L_unc
+L_AC
+Beneath them, show the combined objective:
+L = L_dyn + αL_event + βL_unc + ηL_AC
+Draw one broad blue-gray feedback arrow from the optimization panel upward to the world model and another arrow toward the Actor-Critic. Avoid crossing arrows. Use curved routing where necessary.
+
+At the far lower-right corner, add a small legend with three concise entries: a solid arrow labeled “real transition,” a dashed arrow labeled “imagined transition,” and a dotted coral arrow labeled “rejected future.” Beneath or beside this legend, include four tiny domain icons in a single restrained row: sparse-reward maze navigation, robotic manipulation, open-world crafting, and adaptive locomotion. Do not create a large domain taxonomy; these icons should merely imply broad applicability.
+
+Use the following restrained but lively palette consistently: powder blue #BFD8F0 for observations and local dynamics, butter yellow #FFE8A3 for events and actions, soft coral #F4C3BC for uncertainty and rejected futures, lavender #DCC7EB for temporal jumps and reusable skills, mint green #C9E5C0 for accepted futures and positive outcomes, very light warm gray #F2F2F0 for major containers, blue-gray #AAB8CC for structural arrows, and near-black #111111 for outlines and text. Colors should be flat or almost flat, with no glossy effects and no strong gradients.
+
+All icons must use consistent 2.5–3.2 pixel near-black outlines, rounded corners, simple geometric construction, and controlled interior detail. Use minimal or no drop shadows. Maintain ample pure-white regions. Major arrows should be clearly visible but not excessively thick. Mathematical symbols should be sharp, correctly formatted, and noticeably smaller than the section headings.
+
+Use bold serif headings, italic mathematical variables, and academically styled annotations. Avoid modern corporate sans-serif typography for the main labels. Avoid giant acronyms, decorative slogans, fake institutional logos, citation markers, benchmark scores, or unsupported numerical performance claims. Do not include photorealistic robots, dark backgrounds, neon colors, glassmorphism, dramatic 3D rendering, excessive gradients, microscopic text, cluttered arrow intersections, or floating decorative elements unrelated to the method.
+
+The complete figure should communicate one coherent story at a glance: continuous experience is segmented into events; local and event-level models imagine at different timescales; epistemic uncertainty determines whether to jump or zoom in; counterfactual futures are accepted, refined, or rejected; the selected action is executed in the real environment; and event-structured replay jointly improves the world model and the policy. Preserve a moderately dense ICLR Figure 1 aesthetic, but ensure that every component remains readable when the image is reduced to a two-column paper width.

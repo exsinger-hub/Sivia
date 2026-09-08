@@ -1,0 +1,411 @@
+Create a single publication-quality scientific overview figure for an ICML-style machine learning paper.
+The research topic is:
+"Reliability-Aware Multi-Agent Orchestration with Verifier-Guided Local Repair."
+The attached reference image must be treated as the PRIMARY AND STRICT VISUAL CONTROL IMAGE for
+composition, spatial silhouette, typography, color hierarchy, icon language, panel proportions, arrow
+grammar, visual density, and overall conference-figure character. However, the reference image must
+NOT control or tint the background. Preserve the recognizable structural fingerprint of the reference while
+replacing its original scientific content with the new multi-agent reliability topic. Do not merely create
+another diagram with pastel colors.
+
+BACKGROUND OVERRIDE _ HIGHEST PRIORITY AND NON-NEGOTIABLE
+
+The entire 4 : 3 canvas must be a single, perfectly uniform, digitally flat pure white field: exactly #FFFFFF,
+RGB (255, 255, 255). This requirement applies to every outer margin, exposed negative space, the
+narrow central gutter, the interiors of both dashed phase containers wherever no explicit panel is present,
+and every gap between boxes, arrows, icons, and labels. Do not inherit any background tone from the
+reference image. Do not use off-white, ivory, cream, beige, warm white, cool white, pale gray, blue-gray,
+paper white, or any other near-white substitute.
+There must be no full-canvas gradient, vignette, paper texture, grain, noise, watercolor wash, ambient
+shading, bloom, glow, halo, drop shadow, border fade, spotlight, or environmental illumination. Do not
+simulate a photographed or scanned page. The background should look like a clean vector-artboard
+export placed directly on a pure white digital page. Antialiasing is allowed only along the immediate edges
+of text and shapes; it must not create broad gray halos or contaminate the surrounding white space.
+Colored fills are permitted only inside the explicitly specified panels, bridge modules, title tabs, icons, and
+arrows. Every other pixel must remain #FFFFFF. Both large dashed phase containers must have no fill at
+all, so their interiors reveal the same uninterrupted #FFFFFF canvas. The subtle pastel transition inside the
+central Coordination Library must be clipped strictly to that rounded module and must not spill, feather,
+glow, or bleed beyond its border.
+The output canvas must be 4 : 3 landscape, approximately 1600 × 1200 pixels, on the absolute pure-white
+background defined above. Do not stretch the diagram vertically to fill the entire 4 : 3 canvas. Place a
+broad, shallow framework diagram in the center of the canvas, occupying approximately 94–96% of the
+canvas width and 62–68% of its height. Leave balanced, visibly pure-white margins above and below. The
+internal framework should retain an approximately 2.0–2.1:1 wide horizontal silhouette so that it still
+resembles the provided reference at thumbnail scale.
+The final image must look like a compact ICML paper framework figure exported on a flat pure-white
+digital artboard, not like textured paper, a scanned page, a square poster, commercial dashboard, slide
+cover, or full-page infographic.
+
+VISUAL STRUCTURE – STRICTLY PRESERVE THE REFERENCE SILHOUETTE
+
+Construct TWO SEPARATE adjacent rounded phase containers, not one large outer frame divided by a
+vertical line. Each phase container must have its own medium-gray dashed rounded border. Place a
+narrow, unfilled, absolute-pure-white (#FFFFFF) gutter between the two phase containers. The left phase
+should be slightly wider than the right phase, approximately 52% versus 48% of the framework width.
+Use a medium gray border around both phase containers:
+• border color approximately #808080;
+• visually equivalent to a 2.5–3 pixel stroke;
+• rounded corners with a moderate radius, not pill-shaped;
+• regular rectangular dashes, approximately 9 – 11 pixels long with 5 – 6 pixel gaps;
+• no shadow and no fill behind the phase containers; their interiors must expose the uniform #FFFFFF
+canvas.
+Three vertically stacked knowledge-management modules must STRADDLE THE CENTRAL SEAM
+between the two phase containers, partially covering the dashed borders. This central bridge is essential.
+Do not place all modules neatly inside separate columns. The upper bridge module, central library
+module, and lower bridge module should overlap the seam just as in the reference image, visually
+connecting Phase 1 and Phase 2.
+Place the following large phase headings inside the top margin of the two dashed containers:
+"PHASE 1 : LEARNING TRUST & REPAIR POLICIES"
+"PHASE 2 : EXECUTION WITH SELECTIVE AGENT REPAIR"
+Use Comic Sans MS Bold or an extremely close visual equivalent. The headings must be dark charcoal
+gray, approximately #3B3838, uppercase, compact, slightly informal, and gently hand-lettered without
+becoming cursive. They should look like text written in a polished academic sketch, not like modern
+geometric typography.
+Do not place a separate figure title above the framework. Do not add a legend, benchmark chart,
+comparison strip, or footer.
+
+TYPOGRAPHY – MATCH THE REFERENCE PRECISELY
+
+Use Comic Sans MS Bold for:
+• both phase headings;
+• A, B, C, D panel labels;
+• major module names;
+• short emphasized labels.
+Use Comic Sans MS Regular for:
+• explanatory phrases;
+• small workflow labels;
+• short annotations;
+• comments beside rollout trajectories.
+Use Consolas or Consolas Bold for:
+• <think>;
+• <tool> ;
+• <verify>;
+• <result>;
+• POLICY.md;
+• code-like or file-like labels.
+Do not use cursive handwriting, marker lettering, rounded SaaS fonts, Inter, Helvetica-like corporate
+typography, serif typefaces, or futuristic display fonts. The typography should be slightly playful but
+technically controlled. Most labels should remain one or two short lines. Avoid paragraphs.
+Use dark charcoal #3B3838 for normal text. Use dark burnt orange #843F0B for policy and coordination-related labels. Use dark olive green #3B5F21 for reliability, diagnosis, evidence, and repair-related labels.
+
+COLOR SYSTEM – DO NOT IMPROVISE
+
+Use the following restricted palette:
+• absolute pure white canvas and all unoccupied negative space: #FFFFFF only;
+• pale neutral gray panels: #F2F2F2;
+• pale orange panel fill: #FEF4ED;
+• pale green panel fill: #F7FBF2;
+• orange outline: #C65F10;
+• soft peach-orange block arrows: #F5B482;
+• dark orange text: #843F0B;
+• green outline: #588E32;
+• soft light-green block arrows: #ACD78E;
+• dark green text: #3B5F21;
+• medium gray outline: #808080;
+• soft gray connectors: #B0ACAC;
+• light blue rollout nodes: #DAE3F3;
+• yellow experience bulbs: approximately #FFD84A;
+• green success markers: approximately #6DD276;
+• red failure markers: approximately #EF5B63.
+Orange represents global coordination policy, reusable orchestration structure, policy documents, and
+team adaptation.
+Green represents reliability evidence, failure insight, repair experience, verification, and successful
+correction.
+Gray represents task inputs, neutral execution paths, decomposition links, and enclosing structures.
+Blue should appear only in small rollout nodes, image thumbnails, checklists, targets, or tool icons. Do not
+introduce large blue panels. Avoid purple except for tiny target-like subtask icons. Do not introduce neon
+colors.
+Only the central library module may use a very subtle diagonal pastel transition from pale peach on the
+upper-left side topale yellow-green on the lower-right side. Clip this transition exactly to the module
+boundary with a crisp edge and zero spill. All other panels should use flat fills. The global canvas and all
+negative space must remain uniform #FFFFFF. NO glossy gradients, dramatic shadows, glass effects,
+textured backgrounds, ambient shading, or paper simulation.
+
+ICON LANGUAGE _ COPY THE VISUAL CHARACTER, NOT GENERIC ICONS
+
+Use small colorful PowerPoint or Microsoft Office-style clip-art icons with a cheerful sticker-like
+appearance. Icons should combine flat shapes, thin dark-gray contours, and very slight internal shading.
+They should resemble miniature Office illustrations or friendly emoji stickers rather than monochrome SVG
+outline icons.
+Use:
+• a tiny landscape-image thumbnail•
+• a white question-mark card;
+• an orange Markdown document icon;
+• a white checklist document with a dark navy outline and a small green top element;
+• an orange funnel;
+• yellow light bulbs with gray bases and small orange star-like filaments;
+• a cyan-and-green globe;
+• small Python, browser, magnifier, calculator, or tool icons;
+• light-blue circular trajectory nodes;
+• green circular checkmarks;
+• red circular crosses;
+• gray plus signs;
+• small pink-and-blue target icons over subtasks.
+Do not use humanoid robots, realistic faces, detailed characters, large mascots, generic Lucide icons,
+Font Awesome-style monochrome symbols, or photorealistic objects. Icons should remain small and
+subordinate to the architecture.
+
+PANEL A – UPPER LEFT
+
+Create a large pale-orange rounded panel in the upper-left portion of Phase 1. It should occupy
+approximately 68–72% of the usable left-phase width and roughly 36–39% of its height.
+Use:
+• pale orange fill #FEF4ED;
+• thin dark-orange outline #C65F10;
+• moderate corner radius;
+• no shadow.
+Place a small white rounded title tab overlapping the panel's TOP border near its left side. Give the tab a
+medium-gray outline and write:
+"A. Agent Rollout Summary"
+The tab must visually sit on top of the panel boundary, not float above it.
+Above Panel A, place the label:
+"Task and Query:"
+To its right, place one compact rounded input card containing:
+• a small landscape image thumbnail;
+• a narrow divider•
+• a white card with a large "?" symbol.
+Use a gray downward block arrow from the input card into Panel A.
+Inside the left two-thirds of Panel A, write:
+"Coordination Trajectory"
+Below this label, create one gray dashed rounded inner container. Inside it, arrange four compact
+reasoning columns. Each column should contain:
+• one tiny white code label at the top, such as <plan>, <think>, <tool>, or <verify>;
+• one miniature tool or agent icon in the middle;
+• one tiny white code label such as <result> at the bottom.
+Use soft gray horizontal arrows between adjacent reasoning columns. Add one small worried agent-face
+icon near the final column to echo the playful visual character of the reference.
+Inside the right third of Panel A, place the short heading:
+"Policy Document Generation"
+Below it, create two stacked white rounded boxes with orange outlines:
+"Role Template
+Extraction"
+"Message Pattern
+Extraction"
+Place one compact colorful icon to the left of the text in each box. The first icon may resemble a small
+document with agent roles. The second may resemble three linked nodes or speech bubbles.
+A thick peach-orange horizontal block arrow should exit the right side of Panel A toward the central policy
+modules.
+
+PANEL B – LOWER LEFT
+
+Create a pale-green rounded panel directly below Panel A. Match the width of Panel A and leave only a
+narrow gap between them.
+Use:
+• fill #F7FBF2;
+• thin green outline #588E32.
+Place the white title tab overlapping the panel's BOTTOM border near the left side, not its top border.
+Write:
+"B. Cross-Rollout Diagnosis"
+Connect Panel A to Panel B using one broad gray downward arrow.
+Inside Panel B, place:
+"Rollout×N"
+near the upper-left.
+Below it, draw four compact horizontal rollout rows. Each row should contain three or four light-blue
+circular nodes linked by thin gray arrows. At the end of each row, place:
+• a green checkmark for a reliable rollout;
+• another green checkmark for a second reliable rollout;
+• a red cross for an unreliable rollout•
+• a green checkmark for a successfully repaired rollout.
+Beside the outcome symbols, place tiny agent-face emojis with different expressions: confident, satisfied,
+worried, or relieved.
+To the right of the rollout rows, add three very short Comic Sans MS annotations:
+"Both teams verify
+before acting."
+"I trusted a faulty
+message and failed."
+"I repaired only
+the bad branch!"
+Use two hand-drawn-style gray braces on the far right. Label them:
+"Insight from
+Commonalities"
+and
+"Insight from
+Comparison"
+Do not use long prose.
+At the right edge of Panel B, show two or three small yellow light-bulb icons labeled:
+"Failure
+Items"
+Send them through a thick light-green horizontal block arrow into the lower central bridge module.
+
+CENTRAL BRIDGE _ THREE STACKED MODULES
+
+The central bridge must overlap the seam between the two dashed phase containers.
+Upper bridge module:
+Create a pale-orange rounded box with an orange outline. Add a small white title tab overlapping its top
+border:
+"Policy Manager"
+Inside, place:
+• one orange funnel icon;
+• "Length Filter" in dark orange;
+• three small downward arrows;
+• one small yellow-orange agent-face icon;
+"MLLM Judgement" in dark orange.
+A soft peach-orange arrow should flow downward from this module into the central library.
+Central bridge module:
+Create the largest of the three bridge boxes. Use a subtle diagonal transition from pale peach at the
+upper-left topale green at the lower-right.
+Place:
+• "Coordination Library" in dark orange near the upper-left;
+• an orange POLICY.md document icon below it;
+• a white checklist icon near the right side;
+• "Failure Bank" in dark green near the lower-right.
+Keep the arrangement asymmetrical and compact, matching the reference. Do not divide the box with a
+hard line.
+Lower bridge module:
+Create a pale-green rounded box with a green outline. Add a small white title tab overlapping the top
+border:
+"Failure Manager"
+Inside, vertically arrange:
+• a similarity or overlapping-circle icon;
+• "Similarity Filter"•
+• three small downward arrows;
+• an orange funnel;
+"Quantity Filter"•
+• three small downward arrows;
+• a yellow-orange agent-face icon;
+"MLLM Judgement."
+Use dark green text for these labels.
+Connect this lower module upward into the central library using a thick light-green vertical block arrow.
+From the central library, send:
+• one thick light-green diagonal arrow toward Panel C;
+• one thick peach-orange diagonal arrow toward Panel D.
+
+PANEL C – UPPER RIGHT
+
+Create a large light-gray rounded panel in the upper-right portion of Phase 2 .
+Use:
+• fill #F2F2F2;
+• thin light-gray outline;
+• no shadow.
+Place a white title tab overlapping the panel's TOP-left border:
+"C. Decomposition
+& Routing"
+Above Panel C, place:
+"Task and Query:"
+with the same image-and-question input card used in Phase 1.
+Below the input card, create three small dashed rounded subtask cards arranged horizontally:
+"Subtask1"
+"Subtask2"
+"Subtask3"
+Place one tiny pink-and-blue target icon over the upper-left corner of each subtask card. Use soft gray
+branching arrows from the input card to all three cards. Include a few short curved gray arrows between
+the subtasks, matching the reference's sketch-like routing appearance.
+Below the subtask cards, create one long, shallow white retrieval bar outlined in green. Write:
+"retrieve top-k repair experience"
+in dark green Comic Sans MS Bold.
+Place one white checklist icon to the left of the retrieval bar.
+Below the bar, show three small groups of yellow light bulbs. Each group should contain two bulbs.
+Separate the groups using large soft-gray plus signs. Connect each subtask to its bulb group with a short
+gray downward arrow.
+Keep the geometry shallow, horizontal, and tightly packed.
+
+PANEL D _ LOWER RIGHT
+
+Create another light-gray rounded panel directly below Panel C.
+Place its white title tab overlapping the panel's BOTTOM-left border:
+"D. Local Repair & Execution"
+Do not place this title at the top.
+In the upper-left portion of Panel D, create a gray dashed rounded inner box. Inside it, place:
+• an orange POLICY.md document icon;
+• the label "POLICY.md" above or beside it;
+• one large gray plus sign;
+• three yellow light bulbs;
+• the label "refined repair rules."
+To the right of this dashed inner box, place a compact white rounded rectangle with a green outline:
+"Repair
+Rewrite"
+A green downward arrow from Panel C should enter this rewrite box.
+In the lower-left portion of Panel D, place a white rounded box labeled:
+"Agent
+Execution Loop"
+Inside or immediately to its left, show:
+• a small yellow-orange agent face;
+• two curved gray loop arrows;
+• a cyan-green globe or tool icon;
+• one tiny red faulty node changing into a green corrected node;
+• one small shield-check or magnifier icon.
+The repair event must remain a small local visual detail. Do not add a large verifier gate, large shield,
+evidence board, or separate validation panel.
+To the right of the execution loop, create a white rounded box with an orange outline:
+"Team
+Adaptation"
+Use one green downward arrow from Repair Rewrite into Team Adaptation.
+Add a small gray caption beneath the loop :
+"Verifier-Guided Local Repair"
+Optionally include an even smaller annotation:
+"repair the faulty branch only"
+Keep this annotation subordinate and compact.
+Use a peach-orange arrow from the central library into the POLICY.md dashed box. Preserve the same
+interlocking orange-and-green flow pattern as the reference.
+
+LINE, BOX, AND ARROW STYLE
+
+Use thin outlines, approximately 1.5–2 pixels for normal panels and 2.5–3 pixels for phase borders.
+Main workflow arrows must be broad filled block arrows with rectangular shafts and triangular heads.
+They should have no dark outline.
+Use:
+• peach-orange arrows for policy and team adaptation;
+• light-green arrows for reliability and repair experience;
+• medium-gray arrows for neutral task flow.
+Use curved gray arrows only for small internal loops and subtask relations. Avoid complex arrow
+crossings.
+Panel corners should be softly rounded but not pill-shaped. Title tabs should be shallow white rounded
+rectangles with medium-gray borders. Inner dashed boxes should have smaller gray dashes than the
+phase borders.
+
+VISUAL DENSITY AND FINAL APPEARANCE
+
+The diagram should be compact and moderately dense, with approximately 8–12% internal negative
+space. Do not enlarge individual components to fill the canvas. Do not create large empty gaps between
+modules. At the same time, labels and arrows must not overlap.
+At first glance, the final figure should strongly resemble the supplied reference in:
+• two-phase silhouette;
+• two independent dashed phase borders;
+• central three-box bridge;
+• A/B panels on the left;
+• C/D panels on the right;
+• A and C title tabs on top;
+• B and D title tabs on bottom;
+• orange and green dual dataflows;
+• pale peach, pale green, and light-gray panel fills;
+• Comic Sans MS typography;
+• small colorful Office-style icons;
+• compact horizontal arrangement;
+• playful but rigorous ICML paper aesthetic.
+Only the scientific semantics should be different.
+
+STRICT NEGATIVE CONSTRAINTS
+
+Do not create one large outer frame with a vertical divider.
+Do not stack the two phases vertically.
+Do not add a bottom comparison strip.
+Do not add an agent roster or horizontal agent pool.
+Do not add a large Evidence Board.
+Do not add a large Verifier Gate.
+Do not add benchmark charts, equations, legends, tables, or explanatory paragraphs.
+Do not use dark backgrounds.
+Do not use off-white, ivory, cream, beige, warm-gray, cool-gray, blue-gray, paper-colored, or subtly tinted
+canvas backgrounds.
+Do not add paper texture, grain, noise, vignette, backdrop gradient, ambient shading, glow, halo, spotlight,
+edge darkening, border fade, or any global shadow.
+Do not place a pale-gray or tinted full-canvas rectangle behind the framework; the only full-canvas base
+is solid #FFFFFF.
+Do not allow colored panels, the central library gradient, icons, or antialiasing halos to bleed into the
+surrounding white margins or unoccupied phase interiors.
+Do not use 3D rendering, isometric perspective, photorealism, glassmorphism, neon colors, glossy
+gradients, dramatic shadows, or corporate dashboard styling.
+Do not use generic monochrome outline icons.
+Do not use humanoid robots or realistic people.
+Do not use thick black outlines.
+Do not use modern geometric sans-serif typography.
+Do not turn the diagram into a spacious minimalist infographic.
+Do not add decorative objects unrelated to the workflow.
+Do not reproduce the original framework wording.
+Do not include the watermark visible in the supplied screenshot.
+FINAL BACKGROUND CHECK: before rendering, verify that every exposed background region is exactly
+#FFFFFF with no perceptible tint or texture. At thumbnail scale, the diagram must appear to float cleanly
+on a neutral white page, with color confined to the designed modules only.
+Render specified text accurately, with correct spelling, clear hierarchy, short line lengths, and high
+legibility.
+
+EXPORT REQUIREMENT: Deliver the full diagram on an opaque white artboard. All labels and diagram strokes must be fully visible and solid. Do not remove the background, create cutouts, or make any text, strokes, panels, or white regions transparent. The attached image is a composition/style reference, not a background-removal target.

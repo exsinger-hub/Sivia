@@ -1,0 +1,830 @@
+Create a high-resolution 4 : 3 landscape scientific infographic, approximately 2048 × 1536 pixels, titled:
+"Agent Fleet: Hierarchical Multi-Agent Research & Development"
+The figure should explain how one captain agent coordinates a fleet of specialized AI agents to complete
+a large research or software-development project through task decomposition, dependency-aware
+scheduling, parallel execution, shared artifacts, live progress monitoring, resource control, integration,
+targeted rework, and independent verification.
+Use a highly polished hand-drawn scientific-comic style. The illustration should combine the warmth,
+expressiveness, and visual storytelling of an editorial comic with the precision, hierarchy, and credibility of
+a publication-quality AI systems figure.
+The figure should feel as though it were carefully drawn by a professional scientific illustrator:
+• expressive hand-inked headings
+• variable-width charcoal outlines
+• slightly imperfect rounded cards
+• energetic but controlled hand-drawn arrows
+• editorial comic characters
+• sticker-like technical icons
+• restrained motion lines
+• clean professional body typography
+disciplined academic information architecture
+The result should be visually lively, technically rigorous, readable, and suitable for an AI research
+presentation, technical blog, conference poster, or systems paper overview figure.
+Do not create a generic corporate flowchart, ordinary PowerPoint SmartArt, realistic software screenshot,
+glossy dashboard, childish cartoon, or futuristic science-fiction interface.
+
+PURE WHITE CANVAS
+
+The base canvas must be absolutely pure white:
+#FFFFFF
+Do not use warm white, cream, ivory, beige, pale gray, textured paper, aged paper, or visible canvas grain.
+The outer margins and most of the negative space must remain pure white. Approximately 85–90% of the
+full canvas should visually read as clean white space.
+The white background should make the pastel cards, charcoal linework, and localized yellow-to-green
+highlights appear fresh, clear, and premium.
+
+LOCALIZED YELLOW—GREEN BACKGROUND ACCENTS
+
+Use the visual language of the "Final Deliverable" module as a limited environmental accent throughout
+the composition.
+Create only three or four localized translucent background washes:
+1.
+A soft pale-yellow-to-mint-green halo behind the Captain Agent and Project Task Graph
+2.
+A smaller pale-yellow-to-mint-green halo behind the Shared Artifact Workspace
+3.
+A wider horizontal yellow-to-mint wash behind the Integration, Verification, and Delivery strip
+4.
+Optionally, one extremely subtle brush-like wash behind part of the title area
+Use a gradient approximately transitioning from:
+pale lemon yellow #FFF3A6
+to :
+soft mint green #CDEFD9
+The washes should have very low opacity, approximately 5–10%, with soft feathered edges and an
+irregular hand-brushed silhouette.
+They should resemble translucent marker strokes, diluted watercolor clouds, or lightly airbrushed comic
+highlights placed over a pure white page.
+Do not use rigid rectangular gradients.
+Do not cover the entire canvas with a gradient.
+Do not apply gradients to every card.
+Most functional modules should retain flat pastel fills.
+Only the following elements may use a more visible yellow-to-green gradient:
+the Final Deliverable card
+the localized background halos
+a small completion ribbon or success halo around verified outputs
+The Final Deliverable card may use a slightly stronger diagonal gradient, approximately 20–30% intensity,
+transitioning from pale yellow in the upper-left corner toward soft mint green in the lower-right corner.
+
+GLOBAL COLOR PALETTE
+
+Use a restrained functional pastel palette:
+Captain agent and planning:
+soft cream yellow #FFF0BF
+Research and information retrieval:
+powder blue #DCECF7
+Architecture and reasoning:
+pale lavender #E9E3F1
+Building, coding, and successful execution:
+pale mint #DCEFE7
+Criticism, risk, and verification:
+pale peach #F7DDD5
+Shared artifacts and infrastructure:
+very light blue-gray #E8EEF2
+Active dispatch arrows:
+muted blue #397FAE
+Feedback, artifact-return, and iteration arrows:
+muted teal #26836D
+Warnings and blocked states:
+muted coral red #C75B48
+Completion and verification:
+deep muted green #3D8B70
+Background highlight gradient:
+pale lemon yellow #FFF3A6 to soft mint green #CDEFD9
+Main linework:
+dark charcoal #20252A
+Use flat pastel color blocks. Avoid muddy beige, excessive gray, fluorescent saturation, neon colors,
+rainbow palettes, and strong dark fills.
+
+ENHANCED SCIENTIFIC-COMIC LINEWORK
+
+Strengthen the hand-drawn comic identity through illustration and linework rather than forcing
+typography to look handwritten.
+Use:
+variable-width charcoal ink outlines
+slightly imperfect rounded rectangles
+subtle natural wobble in long lines
+occasional doubled or offset contour strokes
+small deliberate line overlaps at selected corners
+expressive hand-drawn arrows
+naturally inked arrowheads
+irregular hand-drawn dashed boundaries
+sticker-like icons with narrow white separation gaps
+restrained diagonal hatching in warning states
+short motion marks around active agents
+compact radial emphasis lines around important decisions
+tiny stars, sparks, checks, or impact marks around successful outputs
+occasional colored pencil-like underline strokes
+subtle colored offset shadows behind only a few important icons
+The geometry must still remain aligned to a coherent grid.
+The comic treatment should feel deliberate and professional, not messy or amateurish.
+Do not surround every card with decorative rays.
+Do not add random doodles that have no semantic purpose.
+
+TYPOGRAPHY SYSTEM
+
+Use a deliberate two-level typography system.
+The figure should combine expressive hand-lettered display typography with clean, professionally typeset
+body text.
+
+DISPLAY TYPOGRAPHY
+
+Use expressive hand-lettered scientific-comic typography only for:
+the main title "Agent Fleet"
+the four major panel headings
+major agent names
+selected short callouts
+selected emphasis labels such as "Pass" "Targeted Rework", and "Final Deliverable"
+These display headings may use:
+slightly irregular hand-inked lettering
+modest variation in stroke width
+subtle baseline movement
+compact editorial-comic character
+slightly tapered brush terminals
+The main title should be the most expressive handwritten element.
+Panel headings should be controlled, bold, and immediately legible.
+Major agent names may have a subtle hand-drawn appearance but must remain clean.
+Do not use elaborate cursive scripts, illegible brush lettering, childish bubble lettering, or
+decorative fantasy fonts.
+
+BODY TYPOGRAPHY
+
+All small body text, technical descriptions, capability labels, card contents, status tags, equations,
+progress-board labels, dashboard labels, annotations, control rules, and explanatory sentences must use
+a clean modern sans-serif typeface.
+Use a neutral humanist or neo-grotesque sans-serif appearance visually similar to:
+Inter
+Source Sans 3
+IBM Plex Sans
+Helvetica Neue
+Avenir
+Frutiger
+Use these only as visual references for clarity and proportion.
+The small body typography should have:
+clean and stable letterforms
+open counters
+consistent horizontal baselines
+clear differentiation between similar characters
+comfortable line spacing
+controlled letter spacing
+medium-to-high contrast
+no artificial hand-drawn wobble
+no rough brush texture
+no condensed proportions
+no ultra-thin font weight
+Use Regular or Medium weight for body descriptions.
+Use Semibold for card headings, compact category labels, capability headings, and status tags.
+Do not use handwritten fonts for small technical text.
+
+TYPOGRAPHIC HIERARCHY
+
+Level 1 :
+Main title – large expressive hand-drawn lettering
+Level 2 :
+Panel headings _ bold controlled hand-lettered comic typography
+Level 3 :
+Major module and agent names _ compact semibold lettering with subtle hand-drawn character
+Level 4 :
+Card headings and category labels
+clean semibold sans-serif
+Level 5 :
+Descriptions, capabilities, annotations, dashboard labels, status information, and technical details — clean regular sans-serif
+Level 6 :
+Equations and mathematical notation _ precise publication-style mathematical typesetting
+The transition between expressive headings and sans-serif body text should feel intentional and
+systematic.
+The comic identity should primarily come from characters, icons, arrows, borders, highlights, panel
+shapes, and linework—not from making every small word handwritten.
+
+TEXT RENDERING PRIORITY
+
+Text readability is a top priority.
+Render specified English text accurately and sharply.
+Small text should remain readable at normal presentation-slide scale.
+Do not compress long text into extremely small areas.
+Increase card size or simplify decorative elements when necessary rather than shrinking body text
+excessively.
+Maintain sufficient internal padding around every text block.
+Do not allow text to touch borders, arrows, icons, or neighboring modules.
+
+OVERALL COMPOSITION
+
+Use an asymmetric command-center layout with four visual regions:
+1.
+A narrow Mission Intake region on the left, approximately 20% of the canvas width
+2.
+A large central Fleet Orchestration region, approximately 52%
+3.
+A narrower Fleet Control Tower region on the right, approximately 28%
+4.
+A horizontal Integration, Verification, and Delivery strip spanning the lower center and right regions
+The reading direction should move naturally:
+Mission Brief
+→ Captain Agent
+→ Project Task Graph
+→ Specialized Agent Fleet
+→ Shared Artifact Workspace
+→ Fleet Control Tower
+→ Integration
+→ Independent Verification
+→ Final Deliverable
+Do not make the three vertical areas look like rigid equal corporate columns.
+Use open white gaps, slightly irregular panel contours, localized background halos, and curved visual
+paths to create a more editorial composition.
+Every arrow must have a clear origin and destination.
+
+TOP TITLE AREA
+
+Across the top, place the large expressive hand-lettered title:
+"Agent Fleet"
+Render it in bold black brush-ink lettering with slightly irregular edges.
+Draw a thick, energetic, slightly curved blue brush underline beneath "Agent Fleet".
+Allow the underline to taper naturally at both ends.
+Add two or three tiny blue speed marks near the end of the underline.
+To the right, place the smaller subtitle:
+"Hierarchical Multi-Agent Research & Development"
+Below it, place:
+"One captain coordinates specialized agents, shared artifacts, and independent verification."
+Use clean sans-serif typography for the subtitle and explanatory sentence.
+Keep the title area mostly pure white.
+A very faint pale-yellow-to-mint brush halo may sit behind part of the subtitle, but it must remain highly
+subtle.
+LEFT REGION _ PANEL (a): MISSION INTAKE
+Create a tall hand-drawn rounded panel on the left.
+At the top, write:
+"(a) Mission Intake"
+Use controlled hand-lettered display typography.
+Add a tiny target or compass doodle beside the heading.
+
+USER MISSION CARD
+
+Create one main pale-yellow card titled:
+"User Mission"
+Show a green user icon beside several short text lines.
+Give the icon a sticker-like white separation line and slightly offset charcoal contour.
+Below it, arrange four compact stacked cards.
+
+CARD 1
+
+Heading:
+"Goal"
+Add a hand-drawn target icon with a small impact sparkle near the center.
+Body annotation:
+"What must be achieved?"
+
+CARD 2
+
+Heading:
+"Constraints"
+Add a lock or boundary icon.
+Body labels:
+"Time"
+"Budget"
+"Safety"
+"Scope"
+
+CARD 3
+
+Heading:
+"Tools & Data"
+Add:
+wrench icon
+database cylinder
+document icon
+terminal icon
+
+CARD 4
+
+Heading:
+"Success Criteria"
+Add a checklist with three expressive green checks.
+Body labels:
+"Correct"
+"Complete"
+"Verifiable"
+Use clean sans-serif typography for all small body labels and descriptions inside these cards.
+Below the cards, add a slightly tilted pale-mint comic-note box containing:
+"Convert an ambiguous request
+into an executable mission brief."
+The card contour may be hand-drawn, but the sentence itself must use clean sans-serif typography.
+Draw one energetic muted-blue arrow from Mission Intake toward the Captain Agent.
+Use a slightly curved path and hand-inked arrowhead.
+Add two tiny motion marks near the arrowhead.
+CENTRAL REGION _ PANEL (b): CAPTAIN-LED FLEET ORCHESTRATION
+At the top, write:
+"(b) Captain-Led Fleet Orchestration"
+Use controlled bold hand-lettered display typography.
+
+CAPTAIN AGENT
+
+Create a prominent pale-yellow rounded card near the upper center.
+Place the first subtle yellow-to-mint translucent halo behind the Captain Agent and Project Task Graph.
+The halo should be larger than the cards but very light, with irregular hand-brushed edges.
+Title:
+"Captain Agent"
+Use a professional comic-style AI character or robot head wearing a minimal captain cap.
+The character should look intelligent, calm, and confident rather than cute.
+Use slightly thicker outlines around the captain character than around ordinary icons.
+Add a small compass symbol and two short action rays near the captain cap.
+Show four concise responsibilities:
+"Understand"
+"Decompose"
+"Dispatch"
+"Coordinate"
+Use corresponding icons:
+magnifying glass
+task tree
+outgoing arrows
+compass
+Use clean semibold sans-serif typography for the four responsibilities.
+Below the card, add the note:
+"Maintains the global objective,
+not every execution detail."
+Use clean sans-serif typography for this note.
+
+PROJECT TASK GRAPH
+
+Below the Captain Agent, create a pale-yellow rounded container titled:
+"Project Task Graph"
+Show five connected task nodes:
+"R1 Research"
+"D1 Design"
+"B1 Build"
+"T1 Test"
+"S1 Synthesize"
+Connect them using directional arrows:
+R1 → D1
+D1 → B1
+B1 → T1
+R1 → S1
+T1 → S1
+Use neat but slightly hand-drawn arrows.
+Add one small coral side node:
+"Risk Check"
+Connect it to D1 and T1 using thin coral arrows.
+Use short coral warning rays around the Risk Check node.
+Add the annotation:
+"Tasks are dispatched only
+when dependencies are ready."
+Use clean sans-serif typography for node labels and the explanatory annotation.
+
+SPECIALIST AGENT FLEET
+
+Below the task graph, arrange four substantial specialist-agent pods in a balanced 2 × 2 formation.
+Leave a central opening between the four pods for the Shared Artifact Workspace.
+Each pod should resemble a small scientific-comic vignette rather than a flat software card.
+Use:
+slightly imperfect rounded outlines
+one expressive specialist-agent illustration
+small technical props
+a compact three-step process loop
+one or two restrained motion or emphasis marks
+Each pod should contain the internal process:
+"Plan → Act → Report"
+Use clean semibold sans-serif typography for the process labels.
+
+TOP-LEFT POD – RESEARCH SCOUT
+
+Use pale powder blue.
+Major title:
+"Research Scout"
+Draw an agent with:
+magnifying glass
+open paper
+browser window
+database symbols
+Capabilities:
+"Search"
+"Read"
+"Compare"
+"Cite"
+Use clean semibold sans-serif typography for capabilities.
+Show a small output document titled:
+"Evidence Pack"
+Contents:
+"Sources"
+"Claims"
+"Uncertainty"
+Add:
+"Returns evidence,
+not just conclusions."
+Use clean sans-serif typography for output contents and explanation.
+Add small search rays near the magnifying glass and two subtle page-turning lines.
+
+TOP-RIGHT POD – SYSTEMS ARCHITECT
+
+Use pale lavender.
+Major title:
+"Systems Architect"
+Draw an agent beside:
+block diagram
+interface connectors
+dependency arrows
+design grid
+Capabilities:
+"Model"
+"Structure"
+"Specify"
+"Plan"
+Output title:
+"System Blueprint"
+Contents:
+"Modules"
+"Interfaces"
+"Dependencies"
+Add:
+"Turns goals into
+a coherent architecture."
+Use clean sans-serif typography for capabilities, contents, and explanations.
+Add a small pencil stroke and a hand-drawn alignment grid behind the blueprint.
+
+BOTTOM-LEFT POD _ BUILDER AGENT
+
+Use pale mint.
+Major title:
+"Builder Agent"
+Draw an agent beside:
+terminal
+code brackets
+gear
+package cube
+test window
+Capabilities:
+"Code"
+"Execute"
+"Debug"
+"Test"
+Output title:
+"Working Prototype"
+Contents:
+"Code"
+"Tests"
+"Artifacts"
+Add:
+"Produces inspectable,
+reproducible outputs."
+Use clean sans-serif typography for all body text.
+Add tiny comic sparks around the running gear and one small green success check near the terminal.
+
+BOTTOM-RIGHT POD – CRITIC & RED TEAM
+
+Use pale peach.
+Major title:
+"Critic & Red Team"
+Draw an agent with:
+warning triangle
+checklist
+broken-link icon
+Capabilities:
+"Challenge"
+"Stress-Test"
+"Find Gaps"
+"Verify"
+Output title:
+"Risk & Test Report"
+Contents:
+"Failures"
+"Assumptions"
+"Edge Cases"
+Add:
+"Searches for reasons
+the solution may fail."
+Use clean sans-serif typography for all body labels and descriptions.
+Use restrained diagonal hatching inside the warning triangle and two short coral attention rays.
+
+FOCUSED SUBAGENTS
+
+Around one or two specialist pods, add small orbiting mini-agent cards.
+Heading:
+"Focused Subagents"
+Examples:
+"Paper Reader"
+"Code Reviewer"
+"Test Runner"
+Use clean semibold sans-serif typography for these mini-agent labels.
+Connect mini-agents to their parent specialist using thin irregular dashed lines.
+Add tiny circular motion marks to suggest temporary spawning.
+Do not place mini-agents around every pod.
+
+SHARED ARTIFACT WORKSPACE
+
+Place a central pale blue-gray rounded hub between the four specialist pods.
+Place the second subtle yellow-to-mint gradient halo behind this workspace.
+This halo should be softly circular or oval, extremely translucent, and visually lighter than the Captain halo.
+Title:
+"Shared Artifact Workspace"
+Inside it, arrange six small technical icons in a compact grid:
+"Repo"
+with a folder and code icon
+"Docs"
+with stacked pages
+"Data"
+with a database cylinder
+"Experiments"
+with a flask or chart
+"Tests"
+with a checklist
+"Logs"
+with a terminal page
+Use clean sans-serif typography for these labels.
+At the center, add a hand-drawn bidirectional file-sync symbol.
+Draw two-way artifact arrows between each specialist pod and the workspace.
+Use blue arrows for receiving work and green arrows for returning artifacts.
+Add:
+"Artifact-first coordination"
+Below it:
+"Agents read and write shared,
+traceable project state."
+Use clean sans-serif typography.
+Add a small hand-drawn sparkle beside the word "traceable".
+
+CLEAN CONTEXT CALLOUT
+
+Add a dashed pale-blue comic callout containing:
+"Each specialist receives
+a focused context packet."
+Inside it, show a compact packet containing:
+"Task"
+"Relevant Files"
+"Constraints"
+"Expected Output"
+Use clean sans-serif typography for all labels.
+Beside the focused packet, Show a crossed-out stack of irrelevant pages labeled:
+"Not the full project history"
+Use a large hand-drawn coral cross with visible marker-like texture.
+
+DISPATCH AND REPORTING
+
+Draw blue arrows from the Captain Agent or Project Task Graph toward each specialist pod.
+Label one dispatch route:
+"Work Package"
+Draw green return arrows from the specialists toward the Shared Artifact Workspace and Captain.
+Label one return route:
+"Status + Artifact"
+Use clean sans-serif typography for arrow labels.
+Use subtle motion marks to distinguish active dispatch from static relationships.
+RIGHT REGION – PANEL (c): FLEET CONTROL TOWER
+Create a tall rounded panel titled:
+"(c) Fleet Control Tower"
+Use hand-lettered display typography for the panel heading.
+The control tower should resemble a comic interpretation of a monitoring interface rather than a realistic
+software screenshot.
+All small interface text inside this panel must use especially clean sans-serif typography.
+
+PROGRESS BOARD
+
+Create a pale blue-gray progress board titled:
+"Agent Status"
+Show four horizontal rows:
+"Research Scout"
+"Systems Architect"
+"Builder Agent"
+"Critic & Red Team"
+Each row should include:
+a tiny specialist icon
+a hand-drawn progress bar
+a compact status tag
+Use status examples:
+"Done"
+"Running"
+"Blocked"
+"Review"
+Status colors:
+Done:
+mint green
+Running:
+powder blue
+Blocked:
+pale coral
+Review:
+pale yellow
+The progress bars should look like controlled colored marker strokes contained inside outlined tracks.
+Do not use handwritten text for agent names or statuses.
+Add a tiny dependency-chain icon beside the blocked row.
+Use two restrained coral alert rays around the blocked tag.
+
+RESOURCE BUDGET
+
+Create a section titled:
+"Resource Budget"
+Show four compact indicators:
+"Tokens"
+"Time"
+" Tool Calls"
+"Retries"
+Use small hand-drawn gauges, progress bars, or counters.
+The visual elements may be illustrated, but the labels and values must use clean sans-serif typography.
+Add:
+"Budgets are assigned
+per work package."
+
+CONTROL RULES
+
+Arrange three small cards:
+"Dependency Check"
+"Permission Scope"
+"Human Gate"
+Use corresponding icons:
+connected nodes
+shield and key
+hand with stop/check symbol
+Under Human Gate, add:
+"Required for high-impact actions"
+Use clean sans-serif typography.
+
+FRONTEND VISIBILITY
+
+Add a small browser-like comic card titled:
+"Fleet View"
+Inside it, show:
+miniature task graph
+four agent avatars
+marker-style progress bars
+one warning badge
+one completed artifact icon
+Add the caption:
+"Live progress,
+artifacts, and blockers"
+Use clean sans-serif typography.
+Add a small eye icon and two short blue emphasis lines near the title.
+
+PARALLEL EXECUTION EQUATION
+
+Add a pale-yellow equation card.
+Render the equation using precise mathematical typesetting:
+"T_wall ≈ T_plan + max(T_1, …, T_n) + T_merge + T_verify"
+Use correctly differentiated italic variables, regular operators, clear subscripts, stable spacing, and a
+publication-ready mathematical appearance.
+Do not render the equation in handwritten lettering.
+Below it, add:
+"Parallel work reduces wall time"
+and:
+"Coordination still has a cost"
+Use clean sans-serif typography.
+Place tidy merging arrows beside the second sentence.
+BOTTOM REGION – PANEL (d): INTEGRATION, VERIFICATION, AND DELIVERY
+Across the lower center and right regions, create a wide horizontal strip titled:
+"(d) Integration, Verification, and Delivery"
+Use controlled hand-lettered display typography for the panel heading.
+Place the third and most noticeable background gradient wash behind this strip.
+Use a broad, soft, horizontal pale-yellow-to-mint gradient cloud with feathered hand-brushed edges.
+The strip should still visibly sit on a pure white page.
+The localized gradient should guide the eye from:
+Integrator Agent
+→ Independent Verifier
+→ Final Deliverable
+The background wash should become slightly more mint-green toward the Final Deliverable side.
+
+INTEGRATOR AGENT
+
+Create a pale-lavender card titled:
+"Integrator Agent"
+Show several artifact documents converging into one organized package.
+List:
+"Merge"
+"Resolve"
+"Synthesize"
+Show a bundle containing:
+"Evidence"
+"Design"
+"Code"
+"Tests"
+Add:
+"Combines outputs without
+hiding their provenance."
+Use clean sans-serif typography for the list and explanation.
+Use hand-drawn converging arrows and one small knot-resolution icon.
+
+INDEPENDENT VERIFIER
+
+Create a prominent pale-mint card titled:
+"Independent Verifier"
+Add a large green shield-check icon with two short celebratory rays.
+Show three verification checks:
+"Requirements"
+"Evidence"
+"Tests"
+Use clean sans-serif typography.
+Add:
+"Outside the fleet execution loop"
+Draw a hand-drawn dashed mint boundary around the verifier area to emphasize independence.
+
+PASS AND TARGETED REWORK
+
+Draw two paths from the verifier.
+
+SUCCESS PATH
+
+Use a solid green hand-drawn arrow leading toward Final Deliverable.
+Label:
+"Pass"
+Use a short expressive display label with subtle hand-lettered character.
+
+FAILURE PATH
+
+Use a curved coral arrow returning toward the Captain Agent.
+Label:
+"Targeted Rework"
+Use a short controlled hand-lettered emphasis label.
+Add the explanatory sentence:
+"Reopen only the failed task,
+not the entire project."
+Use clean sans-serif typography.
+Add a small wrench icon beside "Targeted Rework".
+
+FINAL DELIVERABLE
+
+At the far right, create the strongest success-focused card titled:
+"Final Deliverable"
+Use a deliberate pale-yellow-to-mint-green diagonal gradient inside this card.
+Gradient direction:
+upper-left:
+pale lemon yellow #FFF3A6
+lower-right:
+soft mint green #CDEFD9
+Keep the gradient smooth, soft, lightly hand-rendered, and completely non-glossy.
+Add a slightly irregular dark-charcoal outline.
+Use a subtle white sticker border around the main output icons.
+Show:
+gold trophy
+document stack
+package cube
+large green check
+List:
+"Answer"
+"Code"
+"Report"
+"Artifacts"
+Add:
+"Verified, traceable,
+and ready to use"
+Use clean sans-serif typography for the list and concluding sentence.
+Use only a few restrained comic completion marks:
+two small gold stars
+three short green radial lines
+one small upward motion stroke near the trophy
+Do not add full-page confetti.
+
+KEY DESIGN PRINCIPLES CALLOUT
+
+Add a compact callout titled:
+"Fleet Design Principles"
+Arrange four principles in a 2 × 2 grid:
+"Clean Context"
+"Clear Ownership"
+"Shared Artifacts"
+"External Verification"
+Use corresponding icons:
+focused document
+agent badge
+shared folder
+shield check
+Use clean semibold sans-serif typography for the four principles.
+
+VISUAL STORYTELLING PRIORITIES
+
+The entire figure must retain a pure white foundation.
+The yellow-to-green gradient should function as a limited visual navigation system, not as a full-page
+decorative background.
+Use the gradient to visually connect:
+strategic planning
+shared coordination
+successful delivery
+The Captain Agent should feel important but not oversized.
+The specialist pods should resemble an organized fleet of illustrated experts.
+The Shared Artifact Workspace should act as the visual coordination center.
+The Fleet Control Tower should clearly communicate:
+progress
+budgets
+dependencies
+permissions
+blockers
+frontend visibility
+The Independent Verifier must visibly remain outside the internal fleet execution loop ·
+The final figure should communicate five core principles:
+1.
+A large mission is decomposed into dependency-aware work packages.
+2.
+Specialized agents operate in parallel with focused contexts.
+3.
+Agents coordinate through shared, inspectable artifacts.
+4.
+A control plane tracks progress, resources, permissions, and blockers.
+5.
+Independent verification either approves delivery or triggers targeted rework.
+Keep all arrow routing clear.
+Maintain consistent card radii, icon language, stroke hierarchy, padding, text alignment, and visual rhythm.
+Do not reduce the comic style when replacing body handwriting with sans-serif typography.
+The comic character must remain strong through:
+illustrated agents
+expressive icons
+organic borders
+hand-drawn arrows
+motion lines
+brush underlines
+sticker contours
+background marker washes
+restrained emphasis marks
+The final result should look like an original, highly polished scientific-comic infographic: expressive and
+visually charming, yet systematic, readable, technically credible, and suitable for a major AI conference
+presentation.
+
+EXPORT REQUIREMENT: Deliver a complete opaque illustration on a solid white artboard. Keep all labels and diagram strokes fully visible. Do not remove the background or make text, strokes, pastel panels, or white regions transparent.

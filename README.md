@@ -38,6 +38,28 @@
 
 [内置模板](skills/design-scientific-figure/references/prompt-templates.md) · [详细工作流](skills/design-scientific-figure/references/imagegen-first-workflow.md)
 
+## 共建科研绘图知识库
+
+知识库以 **实际生成图片 + 对应完整 prompt** 为一个案例，首批整理 6 个不同主题，覆盖 LLM 推理、多模态框架、强化学习与多智能体。点击图片下方链接即可取得生成提示词。
+
+### 精选 · 技术手绘与多智能体协作
+
+![Agent Fleet：多智能体协作技术漫画](knowledge-base/cases/agent-fleet/figure.png)
+
+[完整 prompt](knowledge-base/cases/agent-fleet/prompt.txt) · [案例说明](knowledge-base/cases/agent-fleet/README.md)
+
+### 精选 · LLM 推理与可验证锚点
+
+![Reasoning Between Words：潜在推理与符号锚点](knowledge-base/cases/reasoning-between-words/figure.png)
+
+[完整 prompt](knowledge-base/cases/reasoning-between-words/prompt.txt) · [浏览全部 6 组图文案例](knowledge-base/README.md)
+
+以上为参考提示词的 ImageGen 生成示例；用户认可状态与观察记录见各案例说明。
+
+**欢迎把你的优秀科研图、完整 prompt 和修改经验贡献到 Sivia！** 尤其欢迎“最终认可的 prompt + 对应成图 + 为什么这样改”的配套案例，让后续作图有更多可借鉴的真实经验。
+
+[提交知识库案例](https://github.com/exsinger-hub/Sivia/issues/new?template=knowledge-base.md) · [贡献指南与 PR 方式](knowledge-base/CONTRIBUTING.md)
+
 ## 安装
 
 需要Codex、Node.js及所选的PowerPoint、WPS或draw.io；ImageGen路线需要会话提供图像生成工具，prompt长度检查需要Python 3。

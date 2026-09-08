@@ -1,0 +1,350 @@
+Create a single publication-quality scientific overview figure for an AAAI-style
+artificial intelligence paper about hybrid latent—symbolic reasoning in large language models.
+The main title should be:
+"Reasoning Between Words"
+Use the subtitle:
+"Uncertainty-Gated Latent Deliberation with Sparse Verifiable Anchors"
+Add the concise sentence:
+"Think continuously, verbalize selectively, and verify before answering."
+
+SCIENTIFIC POSITIONING
+
+The figure presents an original conceptual framework for efficient and auditable language-model
+reasoning. It is informed by recent research on continuous latent reasoning, latent thought vectors,
+dynamic switching between latent and discrete reasoning, recurrent hidden-state computation, and
+selectively triggered neuro-symbolic reasoning.
+Do not reproduce the exact architecture, wording, composition, diagrams, or visual identity of any existing
+paper. Do not present this framework as an already published method. Do not claim state-of-the-art
+performance or include fabricated experimental results.
+The central scientific question is:
+Can a language model perform most intermediate deliberation compactly in continuous latent space, while
+emitting only a small number of externally verifiable symbolic anchors when uncertainty, constraint risk,
+or evidence requirements make explicit reasoning necessary?
+
+OUTPUT FORMAT
+
+Use a 4 : 3 landscape canvas, preferably 4800 × 3584 pixels or 2400 × 1800 pixels.
+Use a completely pure white outer background. The full framework should occupy approximately 93–95%
+of the canvas width and 85–88% of its height, with balanced white margins.
+The image should resemble a memorable first-page overview figure from an AAAI artificial-intelligence
+paper. It may use a restrained scientific-comic character, but it must remain technically precise,
+professionally typeset, and suitable for an academic manuscript.
+Do not print "Figure 1." Do not add author names, affiliations, conference logos, company logos, citations,
+watermarks, benchmark rankings, numerical improvements, or unsupported performance claims.
+
+CENTRAL VISUAL STORY
+
+The complete figure must communicate the following flow:
+Problem, constraints, and optional evidence → compact task representation →recurrent latent deliberation
+→ uncertainty and constraint monitoring →selective symbolic checkpoint → evidence and consistency
+verification → commit, repair, tool call, or further latent reasoning → concise final answer with a
+sparse audit trace.
+The framework should visibly balance two goals:
+1. latent computation reduces unnecessary verbal tokens and permits compact exploration;
+2. sparse symbolic anchors expose only the reasoning commitments needed for verification.
+The figure must not imply that hidden latent states are automatically truthful or interpretable. Verification,
+failure detection, and abstention must remain visible.
+
+TITLE REGION
+
+Place the expressive title "Reasoning Between Words" near the upper-left.
+Render only the main title in bold, slightly irregular black marker or brush-ink lettering. Add a short
+lavender-to-powder-blue brush underline with tapered ends and two tiny motion strokes.
+Place the subtitle to the right in clean bold sans-serif typography. Put the sentence "Think continuously,
+verbalize selectively, and verify before answering." directly below it in smaller dark-gray text.
+Keep the title region mostly white. A faint localized lavender marker halo may appear behind part of the
+subtitle, but do not create a banner or full-width gradient.
+
+TOP MOTIVATION STRIP _ TWO INCOMPLETE EXTREMES
+
+Directly below the title, create a shallow comparison strip containing two wide white rounded cards.
+Separate them with a coral tension bracket.
+LEFT CARD _ ALWAYS-VERBAL CHAIN OF THOUGHT
+Heading:
+"Always-Verbal CoT"
+Show a problem card entering a long left-to-right sequence of small butter-yellow word tokens. Several
+tokens should contain tiny fragments such as:
+"first" "therefore" "maybe" "next" "because"
+The chain should become visibly long and slightly repetitive before reaching an answer.
+Add three concise labels:
+"high token cost" "premature commitment" "verbal redundancy"
+Use a small stopwatch and repeated speech-line symbols. Keep the failure illustration disciplined rather
+than humorous.
+RIGHT CARD – UNCHECKED LATENT Loop
+Heading:
+"Unchecked Latent Loop"
+Show the same problem entering a compact lavender hidden-state ribbon that loops through a recurrent
+model block. The representation should appear dense and efficient, but one section should gradually drift
+toward a soft-coral contradiction marker.
+Add three concise labels:
+"compact exploration" "hidden state drift" "weak auditability"
+Do not portray latent reasoning as a brain, cloud of magic, or glowing
+consciousness. Use abstract vector capsules, smooth trajectories, layered embeddings, and transformer-like blocks.
+BETWEEN THE CARDS
+Place a restrained soft-coral bracket labeled:
+"Efficiency–Auditability Tension"
+From the bracket, draw one broad muted-orange arrow downward into the proposed framework.
+Below the arrow, add:
+"Latent computation + selective verification"
+
+MAIN METHOD REGION
+
+Below the comparison strip, build a broad four-part method region. Use nonuniform panel widths and
+slightly irregular rounded contours.
+Do not create four rigid corporate columns.
+Panel (b) and Panel (c) should be the two dominant visual anchors. Panel (a) should be narrower, and
+Panel (d) should be compact but visually conclusive.
+
+PANEL (a) _ TASK AND CONSTRAINT ENCODING
+
+Use approximately 18–20% of the main method width.
+Heading:
+"(a) Task Encoding"
+At the top, show a white problem document labeled: "Problem x"
+Inside it, use a tiny math expression, one short natural-language instruction, and a question mark. Do not
+include a solvable full problem.
+Below it, place three compact input cards: "Constraints C" Show a checklist containing consistency,
+format, and safety symbols.
+"Evidence E" Show a document, database, and calculator symbol. Use powder blue for externally
+observable evidence.
+"Budget B" Show a small token meter and a latency clock. Use muted orange.
+Merge these inputs into a structured packet titled: "Reasoning Brief" Inside the packet, show four short
+fields: goal known facts open constraints available tools
+Add the annotation:
+"Define what must be solved and checked."
+Route the packet into Panel (b) with one clear dark-gray arrow.
+
+PANEL (b) – RECURRENT LATENT DELIBERATION
+
+Use approximately 29–31% of the main method width. This should be a major visual anchor.
+Heading:
+"(b) Latent Deliberation"
+At the upper-left, show a short sequence of visible prompt tokens entering a lavender transformer-style
+module labeled:
+"Shared LLM Backbone"
+The module must look like a compact scientific network block, not a server rack or software interface.
+From the backbone, output an initial rounded latent packet:
+"h_0"
+Then create a large localized pale-lavender reasoning workspace containing a recurrent trajectory:
+h_0 → h_1 → h_2 → … → h_k
+Render the latent states as soft vector capsules connected by smooth lavender arrows. Each state should
+contain small abstract bars, dots, and directional vectors rather than readable words.
+Show three restrained behaviors inside the workspace:
+"explore" Represented by two or three faint candidate directions.
+"integrate" Represented by several signals merging into one state.
+"compress" Represented by a broad representation becoming a smaller dense packet.
+Include the compact expression:
+h_{k+1} = F_θ(h_k, x, C)
+Use correct mathematical typography.
+Along the lower edge of the workspace, draw a small sequence of pulse marks representing inference-time latent steps. Use alternating short and long lavender strokes without turning them into an audio
+waveform.
+Add a small orange controller labeled:
+"Adaptive Depth"
+It should monitor:
+progress, uncertainty, remaining budget. Draw a looping orange arrow around the latent workspace to
+communicate that the model may take additional internal steps when needed.
+Add the annotation:
+"Reason without decoding every intermediate state."
+Do not imply that more recurrent steps are always better.
+
+PANEL (c) – SYMBOLIC ANCHOR GATE
+
+Use approximately 31–33% of the main method width. This should be the largest and most technically
+detailed panel.
+Heading:
+"(c) Symbolic Anchor Gate"
+Route the current latent state h_k into a central diamond-shaped controller
+labeled:
+"Should the model speak now?"
+Place four small monitoring dials around the controller:
+"Uncertainty U_k" Use a lavender-to-coral dial.
+"Constraint Risk R_k" Use a checklist with one possible warning.
+"Evidence Need N_k" Use a powder-blue document and magnifier.
+"Budget B_rem" Use an orange token meter.
+Include a compact decision expression:
+g_k = G_φ(U_k, R_k, N_k, B_rem)
+The gate should have four clearly separated outcomes.
+
+OUTCOME 1 – CONTINUE LATENT
+
+Use a lavender curved arrow returning to Panel (b).
+Label:
+"CONTINUE LATENT"
+Add:
+"explore silently"
+This path should be prominent but not dominant.
+
+OUTCOME 2 – EMIT ANCHOR
+
+Use a butter-yellow arrow entering a small structured card titled:
+"Symbolic Anchor S_k"
+The anchor card should contain four short fields:
+claim support depends on confidence
+Show only concise symbolic commitments, not a long chain-of-thought paragraph.
+Place three anchor examples in a vertical ledger:
+"S_1: establish premise" "S_2: resolve constraint" "S_3: derive candidate"
+Connect them with thin dark-gray dependency arrows. Label the structure:
+"Anchor Ledger"
+
+OUTCOME 3 _ CALL TOOL
+
+Use a powder-blue arrow leading to a compact tool tray containing:
+calculator retriever code executor
+Label:
+"CALL TOOL"
+Show a blue evidence packet returning to the current symbolic anchor. External evidence must remain
+visually distinct from the model's own hidden state.
+
+OUTCOME 4 _ HALT OR ABSTAIN
+
+Use a mint-green path for a verified halt and a soft-coral path for abstention.
+Labels:
+"ANSWER" "ABSTAIN"
+The abstention path should appear when evidence remains insufficient or constraints conflict.
+
+ANCHOR VERIFICATION
+
+To the right of the Anchor Ledger, place a pale-mint rounded module titled: "Anchor Verifier V"
+Inside it, show four checks:
+"logical consistency" "constraint coverage" "evidence support" "anchor faithfulness"
+Represent each check with a small icon and a checkbox.
+The verifier produces two outcomes:
+"COMMIT" Use a broad mint-green arrow that locks the anchor into the ledger.
+"REVISE" Use a soft-coral curved arrow returning only the failed anchor and its dependent latent state for
+repair.
+Add the sentence:"Verify commitments, not private hidden states."
+Do not show a full restart after one failed anchor. The repair path should be local and selective.
+
+PANEL (d) – ANSWER AND AUDIT TRACE
+
+Use approximately 17–19% of the main method width.
+Heading:
+"(d) Answer Assembly"
+At the top, show the verified Anchor Ledger and the final latent state entering
+a compact module labeled:
+"Answer Compiler"
+Use one dark-gray structural arrow from the ledger and one lavender arrow from the final latent state.
+Below it, show two aligned outputs.
+LEFT OUTPUT:
+"Final Answer"
+Use a clean white document with three short answer lines and a mint-green shield check.
+RIGHT OUTPUT:
+"Sparse Audit Trace"
+Show a narrow dependency path:
+S_1 → S_2 → tool evidence → S_3
+Include small provenance markers, but no detailed chain-of-thought.
+At the bottom, place a three-way completion gate:
+"SUPPORTED" in mint green "REVISE" in muted orange "INSUFFICIENT" in soft coral
+Add the annotation:
+"Compact reasoning, inspectable commitments."
+
+BOTTOM REGION – ADAPTIVE DELIBERATION PROFILES
+
+Across the lower width of the figure, create a broad strip titled:
+"Adaptive Deliberation Profiles"
+Use a white foundation with a pale warm-gray outline. Add a localized
+pale-yellow-to-mint marker wash behind the successful reasoning paths.
+Create four miniature task profiles from left to right.
+"Direct Question"
+Show a short latent pulse, no tool call, one verified anchor, and a quick
+answer.
+"Ambiguous Problem"
+Show a longer lavender latent trajectory, two candidate branches, one symbolic anchor, and continued
+deliberation.
+“Tool-Grounded Task"
+Show a blue tool branch returning evidence, followed by an anchor commit and answer.
+"Conflicting Evidence"
+Show two evidence packets disagreeing, a coral warning, a local revision loop, and either a corrected
+answer or abstention.
+Under the profiles, draw a thin evaluation ruler with five labels:
+accuracy token cost anchor fidelity calibration latency
+Do not include numerical values or imply that one configuration dominates every metric.
+
+FAILURE FRONTIER
+
+At the bottom of the strip, add a narrow soft-coral row titled:
+"What Still Breaks"
+Include five compact warning chips:
+"latent drift" "premature anchoring" "verifier blind spot"
+"excessive switching" "hidden contradiction"
+Add the exact sentence:
+"Efficiency matters only when symbolic checkpoints remain faithful."
+Keep this warning row subordinate but clearly readable.
+
+VISUAL STYLE
+
+Use a polished scientific-comic illustration language that remains systematic and mathematically
+rigorous enough for an academic paper.
+Use:
+• a pure white page foundation;
+• slightly irregular dark-charcoal outlines;
+• rounded scientific panels with clean white gutters;
+• expressive marker lettering only for the main title;
+• bold modern sans-serif typography for section headings;
+• clean compact sans-serif typography for technical labels;
+• Computer Modern-style typography for equations and variables;
+• flat pastel fills;
+• small Office-style scientific icons used only as navigation aids;
+• lightly hand-drawn arrows with clear destinations;
+• localized translucent marker halos;
+• subtle shadows only where needed to separate hierarchy.
+Use this restrained palette consistently:
+pure white #FFFFFF, near-black charcoal #252525, light warm gray #F1F1EF, inactive gray #E7E8EA,
+powder blue #BFD8F0, soft lavender #DCC7EB, butter yellow #FFE5A3, muted orange #F2B37E, mint
+green #C8E6C1, soft coral #F3B7B0, blue-gray #A8B6C8, pale sage #D9E7D3.
+
+SEMANTIC COLOR RULES
+
+Lavender = latent states, hidden computation, and semantic refinement. Yellow = visible language tokens
+and symbolic anchors. Powder blue = external evidence, observations, and tool outputs. Orange =
+adaptive depth, routing, budget, and revision scheduling. Mint green = verified anchors, supported
+answers, and successful completion. Coral = contradiction, failed verification, drift, and
+abstention. Gray = inactive states, masked information, and structural context.
+
+ARROW GRAMMAR
+
+Use thin dark-gray arrows for structural dependencies. Use smooth lavender arrows for latent-state
+recurrence. Use yellow arrows for emitted symbolic anchors. Use powder-blue arrows for tool requests
+and returning evidence. Use muted-orange arrows for routing, adaptive depth, and revision. Use solid
+mint-green arrows for verification, commit, and supported answers. Use curved soft-coral arrows only for
+failed anchors, contradiction, repair, or abstention.
+Every arrow must have an identifiable origin and destination. Avoid arrow crossings. Route feedback
+around panel borders rather than through labels. Never place arrows through text.
+
+TEXT AND DENSITY
+
+Keep all in-figure text concise. Most labels should contain two to four words.
+Do not place paragraphs inside the illustration.
+The Latent Deliberation and Symbolic Anchor Gate panels must dominate the visual hierarchy. Maintain
+moderate-to-high scientific information density with approximately 11–14% internal negative space.
+Ensure that the major narrative remains readable at thumbnail scale: verbal reasoning is expensive,
+unchecked latent reasoning is opaque, the proposed system reasons latently, uncertainty triggers sparse
+anchors, anchors are verified, failed anchors are locally revised, and the final answer retains a compact
+audit trace.
+
+STRICT NEGATIVE CONSTRAINTS
+
+Do not use a dark background. Do not use neon colors. Do not use a futuristic AI interface. Do not create
+a corporate dashboard or PowerPoint SmartArt layout. Do not use glassmorphism, metallic surfaces,
+glossy 3D tokens, or cinematic lighting. Do not use a literal human brain, glowing consciousness, robot
+mascot, or humanoid AI character. Do not depict hidden reasoning as magical smoke or an inscrutable
+galaxy. Do not create four equal-width columns. Do not use a circular taxonomy. Do not use full-canvas
+gradients or paper textures. Do not add result charts, percentages, leaderboards, benchmark scores, or
+fabricated data. Do not include paper citations, model-company names, author names, logos, or
+watermarks. Do not print "Figure 1." Do not expose long chain-of-thought text. Do not fill anchor cards
+with paragraphs. Do not imply that latent states are inherently faithful. Do not imply that a verifier is
+infallible. Do not imply that every task benefits from longer reasoning. Do not make the style childish,
+chaotic, excessively cartoonish, or emoji-dominated. Do not repeat titles, panel headings, or output labels.
+Do not allow equations, subscripts, or mathematical operators to become malformed. Do not place arrows
+through text or create tangled feedback loops.
+
+FINAL VISUAL TEST
+
+At thumbnail scale, the viewer should immediately perceive: two incomplete reasoning extremes, an
+efficiency—auditability tension, a structured task packet, a recurrent lavender latent workspace, an
+uncertainty-controlled decision gate, sparse yellow symbolic anchors, blue external tool evidence, a mint-green verifier, a local coral revision loop, and a final answer paired with a compact audit trace.
+The completed figure must communicate one coherent scientific idea without requiring a caption: A
+language model can reserve continuous latent computation for compact internal exploration, emit concise
+symbolic anchors only when uncertainty or verification demands them, validate those anchors against
+constraints and external evidence, locally repair failed commitments, and produce an efficient answer
+whose decisive reasoning structure remains inspectable.

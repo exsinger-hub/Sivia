@@ -1,0 +1,32 @@
+Create a NeurIPS-style scientific framework figure for a computer science paper. The topic is: "Hierarchical Memory Routing for Hallucination-Resistant Long-Video Question Answering". The canvas must be horizontal 4:3, pure white background, medium information density, crisp vector graphics, and the overall figure should look like a conference main-method figure from a strong NeurIPS submission: technical, modular, compact, readable, and visually rigorous.
+
+Do not imitate the original paper content. Learn only the visual language: grouped dashed regions, center-stage model pipeline, small input/output thumbnails, blue-colored neural modules, black arrows for information flow, sparse red warning accents for failure cues, occasional green accent only where improvement is highlighted, concise labels, and several subpanels integrated into one coherent framework board. Avoid glossy rendering, magazine aesthetics, decorative gradients, cinematic lighting, heavy drop shadows, or oversized empty hero zones. This should feel like a top-tier ML systems / multimodal reasoning paper figure.
+
+The figure should present a new method that solves long-video question answering with dynamic memory selection and uncertainty-aware reasoning. The composition should be organized into three vertical layers:
+
+Top layer: "Failure Diagnosis" banner region.
+This upper strip should contain two compact dashed boxes spanning the top width. The left top box shows the failure mode of naive long-video QA: many faded frame thumbnails or event tokens from earlier clips compete with the current query, causing "memory drift", "event dilution", and "retrieval collision". Use small thumbnail rectangles with subtle fading from left to right, a simple equation-like notation or symbolic score expression above them, and short labels such as "stale events", "spurious matches", and "query mismatch". The right top box shows the proposed remedy conceptually: a memory bank cylinder, a routing gate icon, a warning symbol near noisy memories, and a smaller set of preserved event tokens plus one selected query-relevant event. Use a clean plus-sign composition to indicate "compressed temporal context + query-specific evidence". This top strip should function like a diagnosis-and-motivation panel.
+
+Middle layer: the main model pipeline.
+This is the dominant central band. On the far left, show a column of video clip frames or clip stacks, with one clip highlighted in a red or dark outline to indicate the queried moment. Beside it, include a stack of past clip thumbnails labeled "history clips" and a current clip labeled "current clip". These feed into a blue trapezoid or wedge module labeled "Video Encoder". From there, arrows should flow into a rounded blue module labeled "Memory Router", then into another blue module labeled "Temporal Reasoner", then into a larger blue decoder-style block labeled "Answer & Grounding Decoder". Below the router, place a smaller blue parallelogram labeled "Question Encoder", connected upward into the router and decoder. The router should also connect upward to a "Compressed Memory Bank" cylinder. The decoder outputs two things on the right: a natural-language answer card and a temporal grounding strip or highlighted timeline segment. Keep the outputs small and schematic, not UI-heavy.
+
+The key novelty should be visually explicit: the Memory Router must selectively read from compressed long-term memory and current evidence under question guidance. Show this using a few thin black arrows, a small gating symbol, and perhaps one dashed blue arrow from the history clips into the memory bank. The pipeline should read left to right and remain immediately understandable in under five seconds.
+
+Bottom layer: three auxiliary objective / effect modules.
+Create three dashed subpanels along the bottom, each aligned under the main pipeline.
+
+Bottom-left subpanel: "Feature Calibration".
+Show current clip features and routed memory features entering a compact encoder block or two colored token bars. Illustrate that noisy features are pushed away and aligned features are pulled together. Use minimal geometric tokens, a bidirectional gap indicator, and a short label such as "reduce semantic drift". This should resemble a training objective inset.
+
+Bottom-middle subpanel: "Uncertainty-Guided Routing".
+Show a small token grid or heatmap-like matrix over video segments, with several cells softly highlighted to indicate uncertainty scores. Beside it, show two tiny routing iterations: first with broad noisy retrieval, second with more focused retrieval after pruning. Use a loop arrow and labels like "Iterate I" and "Iterate II". This panel should communicate refinement, not adversarial attack.
+
+Bottom-right subpanel: "Behavioral Outcome".
+Show three compact before/after qualitative effects: (1) suppress background distraction, (2) preserve key event boundaries, (3) improve answer grounding. Use tiny frame strips or masks/timelines as visual evidence. Include one red wrong-case icon on the left of each pair and one cleaner corrected output on the right. Keep this compact and schematic.
+
+Styling constraints:
+Use thin but confident outlines. Keep module fills in muted conference blue. Use black arrows and black text. Use red only for warning, failure, or noisy paths. Use green very sparingly for improved retained evidence. All thumbnails should be small, slightly desaturated, and secondary to the diagram. Dashed borders should be medium gray-blue, not dominant. Typography should be compact sans serif. Labels should be short and technical: "Memory Drift", "Compressed Memory", "Question Encoder", "Temporal Reasoner", "Grounding Decoder", "Feature Calibration", "Uncertainty-Guided Routing". The figure title can be omitted inside the artwork, or included very small at the bottom as "Framework Overview".
+
+Maintain moderate information density: rich but not crowded. The result should look like a polished NeurIPS method figure made by an ML researcher, not a marketing designer. Pure white background only.
+
+EXPORT REQUIREMENT: Generate a complete, fully opaque publication figure on a solid pure-white artboard. This is not a background-extraction or cutout request. Keep all text, fine arrows, borders, outlines, panels, and white regions fully opaque. All labels must be solid black or their specified dark colors, with no transparency holes, erased glyphs, damaged contours, or colored fringe artifacts. Deliver the intact white-page illustration, not a transparent layer.
