@@ -106,24 +106,6 @@ notes about fonts, assets, editability and any pending target-application verifi
 
 Specify **WPS**, **Microsoft PowerPoint**, **draw.io**, or a required live document when that choice matters. A constrained backend is not silently replaced. Real-data substitution is a separate adaptation request: a faithful-copy request preserves the approved visible content and identifies schematic values as schematic.
 
-## The workflow
-
-```mermaid
-flowchart TD
-    A[Paper and implementation] --> B[Scientific message and visual references]
-    B --> C[Complete prompt and length check]
-    C --> D[Generate and inspect image]
-    D --> E{Your feedback}
-    E -->|Revise image| C
-    E -->|Image is enough| F[Image and prompt]
-    E -->|Explicit editable request| G[Native reconstruction and atomic assets]
-    G --> H[Inspect exact file and render]
-    H -->|Observed defect| G
-    H --> I[PPTX or draw.io plus preview and editing notes]
-```
-
-Read the [complete workflow](docs/workflow.md) for source authority, region-by-region construction, backend recovery, review evidence and final packaging. The [runtime recovery reference](skills/edit-powerpoint-live/references/reconstruction-recovery.md) makes these decisions available to the drawing skills.
-
 ## What stays editable?
 
 | Content | Representation |
