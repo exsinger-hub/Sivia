@@ -17,6 +17,8 @@ For PowerPoint or WPS, inspect the deck, run `powerpoint_audit_figure`, and expo
 
 For draw.io, inspect the live model, run `drawio_live_audit_figure`, and capture the current renderer through `drawio_live_screenshot`.
 
+For an isolated native-file recovery candidate, inspect the actual PPTX structure and an export from a renderer that imports that exact file, following [Reconstruction Recovery](../edit-powerpoint-live/references/reconstruction-recovery.md). Name the renderer. A passing alternate-renderer view supports only that preview; keep PowerPoint/WPS rendering pending. Grouping is a mutation: require fresh post-grouping evidence of external arrows and labels.
+
 When a reference exists, inspect the full reference and the crop matching the current region. Compare at readable resolution.
 
 When the figure is derived from a manuscript, paper PDF, method section, equations, or an evidence pack, read [Manuscript-to-Figure Workflow](../design-scientific-figure/references/manuscript-to-figure-workflow.md) completely. Obtain the frozen Figure Claim, Paper Figure Signature, required-node and required-edge ledgers, equation-operand ledger, evidence ledger, publication display width, and permitted omissions. Review the source contract and the artifact; do not infer a missing manuscript fact from the Drawer's visual intent.

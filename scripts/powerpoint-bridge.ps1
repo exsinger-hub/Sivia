@@ -1492,7 +1492,7 @@ function Invoke-AddImage {
 
 function Get-ArrowStyle {
     param([string]$Name)
-    $map = @{ none = 1; open = 2; triangle = 3; stealth = 4; diamond = 5; oval = 6 }
+    $map = @{ none = 1; triangle = 2; open = 3; stealth = 4; diamond = 5; oval = 6 }
     return $map[$Name]
 }
 

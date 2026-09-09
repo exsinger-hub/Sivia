@@ -29,6 +29,8 @@ Before preparing copies, include annotation-only leaders and decorations in the 
 
 The manifest reports copy preparation with rendering pending. Export the source and both copies through the selected application, then derive grayscale from both actual copy exports. The reduced view tests the main story; the full-density title-hidden view tests interference from detail. Record renderer, image paths, output dimensions, physical width and removed names alongside the observations. Copy generation, grayscale conversion and source-object counting do not establish visual quality.
 
+When target-application rendering is unavailable, an already available exact-PPTX import renderer may render these same native copies. Record its actual name and retain the target-rendering gate as pending. Do not mask a separately drawn design image or imply that alternate-renderer readability establishes PowerPoint/WPS appearance.
+
 For draw.io, use a duplicated page or disposable saved copy and hide/remove the same named title/L3 cell sets before capturing the current draw.io renderer. Preserve scientific boundaries and claim-critical labels. Do not mask rectangles over the full figure or change the delivery source during read-only review.
 
 Give the reduced grayscale image to an unprimed Reviewer, save their response, then show full-density title-hidden grayscale and save that response too. Freeze both before revealing full color, Figure Claim and the scientific contract for deeper review. Record prior exposure and uncertainty honestly. If the needed renderer is unavailable, deliver the candidate with the dependent gate pending.

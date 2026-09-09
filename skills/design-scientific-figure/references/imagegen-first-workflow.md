@@ -58,6 +58,8 @@ Only after the user explicitly requests reconstruction, enter `$recreate-scienti
 
 Keep canvas ratio, panel proportions, spacing, object scale, palette and connector routes consistent with the accepted image. Compare fresh native-renderer exports with the reference at equal display size. Do not replace dense scientific glyphs with generic empty boxes or treat a whole-slide PNG embedded in PPT as editable reconstruction.
 
+If the authorized native stage stalls or a setter silently fails, use [Reconstruction Recovery](../../edit-powerpoint-live/references/reconstruction-recovery.md). Preserve the locked composition and distinguish a separately built native OOXML candidate from a live session. Do not stop all safe file construction merely because target-application verification is unavailable, and do not convert that missing evidence to a pass.
+
 ## 6. Replace only fields that benefit from real sources
 
 | Field | Production decision |

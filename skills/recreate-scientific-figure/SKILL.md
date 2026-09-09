@@ -19,6 +19,8 @@ Coordinate one backend-neutral four-role protocol. Keep the roles logically sepa
 
 Use `$recreate-scientific-figure-in-drawio` as the draw.io Drawer adapter and `$edit-powerpoint-live` as the PowerPoint/WPS Drawer adapter. Use `$audit-scientific-figure` as the Reviewer and `$correct-scientific-figure` as the Corrector.
 
+For PPTX reconstruction, also read [Reconstruction Recovery](../edit-powerpoint-live/references/reconstruction-recovery.md) completely. If an application call stalls, keep the approved specification and use its bounded recovery route; a separately built native file must not be described as a live application edit.
+
 ## Preserve backend parity
 
 Require both backends to deliver the same semantic capabilities:
@@ -62,8 +64,8 @@ Never insert a whole panel merely because cropping is faster or visually conveni
 
 After each region, require both evidence channels:
 
-- structure evidence from `powerpoint_audit_figure` or `drawio_live_audit_figure` plus inspection;
-- renderer evidence from a PowerPoint slide export or draw.io screenshot, compared with the matching reference crop.
+- structure evidence from the selected backend: `powerpoint_audit_figure` or `drawio_live_audit_figure` plus inspection on the MCP route; direct inspection of the actual native package on an allowed isolated-file recovery route;
+- renderer evidence from a PowerPoint slide export or draw.io screenshot, compared with the matching reference crop. If target rendering is unavailable in an allowed file recovery, use an already available exact-PPTX import renderer and keep target-application verification pending.
 
 The Reviewer must report every defect with:
 
@@ -90,13 +92,13 @@ For each region, repeat:
 5. Drawer executes them and rerenders.
 6. Reviewer audits again.
 
-Do not start the next region until the current region has no unresolved finding except a clearly documented source ambiguity.
+Resolve observed local defects before starting dependent regions. In an allowed file-backed fallback, use actual candidate structure and exact-file rendering for this loop; unavailable target-application evidence remains pending rather than preventing independent construction. Do not treat a missing renderer as a visual pass.
 
 ## Whole-figure loop
 
 After all regions pass locally, repeat the same loop for the complete figure. Check cross-region alignment, scale, hierarchy, whitespace, palette, font metrics, routing lanes, global balance, object hierarchy, and reference similarity.
 
-Finish only when:
+Report a full pass only when:
 
 - readable semantics and text match the source;
 - every reconstructable element is editable;
@@ -107,6 +109,8 @@ Finish only when:
 - no warning remains unless it is an unavoidable, explicitly reported source ambiguity.
 
 Report pass, fail or pending with current renderer and structure evidence. Missing evidence remains pending; successful tool calls or subjective confidence cannot complete a gate.
+
+An isolated-file candidate with passing available structure/preview checks may be delivered with target rendering explicitly pending under [Reconstruction Recovery](../edit-powerpoint-live/references/reconstruction-recovery.md). That is not a full pass and does not excuse an observed hard defect.
 
 ## Raster gate
 

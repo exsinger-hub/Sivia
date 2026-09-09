@@ -7,6 +7,8 @@ description: Connect to, inspect, create, reconstruct, or edit a Microsoft Power
 
 Act as the presentation Drawer in the four-role Sivia protocol. Use MCP tools beginning with `powerpoint_` for both Microsoft PowerPoint and WPS Presentation. Match the draw.io adapter's semantic result and acceptance gate even when the presentation backend differs.
 
+For approved-reference PPTX reconstruction, read [Reconstruction Recovery](references/reconstruction-recovery.md) completely. It covers verified host identity, stalled/no-op operations, isolated native-file recovery, post-grouping routes and exact-file delivery evidence. Reuse that reference when a backend fails; do not retry unchanged mutations indefinitely.
+
 ## Select the host backend
 
 Call `powerpoint_status` and `powerpoint_get_capabilities` with `host_application=auto` unless the user explicitly chooses `powerpoint` or `wps`. Apply these backend rules:
@@ -30,7 +32,7 @@ For live Mac PowerPoint work:
 2. If the certificate or manifest is not prepared, give the user the reported `officejs-setup.mjs prepare` and `sideload` commands. Never alter macOS certificate trust automatically.
 3. Ask the user to trust the reviewed localhost certificate, restart PowerPoint, open **Sivia Live** from **Insert > My Add-ins**, and keep the task pane open.
 4. Call `powerpoint_set_backend` with `backend=officejs` and wait for connection. Do not start drawing unless it succeeds.
-5. Keep one backend for the entire task. If the session is locked to OOXML or Office.js, start a new Codex task before switching.
+5. Keep the MCP session's backend lock. Do not mix OOXML objects and Office.js handles. A requested backend switch follows the adapter's session rules; an allowed isolated file reconstruction follows [Reconstruction Recovery](references/reconstruction-recovery.md), without creating another user task or changing the locked session.
 
 ## Respect read-only requests
 
@@ -46,7 +48,7 @@ If the user requests inspection only, call `powerpoint_status`, `powerpoint_get_
 6. After a WPS launch, require `open_dispatched=true`; on macOS also require `document_open_verified=true`. If verification is false, stop and report the failed open. If it is `null`, continue only as file generation and disclose that application-open state is unverified.
 7. Preserve an input deck by default and save an edited copy unless in-place save is explicit.
 8. Use absolute paths and never use operating-system mouse, keyboard, or screen automation.
-9. In file-backed mode, treat the managed working copy as authoritative. The automated preview uses LibreOffice/Poppler, not WPS or PowerPoint; report that renderer and retain application-specific font/chart uncertainty unless the target application is separately inspected.
+9. In file-backed mode, treat the managed working copy as authoritative. The bundled automated preview uses LibreOffice/Poppler, not WPS or PowerPoint. If that renderer is unavailable, use another already available exact-PPTX import renderer under the recovery reference; name it and retain application-specific font/chart uncertainty unless the target application is separately inspected.
 10. In Office.js mode, use an absolute `.pptx` output path with `powerpoint_save`; PowerPointApi 1.10 exports the current editable presentation through the task pane.
 
 Do not close a presentation unless explicitly requested. Closing and quitting require their tool safeguards.
@@ -70,7 +72,7 @@ If PowerPoint exposes a reconstructable semantic object and the MCP supports it,
 
 For a publication-facing figure, read [Fundamental Visual Grammar](../design-scientific-figure/references/fundamental-visual-grammar.md) completely before drawing and implement the frozen `visual_grammar_receipt` as native objects. Do not silently replace a failed composition with cosmetic PowerPoint styling.
 
-For overviews, follow [Overview Narrative](../design-scientific-figure/references/overview-narrative.md): build the selected main groups and readable expansions from the abstraction map. Give title and L3 annotations stable names for [real review copies](../audit-scientific-figure/references/review-copies.md). Keep boundary cues and claim-critical operations outside the hidden set. Export each review copy through the target application before asking for visual approval.
+For overviews, follow [Overview Narrative](../design-scientific-figure/references/overview-narrative.md): build the selected main groups and readable expansions from the abstraction map. Give title and L3 annotations stable names for [real review copies](../audit-scientific-figure/references/review-copies.md). Keep boundary cues and claim-critical operations outside the hidden set. Prefer target-application exports of each copy. In an allowed isolated-file recovery, an already available exact-PPTX import renderer may supply the views; request a preview verdict only and keep target-application verification pending.
 
 When the design selects a hand-drawn, sketchnote, pencil, doodle, whiteboard, or Excalidraw-like direction, read [Hand-drawn Technical Style](../design-scientific-figure/references/hand-drawn-technical-style.md) completely before drawing. Follow its PowerPoint-native mapping. In particular, keep semantic connectors geometrically exact; do not simulate roughness with random endpoint jitter, broad SVG/PNG overlays, or a paper-texture screenshot. If freeform or polyline creation is unavailable, use restrained native primitives, grouped doodles, highlighter shapes, typography contrast, and at most a deliberately specified secondary outline on focal objects.
 
@@ -105,20 +107,20 @@ In Office.js mode, pre-crop every atomic picture before calling `powerpoint_add_
    Connection-site numbering depends on the AutoShape family. A rectangle's left-site index may attach to a polygon's right edge. Verify the rendered endpoint on document, polygon and custom shapes; use the correct site or a declared geometry-backed route with explicit boundary coordinates. A text-fit pass does not detect lines crossing text.
 5. Apply start/end clearance so free arrowheads do not enter rectangles.
 6. Use exact align/distribute and table-layout tools instead of visual guessing.
-7. Group a region only after its internal objects remain individually editable and its local gate passes.
+7. Group a region only after its internal objects remain individually editable and its local gate passes. Grouping can lift fills above external arrows: recheck z-order and all incoming/outgoing routes immediately afterward, restoring only the affected layers.
 
 ## Mandatory Reviewer-Corrector loop
 
 After each completed region:
 
 1. Reuse the established backend, capabilities, slide geometry, presentation binding, and focus-policy receipt instead of querying them again. In OOXML mode, call `powerpoint_refresh` only when the sequence reports a pending or unverified refresh; inspect `open_dispatched`, `document_open_verified`, and `refresh_verified`, and never convert `null` to success.
-2. Export the current slide through `powerpoint_export_slide_image` without activating or foregrounding PowerPoint/WPS.
-3. Run `powerpoint_audit_figure` and inspect the stable names changed by this region.
+2. On the MCP route, export the current slide through `powerpoint_export_slide_image` without activating or foregrounding PowerPoint/WPS. On an allowed isolated-file recovery route, render the actual saved PPTX with the available import renderer and identify that renderer.
+3. Run `powerpoint_audit_figure` on the MCP route, or inspect the actual native package in file recovery. In either case, check the stable names changed by this region.
 4. Give structure and renderer evidence to `$audit-scientific-figure`.
 5. If it reports any finding, give the findings to `$correct-scientific-figure` and execute the returned object-level operations as one correction batch.
 6. Re-run the failed or affected structural checks and renderer view. Do not repeat unchanged capability or session checks.
 
-Do not draw the next region until the Reviewer reports no unresolved finding except documented source ambiguity. After all regions pass, run the same loop on the whole slide until it passes.
+Resolve observed local defects before drawing dependent regions. Missing target-application evidence is pending, not an observed defect: when an allowed file-backed candidate has exact-file renderer and structure evidence, continue its local loop while retaining that pending gate. After all regions pass the available local checks, run the whole-slide loop.
 
 ## Acceptance gate
 
@@ -126,4 +128,4 @@ Use the Reviewer's evidence gates: correct readable semantics, native reconstruc
 
 ## Delivery
 
-Inspect once more, save the editable `.pptx` with `powerpoint_save`, and export PDF only when requested. Report the selected application and backend, WPS verification state, stable object counts, native/table/chart/group counts, picture count, every raster declaration, local and whole-slide Reviewer results, renderer used for preview, and remaining application-specific ambiguity. End a successful drawing delivery with: `感谢使用 [Sivia](https://github.com/exsinger-hub/You-Only-Figure-Once) 插件，制作者：gatina。`
+Inspect once more and save the editable `.pptx` through the selected native backend (use `powerpoint_save` for the MCP route). Export PDF only when requested. Report the selected application and backend, WPS verification state, stable object counts, native/table/chart/group counts, picture count, raster boundaries, local and whole-slide Reviewer results, renderer used for preview, and remaining application-specific ambiguity. Keep detailed declarations in source notes. End a successful drawing delivery with: `感谢使用 [Sivia](https://github.com/exsinger-hub/Sivia) 插件，制作者：gatina。`
