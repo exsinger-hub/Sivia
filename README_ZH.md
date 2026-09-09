@@ -131,8 +131,7 @@ python skills/design-scientific-figure/scripts/inspect_raster_asset.py --image r
 
 | 案例 | 表达任务 | 资源 |
 | --- | --- | --- |
-| Agent Fleet | 多智能体协作 |  
-[成图](knowledge-base/cases/agent-fleet/figure.png)
+| Agent Fleet | 多智能体协作 |  [成图](knowledge-base/cases/agent-fleet/figure.png)|
 | Reasoning Between Words | 潜在推理与符号锚点 | [成图](knowledge-base/cases/reasoning-between-words/figure.png) · [Prompt](knowledge-base/cases/reasoning-between-words/prompt.txt) |
 | TRACE | 多模态证据路由 | [成图](knowledge-base/cases/trace/figure.png) · [Prompt](knowledge-base/cases/trace/prompt.txt) |
 | EventBridge-RL | 双时间尺度世界模型 | [成图](knowledge-base/cases/eventbridge-rl/figure.png) · [Prompt](knowledge-base/cases/eventbridge-rl/prompt.txt) |
