@@ -10,7 +10,7 @@
 
 [English](README.md) | 简体中文
 
-[快速开始](#快速开始) · [完整工作流](docs/workflow_ZH.md) · [知识库](knowledge-base/README.md) · [更新日志](CHANGELOG.md)
+[快速开始](#快速开始) · [知识库](knowledge-base/README.md) · [更新日志](CHANGELOG.md)
 
 </div>
 
@@ -104,23 +104,6 @@ codex plugin add sivia@sivia
 
 需要 **WPS 演示**、**Microsoft PowerPoint**、**draw.io** 或指定文档的实时编辑时，请明确说明，不会静默改用其他软件。真实数据替换属于内容适配，需单独提出；忠实复刻保留确认稿可见内容，并将示意数值继续标识为示意。
 
-## 工作流
-
-```mermaid
-flowchart TD
-    A[论文与项目实现] --> B[科学图意与视觉参考]
-    B --> C[完整 prompt 与长度核验]
-    C --> D[生成并检查图片]
-    D --> E{你的反馈}
-    E -->|修改图片| C
-    E -->|只需要图片| F[图片与 prompt]
-    E -->|明确要求可编辑| G[原生复刻与独立素材]
-    G --> H[实际文件与渲染检查]
-    H -->|发现具体缺陷| G
-    H --> I[PPTX 或 draw.io 及预览和编辑说明]
-```
-
-[完整工作流](docs/workflow_ZH.md)说明科学来源、逐区构建、失败恢复、审阅证据与最终打包。[运行时恢复规则](skills/edit-powerpoint-live/references/reconstruction-recovery.md)则供绘图 skills 直接执行。
 
 ## 哪些内容可以编辑？
 
@@ -148,7 +131,8 @@ python skills/design-scientific-figure/scripts/inspect_raster_asset.py --image r
 
 | 案例 | 表达任务 | 资源 |
 | --- | --- | --- |
-| Agent Fleet | 多智能体协作 | [成图](knowledge-base/cases/agent-fleet/figure.png) · [Prompt](knowledge-base/cases/agent-fleet/prompt.txt) |
+| Agent Fleet | 多智能体协作 |  
+[成图](knowledge-base/cases/agent-fleet/figure.png)
 | Reasoning Between Words | 潜在推理与符号锚点 | [成图](knowledge-base/cases/reasoning-between-words/figure.png) · [Prompt](knowledge-base/cases/reasoning-between-words/prompt.txt) |
 | TRACE | 多模态证据路由 | [成图](knowledge-base/cases/trace/figure.png) · [Prompt](knowledge-base/cases/trace/prompt.txt) |
 | EventBridge-RL | 双时间尺度世界模型 | [成图](knowledge-base/cases/eventbridge-rl/figure.png) · [Prompt](knowledge-base/cases/eventbridge-rl/prompt.txt) |
