@@ -25,8 +25,8 @@ import json
 import math
 from pathlib import Path
 import posixpath
-from xml.dom import minidom
-from xml.parsers.expat import ExpatError
+from defusedxml import minidom
+from pyexpat import ExpatError
 from zipfile import BadZipFile, ZipFile
 
 
