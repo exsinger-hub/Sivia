@@ -49,6 +49,8 @@ Use the Designer's specification or extract an inventory from the reference. Ass
 
 ## Enforce atomic images
 
+When the inventory contains non-native artwork, empirical fields or cropped assets, read [Asset Production](../design-scientific-figure/references/asset-production.md) completely before inserting them. Prefer supported editable cells/composites for reconstructable geometry; an embedded SVG is not editable child cells. Follow its source-export, standalone-illustration and retained-pixel rules while retaining this adapter's pacing.
+
 Use `drawio_live_add_image` only for one tightly scoped irreducible visual field. Require:
 
 - a specific `raster_reason`;

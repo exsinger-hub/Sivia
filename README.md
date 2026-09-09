@@ -1,5 +1,7 @@
 # Sivia
 
+**v1.1** · 素材分类、实际像素与透明度检查、授权后的轮廓遮罩后备方案，以及从失败到修正再验收的制作流程。
+
 [**Sivia**](https://github.com/exsinger-hub/Sivia) 是面向 Codex 和 Claude Code 的科研绘图插件。输入 PDF 论文，先理解研究内容、参考知识库编写精细 prompt，再生成科研 Overview 图片供你审阅。**默认先交图片，不直接制作 PPT；是否修改图片、是否继续生成可编辑 PPT，由你决定。**
 
 ## 安装
@@ -35,6 +37,7 @@ codex plugin add sivia@sivia
 
 - **理解论文与编写 prompt**：客户端能够读取 PDF；Python 3 用于检查 prompt 长度。
 - **生成图片**：当前会话需要可调用的 ImageGen / 图像生成工具。Sivia 提供工作流、模板和知识库，不内置生图模型或 API 凭据；Claude Code 需另行连接图像生成工具或 MCP 服务。
+- **图片采样与透明度检查（可选）**：Python 3 和 Pillow；只读检测，不会抠图、放大图片或打开演示软件。
 - **制作可编辑 PPT（可选）**：Node.js，以及可用的 PowerPoint / WPS 后端；具体能力由插件检测。只做图片阶段不需要打开这些软件。
 
 没有可用生图工具时，Sivia 会交付完整 prompt 并说明缺少的能力。你也可以将 prompt 用于 ImageGen，再把成图传回继续审阅；它不会擅自跳过图片确认，直接改用 PPT 绘制。
@@ -137,6 +140,24 @@ codex plugin add sivia@sivia
 用户最终认可的完整 prompt、对应图片与有价值的修改反馈会作为配对案例保存在当前项目中。公开上传 GitHub 另行征求同意。
 
 [内置模板](skills/design-scientific-figure/references/prompt-templates.md) · [详细工作流](skills/design-scientific-figure/references/imagegen-first-workflow.md)
+
+### 素材生产与失败修正
+
+没有现成 PPT 图标，不等于必须从整图裁出来。Sivia 按对象含义选择制作方式：线条、网格和模块用原生可编辑组合；定量曲线从真实数值重绘；实验影像从原始结果导出；复杂机器人等插画则单独生成高清素材，文字和箭头分开。SVG 可以无损缩放，但不自动等于内部对象可编辑。
+
+裁图按**实际保留像素与最终放置尺寸**判断，而不是看整张图的分辨率或 DPI 标签。30 mm 宽的素材若以 300 DPI 为规划目标，至少需要 355 像素。透明素材还要检查实际 alpha，防止把绘制的棋盘格当作透明背景。
+
+在插件根目录运行：
+
+```bash
+python skills/design-scientific-figure/scripts/inspect_raster_asset.py --image robot.png --width-mm 30 --require-transparent
+```
+
+需要估算裁图时加 `--crop-px LEFT TOP RIGHT BOTTOM`；透明度检查不适用于普通不透明实验影像时，省略 `--require-transparent`。检测返回的采样与 alpha 结果不能代替边缘质量、标签准确性和最终尺寸阅读检查。
+
+失败后先定位具体瓶颈，再换来源、表示方式或修正操作并重新验收；不反复发送相同指令，也不以其他测试通过掩盖当前缺陷。生成式增强不能补造实验细节，新的制作方式仍遵守用户授权和当前工具边界。详见[素材生产与失败恢复规则](skills/design-scientific-figure/references/asset-production.md)。
+
+若生图工具反复输出假透明背景，在本地处理获授权后，可对适合的闭合深色轮廓插画使用 `extract_outlined_artwork.py` 生成遮罩和透明 PNG。该工具只改 alpha、不重绘角色；仍需检查深浅背景、小尺寸显示和轮廓完整性。它不是通用照片或医学影像抠图工具。
 
 ## 共建科研绘图知识库
 

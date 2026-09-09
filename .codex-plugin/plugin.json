@@ -1,6 +1,6 @@
 {
   "name": "sivia",
-  "version": "1.5.4+codex.20260908164646",
+  "version": "1.1.0",
   "description": "Understand papers and turn their core contributions into scientific overviews, with built-in detailed visual templates and editable figure reconstruction.",
   "author": {
     "name": "gatina",
@@ -22,7 +22,7 @@
   "interface": {
     "displayName": "Sivia",
     "shortDescription": "Paper to image first; editable figures only on request.",
-    "longDescription": "Sivia reads manuscripts, selects paired image-and-prompt knowledge cases, and writes detailed ImageGen prompts with a per-figure length floor. It presents the generated image and pauses for user feedback. Visual approval locks the layout but does not authorize PPT creation: editable reconstruction starts only when the user explicitly requests it. PowerPoint/WPS construction preserves foreground focus, uses native editable objects, and replaces suitable fields with verified real images and data. Designer, Drawer, Reviewer and Corrector separate scientific correctness, visual fidelity and editability.",
+    "longDescription": "Sivia reads manuscripts, selects paired image-and-prompt knowledge cases, and writes detailed ImageGen prompts with a per-figure length floor. It presents the generated image and pauses for user feedback; editable reconstruction starts only on explicit request. Asset production separates editable geometry, empirical fields and independent illustrations, checks retained-pixel resolution and actual transparency, and recovers from failed assets through scoped corrections and authorized local contour masks. PowerPoint/WPS construction preserves foreground focus. Designer, Drawer, Reviewer and Corrector separate scientific correctness, visual fidelity and editability.",
     "developerName": "gatina",
     "category": "Productivity",
     "capabilities": [

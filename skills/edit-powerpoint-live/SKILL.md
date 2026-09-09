@@ -82,6 +82,8 @@ An approved ImageGen draft is a composition authority, not an empirical-data sou
 
 ## Enforce atomic images
 
+When the inventory contains non-native artwork, empirical fields or cropped assets, read [Asset Production](../design-scientific-figure/references/asset-production.md) completely before inserting them. Use supported native primitives/freeforms for reconstructable geometry; SVG insertion alone is not native editability. Apply its original-data, standalone-illustration and final-size resolution rules without changing this adapter's background batching policy.
+
 Use `powerpoint_add_image` only for one tightly scoped irreducible visual field. Require:
 
 - a specific `raster_reason`;

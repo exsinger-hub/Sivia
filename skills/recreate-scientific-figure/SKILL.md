@@ -46,6 +46,8 @@ Treat the supplied reference as the design authority. Extract its design; do not
 
 Produce a `reconstruction_spec` before drawing. It must contain region ids, object ids, geometry, styles, connector routes, grouping, raster decomposition decisions, and local acceptance conditions.
 
+For asset selection and extraction, read [Asset Production](../design-scientific-figure/references/asset-production.md) completely. A missing stock icon does not imply a raster crop: choose editable geometry, verified vector artwork, original experimental fields or independent illustrations. Record the source and actual editability in the existing specification, with retained-pixel/placement estimates for enlarged crops.
+
 ## Drawer handoff
 
 1. Detect the selected backend's current capabilities before choosing objects. For live Mac PowerPoint, require a connected `officejs-context-sync` task pane and lock it with `powerpoint_set_backend` before drawing; otherwise report the OOXML fallback instead of promising a live animation.

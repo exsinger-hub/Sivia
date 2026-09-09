@@ -67,6 +67,8 @@ Require one image object per irreducible visual field. Require the surrounding f
 
 Every retained image must have a precise reason, tight crop, `atomic_raster_unit=true`, `contains_reconstructable_content=false`, and a useful decomposition note.
 
+For mixed/generated artwork, empirical replacements, imported vectors or enlarged crops, read [Asset Production](../design-scientific-figure/references/asset-production.md) completely. Check the declared source, actual vector subobject editability, retained pixels at placement size and the final renderer appearance. A sufficient DPI estimate cannot certify sharpness or scientific validity; native coarse acquisition pixels are not a reason to invent detail. Flag wrong empirical provenance, stretched anatomy, baked labels or visibly inadequate illustration crops with the specific affected objects. Keep genuine source limitations separate from correctable rendering defects.
+
 ## Finding format
 
 Emit one record per defect:

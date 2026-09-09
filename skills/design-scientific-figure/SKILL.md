@@ -109,6 +109,8 @@ When proposing multiple style directions, compare their `style_dna` before drawi
 
 ## Plan editability
 
+When planning mixed visual assets or later editable reconstruction, read [Asset Production](references/asset-production.md) completely. Select native/composite geometry, custom vector artwork, original empirical exports or standalone generated illustrations by semantic role; estimate cropped raster resolution at its final physical size. This planning does not enter the presentation stage.
+
 Classify every planned element as editable text, shape, line, connector, table/chart, repeated motif, or irreducible raster evidence. Split any multi-image evidence block into one atomic image per field and plan its title, border, grid, legend, arrows, and annotations as editable objects.
 
 ## Produce the design handoff
