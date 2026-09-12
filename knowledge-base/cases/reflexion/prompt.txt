@@ -1,0 +1,131 @@
+CREATE ONE PUBLICATION-STYLE SCIENTIFIC ILLUSTRATION.
+
+SOURCE CONTRACT
+Paper: Reflexion: Language Agents with Verbal Reinforcement Learning (NeurIPS 2023).
+Primary source: https://proceedings.neurips.cc/paper_files/paper/2023/hash/1b44b878bb782e6954cd888628510e90-Abstract-Conference.html
+Source figure anchor: actor-evaluator-self-reflection episodic loop.
+Scientific message: An actor receives scalar or textual feedback, converts failure into a verbal reflection and stores it in episodic memory to guide the next trial without weight updates.
+
+This is a source-grounded conceptual adaptation for a visual knowledge base. Do not copy source pixels, author logos, paper typography, result tables, benchmark numbers, or photographic examples. Preserve the method relationships named below while drawing new miniature scenes and clean schematic geometry. The generated figure is not experimental evidence.
+
+DENSITY GATE — HIGHEST PRIORITY
+Use a 16:9 landscape canvas. Keep the meaningful-content bounding hull within 2.5%–97.5% horizontally and 4%–96% vertically. Fill 82%–92% of the canvas width and 76%–90% of its height with meaningful scientific objects. No empty banner, empty lower third, oversized title, decorative margins, floating islands, or unused panel. Enlarge panels and objects until the largest rectangular empty region is below 4% of canvas area, while retaining narrow connector lanes. The title occupies at most 5% of canvas height. Every large light region must contain a diagram, scene, representation, legend, or necessary connector lane.
+
+CASE-SPECIFIC TOPOLOGY
+Stages: task and memory context -> actor trajectory -> environment result -> evaluator feedback -> self-reflection model -> episodic memory update -> improved next trial.
+Exact visible labels: Task, Actor, Trajectory, Evaluator, Reflection, Episodic memory, Next trial.
+Only these short labels and source-grounded symbols appear in the artwork. Do not typeset this production prose.
+
+Create a publication-ready scientific overview for “Reflexion: Language Agents with Verbal Reinforcement Learning”. The figure is titled “Reflexion”. Draw the visual argument specified below as a coherent scientific illustration, with concrete representations and visible transformations rather than an inventory of labeled module boxes.
+
+SCIENTIFIC PURPOSE AND READING DEPTH
+
+The central claim is: An actor receives scalar or textual feedback, converts failure into a verbal reflection and stores it in episodic memory to guide the next trial without weight updates.. The scientific problem is An actor receives scalar or textual feedback, converts failure into a verbal reflection and stores it in episodic memory to guide the next trial without weight updates.; the relevant limitation is the input modalities or states cannot reach the final output through a single unstructured box without obscuring the paper's distinctive operation; the distinctive method addresses it through environment result -> evaluator feedback -> self-reflection model. The reader must recognize how the input becomes the output and where the contribution changes that process. Treat the supplied scientific description as the content authority. A style reference supplies visual language, not additional methods, equations or results.
+
+At first glance, the eye should follow left input context, through the enlarged central operation, to the right output, followed by the lower support strip. At working reading distance, show task and memory context -> actor trajectory -> environment result -> evaluator feedback -> self-reflection model -> episodic memory update -> improved next trial. At closer inspection, make task and memory context feeds actor trajectory; actor trajectory feeds environment result; environment result feeds evaluator feedback; evaluator feedback feeds self-reflection model; self-reflection model feeds episodic memory update; episodic memory update feeds improved next trial recoverable from the picture. Give the distinctive transformation the strongest visual mass. Routine preprocessing or standard sublayers can remain compact named operations when expanding them would distract from the main explanation.
+
+This overview explains actor-evaluator-self-reflection episodic loop. A companion figure, if requested, explains expand environment result, evaluator feedback, and self-reflection model without adding unrelated modules. Keep the overview self-contained at its intended reading depth without copying every technical operation from the companion. A reference to a detail figure can identify where an expanded mechanism appears, but it cannot replace the essential input, output, branch condition or scientific relation needed to understand the overview.
+
+CANVAS AND COMPOSITION
+
+Use a 16:9 landscape canvas designed for a two-column-paper width of 178 mm and a white background. Build a compact left-to-right scientific narrative with three unequal regions and one expanded central mechanism with region bounds 22% input/context, 53% method mechanism, 25% output/support; outer margins 2.5% and gutters 1.5%. These regions follow the paper's argument, not its section order. The main methodological scene is environment result and evaluator feedback as the largest central visual mass; its largest scientific objects and continuous connection path should be apparent even when the image is viewed as a thumbnail. Give it more space than subordinate context or training detail.
+
+Keep exterior margins narrow but deliberate. Within each region, use consistent alignment anchors for headers, operator centers, image fields and connector ports. Gutters separate neighboring scientific scenes; they should not form large unmotivated empty bands. Align the first and last objects of adjacent pathways where that improves comparison. Avoid making every panel equally wide when their explanatory content differs.
+
+The dominant scene should occupy its allocated region with meaningful scientific objects, not a large title, decorative icon or oversized empty frame. Reserve local whitespace for a specific function: separation of representations, a connector lane, formula clearance or an image label. Enlarge undersized representations into unused local space before adding another annotation or an unrelated plot.
+
+When an approved image is attached, use its no external reference image is attached; follow this prompt's frozen region proportions as the composition authority. Preserve its canvas silhouette, panel positions, relative widths, object scale, palette and main routes. Apply only none during initial generation. This restriction covers small edits as well as replacement of example image fields; do not rearrange neighboring modules simply because their new content is easier to draw elsewhere.
+
+INPUTS, OUTPUTS AND THEIR ROLES
+
+Place task and memory context, actor trajectory at left region. Represent each input using concrete miniature scenes plus aligned token, grid, graph or sequence carriers appropriate to the source: an atomic image field, a document excerpt, a spatial grid, a sequence, a graph, a specimen or another scientifically appropriate object. Give each a short visible label and the necessary shape or unit from Task, Actor. Do not replace all input types with the same generic document or brain icon.
+
+When the method has multiple inputs, show whether they are parallel modalities, conditioning information, retrieved context or alternative cases. Draw separate incoming edges to the exact operation that consumes each input. Shared enclosure alone does not establish a data dependency. Use a branch junction for one input reused in two streams, and distinct input objects for independently supplied information.
+
+Place episodic memory update, improved next trial at right region, using a compact, concrete result scene beside the final symbolic representation. The output role must be clear from its label and connection to the final operation. Distinguish a prediction from a target, an intermediate representation from a final result, and an explanatory example from measured evidence. The output does not bypass later decoding or selection stages merely to keep a line short.
+
+For a paired visual example, maintain matching sample identity, orientation, crop extent and display treatment across before/after, input/output, or adjacent frames use matched crops and persistent identity markers. Place the labels directly beside their respective fields. If an output has multiple channels, alternatives or uncertainty fields, arrange those fields as a compact, explicitly labeled local group rather than an unlabeled collage.
+
+CONTEXT AND PROBLEM SCENE
+
+Use task and memory context only for the source-supported limitation relevant to the central claim. Show the limitation as a visible relation or transformation: for example, two genuinely different positions being compared, a missing connection, information lost through a documented reduction, or a dependency unavailable to a stated system. Name the exact objects and what fails in task and memory context visibly supplies actor trajectory.
+
+When a contrast is needed, hold comparable objects, scales and meanings fixed across the two alternatives. Emphasize the changed relation through a local marker and a short phrase. A cross or warning accent applies to that illustrated operation, not to every previous method. Do not create an implausible baseline just to make the proposed method look necessary.
+
+Keep context subordinate to the proposed mechanism. Its visual job is to make the method's intervention understandable, not to become an introductory paragraph. If the paper already has a clear input-to-output task and no useful local counterexample, adapt this space to a source-grounded representation scene within the chosen composition. Do not manufacture a problem panel to preserve a template row.
+
+MAIN METHOD SCENE
+
+Draw the verified main pathway task and memory context -> actor trajectory -> environment result -> evaluator feedback -> self-reflection model -> episodic memory update -> improved next trial as one continuous visual spine. Place Input and problem setup, Distinctive method and Output and interpretation in the reading order established above, adapting the number of groups to the supplied topology. The groups may contain a stack, graph, sequence, sample field or internal operator chain; they should not all become identical empty rounded rectangles.
+
+Within Input and problem setup, draw task and memory context, actor trajectory and show convert task and memory context into actor trajectory. Specify the entering representation at the left or upstream port, the operation at the center, and its changed representation at the downstream port. Use the short labels Task, Actor. Make any scale, token count, coordinate frame or conditioning change visible through the relevant geometry and label.
+
+Within Distinctive method, draw environment result, evaluator feedback, self-reflection model and show environment result feeds evaluator feedback, which produces or controls self-reflection model. This is show the scientific operation that distinguishes this paper in the argument. Reserve space for its distinctive internal relation, with enough separation between the participating objects to see the operation. Show exactly which input is reused, which intermediate is produced and which path carries that intermediate onward.
+
+Within Output and interpretation, draw episodic memory update, improved next trial and show episodic memory update yields improved next trial. Use the output-side representation to explain the cumulative method, not a decorative copy of the input. Label its interface Episodic memory, Next trial. If this group is routine reconstruction or decoding, give it the size needed for readable merges and skips without making it more visually dominant than the contribution.
+
+At every transition, preserve the source-defined representation type and scale. A tensor stack can indicate channels or resolution only when its annotation says which property is represented. An ordered strip indicates token order; a grid indicates positions; a node-link graph indicates adjacency. Do not silently interchange these meanings because the glyphs have similar colors.
+
+CORE CONTRIBUTION EXPANSION
+
+Expand evaluator feedback at center of the main mechanism region. Show a concrete before state environment result, the operation environment result -> evaluator feedback -> self-reflection model, and the after state self-reflection model. Let the reader track use three repeated colored markers to preserve the same sample, query, node, token, object or state across transformations through the transformation using a small, consistent set of symbols or position markers. Specify separately which values change, which identities persist and which relationship is newly established.
+
+Use visual correspondence rather than a paragraph to establish the mechanism. For a rearrangement, align a few identifiable elements before and after. For an aggregation, show its operands meeting at the actual merge. For a selection, distinguish candidates from the selected item. For a coordinate restoration, put the responses in matching coordinates before their combination, not after it.
+
+If the mechanism has parallel branches, draw them on separate aligned lanes. Each branch starts at its actual input, passes through its own ordered operations and ends at its own output representation. Label primary computation and auxiliary conditioning/support near the respective lanes. A paired-direction glyph must not accidentally turn parallel computation into a serial chain.
+
+When branches share parameters, show dotted braces and a short Shared or Frozen label only where the source explicitly states sharing or freezing at the relevant scope. When they are independent, use parallel lanes remain separated and are not drawn as a serial dependency without assigning contradictory color semantics. Repeated calls and repeated parameter sets are different relationships. Place a compact repetition strip outside an expanded single call and attach it with an explanatory association rather than a false tensor edge.
+
+MERGES, SKIPS AND AUXILIARY INPUTS
+
+Implement merge all required operands immediately before episodic memory update; no decorative skip edge with distinct junctions. Label addition, concatenation, averaging, attention or selection accurately; these operations are not interchangeable. A concatenation should visibly combine its inputs before any channel compression. An average uses the specified operands and denominator. A residual route reaches the exact operation that consumes the original representation.
+
+Route each skip from its own source representation to its matching downstream junction. Reserve lanes around the main module boundaries and keep the line visually traceable to both endpoints. Do not collect semantically different skips into one common bus if that makes their destinations ambiguous. Use junction dots only for actual branches or joins, never for incidental crossings.
+
+Show conditioning edges draw a distinct amber conditioning edge from environment result to evaluator feedback only when that relation is conditioning rather than data flow with their defined role and target. If a condition is available only during training, it cannot feed a deployed prediction path. If retrieval, optimization or iteration returns an updated state, the return edge must land at the exact state or operation that changes. A decorative loop around a group is not a substitute for an update dependency.
+
+OPTIONAL TRAINING OR SUPPORTING SCENE
+
+Include a narrow lower strip containing only source-grounded training, update, or support relations needed to interpret the main method only when it explains the chosen figure claim. Give it the proportion specified in the composition, with a clear boundary from the primary inference or application pathway. Use concise scientific scope labels such as a named objective or training-only operator when necessary; do not add status boards, pending-work lists or internal production commentary.
+
+For an objective with two operands, draw two distinct operand lanes until the comparison operation. If a mask or support is derived from one operand, draw its construction from that operand alone and branch the resulting support to each true consumer. Keep shared preprocessing, separate calculations and final aggregation visibly distinguishable.
+
+Where spectral fields, spatial supports or distributions explain an objective, show the concrete intermediate representations at lower strip aligned beneath the exact consumer. Keep any explanatory profile compact inside its scene. A large line chart is inappropriate merely because the method includes a loss equation; it must earn its space by answering the figure's scientific question.
+
+Use the exact objective show no invented objective; if an equation is needed, use only named operators and symbolic loss terms from the source with readable symbols. Connect each term to its actual source and update role. A target, label, teacher or loss may supervise training without becoming an inference input. Draw only task and memory context to actor trajectory; self-reflection model to episodic memory update between the supporting scene and the main architecture.
+
+If this paper does not need a training or evidence scene in the overview, spend its descriptive detail on the actual method interfaces and transformations. Do not import a spectral objective, geometry audit or experimental comparison from a style example. The generated composition must follow the instantiated figure specification, not retain an unfilled optional panel.
+
+EXACT TEXT, SYMBOLS AND NUMERICAL CONTENT
+
+Typeset only the visible labels listed in Task, Actor, Trajectory, Evaluator, Reflection, Episodic memory, Next trial. Use the manuscript notation 1: Task; 2: Actor; 3: Trajectory; 4: Evaluator; 5: Reflection; 6: Episodic memory; 7: Next trial consistently in headings, representations and equations. Preserve subscripts, superscripts, axis conventions and argument order where they determine meaning. A short text label should name what the neighboring graphic already shows.
+
+Use no numeric result values are printed; only source-defined names and multiplication signs such as ×N or ×K may appear only in their specified roles. Place a dimension adjacent to the represented tensor or its interface, not on a nearby arrow that could refer to a different object. Do not invent indices or performance numbers to make token strips or small tables look realistic. Abstract identity letters can explain a correspondence without pretending to be measured indices.
+
+Define every displayed quantity through none. An orientation count is not a step distance; a locality fraction is not a reconstruction score. Keep any empirical comparison tied to its actual methods, sample scope and calculation. If a reported value is not central to this overview, leave it to the designated result figure rather than decorating a mechanism with metric cards.
+
+ATOMIZED IMAGE AND DATA FIELDS
+
+Reserve the empirical fields all pictured images, masks, depth maps, graphs, robot scenes and trajectories are clearly stylized conceptual miniatures, never represented as measured experimental output at the declared positions and sizes. Each field has one role, one source binding and one display treatment. The rendering draft may establish its frame and surrounding composition, but generative redraw does not preserve scientific pixels. Final authentic images will be inserted separately during editable reconstruction.
+
+For each field, specify its crop, aspect ratio, orientation and paired neighbors through preserve aspect ratio and keep every atomic field inside its own frame with a short label. Keep annotations, arrows, scale bars, masks and labels visually separate from the underlying image. Any overlay must correspond to actual data or an explicitly symbolic position cue, not a generated lesion or an invented activation.
+
+For computed plots or geometry, use no quantitative curves or performance numbers. Draw their visual carriers within the reserved frames, with axes, units, highlighted steps or index entries matching the supplied calculation. If measured data is unavailable, use the defined mechanism glyph rather than synthesizing an evidence-like chart. Do not fill an empty empirical role with an unrelated available image.
+
+VISUAL GRAMMAR AND COLOR
+
+Use navy structure, blue information, teal learned transformation, amber conditioning or feedback, coral warning only when scientifically necessary, pale neutral panels as a small role-based palette: a light fill and deeper outline for each major module family, dark technical text and a consistent inference-arrow color. A restrained blue, amber, teal and violet family is one possible vocabulary, not a requirement for every paper. Preserve the supplied approved palette when it already establishes these roles.
+
+Keep module identity distinct from flow direction. Direction can be carried by lane labels, token order, arrowheads or line styles; it should not reuse a module's color with an unrelated meaning. Use a single local warning accent only for a source-grounded contrast. Grayscale differences in stroke, enclosure and labels should keep the relation readable without hue.
+
+Use modest depth only for representations that benefit from it, such as a few offset feature planes. Keep operator boxes flat, corners restrained and backgrounds untextured. The image should resemble a carefully composed scientific method illustration, not a glossy product diagram. Avoid ornamental icons that add visual mass without conveying a source-defined role.
+
+TYPOGRAPHY, ROUTING AND FINAL APPEARANCE
+
+Set typography according to section headers 10-11 pt, module labels 8-9 pt, secondary annotations 7 pt minimum at 178 mm width. Use a short bold title, distinct but compact panel headers, regular technical labels and clean mathematical notation. Long production instructions are not printed text. Make important operator names and representation labels legible before allocating space to secondary annotation.
+
+Route the main path with confident solid arrows, auxiliary dependencies with a distinct lighter or dashed style, and explanatory associations with unobtrusive dotted guides. Keep arrowheads clear of labels and neighboring boundaries. Use aligned ports, short orthogonal turns and reserved lanes. A line passing behind a label is still an ambiguous scientific relation even if it looks tidy.
+
+Maintain fill the usable canvas tightly; meaningful-content hull must cover 82-92% of canvas width and 76-90% of canvas height throughout the completed artwork. Check the whole silhouette for undersized content and inspect each scientific scene for exact operand order, visible endpoints and consistent identity markers. The completed image should communicate its main transformation before the reader studies its formulas.
+
+Render one complete visual draft matching this fully instantiated specification. Keep scientific fields atomic in appearance, with separate frames, symbols and connectors suitable for later editable reconstruction. Do not print template section headings, unfilled fields, editing instructions, provenance notes or approval requests inside the image. The final artwork contains the scientific scene and its concise labels only.

@@ -1,0 +1,12 @@
+{
+  "paper_title": "DUSt3R: Geometric 3D Vision Made Easy",
+  "venue": "CVPR",
+  "year": 2024,
+  "topic": "Multi-view geometry",
+  "official_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Wang_DUSt3R_Geometric_3D_Vision_Made_Easy_CVPR_2024_paper.html",
+  "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Wang_DUSt3R_Geometric_3D_Vision_Made_Easy_CVPR_2024_paper.pdf",
+  "source_family": "dust3r",
+  "learning_only": true,
+  "exclude_from_sealed_evaluation": true,
+  "conceptual_asset": true
+}

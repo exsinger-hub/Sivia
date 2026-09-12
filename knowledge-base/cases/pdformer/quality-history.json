@@ -1,0 +1,34 @@
+{
+  "case_id": "pdformer",
+  "version": 4,
+  "reviewer": "root plus bounded source/visual agents",
+  "human_gold": false,
+  "actual_png_inspected": true,
+  "source_provenance_pass": true,
+  "exact_prompt_and_image_identity_pass": true,
+  "scientific_relations_pass": false,
+  "readability_pass": true,
+  "readability_evidence": "实际PNG文字、变量和图形主体可辨认；下标错误另计科学关系失败。",
+  "review_image_sha256": "620a45cc4315c23676d63d58709b8b969a493c1fccd3ac8bc4c2f22f87f43c32",
+  "density": {
+    "support_area_fraction": 0.36492081354466677,
+    "body_occupied_fraction": [
+      0.7407407407407407,
+      0.6888020833333334
+    ],
+    "body_max_empty_rectangle_fraction": [
+      0.06481481481481481,
+      0.07421875
+    ],
+    "numeric_screen_pass": false,
+    "definition": "Spatial occupancy of agent-annotated scientific support, not white-pixel ratio or human gold.",
+    "annotation": "cases/pdformer/semantic-support.v4.json",
+    "measurements": "cases/pdformer/semantic-density.v4.json"
+  },
+  "findings_zh": "把设计布局比例 38%/32%/30% 渲染为注意力标题的一部分，容易被误读为论文参数；版面仍有可压缩空区。",
+  "admission": "hold",
+  "hold_reasons": [
+    "scientific_relations_or_visible_content",
+    "low_empty_area_gate"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "paper_title": "Divide, Conquer and Combine: A Training-Free Framework for High-Resolution Image Perception in Multimodal Large Language Models",
+  "venue": "AAAI",
+  "year": 2025,
+  "topic": "High-resolution image reasoning",
+  "official_url": "https://ojs.aaai.org/index.php/AAAI/article/view/32852",
+  "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/32852/35007",
+  "source_family": "dc2",
+  "learning_only": true,
+  "exclude_from_sealed_evaluation": true,
+  "conceptual_asset": true
+}

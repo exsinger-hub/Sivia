@@ -1,0 +1,12 @@
+{
+  "paper_title": "Image BERT Pre-training with Online Tokenizer",
+  "venue": "ICLR",
+  "year": 2022,
+  "topic": "Self-supervised visual representations",
+  "official_url": "https://iclr.cc/virtual/2022/papers.html",
+  "pdf_url": "https://arxiv.org/pdf/2111.07832v3",
+  "source_family": "ibot",
+  "learning_only": true,
+  "exclude_from_sealed_evaluation": true,
+  "conceptual_asset": true
+}

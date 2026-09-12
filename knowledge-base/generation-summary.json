@@ -1,0 +1,12 @@
+{
+  "schema_version": "sivia.image_generation.summary.v1",
+  "new_wave_final_pairs": 24,
+  "new_wave_generation_calls": 40,
+  "additional_prior_pair_density_repair_calls": 1,
+  "total_calls_in_this_augmentation_phase": 41,
+  "duplicate_call_note": "LLaVA received one same-prompt duplicate generation; the earlier output is retained as figure.v1.png.",
+  "provider_model_id": null,
+  "seed": null,
+  "cost": null,
+  "note": "Provider model identifier, seed and cost were not returned by the generation tool and are intentionally not inferred."
+}

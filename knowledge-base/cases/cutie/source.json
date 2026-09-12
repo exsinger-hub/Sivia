@@ -1,0 +1,12 @@
+{
+  "paper_title": "Putting the Object Back into Video Object Segmentation",
+  "venue": "CVPR",
+  "year": 2024,
+  "topic": "Video object segmentation",
+  "official_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Cheng_Putting_the_Object_Back_into_Video_Object_Segmentation_CVPR_2024_paper.html",
+  "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Cheng_Putting_the_Object_Back_into_Video_Object_Segmentation_CVPR_2024_paper.pdf",
+  "source_family": "cutie",
+  "learning_only": true,
+  "exclude_from_sealed_evaluation": true,
+  "conceptual_asset": true
+}

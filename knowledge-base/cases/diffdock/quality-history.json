@@ -1,0 +1,34 @@
+{
+  "case_id": "diffdock",
+  "version": 3,
+  "reviewer": "root plus bounded source/visual agents",
+  "human_gold": false,
+  "actual_png_inspected": true,
+  "source_provenance_pass": true,
+  "exact_prompt_and_image_identity_pass": true,
+  "scientific_relations_pass": false,
+  "readability_pass": true,
+  "readability_evidence": "实际PNG文字、变量和图形主体可辨认；下标错误另计科学关系失败。",
+  "review_image_sha256": "e21ce8da9fc5e69673a9894e538c999fc87385c15ea52ec9e24fdd81d9c96009",
+  "density": {
+    "support_area_fraction": 0.35508620514229317,
+    "body_occupied_fraction": [
+      0.6990740740740741,
+      0.6302083333333334
+    ],
+    "body_max_empty_rectangle_fraction": [
+      0.034722222222222224,
+      0.044270833333333336
+    ],
+    "numeric_screen_pass": false,
+    "definition": "Spatial occupancy of agent-annotated scientific support, not white-pixel ratio or human gold.",
+    "annotation": "cases/diffdock/semantic-support.v3.json",
+    "measurements": "cases/diffdock/semantic-density.v3.json"
+  },
+  "findings_zh": "不同步骤的配体原子/键连接和环结构发生漂移；固定配体仅改变位姿的语义未守住。",
+  "admission": "hold",
+  "hold_reasons": [
+    "scientific_relations_or_visible_content",
+    "low_empty_area_gate"
+  ]
+}

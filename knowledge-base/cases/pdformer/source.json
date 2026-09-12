@@ -1,0 +1,12 @@
+{
+  "paper_title": "PDFormer: Propagation Delay-Aware Dynamic Long-Range Transformer for Traffic Flow Prediction",
+  "venue": "AAAI",
+  "year": 2023,
+  "topic": "Traffic forecasting",
+  "official_url": "https://ojs.aaai.org/index.php/AAAI/article/view/25556",
+  "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/25556/25328",
+  "source_family": "pdformer",
+  "learning_only": true,
+  "exclude_from_sealed_evaluation": true,
+  "conceptual_asset": true
+}

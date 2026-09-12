@@ -1,0 +1,12 @@
+{
+  "paper_title": "Learning Interactive Real-World Simulators",
+  "venue": "ICLR",
+  "year": 2024,
+  "topic": "Interactive video simulation",
+  "official_url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/c4d66eae503694424123b93ac0fbaf17-Abstract-Conference.html",
+  "pdf_url": "https://proceedings.iclr.cc/paper_files/paper/2024/file/c4d66eae503694424123b93ac0fbaf17-Paper-Conference.pdf",
+  "source_family": "unisim",
+  "learning_only": true,
+  "exclude_from_sealed_evaluation": true,
+  "conceptual_asset": true
+}

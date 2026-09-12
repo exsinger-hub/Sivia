@@ -127,18 +127,18 @@ python skills/design-scientific-figure/scripts/inspect_raster_asset.py --image r
 
 ## 科研绘图知识库
 
-每个案例包含**实际生成图片与对应完整 prompt**，用于借鉴表达方式，不作为本文模型结构或实验结果的证据。
+知识库现有 **42 对实际成图–完整 prompt**，其中 **36 对来自优秀 AI 会议论文的概念图增广**，本轮新增 24 对。全部配对通过低空白率数值筛查；论文来源案例还完成了实际 PNG 目视检查。
 
-| 案例 | 表达任务 | 资源 |
-| --- | --- | --- |
-| Agent Fleet | 多智能体协作 |  [成图](knowledge-base/cases/agent-fleet/figure.png)|
-| Reasoning Between Words | 潜在推理与符号锚点 | [成图](knowledge-base/cases/reasoning-between-words/figure.png) · [Prompt](knowledge-base/cases/reasoning-between-words/prompt.txt) |
-| TRACE | 多模态证据路由 | [成图](knowledge-base/cases/trace/figure.png) · [Prompt](knowledge-base/cases/trace/prompt.txt) |
-| EventBridge-RL | 双时间尺度世界模型 | [成图](knowledge-base/cases/eventbridge-rl/figure.png) · [Prompt](knowledge-base/cases/eventbridge-rl/prompt.txt) |
-| Trust / Repair | 紧凑两阶段智能体框架 | [成图](knowledge-base/cases/two-phase-trust-repair/figure.png) · [Prompt](knowledge-base/cases/two-phase-trust-repair/prompt.txt) |
-| Memory Routing | 长视频记忆框架 | [成图](knowledge-base/cases/visio-memory-routing/figure.png) · [Prompt](knowledge-base/cases/visio-memory-routing/prompt.txt) |
+| 大类 | 数量 |
+| --- | ---: |
+| [多模态与基础表征](knowledge-base/README.md#multimodal-foundation) | 7 |
+| [生成建模与可控编辑](knowledge-base/README.md#generative-control) | 6 |
+| [检测、分割与密集预测](knowledge-base/README.md#detection-segmentation) | 7 |
+| [三维表示、重建与分子空间](knowledge-base/README.md#three-d-reconstruction) | 6 |
+| [智能体、工具使用与推理](knowledge-base/README.md#agents-reasoning) | 9 |
+| [时序、图学习、世界模型与机器人](knowledge-base/README.md#structured-robotics) | 7 |
 
-用户认可状态与观察记录见各[案例说明](knowledge-base/README.md)。欢迎[贡献案例](knowledge-base/CONTRIBUTING.md)：最终成图、完整 prompt，以及有价值的修改反馈应配套提交。公开论文或私有素材需要所有者授权。
+请从完整的[分类知识库索引](knowledge-base/README.md)浏览，机器可读数据见 [`index.json`](knowledge-base/index.json)。每个案例都含实际 PNG、精确完整 prompt 与来源 / 质量说明。论文来源家族及其衍生物只用于学习与开发，并从未来封闭评测中排除。
 
 ## Limitations
 

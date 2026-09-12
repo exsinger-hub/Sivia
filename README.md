@@ -128,18 +128,18 @@ Run from the plugin root. Add `--crop-px LEFT TOP RIGHT BOTTOM` to evaluate a cr
 
 ## Knowledge base
 
-Every case pairs an **actual generated image with its full prompt**. These are visual references, not evidence for your paper's architecture or results.
+The knowledge base now contains **42 actual image–prompt pairs**, including **36 paper-sourced conceptual examples** and 24 new pairs from major AI conferences. Every pair passes the low-whitespace admission screen; paper-sourced examples also received visual review.
 
-| Case | Communication task | Resources |
-| --- | --- | --- |
-| Agent Fleet | Multi-agent coordination | [Image](knowledge-base/cases/agent-fleet/figure.png) · [Prompt](knowledge-base/cases/agent-fleet/prompt.txt) |
-| Reasoning Between Words | Latent reasoning and symbolic anchors | [Image](knowledge-base/cases/reasoning-between-words/figure.png) · [Prompt](knowledge-base/cases/reasoning-between-words/prompt.txt) |
-| TRACE | Multimodal evidence routing | [Image](knowledge-base/cases/trace/figure.png) · [Prompt](knowledge-base/cases/trace/prompt.txt) |
-| EventBridge-RL | Two-timescale world models | [Image](knowledge-base/cases/eventbridge-rl/figure.png) · [Prompt](knowledge-base/cases/eventbridge-rl/prompt.txt) |
-| Trust / Repair | Compact two-stage agent framework | [Image](knowledge-base/cases/two-phase-trust-repair/figure.png) · [Prompt](knowledge-base/cases/two-phase-trust-repair/prompt.txt) |
-| Memory Routing | Long-video memory framework | [Image](knowledge-base/cases/visio-memory-routing/figure.png) · [Prompt](knowledge-base/cases/visio-memory-routing/prompt.txt) |
+| Category | Pairs |
+| --- | ---: |
+| [Multimodal and foundation representations](knowledge-base/README.md#multimodal-foundation) | 7 |
+| [Generative modeling and control](knowledge-base/README.md#generative-control) | 6 |
+| [Detection, segmentation and dense prediction](knowledge-base/README.md#detection-segmentation) | 7 |
+| [3D representation, reconstruction and molecular space](knowledge-base/README.md#three-d-reconstruction) | 6 |
+| [Agents, tool use and reasoning](knowledge-base/README.md#agents-reasoning) | 9 |
+| [Time series, graphs, world models and robotics](knowledge-base/README.md#structured-robotics) | 7 |
 
-See individual [case notes](knowledge-base/README.md) for approval state and observations. [Contribute a case](knowledge-base/CONTRIBUTING.md) with the final image, complete prompt and useful revision feedback. Publishing a manuscript or private asset requires its owner's authorization.
+Browse the complete categorized [knowledge-base index](knowledge-base/README.md), or use the machine-readable [`index.json`](knowledge-base/index.json). Each case includes the generated PNG, the exact full prompt and source/quality notes. Source families and derivatives are learning assets and are excluded from future sealed evaluation.
 
 ## Limitations
 

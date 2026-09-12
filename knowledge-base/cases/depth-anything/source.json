@@ -1,0 +1,12 @@
+{
+  "paper_title": "Depth Anything: Unleashing the Power of Large-Scale Unlabeled Data",
+  "venue": "CVPR",
+  "year": 2024,
+  "topic": "Monocular depth training",
+  "official_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Yang_Depth_Anything_Unleashing_the_Power_of_Large-Scale_Unlabeled_Data_CVPR_2024_paper.html",
+  "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Yang_Depth_Anything_Unleashing_the_Power_of_Large-Scale_Unlabeled_Data_CVPR_2024_paper.pdf",
+  "source_family": "depth-anything",
+  "learning_only": true,
+  "exclude_from_sealed_evaluation": true,
+  "conceptual_asset": true
+}

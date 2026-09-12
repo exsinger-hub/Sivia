@@ -1,0 +1,34 @@
+{
+  "case_id": "unisim",
+  "version": 4,
+  "reviewer": "root plus bounded source/visual agents",
+  "human_gold": false,
+  "actual_png_inspected": true,
+  "source_provenance_pass": true,
+  "exact_prompt_and_image_identity_pass": true,
+  "scientific_relations_pass": false,
+  "readability_pass": true,
+  "readability_evidence": "实际PNG文字、变量和图形主体可辨认；下标错误另计科学关系失败。",
+  "review_image_sha256": "c60b5e1585929656e3a1177eccb3a7454e1a9dc8c500df7d754f3f943cbfa3b1",
+  "density": {
+    "support_area_fraction": 0.38487497965494794,
+    "body_occupied_fraction": [
+      0.8379629629629629,
+      0.7708333333333334
+    ],
+    "body_max_empty_rectangle_fraction": [
+      0.011574074074074073,
+      0.041666666666666664
+    ],
+    "numeric_screen_pass": false,
+    "definition": "Spatial occupancy of agent-annotated scientific support, not white-pixel ratio or human gold.",
+    "annotation": "cases/unisim/semantic-support.v4.json",
+    "measurements": "cases/unisim/semantic-density.v4.json"
+  },
+  "findings_zh": "主交互链成立；右下训练模块 sampled-noise 箭头方向错误，history h 未明确连入训练模型。",
+  "admission": "hold",
+  "hold_reasons": [
+    "scientific_relations_or_visible_content",
+    "low_empty_area_gate"
+  ]
+}

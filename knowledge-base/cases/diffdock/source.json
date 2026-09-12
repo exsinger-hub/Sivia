@@ -1,0 +1,12 @@
+{
+  "paper_title": "DiffDock: Diffusion Steps, Twists, and Turns for Molecular Docking",
+  "venue": "ICLR",
+  "year": 2023,
+  "topic": "Molecular docking",
+  "official_url": "https://iclr.cc/virtual/2023/papers.html",
+  "pdf_url": "https://arxiv.org/pdf/2210.01776v2",
+  "source_family": "diffdock",
+  "learning_only": true,
+  "exclude_from_sealed_evaluation": true,
+  "conceptual_asset": true
+}

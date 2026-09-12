@@ -1,0 +1,31 @@
+{
+  "case_id": "dust3r",
+  "version": 3,
+  "reviewer": "root plus bounded source/visual agents",
+  "human_gold": false,
+  "actual_png_inspected": true,
+  "source_provenance_pass": true,
+  "exact_prompt_and_image_identity_pass": true,
+  "scientific_relations_pass": true,
+  "readability_pass": true,
+  "readability_evidence": "实际PNG文字、变量和图形主体可辨认；下标错误另计科学关系失败。",
+  "review_image_sha256": "89be4ae9b83b01fb9bec706de65dab596f4adc5bcc1d631fef8b0259af73c9db",
+  "density": {
+    "support_area_fraction": 0.5544562640538038,
+    "body_occupied_fraction": [
+      0.8819444444444444,
+      0.8346354166666666
+    ],
+    "body_max_empty_rectangle_fraction": [
+      0.020833333333333332,
+      0.0234375
+    ],
+    "numeric_screen_pass": true,
+    "definition": "Spatial occupancy of agent-annotated scientific support, not white-pixel ratio or human gold.",
+    "annotation": "cases/dust3r/semantic-support.v3.json",
+    "measurements": "cases/dust3r/semantic-density.v3.json"
+  },
+  "findings_zh": "v3实际放大patch、feature及decoder内部结构；双头仍各输出pointmap与confidence，均使用camera 1坐标，P_a/P_b为独立采样点。Cross-view attention左线双箭头与右线向下形成冗余表达，但双向交互可辨认。",
+  "admission": "admitted",
+  "hold_reasons": []
+}

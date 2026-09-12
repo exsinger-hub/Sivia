@@ -1,0 +1,12 @@
+{
+  "paper_title": "Anywhere: A Multi-Agent Framework for User-Guided, Reliable, and Diverse Foreground-Conditioned Image Generation",
+  "venue": "AAAI",
+  "year": 2025,
+  "topic": "Foreground-preserving image generation",
+  "official_url": "https://ojs.aaai.org/index.php/AAAI/article/view/32797",
+  "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/32797/34952",
+  "source_family": "anywhere",
+  "learning_only": true,
+  "exclude_from_sealed_evaluation": true,
+  "conceptual_asset": true
+}

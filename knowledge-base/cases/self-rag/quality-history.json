@@ -1,0 +1,33 @@
+{
+  "case_id": "self-rag",
+  "version": 3,
+  "reviewer": "root plus bounded source/visual agents",
+  "human_gold": false,
+  "actual_png_inspected": true,
+  "source_provenance_pass": true,
+  "exact_prompt_and_image_identity_pass": true,
+  "scientific_relations_pass": true,
+  "readability_pass": true,
+  "readability_evidence": "实际PNG文字、变量和图形主体可辨认；下标错误另计科学关系失败。",
+  "review_image_sha256": "6851935cb16049450b7a4949171a7892aab3aecfc6cd23680f9833dc5bd0b3a3",
+  "density": {
+    "support_area_fraction": 0.3003387451171875,
+    "body_occupied_fraction": [
+      0.6666666666666666,
+      0.5677083333333334
+    ],
+    "body_max_empty_rectangle_fraction": [
+      0.05555555555555555,
+      0.06770833333333333
+    ],
+    "numeric_screen_pass": false,
+    "definition": "Spatial occupancy of agent-annotated scientific support, not white-pixel ratio or human gold.",
+    "annotation": "cases/self-rag/semantic-support.v3.json",
+    "measurements": "cases/self-rag/semantic-density.v3.json"
+  },
+  "findings_zh": "检索、反思与训练关系已核对；主要空区位于连接通道和底部训练区，密度未过门。",
+  "admission": "hold",
+  "hold_reasons": [
+    "low_empty_area_gate"
+  ]
+}

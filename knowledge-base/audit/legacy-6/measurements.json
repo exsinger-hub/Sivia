@@ -1,0 +1,235 @@
+{
+  "schema_version": "sivia.paper_knowledge.density_audit.v1",
+  "count": 6,
+  "method": "near-white pixels plus 32x20 meaningful-content and local-detail grids; pale panel fills and borders count as occupied for the whitespace gate; numerical screen is a triage aid, not semantic admission",
+  "thresholds": {
+    "content_grid_fraction_min": 0.78,
+    "largest_empty_rectangle_fraction_max": 0.1,
+    "cell_content_fraction_min": 0.06
+  },
+  "pass_count": 6,
+  "records": [
+    {
+      "id": "eventbridge-rl",
+      "title": "EventBridge-RL",
+      "category": "structured-robotics",
+      "communication_task": "双时间尺度世界模型与分支场景",
+      "prompt": "cases/eventbridge-rl/prompt.txt",
+      "image": "cases/eventbridge-rl/figure.png",
+      "readme": "cases/eventbridge-rl/README.md",
+      "prompt_characters": 12304,
+      "prompt_nonwhitespace_characters": 10480,
+      "prompt_sha256": "8cdf9fa6ac2e35d871803ce368df2d1d8e93a17714eeac052a4a2bbc1cc70806",
+      "image_sha256": "00dcccf52da5e6ec0fd60a85c93cc7c7de29ac7deef766a618a16fe12742f91e",
+      "density": {
+        "size": [
+          1448,
+          1086
+        ],
+        "sha256": "00dcccf52da5e6ec0fd60a85c93cc7c7de29ac7deef766a618a16fe12742f91e",
+        "near_white_fraction": 0.23863994790553808,
+        "content_grid_fraction": 1.0,
+        "detail_grid_fraction": 0.9796875,
+        "largest_empty_rectangle_fraction": 0.0,
+        "density_screen_pass": true
+      },
+      "admission": "admitted",
+      "provenance_tier": "legacy-curated",
+      "size": [
+        1448,
+        1086
+      ],
+      "sha256": "00dcccf52da5e6ec0fd60a85c93cc7c7de29ac7deef766a618a16fe12742f91e",
+      "near_white_fraction": 0.23863994790553808,
+      "content_grid_fraction": 1.0,
+      "detail_grid_fraction": 0.9796875,
+      "largest_empty_rectangle_fraction": 0.0,
+      "density_screen_pass": true
+    },
+    {
+      "id": "reasoning-between-words",
+      "title": "Reasoning Between Words",
+      "category": "agents-reasoning",
+      "communication_task": "潜在推理、符号锚点与局部反馈",
+      "prompt": "cases/reasoning-between-words/prompt.txt",
+      "image": "cases/reasoning-between-words/figure.png",
+      "readme": "cases/reasoning-between-words/README.md",
+      "prompt_characters": 18144,
+      "prompt_nonwhitespace_characters": 15505,
+      "prompt_sha256": "f8ebccd296c20c6aade578742be412f9e3d4ec5f00ed91247787d6041840a20a",
+      "image_sha256": "82e7f2e2c0534a1c3008cf81cecd7c8bd8776f679c89a8b46a611b4460540812",
+      "density": {
+        "size": [
+          1448,
+          1086
+        ],
+        "sha256": "82e7f2e2c0534a1c3008cf81cecd7c8bd8776f679c89a8b46a611b4460540812",
+        "near_white_fraction": 0.5320312261530479,
+        "content_grid_fraction": 0.978125,
+        "detail_grid_fraction": 0.9890625,
+        "largest_empty_rectangle_fraction": 0.009375,
+        "density_screen_pass": true
+      },
+      "admission": "admitted",
+      "provenance_tier": "legacy-curated",
+      "size": [
+        1448,
+        1086
+      ],
+      "sha256": "82e7f2e2c0534a1c3008cf81cecd7c8bd8776f679c89a8b46a611b4460540812",
+      "near_white_fraction": 0.5320312261530479,
+      "content_grid_fraction": 0.978125,
+      "detail_grid_fraction": 0.9890625,
+      "largest_empty_rectangle_fraction": 0.009375,
+      "density_screen_pass": true
+    },
+    {
+      "id": "trace",
+      "title": "TRACE",
+      "category": "multimodal-foundation",
+      "communication_task": "多模态证据路由与选择性验证",
+      "prompt": "cases/trace/prompt.txt",
+      "image": "cases/trace/figure.png",
+      "readme": "cases/trace/README.md",
+      "prompt_characters": 11103,
+      "prompt_nonwhitespace_characters": 9480,
+      "prompt_sha256": "3ea47add7b20cf8f8884bd803995531c2935a968fa19d7f83ba42f80d90cee3a",
+      "image_sha256": "a5cc7c75de3f5b436428f2b847c86ba81a08c1b9496a16f57118ea3a3df68ecd",
+      "density": {
+        "size": [
+          1448,
+          1086
+        ],
+        "sha256": "a5cc7c75de3f5b436428f2b847c86ba81a08c1b9496a16f57118ea3a3df68ecd",
+        "near_white_fraction": 0.4123239776970585,
+        "content_grid_fraction": 0.9984375,
+        "detail_grid_fraction": 0.9703125,
+        "largest_empty_rectangle_fraction": 0.0015625,
+        "density_screen_pass": true
+      },
+      "admission": "admitted",
+      "provenance_tier": "legacy-curated",
+      "size": [
+        1448,
+        1086
+      ],
+      "sha256": "a5cc7c75de3f5b436428f2b847c86ba81a08c1b9496a16f57118ea3a3df68ecd",
+      "near_white_fraction": 0.4123239776970585,
+      "content_grid_fraction": 0.9984375,
+      "detail_grid_fraction": 0.9703125,
+      "largest_empty_rectangle_fraction": 0.0015625,
+      "density_screen_pass": true
+    },
+    {
+      "id": "two-phase-trust-repair",
+      "title": "Two-phase Trust / Repair",
+      "category": "agents-reasoning",
+      "communication_task": "紧凑双阶段信任与修复",
+      "prompt": "cases/two-phase-trust-repair/prompt.txt",
+      "image": "cases/two-phase-trust-repair/figure.png",
+      "readme": "cases/two-phase-trust-repair/README.md",
+      "prompt_characters": 20999,
+      "prompt_nonwhitespace_characters": 17719,
+      "prompt_sha256": "d3b35b216aebc337a6febbe847c48abacff645bb99840ea9ebe6a7b38f2d0647",
+      "image_sha256": "99ce1b1c89ffb36711f88b9a33863b997334973b379f8ae971d4b9918bf3691b",
+      "density": {
+        "size": [
+          1448,
+          1086
+        ],
+        "sha256": "99ce1b1c89ffb36711f88b9a33863b997334973b379f8ae971d4b9918bf3691b",
+        "near_white_fraction": 0.5703230721487949,
+        "content_grid_fraction": 0.7828125,
+        "detail_grid_fraction": 0.78125,
+        "largest_empty_rectangle_fraction": 0.1,
+        "density_screen_pass": true
+      },
+      "admission": "admitted",
+      "provenance_tier": "legacy-curated",
+      "size": [
+        1448,
+        1086
+      ],
+      "sha256": "99ce1b1c89ffb36711f88b9a33863b997334973b379f8ae971d4b9918bf3691b",
+      "near_white_fraction": 0.5703230721487949,
+      "content_grid_fraction": 0.7828125,
+      "detail_grid_fraction": 0.78125,
+      "largest_empty_rectangle_fraction": 0.1,
+      "density_screen_pass": true
+    },
+    {
+      "id": "agent-fleet",
+      "title": "Agent Fleet",
+      "category": "agents-reasoning",
+      "communication_task": "多智能体协作与共享产物",
+      "prompt": "cases/agent-fleet/prompt.txt",
+      "image": "cases/agent-fleet/figure.png",
+      "readme": "cases/agent-fleet/README.md",
+      "prompt_characters": 27006,
+      "prompt_nonwhitespace_characters": 23119,
+      "prompt_sha256": "2522c2e250cd09696be7cb688d3dc331be8394b3cb5a2ac49d7da5e71a89bbc7",
+      "image_sha256": "76b859a95308e72d7ef58a35262c6c617460c772d88afd017fb4a571afcbdca5",
+      "density": {
+        "size": [
+          1448,
+          1086
+        ],
+        "sha256": "76b859a95308e72d7ef58a35262c6c617460c772d88afd017fb4a571afcbdca5",
+        "near_white_fraction": 0.3868846850421741,
+        "content_grid_fraction": 0.9859375,
+        "detail_grid_fraction": 0.9828125,
+        "largest_empty_rectangle_fraction": 0.00625,
+        "density_screen_pass": true
+      },
+      "admission": "admitted",
+      "provenance_tier": "legacy-curated",
+      "size": [
+        1448,
+        1086
+      ],
+      "sha256": "76b859a95308e72d7ef58a35262c6c617460c772d88afd017fb4a571afcbdca5",
+      "near_white_fraction": 0.3868846850421741,
+      "content_grid_fraction": 0.9859375,
+      "detail_grid_fraction": 0.9828125,
+      "largest_empty_rectangle_fraction": 0.00625,
+      "density_screen_pass": true
+    },
+    {
+      "id": "visio-memory-routing",
+      "title": "Visio Memory Routing",
+      "category": "multimodal-foundation",
+      "communication_task": "长视频记忆与路由",
+      "prompt": "cases/visio-memory-routing/prompt.txt",
+      "image": "cases/visio-memory-routing/figure.png",
+      "readme": "cases/visio-memory-routing/README.md",
+      "prompt_characters": 6536,
+      "prompt_nonwhitespace_characters": 5579,
+      "prompt_sha256": "af2b476f20fd6ab3d38e5257579d0563a43f78fe697be29b494154489ff89fb3",
+      "image_sha256": "38aec9b6cf90dcb11c17017734f274ae9bcd50eb7a536212232ae27d4743917a",
+      "density": {
+        "size": [
+          1448,
+          1086
+        ],
+        "sha256": "38aec9b6cf90dcb11c17017734f274ae9bcd50eb7a536212232ae27d4743917a",
+        "near_white_fraction": 0.7019404423959382,
+        "content_grid_fraction": 0.8453125,
+        "detail_grid_fraction": 0.9390625,
+        "largest_empty_rectangle_fraction": 0.01875,
+        "density_screen_pass": true
+      },
+      "admission": "admitted",
+      "provenance_tier": "legacy-curated",
+      "size": [
+        1448,
+        1086
+      ],
+      "sha256": "38aec9b6cf90dcb11c17017734f274ae9bcd50eb7a536212232ae27d4743917a",
+      "near_white_fraction": 0.7019404423959382,
+      "content_grid_fraction": 0.8453125,
+      "detail_grid_fraction": 0.9390625,
+      "largest_empty_rectangle_fraction": 0.01875,
+      "density_screen_pass": true
+    }
+  ]
+}

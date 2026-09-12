@@ -1,42 +1,122 @@
 # Sivia 科研绘图知识库
 
-**一个案例 = 实际生成图片 + 生成它时使用的完整 prompt。** 不是一张孤立图片，也不是只有提示词的长截图。欢迎[贡献图文配对案例](CONTRIBUTING.md)，一起积累可复用的科研绘图经验。
+本知识库现有 **42 对实际生成 PNG + 完整生产 prompt**：6 对早期整理案例、12 对先前论文来源案例，以及本轮新增的 24 对。36 对论文来源案例覆盖 ICLR、CVPR、ICCV、NeurIPS、ICML、AAAI、CoRL 与 RSS 等会议。
 
-## 首批 6 组生成案例
+## 纳入门槛
 
-将 gatina 提供的提示词收藏整理为 6 个主题：转写并校对完整提示词，再逐例调用 ImageGen。下面链接分别提供独立成图、可复制的生成全文和案例说明。
+所有 42 对均通过同一低空白率数值筛查：32×20 内容网格占用率不低于 78%，且最大连续空区不高于画布的 10%。数值筛查只用于发现空白布局问题；论文来源案例还经过实际 PNG 目视检查。完整指标见 [`audit/`](audit/)，机器可读总索引见 [`index.json`](index.json)。
 
-| 案例 | 可借鉴的表达 | 实际成图 | 完整 prompt |
+每个案例必须同时包含 `figure.png` 与生成它的完整 `prompt.txt`。论文来源图是重新设计并生成的概念示意，不是论文原图、实验结果或人工 gold。
+
+## 按大类浏览
+
+<a id="multimodal-foundation"></a>
+
+### 多模态与基础表征
+
+Multimodal and foundation representations。共 7 对。
+
+| 案例 | 来源层级 | 实际成图 | 完整 prompt |
 | --- | --- | --- | --- |
-| [EventBridge-RL](cases/eventbridge-rl/README.md) | 数学机制、双时间尺度、分支场景叙事 | [PNG](cases/eventbridge-rl/figure.png) | [TXT](cases/eventbridge-rl/prompt.txt) |
-| [Reasoning Between Words](cases/reasoning-between-words/README.md) | LLM 潜在推理与符号锚点、非等宽分区、局部反馈 | [PNG](cases/reasoning-between-words/figure.png) | [TXT](cases/reasoning-between-words/prompt.txt) |
-| [TRACE](cases/trace/README.md) | 多模态证据、中心机制放大、选择性获取与验证 | [PNG](cases/trace/figure.png) | [TXT](cases/trace/prompt.txt) |
-| [两阶段 Trust / Repair](cases/two-phase-trust-repair/README.md) | 紧凑双阶段、跨区知识模块、橙绿双流向 | [PNG](cases/two-phase-trust-repair/figure.png) | [TXT](cases/two-phase-trust-repair/prompt.txt) |
-| [Agent Fleet](cases/agent-fleet/README.md) | 多智能体、共享产物、技术漫画与清晰正文搭配 | [PNG](cases/agent-fleet/figure.png) | [TXT](cases/agent-fleet/prompt.txt) |
-| [Memory Routing](cases/visio-memory-routing/README.md) | 神经网络框架、视频场景、主干流程与机制放大 | [PNG](cases/visio-memory-routing/figure.png) | [TXT](cases/visio-memory-routing/prompt.txt) |
+| [BLIP-2: Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models](cases/blip2/README.md) | 论文来源·新增 24 | [PNG](cases/blip2/figure.png) | [TXT](cases/blip2/prompt.txt) |
+| [Flamingo: a Visual Language Model for Few-Shot Learning](cases/flamingo/README.md) | 论文来源·新增 24 | [PNG](cases/flamingo/figure.png) | [TXT](cases/flamingo/prompt.txt) |
+| [Image BERT Pre-training with Online Tokenizer](cases/ibot/README.md) | 论文来源·先前批次 | [PNG](cases/ibot/figure.png) | [TXT](cases/ibot/prompt.txt) |
+| [InstructBLIP: Towards General-purpose Vision-Language Models with Instruction Tuning](cases/instructblip/README.md) | 论文来源·新增 24 | [PNG](cases/instructblip/figure.png) | [TXT](cases/instructblip/prompt.txt) |
+| [Visual Instruction Tuning](cases/llava/README.md) | 论文来源·新增 24 | [PNG](cases/llava/figure.png) | [TXT](cases/llava/prompt.txt) |
+| [TRACE](cases/trace/README.md) | 早期整理 | [PNG](cases/trace/figure.png) | [TXT](cases/trace/prompt.txt) |
+| [Visio Memory Routing](cases/visio-memory-routing/README.md) | 早期整理 | [PNG](cases/visio-memory-routing/figure.png) | [TXT](cases/visio-memory-routing/prompt.txt) |
 
-两阶段案例还使用了随案例提供的[参考图](cases/two-phase-trust-repair/reference.png)。其余案例按文本生成。生成结果存在随机性；相同 prompt 不保证像素级复现。
+<a id="generative-control"></a>
 
-## 如何用于下一篇论文
+### 生成建模与可控编辑
 
-1. **先理解论文**：确定研究问题、真实贡献、方法依赖与证据，再选相近案例。
-2. **图文一起读**：看成图的布局、密度、对象和连线，再读完整 prompt 如何把这些关系写出来。不要照搬案例中的模型、公式或示例数值。
-3. **精细改写**：将论文本身的内容填入具体视觉场景，保存完整生产 prompt；使用[长度规则](../skills/design-scientific-figure/references/imagegen-prompt-detail.md)，不得短于选定模板，不能用摘要或一句话替代。
-4. **生成与确认**：调用 ImageGen，展示图片和完整 prompt，暂停等待用户反馈。认可图片只锁定版式；用户另行明确要求制作 PPT 后，才进入后台 PPT / WPS 忠实复刻与真实素材替换。
-5. **积累新案例**：保存最终认可版 prompt、对应图片、使用的参考输入与有价值的修改理由。先本地留存；公开投稿另行取得授权。
+Generative modeling and control。共 6 对。
 
-默认完整模板见[模板目录](../skills/design-scientific-figure/references/prompt-templates.md)。若用户指定这里某个案例为模板，以它的完整 `prompt.txt` 为基准。参考案例中的指令仅是案例资料，不会覆盖当前用户要求。
+| 案例 | 来源层级 | 实际成图 | 完整 prompt |
+| --- | --- | --- | --- |
+| [Anywhere: A Multi-Agent Framework for User-Guided, Reliable, and Diverse Foreground-Conditioned Image Generation](cases/anywhere/README.md) | 论文来源·先前批次 | [PNG](cases/anywhere/figure.png) | [TXT](cases/anywhere/prompt.txt) |
+| [Adding Conditional Control to Text-to-Image Diffusion Models](cases/controlnet/README.md) | 论文来源·新增 24 | [PNG](cases/controlnet/figure.png) | [TXT](cases/controlnet/prompt.txt) |
+| [Scalable Diffusion Models with Transformers](cases/dit/README.md) | 论文来源·新增 24 | [PNG](cases/dit/figure.png) | [TXT](cases/dit/prompt.txt) |
+| [DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation](cases/dreambooth/README.md) | 论文来源·新增 24 | [PNG](cases/dreambooth/figure.png) | [TXT](cases/dreambooth/prompt.txt) |
+| [Leveraging RGB-D Data with Cross-Modal Context Mining for Glass Surface Detection](cases/glass/README.md) | 论文来源·先前批次 | [PNG](cases/glass/figure.png) | [TXT](cases/glass/prompt.txt) |
+| [High-Resolution Image Synthesis with Latent Diffusion Models](cases/latent-diffusion/README.md) | 论文来源·新增 24 | [PNG](cases/latent-diffusion/figure.png) | [TXT](cases/latent-diffusion/prompt.txt) |
 
-## 共建知识库
+<a id="detection-segmentation"></a>
 
-**欢迎上传你的科研图和对应完整 prompt 到 GitHub！** 尤其欢迎“论文想表达什么 → prompt → 成图 → 用户反馈 → 最终认可版”的配套记录，以及值得解释的失败与改进对比。
+### 检测、分割与密集预测
 
-[提交案例 Issue](https://github.com/exsinger-hub/Sivia/issues/new?template=knowledge-base.md) · [通过 Pull Request 投稿](CONTRIBUTING.md)
+Detection, segmentation and dense prediction。共 7 对。
 
-仅有图片或仅有 prompt 的投稿先归为待补全参考；补齐配对后再收为完整案例。不要把尚未认可的生成稿标成“用户最终认可”。
+| 案例 | 来源层级 | 实际成图 | 完整 prompt |
+| --- | --- | --- | --- |
+| [Putting the Object Back into Video Object Segmentation](cases/cutie/README.md) | 论文来源·先前批次 | [PNG](cases/cutie/figure.png) | [TXT](cases/cutie/prompt.txt) |
+| [Divide, Conquer and Combine: A Training-Free Framework for High-Resolution Image Perception in Multimodal Large Language Models](cases/dc2/README.md) | 论文来源·先前批次 | [PNG](cases/dc2/figure.png) | [TXT](cases/dc2/prompt.txt) |
+| [Depth Anything: Unleashing the Power of Large-Scale Unlabeled Data](cases/depth-anything/README.md) | 论文来源·先前批次 | [PNG](cases/depth-anything/figure.png) | [TXT](cases/depth-anything/prompt.txt) |
+| [Masked-Attention Mask Transformer for Universal Image Segmentation](cases/mask2former/README.md) | 论文来源·新增 24 | [PNG](cases/mask2former/figure.png) | [TXT](cases/mask2former/prompt.txt) |
+| [Segment Anything](cases/segment-anything/README.md) | 论文来源·新增 24 | [PNG](cases/segment-anything/figure.png) | [TXT](cases/segment-anything/prompt.txt) |
+| [Tube-Link: A Flexible Cross Tube Framework for Universal Video Segmentation](cases/tube-link/README.md) | 论文来源·新增 24 | [PNG](cases/tube-link/figure.png) | [TXT](cases/tube-link/prompt.txt) |
+| [VideoGrounding-DINO: Towards Open-Vocabulary Spatio-Temporal Video Grounding](cases/video-grounding-dino/README.md) | 论文来源·新增 24 | [PNG](cases/video-grounding-dino/figure.png) | [TXT](cases/video-grounding-dino/prompt.txt) |
 
-## 使用边界与许可
+<a id="three-d-reconstruction"></a>
 
-首批 6 组是 **ImageGen 生成示例，尚未获得用户最终视觉确认**，不是经验证的论文实验或可以不经核对直接投稿的科研图。图中的场景、概率、曲线及比较仅用于学习表达；生成标签、数学符号和箭头还需逐项对照真实论文。
+### 三维表示、重建与分子空间
 
-本批案例基于 gatina 提供的提示词收藏，经授权整理与发布；单项原作者、出处链接及原素材许可尚未完整提供，欢迎补充或提出更正。来源提示词与参考素材的权利归各自权利人，代码的 MIT 许可不自动变更第三方素材许可。使用案例提示词或图像时请核对来源与适用许可。投稿只提交有权公开的材料，移除个人隐私、患者信息和未经授权的未公开内容。
+3D representation, reconstruction and molecular space。共 6 对。
+
+| 案例 | 来源层级 | 实际成图 | 完整 prompt |
+| --- | --- | --- | --- |
+| [3DGStream: On-the-Fly Training of 3D Gaussians for Efficient Streaming of Photo-Realistic Free-Viewpoint Videos](cases/3dgstream/README.md) | 论文来源·新增 24 | [PNG](cases/3dgstream/figure.png) | [TXT](cases/3dgstream/prompt.txt) |
+| [DiffDock: Diffusion Steps, Twists, and Turns for Molecular Docking](cases/diffdock/README.md) | 论文来源·先前批次 | [PNG](cases/diffdock/figure.png) | [TXT](cases/diffdock/prompt.txt) |
+| [DUSt3R: Geometric 3D Vision Made Easy](cases/dust3r/README.md) | 论文来源·先前批次 | [PNG](cases/dust3r/figure.png) | [TXT](cases/dust3r/prompt.txt) |
+| [GaussianDreamer: Fast Generation from Text to 3D Gaussians by Bridging 2D and 3D Diffusion Models](cases/gaussian-dreamer/README.md) | 论文来源·新增 24 | [PNG](cases/gaussian-dreamer/figure.png) | [TXT](cases/gaussian-dreamer/prompt.txt) |
+| [Mip-NeRF 360: Unbounded Anti-Aliased Neural Radiance Fields](cases/mipnerf360/README.md) | 论文来源·新增 24 | [PNG](cases/mipnerf360/figure.png) | [TXT](cases/mipnerf360/prompt.txt) |
+| [Neuralangelo: High-Fidelity Neural Surface Reconstruction](cases/neuralangelo/README.md) | 论文来源·新增 24 | [PNG](cases/neuralangelo/figure.png) | [TXT](cases/neuralangelo/prompt.txt) |
+
+<a id="agents-reasoning"></a>
+
+### 智能体、工具使用与推理
+
+Agents, tool use and reasoning。共 9 对。
+
+| 案例 | 来源层级 | 实际成图 | 完整 prompt |
+| --- | --- | --- | --- |
+| [Agent Fleet](cases/agent-fleet/README.md) | 早期整理 | [PNG](cases/agent-fleet/figure.png) | [TXT](cases/agent-fleet/prompt.txt) |
+| [ReAct: Synergizing Reasoning and Acting in Language Models](cases/react/README.md) | 论文来源·新增 24 | [PNG](cases/react/figure.png) | [TXT](cases/react/prompt.txt) |
+| [Reasoning Between Words](cases/reasoning-between-words/README.md) | 早期整理 | [PNG](cases/reasoning-between-words/figure.png) | [TXT](cases/reasoning-between-words/prompt.txt) |
+| [Reflexion: Language Agents with Verbal Reinforcement Learning](cases/reflexion/README.md) | 论文来源·新增 24 | [PNG](cases/reflexion/figure.png) | [TXT](cases/reflexion/prompt.txt) |
+| [Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection](cases/self-rag/README.md) | 论文来源·先前批次 | [PNG](cases/self-rag/figure.png) | [TXT](cases/self-rag/prompt.txt) |
+| [Toolformer: Language Models Can Teach Themselves to Use Tools](cases/toolformer/README.md) | 论文来源·新增 24 | [PNG](cases/toolformer/figure.png) | [TXT](cases/toolformer/prompt.txt) |
+| [Tree of Thoughts: Deliberate Problem Solving with Large Language Models](cases/tree-of-thoughts/README.md) | 论文来源·新增 24 | [PNG](cases/tree-of-thoughts/figure.png) | [TXT](cases/tree-of-thoughts/prompt.txt) |
+| [Two-phase Trust / Repair](cases/two-phase-trust-repair/README.md) | 早期整理 | [PNG](cases/two-phase-trust-repair/figure.png) | [TXT](cases/two-phase-trust-repair/prompt.txt) |
+| [Visual Programming: Compositional Visual Reasoning Without Training](cases/visprog/README.md) | 论文来源·先前批次 | [PNG](cases/visprog/figure.png) | [TXT](cases/visprog/prompt.txt) |
+
+<a id="structured-robotics"></a>
+
+### 时序、图学习、世界模型与机器人
+
+Time series, graphs, world models and robotics。共 7 对。
+
+| 案例 | 来源层级 | 实际成图 | 完整 prompt |
+| --- | --- | --- | --- |
+| [Diffusion Policy: Visuomotor Policy Learning via Action Diffusion](cases/diffusion-policy/README.md) | 论文来源·新增 24 | [PNG](cases/diffusion-policy/figure.png) | [TXT](cases/diffusion-policy/prompt.txt) |
+| [EventBridge-RL](cases/eventbridge-rl/README.md) | 早期整理 | [PNG](cases/eventbridge-rl/figure.png) | [TXT](cases/eventbridge-rl/prompt.txt) |
+| [Recipe for a General, Powerful, Scalable Graph Transformer](cases/graphgps/README.md) | 论文来源·新增 24 | [PNG](cases/graphgps/figure.png) | [TXT](cases/graphgps/prompt.txt) |
+| [A Time Series is Worth 64 Words: Long-term Forecasting with Transformers](cases/patchtst/README.md) | 论文来源·新增 24 | [PNG](cases/patchtst/figure.png) | [TXT](cases/patchtst/prompt.txt) |
+| [PDFormer: Propagation Delay-Aware Dynamic Long-Range Transformer for Traffic Flow Prediction](cases/pdformer/README.md) | 论文来源·先前批次 | [PNG](cases/pdformer/figure.png) | [TXT](cases/pdformer/prompt.txt) |
+| [RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control](cases/rt2/README.md) | 论文来源·新增 24 | [PNG](cases/rt2/figure.png) | [TXT](cases/rt2/prompt.txt) |
+| [Learning Interactive Real-World Simulators](cases/unisim/README.md) | 论文来源·先前批次 | [PNG](cases/unisim/figure.png) | [TXT](cases/unisim/prompt.txt) |
+
+## 使用方式
+
+1. 先按任务大类选择结构接近的案例，同时查看 PNG 与完整 prompt。
+2. 借鉴版式、信息密度、对象层级、配色和连线约束；不要照搬案例的方法名、公式、示意数值或实验结论。
+3. 用目标论文的真实贡献、模块与依赖关系重写完整 prompt，并保留明确的低空白率约束。
+4. 生成后先检查空白占比、裁切、文字、箭头、输入输出与科学关系，再决定是否入库。
+
+## 数据与评测边界
+
+36 个论文来源家族及其衍生图只用于学习和开发，必须排除在未来封闭评测之外；列表见 [`evaluation-exclusions.json`](evaluation-exclusions.json)。详细生成调用说明见 [`generation-summary.json`](generation-summary.json)。生成图不能充当定量曲线、消融、基准结果、用户研究或人工标注。
+
+## 共建
+
+欢迎通过 [Issue](https://github.com/exsinger-hub/Sivia/issues/new?template=knowledge-base.md) 或 [Pull Request](CONTRIBUTING.md) 提交有权公开的图文配对案例。投稿应包含最终 PNG、对应完整 prompt、来源与有价值的修改记录。代码的 MIT 许可不会自动覆盖第三方来源素材。

@@ -1,0 +1,33 @@
+{
+  "case_id": "depth-anything",
+  "version": 2,
+  "reviewer": "root plus bounded source/visual agents",
+  "human_gold": false,
+  "actual_png_inspected": true,
+  "source_provenance_pass": true,
+  "exact_prompt_and_image_identity_pass": true,
+  "scientific_relations_pass": true,
+  "readability_pass": true,
+  "readability_evidence": "实际PNG文字、变量和图形主体可辨认；下标错误另计科学关系失败。",
+  "review_image_sha256": "953cad469898e9c5272addb6e9cad0ad7b80bde45f3ced019932ba11cae908d3",
+  "density": {
+    "support_area_fraction": 0.4185458064975632,
+    "body_occupied_fraction": [
+      0.7407407407407407,
+      0.6848958333333334
+    ],
+    "body_max_empty_rectangle_fraction": [
+      0.05555555555555555,
+      0.046875
+    ],
+    "numeric_screen_pass": false,
+    "definition": "Spatial occupancy of agent-annotated scientific support, not white-pixel ratio or human gold.",
+    "annotation": "cases/depth-anything/semantic-support.v2.json",
+    "measurements": "cases/depth-anything/semantic-density.v2.json"
+  },
+  "findings_zh": "干净教师目标、互补 CutMix 区域、分区域损失、标签分支和冻结语义分支已核对。放大确认左下深度图为书堆与后方椅背；植物细节简化。",
+  "admission": "hold",
+  "hold_reasons": [
+    "low_empty_area_gate"
+  ]
+}

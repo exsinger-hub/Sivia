@@ -2,6 +2,7 @@
 ~$*.pptx
 __pycache__/
 *.py[cod]
+.venv/
 # Local construction trials; published v1/v2/v3 evidence remains versioned.
 examples/evidence-gated-overview/review/v2-label-endpoint-draft/
 examples/evidence-gated-overview/review/v2-route-draft/

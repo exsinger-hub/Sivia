@@ -1,0 +1,12 @@
+{
+  "paper_title": "Leveraging RGB-D Data with Cross-Modal Context Mining for Glass Surface Detection",
+  "venue": "AAAI",
+  "year": 2025,
+  "topic": "RGB-D context and missing-data attention",
+  "official_url": "https://ojs.aaai.org/index.php/AAAI/article/view/32558",
+  "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/32558/34713",
+  "source_family": "glass",
+  "learning_only": true,
+  "exclude_from_sealed_evaluation": true,
+  "conceptual_asset": true
+}

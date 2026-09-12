@@ -1,0 +1,31 @@
+{
+  "case_id": "visprog",
+  "version": 3,
+  "reviewer": "root plus bounded source/visual agents",
+  "human_gold": false,
+  "actual_png_inspected": true,
+  "source_provenance_pass": true,
+  "exact_prompt_and_image_identity_pass": true,
+  "scientific_relations_pass": true,
+  "readability_pass": true,
+  "readability_evidence": "实际PNG文字、变量和图形主体可辨认；下标错误另计科学关系失败。",
+  "review_image_sha256": "007455100272685ad9565938769b286d15671ea5fde6fb9ab3270f7f0495c7b0",
+  "density": {
+    "support_area_fraction": 0.5038606625764375,
+    "body_occupied_fraction": [
+      0.8425925925925926,
+      0.81640625
+    ],
+    "body_max_empty_rectangle_fraction": [
+      0.027777777777777776,
+      0.0234375
+    ],
+    "numeric_screen_pass": true,
+    "definition": "Spatial occupancy of agent-annotated scientific support, not white-pixel ratio or human gold.",
+    "annotation": "cases/visprog/semantic-support.v3.json",
+    "measurements": "cases/visprog/semantic-density.v3.json"
+  },
+  "findings_zh": "程序生成器只接文本，图像进入解释器；SEG→对象集合、SELECT→全彩红杯选择、COLORPOP→其余变灰均正确。v3实际放大主照片与下方应用图，缩减中部空带。original IMAGE旁路起点仍有小白隙，可由端口与标签辨认。",
+  "admission": "admitted",
+  "hold_reasons": []
+}

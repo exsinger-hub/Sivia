@@ -1,0 +1,12 @@
+{
+  "paper_title": "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection",
+  "venue": "ICLR",
+  "year": 2024,
+  "topic": "Retrieval and reflection",
+  "official_url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/25f7be9694d7b32d5cc670927b8091e1-Abstract-Conference.html",
+  "pdf_url": "https://proceedings.iclr.cc/paper_files/paper/2024/file/25f7be9694d7b32d5cc670927b8091e1-Paper-Conference.pdf",
+  "source_family": "self-rag",
+  "learning_only": true,
+  "exclude_from_sealed_evaluation": true,
+  "conceptual_asset": true
+}

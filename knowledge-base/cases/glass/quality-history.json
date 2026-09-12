@@ -1,0 +1,36 @@
+{
+  "case_id": "glass",
+  "version": 3,
+  "reviewer": "root plus bounded source/visual agents",
+  "human_gold": false,
+  "actual_png_inspected": true,
+  "source_provenance_pass": true,
+  "exact_prompt_and_image_identity_pass": true,
+  "scientific_relations_pass": false,
+  "readability_pass": false,
+  "readability_evidence": "透明化造成mask前景丢失、标题与字段显示不稳定，未通过。",
+  "review_image_sha256": "2323ad04c08118eded7f09c15068814b56df2dd4a2706499c9abbf9a31d5b831",
+  "density": {
+    "support_area_fraction": 0.3560784717770248,
+    "body_occupied_fraction": [
+      0.7106481481481481,
+      0.6419270833333334
+    ],
+    "body_max_empty_rectangle_fraction": [
+      0.08796296296296297,
+      0.08333333333333333
+    ],
+    "numeric_screen_pass": false,
+    "definition": "Spatial occupancy of agent-annotated scientific support, not white-pixel ratio or human gold.",
+    "annotation": "cases/glass/semantic-support.v3.json",
+    "measurements": "cases/glass/semantic-density.v3.json"
+  },
+  "findings_zh": "再次生成透明背景，玻璃 mask 的白色支持区域丢失；无法作为可靠的 RGB-D/mask 配对示意。",
+  "admission": "hold",
+  "hold_reasons": [
+    "scientific_relations_or_visible_content",
+    "readability",
+    "low_empty_area_gate",
+    "opacity_and_mask_integrity"
+  ]
+}

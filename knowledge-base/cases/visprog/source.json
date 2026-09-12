@@ -1,0 +1,12 @@
+{
+  "paper_title": "Visual Programming: Compositional Visual Reasoning Without Training",
+  "venue": "CVPR",
+  "year": 2023,
+  "topic": "Visual program execution",
+  "official_url": "https://openaccess.thecvf.com/content/CVPR2023/html/Gupta_Visual_Programming_Compositional_Visual_Reasoning_Without_Training_CVPR_2023_paper.html",
+  "pdf_url": "https://openaccess.thecvf.com/content/CVPR2023/papers/Gupta_Visual_Programming_Compositional_Visual_Reasoning_Without_Training_CVPR_2023_paper.pdf",
+  "source_family": "visprog",
+  "learning_only": true,
+  "exclude_from_sealed_evaluation": true,
+  "conceptual_asset": true
+}
