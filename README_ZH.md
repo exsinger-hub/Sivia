@@ -16,7 +16,7 @@
 
 Sivia 是面向 **Codex 与 Claude Code** 的科研绘图插件。它先理解论文，从“成图＋完整 prompt”知识库中选择合适参考，再围绕方法的真实贡献编写精细 ImageGen prompt。你先审阅图片；是否继续制作可编辑 PowerPoint、WPS 或 draw.io 图件，由你明确决定。
 
-**默认第一轮交付图片、完整 prompt 和简短设计说明，不直接制作演示文稿。**
+
 
 ## 科研绘图知识库
 
