@@ -16,7 +16,7 @@ English | [简体中文](README_ZH.md)
 
 Sivia is a scientific-figure plugin for **Codex and Claude Code**. It reads your manuscript, finds relevant image-and-prompt examples, and develops a detailed ImageGen prompt around the method's actual contribution. You review the image first; editable PowerPoint, WPS or draw.io reconstruction is a separate, explicit choice.
 
-**The default first delivery is an image, its complete prompt and a short design explanation—not a presentation.**
+
 
 ## Knowledge base
 
