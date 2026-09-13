@@ -1,0 +1,12 @@
+{
+  "valid": true,
+  "checks": 179,
+  "errors": [],
+  "active_legacy": 3,
+  "excluded_history": 39,
+  "candidates": 24,
+  "actual_drafts": 3,
+  "new_admitted": 0,
+  "publication_allowed": false,
+  "scope": "structural/provenance validation only, not visual acceptance"
+}

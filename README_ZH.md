@@ -18,9 +18,9 @@ Sivia 是面向 **Codex 与 Claude Code** 的科研绘图插件。它先理解�
 
 **默认第一轮交付图片、完整 prompt 和简短设计说明，不直接制作演示文稿。**
 
-![Agent Fleet：ImageGen 知识库示例](knowledge-base/cases/agent-fleet/figure.png)
+![Neuralangelo：ImageGen 知识库示例](knowledge-base/cases/neuralangelo/figure.png)
 
-<p align="center">知识库成图示例，不代表其中每个像素都是原生可编辑对象。<a href="knowledge-base/cases/agent-fleet/prompt.txt">完整 prompt</a> · <a href="knowledge-base/cases/agent-fleet/README.md">案例说明</a></p>
+<p align="center">知识库成图示例，不代表其中每个像素都是原生可编辑对象。<a href="knowledge-base/cases/neuralangelo/prompt.txt">完整 prompt</a> · <a href="knowledge-base/cases/neuralangelo/README.md">案例说明</a></p>
 
 ## 为什么使用 Sivia？
 
@@ -127,18 +127,11 @@ python skills/design-scientific-figure/scripts/inspect_raster_asset.py --image r
 
 ## 科研绘图知识库
 
-知识库现有 **42 对实际成图–完整 prompt**，其中 **36 对来自优秀 AI 会议论文的概念图增广**，本轮新增 24 对。全部配对通过低空白率数值筛查；论文来源案例还完成了实际 PNG 目视检查。
+当前参考池仅有用户认可的 **Neuralangelo、ReAct、DiffDock 3 对**。上一版 42 对中的其余 39 对已转为历史排除项，旧空白率筛查不代表质量认可。
 
-| 大类 | 数量 |
-| --- | ---: |
-| [多模态与基础表征](knowledge-base/README.md#multimodal-foundation) | 7 |
-| [生成建模与可控编辑](knowledge-base/README.md#generative-control) | 6 |
-| [检测、分割与密集预测](knowledge-base/README.md#detection-segmentation) | 7 |
-| [三维表示、重建与分子空间](knowledge-base/README.md#three-d-reconstruction) | 6 |
-| [智能体、工具使用与推理](knowledge-base/README.md#agents-reasoning) | 9 |
-| [时序、图学习、世界模型与机器人](knowledge-base/README.md#structured-robotics) | 7 |
+本地重启版按六大类整理 **24 篇近期主会候选**，完成 **3 个实际生成试配对**，均待审阅；其余 21 篇尚未生成。新入库为 0，本轮尚未推送。近期口径为 2025-09-13—2026-09-13 的会议论文集版本，首次预印本日期尚未逐篇核验。
 
-请从完整的[分类知识库索引](knowledge-base/README.md)浏览，机器可读数据见 [`index.json`](knowledge-base/index.json)。每个案例都含实际 PNG、精确完整 prompt 与来源 / 质量说明。论文来源家族及其衍生物只用于学习与开发，并从未来封闭评测中排除。
+条件匹配按领域、科学对象、机制拓扑、构图形式检索，记录借鉴与禁止迁移的内容，弱匹配不强行套版。查看[图文审阅页](knowledge-base/restart-2026/gallery.html)、[分类知识库](knowledge-base/README.md)和[有效索引](knowledge-base/index.json)。每张草图附完整实际提交 prompt、参考绑定及修订记录。
 
 ## Limitations
 

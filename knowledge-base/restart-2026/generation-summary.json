@@ -1,0 +1,13 @@
+{
+  "successful_image_calls": 13,
+  "failed_calls": 2,
+  "failure_notes": [
+    "One rejected parallel AutoTool invocation did not retain its error detail.",
+    "Retry returned HTTP 400: prompt 33701 characters exceeded 32000. No image was produced."
+  ],
+  "actual_draft_pairs": 3,
+  "approved_new_pairs": 0,
+  "model_id": null,
+  "cost": null,
+  "paid_benchmark_experiments": 0
+}

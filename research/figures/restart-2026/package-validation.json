@@ -1,0 +1,55 @@
+{
+  "actual_drafts": 3,
+  "approved_new": 0,
+  "generated_images": 13,
+  "density": {
+    "d4rt": {
+      "size": [
+        1585,
+        992
+      ],
+      "near_white_pixel_fraction": 0.6217468454258676,
+      "contrast_grid_occupied_fraction": 0.6933333333333334,
+      "largest_low_contrast_rectangle_fraction": 0.03833333333333333,
+      "grid": [
+        60,
+        40
+      ],
+      "contrast_threshold": 28,
+      "tile_edge_fraction_threshold": 0.035,
+      "role": "diagnostic only; flat fills excluded, text/borders/texture still contribute; no automatic quality/admission verdict"
+    },
+    "autotool": {
+      "size": [
+        1585,
+        992
+      ],
+      "near_white_pixel_fraction": 0.4345203266510634,
+      "contrast_grid_occupied_fraction": 0.8091666666666667,
+      "largest_low_contrast_rectangle_fraction": 0.020833333333333332,
+      "grid": [
+        60,
+        40
+      ],
+      "contrast_threshold": 28,
+      "tile_edge_fraction_threshold": 0.035,
+      "role": "diagnostic only; flat fills excluded, text/borders/texture still contribute; no automatic quality/admission verdict"
+    },
+    "sigmadock": {
+      "size": [
+        1448,
+        1086
+      ],
+      "near_white_pixel_fraction": 0.6976963208286275,
+      "contrast_grid_occupied_fraction": 0.6983333333333334,
+      "largest_low_contrast_rectangle_fraction": 0.017083333333333332,
+      "grid": [
+        60,
+        40
+      ],
+      "contrast_threshold": 28,
+      "tile_edge_fraction_threshold": 0.035,
+      "role": "diagnostic only; flat fills excluded, text/borders/texture still contribute; no automatic quality/admission verdict"
+    }
+  }
+}

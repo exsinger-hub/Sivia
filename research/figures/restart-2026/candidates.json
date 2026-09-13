@@ -1,0 +1,512 @@
+{
+  "window": [
+    "2025-09-13",
+    "2026-09-13"
+  ],
+  "records": [
+    {
+      "id": "d4rt",
+      "title": "Efficiently Reconstructing Dynamic Scenes One D4RT at a Time",
+      "category": "geometry-4d",
+      "venue": "CVPR",
+      "year": 2026,
+      "official_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_Efficiently_Reconstructing_Dynamic_Scenes_One_D4RT_at_a_Time_CVPR_2026_paper.html",
+      "pdf_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhang_Efficiently_Reconstructing_Dynamic_Scenes_One_D4RT_at_a_Time_CVPR_2026_paper.pdf",
+      "official_page_sha256": "2924c83f68ac1d3af3da34a1b04fe8873afe8315e5f5cf4e9e20be048c78488b",
+      "official_date_metadata": [
+        "2026"
+      ],
+      "abstract": "Understanding and reconstructing the complex geometry and motion of dynamic 4D scenes from video remains a formidable challenge in computer vision. This paper introduces D4RT, a simple yet powerful feedforward network designed to efficiently solve this task. D4RT utilizes a unified transformer architecture to jointly infer depth, spatio-temporal correspondence, and full camera parameters from a single video. Its core innovation is a novel mechanism that sidesteps the heavy computation of dense, per-frame decoding and the complexity of managing multiple, task-specific decoders. Our unified decoding interface allows the model to independently and efficiently probe the 3D position of any point in space and time. The result is a lightweight and highly scalable method that enables remarkably efficient training and inference. We demonstrate that our approach sets a new state-of-the-art, outperforming previous methods across a wide spectrum of 4D reconstruction tasks.",
+      "main_track_verification": "official proceedings page; track text retained",
+      "recency_basis": "main-conference proceedings edition within 2025-09-13..2026-09-13",
+      "preprint_first_date": null,
+      "source_figure_review": "pending",
+      "pair_status": "candidate_only",
+      "user_approval": "pending",
+      "publication_allowed": false
+    },
+    {
+      "id": "fuser",
+      "title": "FUSER: Feed-Forward Multiview 3D Registration Transformer and SE(3)$^N$ Diffusion Refinement",
+      "category": "geometry-4d",
+      "venue": "CVPR",
+      "year": 2026,
+      "official_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Jiang_FUSER_Feed-Forward_Multiview_3D_Registration_Transformer_and_SE3N_Diffusion_Refinement_CVPR_2026_paper.html",
+      "pdf_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Jiang_FUSER_Feed-Forward_Multiview_3D_Registration_Transformer_and_SE3N_Diffusion_Refinement_CVPR_2026_paper.pdf",
+      "official_page_sha256": "d77a804bb1b4926cdb2eeb73622642c84826a8127f652c88dfd3257b93ee7aed",
+      "official_date_metadata": [
+        "2026"
+      ],
+      "abstract": "Registration of multiview point clouds typically depends on extensive pairwise matching to build a pose graph for global synchronization, which is computationally expensive and ill-posed without holistic geometric constraints. In this paper, we propose FUSER, the first feed-forward multi-view registration transformer that processes all scans jointly in a unified, compact latent space to directly predict global poses without any pairwise estimation. To maintain tractability, FUSER employs a sparse 3D CNN to encode each scan into low-resolution superpoint features preserving absolute translation cues, followed by a Geometric Alternating Attention module for efficient intra- and inter-scan reasoning. Particularly, we transfer 2D attention priors from off-the-shelf foundation models (i.e., \\pi^3) to enhance 3D feature attention. Building upon FUSER and its estimates, we further introduce FUSER-DF, an SE(3) diffusion refinement framework to correct FUSER's estimates through a denoising process over the joint SE(3)^N space. Here, FUSER serves as a surrogate multiview register to model the denoiser, and a prior-conditioned SE(3)^N variational lower bound is derived for denoising supervision. Extensive experiments on 3DMatch and ScanNet confirm the superior registration accuracy and efficiency of our method.",
+      "main_track_verification": "official proceedings page; track text retained",
+      "recency_basis": "main-conference proceedings edition within 2025-09-13..2026-09-13",
+      "preprint_first_date": null,
+      "source_figure_review": "pending",
+      "pair_status": "candidate_only",
+      "user_approval": "pending",
+      "publication_allowed": false
+    },
+    {
+      "id": "4dpm",
+      "title": "4D Primitive-Mache: Glueing Primitives for Persistent 4D Scene Reconstruction",
+      "category": "geometry-4d",
+      "venue": "CVPR",
+      "year": 2026,
+      "official_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Mazur_4D_Primitive-Mache_Glueing_Primitives_for_Persistent_4D_Scene_Reconstruction_CVPR_2026_paper.html",
+      "pdf_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Mazur_4D_Primitive-Mache_Glueing_Primitives_for_Persistent_4D_Scene_Reconstruction_CVPR_2026_paper.pdf",
+      "official_page_sha256": "c8c7a2b6172c000b7f7f570890debd1f9b5197c8574178183db03184e3ce62fd",
+      "official_date_metadata": [
+        "2026"
+      ],
+      "abstract": "We present 4DPM, a dynamic reconstruction system that receives a casual monocular RGB video as input, and outputs a complete and persistent reconstruction of the scene.  In other words, we reconstruct not only the currently visible parts of the scene, but also all previously viewed parts, which enables replaying the complete reconstruction across all timesteps. Our method decomposes the scene into a set of rigid 3D primitives, which are assumed to be moving through the scene. Using estimated dense 2D correspondences, we jointly infer the rigid motion of these primitives through an optimisation pipeline, yielding a 4D reconstruction of the scene, i.e. providing 3D geometry dynamically moving through time. To achieve this, we also introduce a mechanism to extrapolate motion for objects that become invisible, employing motion-grouping techniques to maintain continuity. The resulting system enables 4D spatio-temporal awareness, offering capabilities such as replayable 3D reconstructions of articulated objects through time, multi-object scanning, and object permanence. On object scanning and multi-object datasets, our system significantly outperforms existing methods both quantitatively and qualitatively.",
+      "main_track_verification": "official proceedings page; track text retained",
+      "recency_basis": "main-conference proceedings edition within 2025-09-13..2026-09-13",
+      "preprint_first_date": null,
+      "source_figure_review": "pending",
+      "pair_status": "candidate_only",
+      "user_approval": "pending",
+      "publication_allowed": false
+    },
+    {
+      "id": "superfrusta",
+      "title": "Residual Primitive Fitting of 3D Shapes with SuperFrusta",
+      "category": "geometry-4d",
+      "venue": "CVPR",
+      "year": 2026,
+      "official_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Ganeshan_Residual_Primitive_Fitting_of_3D_Shapes_with_SuperFrusta_CVPR_2026_paper.html",
+      "pdf_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Ganeshan_Residual_Primitive_Fitting_of_3D_Shapes_with_SuperFrusta_CVPR_2026_paper.pdf",
+      "official_page_sha256": "6b2f8d4d377b682fa3263a4037e6d514f9507221935642dd47b1cdb7f71ef552",
+      "official_date_metadata": [
+        "2026"
+      ],
+      "abstract": "We introduce a framework for converting 3D shapes into compact and editable assemblies of analytic primitives, directly addressing the persistent trade-off between reconstruction fidelity and parsimony. Our approach combines two key contributions: a novel primitive, termed SuperFrustum, and an iterative inference algorithm, Residual Primitive Fitting (ResFit). SuperFrustum is a analytical primitive that is simultaneously (1) expressive, being able to express various common solids such as cylinders, spheres, cones & their tapered and bent forms, (2) editable, being compactly parameterized with 8 parameters, and (3) optimizable, with a sign distance field differentiable w.r.t. its parameters almost everywhere. ResFit is an unsupervised procedure that interleaves global shape analysis with local optimization, iteratively fitting primitives to the unexplained residual of a shape to discover a parsimonious yet accurate decompositions for each input shape. On diverse 3D benchmarks, our method achieves state-of-the-art results, improving IoU by over 9 points while using nearly half as many primitives as prior work. The resulting assemblies bridge the gap between dense 3D data and human-controllable design, producing high-fidelity and editable shape programs.",
+      "main_track_verification": "official proceedings page; track text retained",
+      "recency_basis": "main-conference proceedings edition within 2025-09-13..2026-09-13",
+      "preprint_first_date": null,
+      "source_figure_review": "pending",
+      "pair_status": "candidate_only",
+      "user_approval": "pending",
+      "publication_allowed": false
+    },
+    {
+      "id": "ai-researcher",
+      "title": "AI-Researcher: Autonomous Scientific Innovation",
+      "category": "agents-retrieval",
+      "venue": "NeurIPS",
+      "year": 2025,
+      "official_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/0d904d300a105809a2114d727851e759-Abstract-Conference.html",
+      "pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/0d904d300a105809a2114d727851e759-Paper-Conference.pdf",
+      "official_page_sha256": "09fb1881fefdf77bd6e9688d0870f2ccffc213961811e2e50100b6673d291131",
+      "official_date_metadata": [
+        "2026-04-23"
+      ],
+      "abstract": null,
+      "main_track_verification": "official proceedings page; track text retained",
+      "recency_basis": "main-conference proceedings edition within 2025-09-13..2026-09-13",
+      "preprint_first_date": null,
+      "source_figure_review": "pending",
+      "pair_status": "candidate_only",
+      "user_approval": "pending",
+      "publication_allowed": false
+    },
+    {
+      "id": "mle-search",
+      "title": "AI Research Agents for Machine Learning: Search, Exploration, and Generalization in MLE-bench",
+      "category": "agents-retrieval",
+      "venue": "NeurIPS",
+      "year": 2025,
+      "official_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/328b81881da145412f2bc56c998dfb6a-Abstract-Conference.html",
+      "pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/328b81881da145412f2bc56c998dfb6a-Paper-Conference.pdf",
+      "official_page_sha256": "5ad52bcac64952a21553f36aa72d606e8d473da63754630175c0aba7d47df2b3",
+      "official_date_metadata": [
+        "2026-04-23"
+      ],
+      "abstract": null,
+      "main_track_verification": "official proceedings page; track text retained",
+      "recency_basis": "main-conference proceedings edition within 2025-09-13..2026-09-13",
+      "preprint_first_date": null,
+      "source_figure_review": "pending",
+      "pair_status": "candidate_only",
+      "user_approval": "pending",
+      "publication_allowed": false
+    },
+    {
+      "id": "sigmadock",
+      "title": "SigmaDock: Untwisting Molecular Docking with Fragment-Based SE(3) Diffusion",
+      "category": "molecular-science",
+      "venue": "ICLR",
+      "year": 2026,
+      "official_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/4c1516dc8f1643c94d164a436ce8fe51-Abstract-Conference.html",
+      "pdf_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/4c1516dc8f1643c94d164a436ce8fe51-Paper-Conference.pdf",
+      "official_page_sha256": "c66dc8dfb21cead443a1401ee2ed74e5ff7502f81037bb23cff43e074df92b47",
+      "official_date_metadata": [
+        "2026-04-20"
+      ],
+      "abstract": null,
+      "main_track_verification": "official proceedings page; track text retained",
+      "recency_basis": "main-conference proceedings edition within 2025-09-13..2026-09-13",
+      "preprint_first_date": null,
+      "source_figure_review": "pending",
+      "pair_status": "candidate_only",
+      "user_approval": "pending",
+      "publication_allowed": false
+    },
+    {
+      "id": "star-md",
+      "title": "Scalable Spatio-Temporal SE(3) Diffusion for Long-Horizon Protein Dynamics",
+      "category": "molecular-science",
+      "venue": "ICLR",
+      "year": 2026,
+      "official_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/f1f2ecd9db4c1faaa2ba9c716dc3e413-Abstract-Conference.html",
+      "pdf_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/f1f2ecd9db4c1faaa2ba9c716dc3e413-Paper-Conference.pdf",
+      "official_page_sha256": "aeb889b77ea54d7e1486ba924b833a893132f7ba9859ecb18ef454a0e6c8f8cc",
+      "official_date_metadata": [
+        "2026-04-20"
+      ],
+      "abstract": null,
+      "main_track_verification": "official proceedings page; track text retained",
+      "recency_basis": "main-conference proceedings edition within 2025-09-13..2026-09-13",
+      "preprint_first_date": null,
+      "source_figure_review": "pending",
+      "pair_status": "candidate_only",
+      "user_approval": "pending",
+      "publication_allowed": false
+    },
+    {
+      "id": "demodiff",
+      "title": "Graph Diffusion Transformers are In-Context Molecular Designers",
+      "category": "molecular-science",
+      "venue": "ICLR",
+      "year": 2026,
+      "official_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/a6b41bed7b8c1abfcf34591d7ae13424-Abstract-Conference.html",
+      "pdf_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/a6b41bed7b8c1abfcf34591d7ae13424-Paper-Conference.pdf",
+      "official_page_sha256": "8227e8e353bb8e2d4aef1a613e6fba021615b6eb8fa7bd9663b7fe901ab73b28",
+      "official_date_metadata": [
+        "2026-04-20"
+      ],
+      "abstract": null,
+      "main_track_verification": "official proceedings page; track text retained",
+      "recency_basis": "main-conference proceedings edition within 2025-09-13..2026-09-13",
+      "preprint_first_date": null,
+      "source_figure_review": "pending",
+      "pair_status": "candidate_only",
+      "user_approval": "pending",
+      "publication_allowed": false
+    },
+    {
+      "id": "dynapharm",
+      "title": "DynaPhArM: Adaptive and Physics-Constrained Modeling for Target-Drug Complexes with Drug-Specific Adaptations",
+      "category": "molecular-science",
+      "venue": "NeurIPS",
+      "year": 2025,
+      "official_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/027af285dc29d3388002c2d223ab1772-Abstract-Conference.html",
+      "pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/027af285dc29d3388002c2d223ab1772-Paper-Conference.pdf",
+      "official_page_sha256": "0cdedd0501cb3f1015fe052a3c1233335f75312a4d3730d5dbb896cd5d246718",
+      "official_date_metadata": [
+        "2026-04-23"
+      ],
+      "abstract": null,
+      "main_track_verification": "official proceedings page; track text retained",
+      "recency_basis": "main-conference proceedings edition within 2025-09-13..2026-09-13",
+      "preprint_first_date": null,
+      "source_figure_review": "pending",
+      "pair_status": "candidate_only",
+      "user_approval": "pending",
+      "publication_allowed": false
+    },
+    {
+      "id": "thinkgen",
+      "title": "ThinkGen: Generalized Thinking for Visual Generation",
+      "category": "visual-generation",
+      "venue": "CVPR",
+      "year": 2026,
+      "official_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Jiao_ThinkGen_Generalized_Thinking_for_Visual_Generation_CVPR_2026_paper.html",
+      "pdf_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Jiao_ThinkGen_Generalized_Thinking_for_Visual_Generation_CVPR_2026_paper.pdf",
+      "official_page_sha256": "c3fc4e12067925e575b12db59bc95e821448cfa830d1cbcb3d52ee23d86ad1bc",
+      "official_date_metadata": [
+        "2026"
+      ],
+      "abstract": "Recent progress in Multimodal Large Language Models (MLLMs) demonstrates that Chain-of-Thought (CoT) reasoning enables systematic solutions to complex understanding tasks. However, its extension to generation tasks remains nascent and limited by scenario-specific mechanisms that hinder generalization and adaptation. In this work, we present ThinkGen, the first think-driven visual generation framework that explicitly leverages MLLM's CoT reasoning in various generation scenarios. ThinkGen employs a decoupled architecture comprising a pretrained MLLM and a Diffusion Transformer (DiT), wherein the MLLM generates tailored instructions based on user intent, and DiT produces high-quality images guided by these instructions. We further propose a separable GRPO-based training paradigm (SepGRPO), alternating reinforcement learning between the MLLM and DiT modules. This flexible design enables joint training across diverse datasets, facilitating effective CoT reasoning for a wide range of generative scenarios. Extensive experiments demonstrate that ThinkGen achieves robust, state-of-the-art performance across multiple generation benchmarks.",
+      "main_track_verification": "official proceedings page; track text retained",
+      "recency_basis": "main-conference proceedings edition within 2025-09-13..2026-09-13",
+      "preprint_first_date": null,
+      "source_figure_review": "pending",
+      "pair_status": "candidate_only",
+      "user_approval": "pending",
+      "publication_allowed": false
+    },
+    {
+      "id": "dynavid",
+      "title": "Learning to Generate Highly Dynamic Videos using Synthetic Motion Data",
+      "category": "visual-generation",
+      "venue": "CVPR",
+      "year": 2026,
+      "official_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Jin_Learning_to_Generate_Highly_Dynamic_Videos_using_Synthetic_Motion_Data_CVPR_2026_paper.html",
+      "pdf_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Jin_Learning_to_Generate_Highly_Dynamic_Videos_using_Synthetic_Motion_Data_CVPR_2026_paper.pdf",
+      "official_page_sha256": "fde86d3ad42dddbf837e2858435857861f42d8751b655914a21578ed953a3cf5",
+      "official_date_metadata": [
+        "2026"
+      ],
+      "abstract": "Despite recent progress, video diffusion models still struggle to synthesize realistic videos involving highly dynamic motions or requiring fine-grained motion controllability. A central limitation lies in the scarcity of such examples in commonly used training datasets. To address this, we introduce DynaVid, a video synthesis framework that leverages synthetic motion data in training, which is represented as optical flow and rendered using computer graphics pipelines. This approach offers two key advantages. First, synthetic motion offers diverse motion patterns and precise control signals that are difficult to obtain from real data. Second, unlike rendered videos with artificial appearances, rendered optical flow encodes only motion and is decoupled from appearance, thereby preventing models from reproducing the unnatural look of synthetic videos. Building on this idea, DynaVid adopts a two-stage generation framework: a motion generator first synthesizes motion, and then a motion-guided video generator produces video frames conditioned on that motion. This decoupled formulation enables the model to learn dynamic motion patterns from synthetic data while preserving visual realism from real-world videos. We validate our framework on two challenging scenarios, vigorous human motion generation and extreme camera motion control, where existing datasets are particularly limited. Extensive experiments demonstrate that DynaVid improves the realism and controllability in dynamic motion generation and camera motion control.",
+      "main_track_verification": "official proceedings page; track text retained",
+      "recency_basis": "main-conference proceedings edition within 2025-09-13..2026-09-13",
+      "preprint_first_date": null,
+      "source_figure_review": "pending",
+      "pair_status": "candidate_only",
+      "user_approval": "pending",
+      "publication_allowed": false
+    },
+    {
+      "id": "seeu",
+      "title": "SeeU: Seeing the Unseen World via 4D Dynamics-aware Generation",
+      "category": "visual-generation",
+      "venue": "CVPR",
+      "year": 2026,
+      "official_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Yuan_SeeU_Seeing_the_Unseen_World_via_4D_Dynamics-aware_Generation_CVPR_2026_paper.html",
+      "pdf_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Yuan_SeeU_Seeing_the_Unseen_World_via_4D_Dynamics-aware_Generation_CVPR_2026_paper.pdf",
+      "official_page_sha256": "94de1475f9245ab749c9198332936874812bbe4182d7c7f5704cd95b3de41067",
+      "official_date_metadata": [
+        "2026"
+      ],
+      "abstract": "Images and videos are discrete 2D projections of the 4D world (3D space + time). Most visual understanding, prediction, and generation operate directly on 2D observations, leading to suboptimal performance. We propose SeeU, a novel approach that learns the continuous 4D dynamics and generate the unseen visual contents. The principle behind SeeU is a new 2D\\to4D\\to2D learning framework. SeeU first reconstructs the 4D world from sparse and monocular 2D frames (2D\\to4D). It then learns the continuous 4D dynamics on a low-rank representation and physical constraints (discrete 4D\\tocontinuous 4D). Finally, SeeU rolls the world forward in time, re-projects it back to 2D at sampled times and viewpoints, and generates unseen regions based on spatial-temporal context awareness (4D\\to2D). By modeling dynamics in 4D, SeeU achieves continuous and physically-consistent novel visual generation, demonstrating strong potentials in multiple tasks including unseen temporal generation, unseen spatial generation, and video editing. All data and code will be public at \\href https://yuyuanspace.com/SeeU/  here .",
+      "main_track_verification": "official proceedings page; track text retained",
+      "recency_basis": "main-conference proceedings edition within 2025-09-13..2026-09-13",
+      "preprint_first_date": null,
+      "source_figure_review": "pending",
+      "pair_status": "candidate_only",
+      "user_approval": "pending",
+      "publication_allowed": false
+    },
+    {
+      "id": "ar-rag",
+      "title": "AR-RAG: Autoregressive Retrieval Augmentation for Image Generation",
+      "category": "visual-generation",
+      "venue": "NeurIPS",
+      "year": 2025,
+      "official_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/294fe7aabe8f67e8aca8c0eab2bcfbc4-Abstract-Conference.html",
+      "pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/294fe7aabe8f67e8aca8c0eab2bcfbc4-Paper-Conference.pdf",
+      "official_page_sha256": "ea5e3dd10c2eb6e5acb0fec5a2a91fe7b21497b2a8f5b7792bfef9ab580dde0a",
+      "official_date_metadata": [
+        "2026-04-23"
+      ],
+      "abstract": null,
+      "main_track_verification": "official proceedings page; track text retained",
+      "recency_basis": "main-conference proceedings edition within 2025-09-13..2026-09-13",
+      "preprint_first_date": null,
+      "source_figure_review": "pending",
+      "pair_status": "candidate_only",
+      "user_approval": "pending",
+      "publication_allowed": false
+    },
+    {
+      "id": "cosmos-policy",
+      "title": "Cosmos Policy: Fine-Tuning Video Models for Visuomotor Control and Planning",
+      "category": "embodied-control",
+      "venue": "ICLR",
+      "year": 2026,
+      "official_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/748becc400a57c0e31cfe6a2e7951467-Abstract-Conference.html",
+      "pdf_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/748becc400a57c0e31cfe6a2e7951467-Paper-Conference.pdf",
+      "official_page_sha256": "9f9fd707d262f025a3ffa8178dbc3fc14b445b79b2f4618109981b8970b213a3",
+      "official_date_metadata": [
+        "2026-04-20"
+      ],
+      "abstract": null,
+      "main_track_verification": "official proceedings page; track text retained",
+      "recency_basis": "main-conference proceedings edition within 2025-09-13..2026-09-13",
+      "preprint_first_date": null,
+      "source_figure_review": "pending",
+      "pair_status": "candidate_only",
+      "user_approval": "pending",
+      "publication_allowed": false
+    },
+    {
+      "id": "worldgym",
+      "title": "WorldGym: World Model as An Environment for Policy Evaluation",
+      "category": "embodied-control",
+      "venue": "ICLR",
+      "year": 2026,
+      "official_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/7f5e909ac0324db03506b380c695ffaf-Abstract-Conference.html",
+      "pdf_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/7f5e909ac0324db03506b380c695ffaf-Paper-Conference.pdf",
+      "official_page_sha256": "e972e724a99aebf7674f367979b244cfb3daa6965fc88138129fd81937e87bfb",
+      "official_date_metadata": [
+        "2026-04-20"
+      ],
+      "abstract": null,
+      "main_track_verification": "official proceedings page; track text retained",
+      "recency_basis": "main-conference proceedings edition within 2025-09-13..2026-09-13",
+      "preprint_first_date": null,
+      "source_figure_review": "pending",
+      "pair_status": "candidate_only",
+      "user_approval": "pending",
+      "publication_allowed": false
+    },
+    {
+      "id": "memer",
+      "title": "Scaling up Memory for Robotic Control via Experience Retrieval",
+      "category": "embodied-control",
+      "venue": "ICLR",
+      "year": 2026,
+      "official_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/9da515b1ad19d032a7398f00f5ff9b0c-Abstract-Conference.html",
+      "pdf_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/9da515b1ad19d032a7398f00f5ff9b0c-Paper-Conference.pdf",
+      "official_page_sha256": "aa43c56ae8d12e4ed4441d37b67ef27d455188ab53cfc7b84b4902ffcf21b326",
+      "official_date_metadata": [
+        "2026-04-20"
+      ],
+      "abstract": null,
+      "main_track_verification": "official proceedings page; track text retained",
+      "recency_basis": "main-conference proceedings edition within 2025-09-13..2026-09-13",
+      "preprint_first_date": null,
+      "source_figure_review": "pending",
+      "pair_status": "candidate_only",
+      "user_approval": "pending",
+      "publication_allowed": false
+    },
+    {
+      "id": "pcd",
+      "title": "Policy Contrastive Decoding for Robotic Foundation Models",
+      "category": "embodied-control",
+      "venue": "ICLR",
+      "year": 2026,
+      "official_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/b6d67c380f8bde2adc4247d0036c0c73-Abstract-Conference.html",
+      "pdf_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/b6d67c380f8bde2adc4247d0036c0c73-Paper-Conference.pdf",
+      "official_page_sha256": "b305f86475d5ae21ffe0e6a0afbbf3c1a975f305d7c37f7c7f9f455cc06efffb",
+      "official_date_metadata": [
+        "2026-04-20"
+      ],
+      "abstract": null,
+      "main_track_verification": "official proceedings page; track text retained",
+      "recency_basis": "main-conference proceedings edition within 2025-09-13..2026-09-13",
+      "preprint_first_date": null,
+      "source_figure_review": "pending",
+      "pair_status": "candidate_only",
+      "user_approval": "pending",
+      "publication_allowed": false
+    },
+    {
+      "id": "seggraph",
+      "title": "SegGraph: Leveraging Graphs of SAM Segments for Few-Shot 3D Part Segmentation",
+      "category": "visual-perception",
+      "venue": "NeurIPS",
+      "year": 2025,
+      "official_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/13388efc819c09564c66ab2dc8463809-Abstract-Conference.html",
+      "pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/13388efc819c09564c66ab2dc8463809-Paper-Conference.pdf",
+      "official_page_sha256": "2bd9ac07107bd903ca4973cfb182d72d72b2626add557cfc50d82dee4e6a6fb7",
+      "official_date_metadata": [
+        "2026-04-23"
+      ],
+      "abstract": null,
+      "main_track_verification": "official proceedings page; track text retained",
+      "recency_basis": "main-conference proceedings edition within 2025-09-13..2026-09-13",
+      "preprint_first_date": null,
+      "source_figure_review": "pending",
+      "pair_status": "candidate_only",
+      "user_approval": "pending",
+      "publication_allowed": false
+    },
+    {
+      "id": "roborefer",
+      "title": "RoboRefer: Towards Spatial Referring with Reasoning in Vision-Language Models for Robotics",
+      "category": "visual-perception",
+      "venue": "NeurIPS",
+      "year": 2025,
+      "official_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/29416b66c2149872b9d1415a3fd2c5e0-Abstract-Conference.html",
+      "pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/29416b66c2149872b9d1415a3fd2c5e0-Paper-Conference.pdf",
+      "official_page_sha256": "0c87081c2589806f27857debc43f0da08ad30eadd14c31314650ae600a76ea3a",
+      "official_date_metadata": [
+        "2026-04-23"
+      ],
+      "abstract": null,
+      "main_track_verification": "official proceedings page; track text retained",
+      "recency_basis": "main-conference proceedings edition within 2025-09-13..2026-09-13",
+      "preprint_first_date": null,
+      "source_figure_review": "pending",
+      "pair_status": "candidate_only",
+      "user_approval": "pending",
+      "publication_allowed": false
+    },
+    {
+      "id": "ms-temba",
+      "title": "MS-Temba: Multi-Scale Temporal Mamba for Understanding Long Untrimmed Videos",
+      "category": "visual-perception",
+      "venue": "CVPR",
+      "year": 2026,
+      "official_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Sinha_MS-Temba_Multi-Scale_Temporal_Mamba_for_Understanding_Long_Untrimmed_Videos_CVPR_2026_paper.html",
+      "pdf_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Sinha_MS-Temba_Multi-Scale_Temporal_Mamba_for_Understanding_Long_Untrimmed_Videos_CVPR_2026_paper.pdf",
+      "official_page_sha256": "d7a54d99c2f90ba781b55074804f10be23b6b0a8b17ecf970f2db167b67e1000",
+      "official_date_metadata": [
+        "2026"
+      ],
+      "abstract": "Temporal Action Detection (TAD) in untrimmed videos poses significant challenges, particularly for Activities of Daily Living (ADL) requiring models to (1) process long-duration videos, (2) capture temporal variations in actions, and (3) simultaneously detect dense overlapping actions. Existing CNN and Transformer-based approaches, struggle to jointly capture fine-grained detail and long-range structure at scale. State-space Model (SSM) based Mamba offers powerful long-range modeling, but naive application to TAD collapses fine-grained temporal structure and fails to account for the challenges inherent to TAD. To this end, we propose Multi-Scale Temporal Mamba (MS-Temba), which extends Mamba to TAD with newly introduced dilated SSMs. Each Temba block, comprising dilated SSMs coupled with our proposed additional losses, enables the learning of discriminative representations across temporal scales. A lightweight Multi-scale Mamba Fuser then unifies these multi-scale features via SSM-based aggregation, yielding precise action-boundary localization. With only 17M parameters, MS-Temba achieves state-of-the-art performance on densely labeled ADL benchmarks TSU & Charades, and further generalizes to long-form video summarization, setting new state-of-the-art results on TVSum & SumMe.",
+      "main_track_verification": "official proceedings page; track text retained",
+      "recency_basis": "main-conference proceedings edition within 2025-09-13..2026-09-13",
+      "preprint_first_date": null,
+      "source_figure_review": "pending",
+      "pair_status": "candidate_only",
+      "user_approval": "pending",
+      "publication_allowed": false
+    },
+    {
+      "id": "soft-boundaries",
+      "title": "Guardians of the Hair: Rescuing Soft Boundaries in Depth, Stereo, and Novel Views",
+      "category": "visual-perception",
+      "venue": "CVPR",
+      "year": 2026,
+      "official_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_Guardians_of_the_Hair_Rescuing_Soft_Boundaries_in_Depth_Stereo_CVPR_2026_paper.html",
+      "pdf_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhang_Guardians_of_the_Hair_Rescuing_Soft_Boundaries_in_Depth_Stereo_CVPR_2026_paper.pdf",
+      "official_page_sha256": "cd3602b65cc273c46b61774927d69f5d2be502fbe65a5895e40acb6d7205d0f7",
+      "official_date_metadata": [
+        "2026"
+      ],
+      "abstract": "Soft boundaries, like thin hairs, are commonly observed in natural and computer-generated imagery, but they remain challenging for 3D vision due to the ambiguous mixing of foreground and background cues. This paper introduces Guardians of the Hair (HairGuard), a framework designed to recover fine-grained soft boundary details in 3D vision tasks. Specifically, we first propose a novel data curation pipeline that leverages image matting datasets for training and design a depth fixer network to automatically identify soft boundary regions. With a gated residual module, the depth fixer refines depth precisely around soft boundaries while maintaining global depth quality, allowing plug-and-play integration with state-of-the-art depth models. For view synthesis, we perform depth-based forward warping to retain high-fidelity textures, followed by a generative scene painter that fills disoccluded regions and eliminates redundant background artifacts within soft boundaries. Finally, a color fuser adaptively combines warped and inpainted results to produce novel views with consistent geometry and fine-grained details. Extensive experiments demonstrate that HairGuard achieves state-of-the-art performance across monocular depth estimation, stereo image/video conversion, and novel view synthesis, with significant improvements in soft boundary regions.",
+      "main_track_verification": "official proceedings page; track text retained",
+      "recency_basis": "main-conference proceedings edition within 2025-09-13..2026-09-13",
+      "preprint_first_date": null,
+      "source_figure_review": "pending",
+      "pair_status": "candidate_only",
+      "user_approval": "pending",
+      "publication_allowed": false
+    },
+    {
+      "id": "autotool",
+      "title": "AutoTool: Efficient Tool Selection for Large Language Model Agents",
+      "category": "agents-retrieval",
+      "venue": "AAAI",
+      "year": 2026,
+      "official_url": "https://ojs.aaai.org/index.php/AAAI/article/view/40389",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/view/40389/44350",
+      "official_date_metadata": [
+        "2026-03-14"
+      ],
+      "official_page_sha256": null,
+      "evidence_transport": "web tool read official page and PDF; requests HTML download failed",
+      "main_track_verification": "AAAI-26 Technical Tracks; official OJS page Section field",
+      "preprint_first_date": null,
+      "pair_status": "candidate_only",
+      "user_approval": "pending",
+      "publication_allowed": false
+    },
+    {
+      "id": "mobile-agent-rag",
+      "title": "Mobile-Agent-RAG: Driving Smart Multi-Agent Coordination with Contextual Knowledge Empowerment for Long-Horizon Mobile Automation",
+      "category": "agents-retrieval",
+      "venue": "AAAI",
+      "year": 2026,
+      "official_url": "https://ojs.aaai.org/index.php/AAAI/article/view/40241",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/view/40241/44202",
+      "official_date_metadata": [
+        "2026-03-14"
+      ],
+      "official_page_sha256": null,
+      "evidence_transport": "web tool read official page and PDF; requests HTML download failed",
+      "main_track_verification": "AAAI-26 Technical Tracks; official OJS page Section field",
+      "preprint_first_date": null,
+      "pair_status": "candidate_only",
+      "user_approval": "pending",
+      "publication_allowed": false
+    }
+  ],
+  "errors": [],
+  "retrieval_notes": [
+    "AAAI official evidence verified via web tool; local HTML hashes unavailable."
+  ]
+}

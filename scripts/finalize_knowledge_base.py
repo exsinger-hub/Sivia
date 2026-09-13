@@ -9,6 +9,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 KB = ROOT / "knowledge-base"
+if __name__ == "__main__" and (KB / "index.json").exists() and json.loads((KB / "index.json").read_text(encoding="utf-8")).get("schema_version") == "sivia.knowledge_base.index.v3":
+    raise SystemExit("This legacy finalizer would restore user-rejected entries. Use restart_conditional_kb.py for the current review pool.")
 CATEGORIES = {
     "multimodal-foundation": ("多模态与基础表征", "Multimodal and foundation representations"),
     "generative-control": ("生成建模与可控编辑", "Generative modeling and control"),

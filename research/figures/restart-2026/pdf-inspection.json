@@ -1,0 +1,201 @@
+{
+  "downloaded": [
+    {
+      "id": "mle-search",
+      "pages": 40,
+      "pdf_sha256": "3225e6b9f34ebe1ada255868fa70d8057959a6b0850bc2ef0eff955c6c59d827",
+      "figure_pages": [
+        1,
+        2,
+        7
+      ]
+    },
+    {
+      "id": "ai-researcher",
+      "pages": 40,
+      "pdf_sha256": "1832e0b5a7fa76efb825b66d2f6766e6282457147a5b69ba455ac24f453066f6",
+      "figure_pages": [
+        2,
+        3,
+        5
+      ]
+    },
+    {
+      "id": "4dpm",
+      "pages": 10,
+      "pdf_sha256": "0c6a5ecdcf21000609c05c4702d8be095c87c0742d3cc3f3ea9e3765daf524fa",
+      "figure_pages": []
+    },
+    {
+      "id": "fuser",
+      "pages": 11,
+      "pdf_sha256": "e768ae6e2ba94af8cf90c1ad4d6a07454668a149bb8114ef4c878d83faa9d6c6",
+      "figure_pages": []
+    },
+    {
+      "id": "d4rt",
+      "pages": 11,
+      "pdf_sha256": "b88222682a2007f797d83bd891165a9dbb997cc5a7d3ab5a0d426e767861c5be",
+      "figure_pages": []
+    },
+    {
+      "id": "sigmadock",
+      "pages": 45,
+      "pdf_sha256": "79499e382e07c180c2a3cbaeb230c7aac3015685b3875fd2b22ffab7c0464b21",
+      "figure_pages": [
+        3,
+        4,
+        6
+      ]
+    },
+    {
+      "id": "superfrusta",
+      "pages": 10,
+      "pdf_sha256": "a925c210f36c7a5687f44f1230d27c8c1c04e10d4308cedb6b89a1784cbc53bf",
+      "figure_pages": []
+    },
+    {
+      "id": "demodiff",
+      "pages": 35,
+      "pdf_sha256": "1749d3d0a5920140497853611523066ee39c5dfe4740cd9d45901cf2dc57cde7",
+      "figure_pages": [
+        2,
+        4,
+        5
+      ]
+    },
+    {
+      "id": "star-md",
+      "pages": 49,
+      "pdf_sha256": "9263ed706029f1b85e8a2d4b0983645c29ff5e2dfeb2de037729ad1ef0ccb4f7",
+      "figure_pages": [
+        3,
+        7,
+        8
+      ]
+    },
+    {
+      "id": "dynapharm",
+      "pages": 34,
+      "pdf_sha256": "f6b71611a73cc0548c433c7d387e37897a7763795847f227f3c5bca0a473f407",
+      "figure_pages": [
+        4,
+        10,
+        28
+      ]
+    },
+    {
+      "id": "thinkgen",
+      "pages": 11,
+      "pdf_sha256": "e9d78c11f3a5099ff7c615bdb7463cca2ee3af675cd990284c54f48e7eeeadcc",
+      "figure_pages": [
+        3
+      ]
+    },
+    {
+      "id": "ar-rag",
+      "pages": 26,
+      "pdf_sha256": "a41a15676bcdeb578f7ed237ca0fccfacba5879f06ce214f1cbf5d5a2e468173",
+      "figure_pages": [
+        1,
+        4,
+        5
+      ]
+    },
+    {
+      "id": "worldgym",
+      "pages": 26,
+      "pdf_sha256": "747d71a0b1e79b5dedb77c79dbe51d3a8ecaab36d6eadf5115ef3085d3d0a9a5",
+      "figure_pages": [
+        2,
+        4,
+        5
+      ]
+    },
+    {
+      "id": "dynavid",
+      "pages": 11,
+      "pdf_sha256": "62b96617767da1fcb426bd00f04df7ba8ddfeeea8368a6ccc7b66306f688bbdd",
+      "figure_pages": []
+    },
+    {
+      "id": "seeu",
+      "pages": 13,
+      "pdf_sha256": "53889689ca241f16cdad24ac2093e8479cae76797d2bf98218ec288115da13d4",
+      "figure_pages": [
+        2,
+        8
+      ]
+    },
+    {
+      "id": "memer",
+      "pages": 25,
+      "pdf_sha256": "016115b400b8c0b2660f9649669f72bcdcc6b4961206b09490541fbd34bb0751",
+      "figure_pages": [
+        3,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "id": "seggraph",
+      "pages": 21,
+      "pdf_sha256": "b7a67be897b7ddba39714def05782ba3ed1c831971fcdb8dd2da2902f63adc84",
+      "figure_pages": [
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": "cosmos-policy",
+      "pages": 22,
+      "pdf_sha256": "6ede586af6395efd57beba1d037519466cee7f3e48ff5886415b45f0bfe8c64f",
+      "figure_pages": [
+        1,
+        4,
+        6
+      ]
+    },
+    {
+      "id": "ms-temba",
+      "pages": 12,
+      "pdf_sha256": "a4a7c789cef654afe4af00e95641c2f8bd22abd2c08c894afc1fe778d8da7b7a",
+      "figure_pages": []
+    },
+    {
+      "id": "pcd",
+      "pages": 21,
+      "pdf_sha256": "3af97da569df06022717efb2759d4a3a83b81183185fd1cd3e8e2cde329a9327",
+      "figure_pages": [
+        2,
+        4,
+        5,
+        7
+      ]
+    },
+    {
+      "id": "roborefer",
+      "pages": 78,
+      "pdf_sha256": "99a4362b82b6ac6d71a239a4eef646664a8caaf35ecaa55f6a90b488b415b59f",
+      "figure_pages": [
+        1,
+        4,
+        6
+      ]
+    },
+    {
+      "id": "soft-boundaries",
+      "pages": 11,
+      "pdf_sha256": "369931751f584517b1fc9a7e0ed87b04cf6b6a4ddff6f36760007c7665cf3dc2",
+      "figure_pages": [
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "errors": []
+}

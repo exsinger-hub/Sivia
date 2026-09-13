@@ -1,0 +1,7 @@
+sources/*/official.html
+sources/*/official.txt
+sources/*/paper.pdf
+sources/*/paper.txt
+sources/*/page-*.png
+sources/*/contact*.jpg
+__pycache__/

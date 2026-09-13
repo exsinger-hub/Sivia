@@ -1,0 +1,11 @@
+{
+  "valid": true,
+  "html_pairs": 3,
+  "html_candidates": 24,
+  "local_links_verified": 16,
+  "full_prompt_embeds_exact": 3,
+  "retrieval_positive_negative_checks": 11,
+  "condition_queries_preserve_database_bytes": true,
+  "legacy_finalizer_cannot_restore_rejected_pool": true,
+  "browser_rendering": "not executed: file URL blocked by Browser Use policy"
+}

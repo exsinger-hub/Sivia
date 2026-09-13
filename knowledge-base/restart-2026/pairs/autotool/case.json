@@ -1,0 +1,125 @@
+{
+  "id": "autotool",
+  "title": "AutoTool: Efficient Tool Selection for Large Language Model Agents",
+  "venue": "AAAI",
+  "year": 2026,
+  "category": "agents-retrieval",
+  "selected_anchor": "react",
+  "source_url": "https://ojs.aaai.org/index.php/AAAI/article/view/40389",
+  "source_pdf": "https://ojs.aaai.org/index.php/AAAI/article/view/40389/44350",
+  "source_visual_review": "Official PDF method text and Figure 2 caption inspected via web; original figure raster inspection remains pending because local PDF download failed and the web screenshot tool returned a citation without a model-visible image.",
+  "source_review_scope": "PDF p4 Fig.2, §4.2–4.5; §5.2 execution cap distinct from mechanism",
+  "pair_status": "generated_draft_pending_review",
+  "admission": "not_admitted",
+  "user_approval": "pending",
+  "publication_allowed": false,
+  "prompt": "pairs/autotool/prompt.txt",
+  "image": "pairs/autotool/figure.png",
+  "prompt_sha256": "b937d5ef848d093025828ad62e4439b7642c13781d7951513c44f8dad94ae88c",
+  "image_sha256": "0480de639aca6c28ca617831f941c6b5c96913e70e801959544b11dccc334ca6",
+  "prompt_characters": 28941,
+  "prompt_nonwhitespace_characters": 24434,
+  "template": "../cases/react/prompt.txt",
+  "template_sha256": "f9176650fb728cff67e0899f0b8ce3763931ba6bf75dd0d427ec33cf5e665fd0",
+  "template_nonwhitespace_characters": 20426,
+  "tool_max_prompt_characters": 32000,
+  "exact_production_text_saved": true,
+  "generation_tool": "built-in image_gen",
+  "provider_model_id": null,
+  "seed": null,
+  "cost": null,
+  "successful_image_calls": 6,
+  "assistant_visual_review": "provisional; not human evaluation or admission",
+  "scientific_checks": [
+    "Both-checks-pass and any-check-fails routes converge before shared execution.",
+    "LLM output and argument completeness no longer bypass execution to reach observation.",
+    "Parameter source value a is preserved through the example.",
+    "Candidate and argument information now reaches the enclosing decision region through a continuous gutter connector."
+  ],
+  "remaining_review_notes": [
+    "The history-to-graph maintenance line is continuous, but an extra arrowhead near Add to history makes its direction ambiguous and still needs correction.",
+    "Original source figure visual assessment is still pending."
+  ],
+  "density_diagnostic": {
+    "size": [
+      1585,
+      992
+    ],
+    "near_white_pixel_fraction": 0.4345203266510634,
+    "contrast_grid_occupied_fraction": 0.8091666666666667,
+    "largest_low_contrast_rectangle_fraction": 0.020833333333333332,
+    "grid": [
+      60,
+      40
+    ],
+    "contrast_threshold": 28,
+    "tile_edge_fraction_threshold": 0.035,
+    "role": "diagnostic only; flat fills excluded, text/borders/texture still contribute; no automatic quality/admission verdict"
+  },
+  "all_scientific_pixels": "generated conceptual illustration",
+  "sealed_evaluation_eligible": false,
+  "length_floor_pass": true,
+  "tool_length_pass": true,
+  "versions": [
+    {
+      "version": 1,
+      "prompt": "prompt.v1.txt",
+      "image": "figure.v1.png",
+      "prompt_sha256": "a7115867742d97128d940cb789345cc43f4dada6ce1d2f997caca49b2ae22f4d",
+      "image_sha256": "a9a6e0c67a0b76ced14761bf90fc94b722790d452a7338019c3718484b05b787",
+      "generated_original_filename": "exec-74ef6236-6d0d-403d-9ea0-d0a38b737b21.png",
+      "reference_image": "react/figure.png",
+      "selected_for_review": false
+    },
+    {
+      "version": 2,
+      "prompt": "prompt.v2.txt",
+      "image": "figure.v2.png",
+      "prompt_sha256": "f5706e759a145706d3d53b4e00c100fe9f00f594568fc4d9d01a15b2c69e8fc7",
+      "image_sha256": "6420964ba990598e2814146a128a12ca3ed6907d56cc499eb1ea7b5ca8ffe264",
+      "generated_original_filename": "exec-fdca3479-d892-4069-838e-cdf2df151966.png",
+      "reference_image": "autotool/figure.v1.png",
+      "selected_for_review": false
+    },
+    {
+      "version": 3,
+      "prompt": "prompt.v3.txt",
+      "image": "figure.v3.png",
+      "prompt_sha256": "748c56b983f13777de7078568768d26a2f627afbeb47f10a2e55671a77bd5c2b",
+      "image_sha256": "84127f550a66a227b7d2d7a862293fdae0bc84fdd480062a733afbe673f68df4",
+      "generated_original_filename": "exec-d783b576-135d-4e2c-944e-a2a7f95b0a89.png",
+      "reference_image": "react/figure.png",
+      "selected_for_review": false
+    },
+    {
+      "version": 4,
+      "prompt": "prompt.v4.txt",
+      "image": "figure.v4.png",
+      "prompt_sha256": "b69e2c1759e8290bfc496e096ad33942834320cc4d3d74c42240ead08208e68f",
+      "image_sha256": "a3ec0dd8a3410b71f8ba4e7c794653e989e7585df29e02af1a75d1f7f1539708",
+      "generated_original_filename": "exec-d5698d2b-d3e6-440e-94d6-c6cbdd1ed1e2.png",
+      "reference_image": "autotool/figure.v3.png",
+      "selected_for_review": false
+    },
+    {
+      "version": 5,
+      "prompt": "prompt.v5.txt",
+      "image": "figure.v5.png",
+      "prompt_sha256": "e43f18b5a0a00beca1f7b75d8dbf4c9800e658639870e057c47bbcb313ae3fe1",
+      "image_sha256": "bcc55ca3c9af65dcaefb449fecef2ac4a95e6f3cd5e69fd5ec603e2866690e35",
+      "generated_original_filename": "exec-6027c6ee-5e2e-422e-8848-310a300c820c.png",
+      "reference_image": "autotool/figure.v4.png",
+      "selected_for_review": false
+    },
+    {
+      "version": 6,
+      "prompt": "prompt.txt",
+      "image": "figure.png",
+      "prompt_sha256": "b937d5ef848d093025828ad62e4439b7642c13781d7951513c44f8dad94ae88c",
+      "image_sha256": "0480de639aca6c28ca617831f941c6b5c96913e70e801959544b11dccc334ca6",
+      "generated_original_filename": "exec-517c319a-0f7b-4efc-ae00-c58c72d4bba4.png",
+      "reference_image": "autotool/figure.v5.png",
+      "selected_for_review": true
+    }
+  ]
+}

@@ -1,0 +1,3014 @@
+{
+  "schema_version": "sivia.restart.candidates.v1",
+  "records": [
+    {
+      "id": "d4rt",
+      "title": "Efficiently Reconstructing Dynamic Scenes One D4RT at a Time",
+      "category": "geometry-4d",
+      "venue": "CVPR",
+      "year": 2026,
+      "official_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_Efficiently_Reconstructing_Dynamic_Scenes_One_D4RT_at_a_Time_CVPR_2026_paper.html",
+      "pdf_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhang_Efficiently_Reconstructing_Dynamic_Scenes_One_D4RT_at_a_Time_CVPR_2026_paper.pdf",
+      "official_page_sha256": "2924c83f68ac1d3af3da34a1b04fe8873afe8315e5f5cf4e9e20be048c78488b",
+      "official_date_metadata": [
+        "2026"
+      ],
+      "abstract": "Understanding and reconstructing the complex geometry and motion of dynamic 4D scenes from video remains a formidable challenge in computer vision. This paper introduces D4RT, a simple yet powerful feedforward network designed to efficiently solve this task. D4RT utilizes a unified transformer architecture to jointly infer depth, spatio-temporal correspondence, and full camera parameters from a single video. Its core innovation is a novel mechanism that sidesteps the heavy computation of dense, per-frame decoding and the complexity of managing multiple, task-specific decoders. Our unified decoding interface allows the model to independently and efficiently probe the 3D position of any point in space and time. The result is a lightweight and highly scalable method that enables remarkably efficient training and inference. We demonstrate that our approach sets a new state-of-the-art, outperforming previous methods across a wide spectrum of 4D reconstruction tasks.",
+      "main_track_verification": "official proceedings page; track text retained",
+      "recency_basis": "Conference proceedings edition, not first arXiv posting",
+      "preprint_first_date": null,
+      "source_figure_review": "pending",
+      "pair_status": "generated_draft_pending_review",
+      "user_approval": "pending",
+      "publication_allowed": false,
+      "objects": [
+        "video",
+        "camera",
+        "point_cloud",
+        "coordinate_frame"
+      ],
+      "topology": [
+        "encode_decode",
+        "correspondence",
+        "geometric_transform"
+      ],
+      "composition": [
+        "object_sequence",
+        "dense_3d",
+        "local_detail"
+      ],
+      "claim": "视频一次编码为 F；独立查询 q=(u,v,t_src,t_tgt,t_cam) 通过交叉注意力返回相应三维位置。",
+      "layout": "左侧动态场景和相机轨迹，中间查询构造及共享特征，右侧独立查询结果；底部用同一场景展示深度、轨迹与相机坐标关系。",
+      "do_not_transfer": "Neuralangelo 的 SDF 和优化过程；不要为各输出另画独立解码器。",
+      "review_scope": "PDF p2 Fig.2, §2.1–2.2, p3 camera recovery",
+      "recency_window": [
+        "2025-09-13",
+        "2026-09-13"
+      ],
+      "conference_window_eligible": true,
+      "recency_precision": "conference edition; day not asserted",
+      "figure_review": "assistant inspected original PDF p2 Figure 2 at rendered resolution",
+      "conditional_matches": [
+        {
+          "anchor_id": "neuralangelo",
+          "score": 1.0,
+          "components": {
+            "domain": 1.0,
+            "objects": 1.0,
+            "topology": 1.0,
+            "composition": 1.0
+          },
+          "matched": {
+            "objects": [
+              "camera",
+              "coordinate_frame",
+              "point_cloud",
+              "video"
+            ],
+            "topology": [
+              "correspondence",
+              "encode_decode",
+              "geometric_transform"
+            ],
+            "composition": [
+              "dense_3d",
+              "local_detail",
+              "object_sequence"
+            ]
+          },
+          "transfer": "同一对象在图像、几何和局部细节中保持身份对应；大尺寸实体占据主要区域。",
+          "forbidden": "不迁移 hash-grid SDF、数值梯度、体渲染或七列固定流程。"
+        },
+        {
+          "anchor_id": "diffdock",
+          "score": 0.3083,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.25,
+            "topology": 0.3333333333333333,
+            "composition": 1.0
+          },
+          "matched": {
+            "objects": [
+              "coordinate_frame"
+            ],
+            "topology": [
+              "geometric_transform"
+            ],
+            "composition": [
+              "dense_3d",
+              "local_detail",
+              "object_sequence"
+            ]
+          },
+          "transfer": "分子/蛋白实体、同一构型的状态序列，以及局部几何解释形成密集科学叙事。",
+          "forbidden": "不迁移扭转扩散、置信网络或训练损失，除非新论文独立支持。"
+        },
+        {
+          "anchor_id": "react",
+          "score": 0.05,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.0,
+            "topology": 0.0,
+            "composition": 0.3333333333333333
+          },
+          "matched": {
+            "objects": [],
+            "topology": [],
+            "composition": [
+              "local_detail"
+            ]
+          },
+          "transfer": "用具体任务、动作载体和返回内容解释决策；反馈线具有明确起点和落点。",
+          "forbidden": "不把所有方法改为 Thought–Action–Observation，不迁移示例商店、价格或距离。"
+        }
+      ],
+      "selected_anchor": "neuralangelo",
+      "match_strength": "domain-and-structure",
+      "weak_match_requires_source_specific_layout": false,
+      "admission": "not_admitted",
+      "sealed_evaluation_eligible": false,
+      "pair_metadata": "restart-2026/pairs/d4rt/case.json",
+      "source_visual_review": "assistant inspected original PDF p2 Figure 2 at rendered resolution"
+    },
+    {
+      "id": "fuser",
+      "title": "FUSER: Feed-Forward Multiview 3D Registration Transformer and SE(3)$^N$ Diffusion Refinement",
+      "category": "geometry-4d",
+      "venue": "CVPR",
+      "year": 2026,
+      "official_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Jiang_FUSER_Feed-Forward_Multiview_3D_Registration_Transformer_and_SE3N_Diffusion_Refinement_CVPR_2026_paper.html",
+      "pdf_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Jiang_FUSER_Feed-Forward_Multiview_3D_Registration_Transformer_and_SE3N_Diffusion_Refinement_CVPR_2026_paper.pdf",
+      "official_page_sha256": "d77a804bb1b4926cdb2eeb73622642c84826a8127f652c88dfd3257b93ee7aed",
+      "official_date_metadata": [
+        "2026"
+      ],
+      "abstract": "Registration of multiview point clouds typically depends on extensive pairwise matching to build a pose graph for global synchronization, which is computationally expensive and ill-posed without holistic geometric constraints. In this paper, we propose FUSER, the first feed-forward multi-view registration transformer that processes all scans jointly in a unified, compact latent space to directly predict global poses without any pairwise estimation. To maintain tractability, FUSER employs a sparse 3D CNN to encode each scan into low-resolution superpoint features preserving absolute translation cues, followed by a Geometric Alternating Attention module for efficient intra- and inter-scan reasoning. Particularly, we transfer 2D attention priors from off-the-shelf foundation models (i.e., \\pi^3) to enhance 3D feature attention. Building upon FUSER and its estimates, we further introduce FUSER-DF, an SE(3) diffusion refinement framework to correct FUSER's estimates through a denoising process over the joint SE(3)^N space. Here, FUSER serves as a surrogate multiview register to model the denoiser, and a prior-conditioned SE(3)^N variational lower bound is derived for denoising supervision. Extensive experiments on 3DMatch and ScanNet confirm the superior registration accuracy and efficiency of our method.",
+      "main_track_verification": "official proceedings page; track text retained",
+      "recency_basis": "Conference proceedings edition, not first arXiv posting",
+      "preprint_first_date": null,
+      "source_figure_review": "pending",
+      "pair_status": "candidate_only",
+      "user_approval": "pending",
+      "publication_allowed": false,
+      "objects": [
+        "point_cloud",
+        "camera",
+        "coordinate_frame"
+      ],
+      "topology": [
+        "encode_decode",
+        "geometric_transform",
+        "diffusion"
+      ],
+      "composition": [
+        "dense_3d",
+        "object_sequence",
+        "local_detail"
+      ],
+      "claim": "联合处理多视角扫描并预测全局位姿；可选 SE(3)^N 扩散模块细化联合位姿。",
+      "layout": "多色局部扫描→超点及跨扫描注意力→对齐点云；下方细化支路连接初始位姿与联合位姿更新。",
+      "do_not_transfer": "不能画成逐对注册后拼接，也不添加 SDF。",
+      "recency_window": [
+        "2025-09-13",
+        "2026-09-13"
+      ],
+      "conference_window_eligible": true,
+      "recency_precision": "conference edition; day not asserted",
+      "figure_review": "pending method and visual inspection",
+      "conditional_matches": [
+        {
+          "anchor_id": "neuralangelo",
+          "score": 0.9167,
+          "components": {
+            "domain": 1.0,
+            "objects": 1.0,
+            "topology": 0.6666666666666666,
+            "composition": 1.0
+          },
+          "matched": {
+            "objects": [
+              "camera",
+              "coordinate_frame",
+              "point_cloud"
+            ],
+            "topology": [
+              "encode_decode",
+              "geometric_transform"
+            ],
+            "composition": [
+              "dense_3d",
+              "local_detail",
+              "object_sequence"
+            ]
+          },
+          "transfer": "同一对象在图像、几何和局部细节中保持身份对应；大尺寸实体占据主要区域。",
+          "forbidden": "不迁移 hash-grid SDF、数值梯度、体渲染或七列固定流程。"
+        },
+        {
+          "anchor_id": "diffdock",
+          "score": 0.4167,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.3333333333333333,
+            "topology": 0.6666666666666666,
+            "composition": 1.0
+          },
+          "matched": {
+            "objects": [
+              "coordinate_frame"
+            ],
+            "topology": [
+              "diffusion",
+              "geometric_transform"
+            ],
+            "composition": [
+              "dense_3d",
+              "local_detail",
+              "object_sequence"
+            ]
+          },
+          "transfer": "分子/蛋白实体、同一构型的状态序列，以及局部几何解释形成密集科学叙事。",
+          "forbidden": "不迁移扭转扩散、置信网络或训练损失，除非新论文独立支持。"
+        },
+        {
+          "anchor_id": "react",
+          "score": 0.05,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.0,
+            "topology": 0.0,
+            "composition": 0.3333333333333333
+          },
+          "matched": {
+            "objects": [],
+            "topology": [],
+            "composition": [
+              "local_detail"
+            ]
+          },
+          "transfer": "用具体任务、动作载体和返回内容解释决策；反馈线具有明确起点和落点。",
+          "forbidden": "不把所有方法改为 Thought–Action–Observation，不迁移示例商店、价格或距离。"
+        }
+      ],
+      "selected_anchor": "neuralangelo",
+      "match_strength": "domain-and-structure",
+      "weak_match_requires_source_specific_layout": false,
+      "admission": "not_admitted",
+      "sealed_evaluation_eligible": false
+    },
+    {
+      "id": "4dpm",
+      "title": "4D Primitive-Mache: Glueing Primitives for Persistent 4D Scene Reconstruction",
+      "category": "geometry-4d",
+      "venue": "CVPR",
+      "year": 2026,
+      "official_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Mazur_4D_Primitive-Mache_Glueing_Primitives_for_Persistent_4D_Scene_Reconstruction_CVPR_2026_paper.html",
+      "pdf_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Mazur_4D_Primitive-Mache_Glueing_Primitives_for_Persistent_4D_Scene_Reconstruction_CVPR_2026_paper.pdf",
+      "official_page_sha256": "c8c7a2b6172c000b7f7f570890debd1f9b5197c8574178183db03184e3ce62fd",
+      "official_date_metadata": [
+        "2026"
+      ],
+      "abstract": "We present 4DPM, a dynamic reconstruction system that receives a casual monocular RGB video as input, and outputs a complete and persistent reconstruction of the scene.  In other words, we reconstruct not only the currently visible parts of the scene, but also all previously viewed parts, which enables replaying the complete reconstruction across all timesteps. Our method decomposes the scene into a set of rigid 3D primitives, which are assumed to be moving through the scene. Using estimated dense 2D correspondences, we jointly infer the rigid motion of these primitives through an optimisation pipeline, yielding a 4D reconstruction of the scene, i.e. providing 3D geometry dynamically moving through time. To achieve this, we also introduce a mechanism to extrapolate motion for objects that become invisible, employing motion-grouping techniques to maintain continuity. The resulting system enables 4D spatio-temporal awareness, offering capabilities such as replayable 3D reconstructions of articulated objects through time, multi-object scanning, and object permanence. On object scanning and multi-object datasets, our system significantly outperforms existing methods both quantitatively and qualitatively.",
+      "main_track_verification": "official proceedings page; track text retained",
+      "recency_basis": "Conference proceedings edition, not first arXiv posting",
+      "preprint_first_date": null,
+      "source_figure_review": "pending",
+      "pair_status": "candidate_only",
+      "user_approval": "pending",
+      "publication_allowed": false,
+      "objects": [
+        "video",
+        "surface",
+        "coordinate_frame"
+      ],
+      "topology": [
+        "correspondence",
+        "geometric_transform",
+        "iteration"
+      ],
+      "composition": [
+        "dense_3d",
+        "object_sequence",
+        "local_detail"
+      ],
+      "claim": "将动态单目视频分解为可持续跟踪的刚体基元，并用运动分组维持遮挡期间的场景表达。",
+      "layout": "相邻帧内同色物体→刚体基元集合→跨时间组装；局部遮挡放大展示可见对应和不可见延续。",
+      "do_not_transfer": "不要用静态网格优化序列代替物体运动。",
+      "recency_window": [
+        "2025-09-13",
+        "2026-09-13"
+      ],
+      "conference_window_eligible": true,
+      "recency_precision": "conference edition; day not asserted",
+      "figure_review": "pending method and visual inspection",
+      "conditional_matches": [
+        {
+          "anchor_id": "neuralangelo",
+          "score": 1.0,
+          "components": {
+            "domain": 1.0,
+            "objects": 1.0,
+            "topology": 1.0,
+            "composition": 1.0
+          },
+          "matched": {
+            "objects": [
+              "coordinate_frame",
+              "surface",
+              "video"
+            ],
+            "topology": [
+              "correspondence",
+              "geometric_transform",
+              "iteration"
+            ],
+            "composition": [
+              "dense_3d",
+              "local_detail",
+              "object_sequence"
+            ]
+          },
+          "transfer": "同一对象在图像、几何和局部细节中保持身份对应；大尺寸实体占据主要区域。",
+          "forbidden": "不迁移 hash-grid SDF、数值梯度、体渲染或七列固定流程。"
+        },
+        {
+          "anchor_id": "diffdock",
+          "score": 0.4167,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.3333333333333333,
+            "topology": 0.6666666666666666,
+            "composition": 1.0
+          },
+          "matched": {
+            "objects": [
+              "coordinate_frame"
+            ],
+            "topology": [
+              "geometric_transform",
+              "iteration"
+            ],
+            "composition": [
+              "dense_3d",
+              "local_detail",
+              "object_sequence"
+            ]
+          },
+          "transfer": "分子/蛋白实体、同一构型的状态序列，以及局部几何解释形成密集科学叙事。",
+          "forbidden": "不迁移扭转扩散、置信网络或训练损失，除非新论文独立支持。"
+        },
+        {
+          "anchor_id": "react",
+          "score": 0.05,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.0,
+            "topology": 0.0,
+            "composition": 0.3333333333333333
+          },
+          "matched": {
+            "objects": [],
+            "topology": [],
+            "composition": [
+              "local_detail"
+            ]
+          },
+          "transfer": "用具体任务、动作载体和返回内容解释决策；反馈线具有明确起点和落点。",
+          "forbidden": "不把所有方法改为 Thought–Action–Observation，不迁移示例商店、价格或距离。"
+        }
+      ],
+      "selected_anchor": "neuralangelo",
+      "match_strength": "domain-and-structure",
+      "weak_match_requires_source_specific_layout": false,
+      "admission": "not_admitted",
+      "sealed_evaluation_eligible": false
+    },
+    {
+      "id": "superfrusta",
+      "title": "Residual Primitive Fitting of 3D Shapes with SuperFrusta",
+      "category": "geometry-4d",
+      "venue": "CVPR",
+      "year": 2026,
+      "official_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Ganeshan_Residual_Primitive_Fitting_of_3D_Shapes_with_SuperFrusta_CVPR_2026_paper.html",
+      "pdf_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Ganeshan_Residual_Primitive_Fitting_of_3D_Shapes_with_SuperFrusta_CVPR_2026_paper.pdf",
+      "official_page_sha256": "6b2f8d4d377b682fa3263a4037e6d514f9507221935642dd47b1cdb7f71ef552",
+      "official_date_metadata": [
+        "2026"
+      ],
+      "abstract": "We introduce a framework for converting 3D shapes into compact and editable assemblies of analytic primitives, directly addressing the persistent trade-off between reconstruction fidelity and parsimony. Our approach combines two key contributions: a novel primitive, termed SuperFrustum, and an iterative inference algorithm, Residual Primitive Fitting (ResFit). SuperFrustum is a analytical primitive that is simultaneously (1) expressive, being able to express various common solids such as cylinders, spheres, cones & their tapered and bent forms, (2) editable, being compactly parameterized with 8 parameters, and (3) optimizable, with a sign distance field differentiable w.r.t. its parameters almost everywhere. ResFit is an unsupervised procedure that interleaves global shape analysis with local optimization, iteratively fitting primitives to the unexplained residual of a shape to discover a parsimonious yet accurate decompositions for each input shape. On diverse 3D benchmarks, our method achieves state-of-the-art results, improving IoU by over 9 points while using nearly half as many primitives as prior work. The resulting assemblies bridge the gap between dense 3D data and human-controllable design, producing high-fidelity and editable shape programs.",
+      "main_track_verification": "official proceedings page; track text retained",
+      "recency_basis": "Conference proceedings edition, not first arXiv posting",
+      "preprint_first_date": null,
+      "source_figure_review": "pending",
+      "pair_status": "candidate_only",
+      "user_approval": "pending",
+      "publication_allowed": false,
+      "objects": [
+        "surface",
+        "point_cloud",
+        "coordinate_frame"
+      ],
+      "topology": [
+        "geometric_transform",
+        "iteration"
+      ],
+      "composition": [
+        "dense_3d",
+        "object_sequence",
+        "local_detail"
+      ],
+      "claim": "以 SuperFrusta 基元逐步解释三维形状的残差部分。",
+      "layout": "完整形状、当前基元、剩余残差并排对应；放大一个基元的几何自由度。",
+      "do_not_transfer": "需从方法原文进一步确认基元参数和拟合顺序，不能凭标题写公式。",
+      "recency_window": [
+        "2025-09-13",
+        "2026-09-13"
+      ],
+      "conference_window_eligible": true,
+      "recency_precision": "conference edition; day not asserted",
+      "figure_review": "pending method and visual inspection",
+      "conditional_matches": [
+        {
+          "anchor_id": "neuralangelo",
+          "score": 1.0,
+          "components": {
+            "domain": 1.0,
+            "objects": 1.0,
+            "topology": 1.0,
+            "composition": 1.0
+          },
+          "matched": {
+            "objects": [
+              "coordinate_frame",
+              "point_cloud",
+              "surface"
+            ],
+            "topology": [
+              "geometric_transform",
+              "iteration"
+            ],
+            "composition": [
+              "dense_3d",
+              "local_detail",
+              "object_sequence"
+            ]
+          },
+          "transfer": "同一对象在图像、几何和局部细节中保持身份对应；大尺寸实体占据主要区域。",
+          "forbidden": "不迁移 hash-grid SDF、数值梯度、体渲染或七列固定流程。"
+        },
+        {
+          "anchor_id": "diffdock",
+          "score": 0.5,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.3333333333333333,
+            "topology": 1.0,
+            "composition": 1.0
+          },
+          "matched": {
+            "objects": [
+              "coordinate_frame"
+            ],
+            "topology": [
+              "geometric_transform",
+              "iteration"
+            ],
+            "composition": [
+              "dense_3d",
+              "local_detail",
+              "object_sequence"
+            ]
+          },
+          "transfer": "分子/蛋白实体、同一构型的状态序列，以及局部几何解释形成密集科学叙事。",
+          "forbidden": "不迁移扭转扩散、置信网络或训练损失，除非新论文独立支持。"
+        },
+        {
+          "anchor_id": "react",
+          "score": 0.05,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.0,
+            "topology": 0.0,
+            "composition": 0.3333333333333333
+          },
+          "matched": {
+            "objects": [],
+            "topology": [],
+            "composition": [
+              "local_detail"
+            ]
+          },
+          "transfer": "用具体任务、动作载体和返回内容解释决策；反馈线具有明确起点和落点。",
+          "forbidden": "不把所有方法改为 Thought–Action–Observation，不迁移示例商店、价格或距离。"
+        }
+      ],
+      "selected_anchor": "neuralangelo",
+      "match_strength": "domain-and-structure",
+      "weak_match_requires_source_specific_layout": false,
+      "admission": "not_admitted",
+      "sealed_evaluation_eligible": false
+    },
+    {
+      "id": "autotool",
+      "title": "AutoTool: Efficient Tool Selection for Large Language Model Agents",
+      "category": "agents-retrieval",
+      "venue": "AAAI",
+      "year": 2026,
+      "official_url": "https://ojs.aaai.org/index.php/AAAI/article/view/40389",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/view/40389/44350",
+      "official_date_metadata": [
+        "2026-03-14"
+      ],
+      "official_page_sha256": null,
+      "evidence_transport": "web tool read official page and PDF; requests HTML download failed",
+      "main_track_verification": "AAAI-26 Technical Tracks; official OJS page Section field",
+      "preprint_first_date": null,
+      "pair_status": "generated_draft_pending_review",
+      "user_approval": "pending",
+      "publication_allowed": false,
+      "objects": [
+        "tool",
+        "text",
+        "graph",
+        "document"
+      ],
+      "topology": [
+        "feedback",
+        "conditional_branch",
+        "search"
+      ],
+      "composition": [
+        "concrete_scenario",
+        "flow_loop",
+        "local_detail"
+      ],
+      "claim": "工具惯性图先筛选候选，再按依赖回溯、环境状态、启发式的优先级填参；两关都通过才绕过 LLM。",
+      "layout": "上方带实际参数端口的工具图；中间惯性选择和填参细节；下方共享执行与观察回路，并保留失败时 LLM 路径。",
+      "do_not_transfer": "不把高置信工具候选直接连到执行；不省略缺参回退。",
+      "review_scope": "PDF p4 Fig.2, §4.2–4.5; §5.2 execution cap distinct from mechanism",
+      "recency_basis": "Conference proceedings edition, not first arXiv posting",
+      "recency_window": [
+        "2025-09-13",
+        "2026-09-13"
+      ],
+      "conference_window_eligible": true,
+      "recency_precision": "AAAI exact issue publication date",
+      "figure_review": "Official PDF method text and Figure 2 caption inspected via web; original figure raster inspection remains pending because local PDF download failed and the web screenshot tool returned a citation without a model-visible image.",
+      "conditional_matches": [
+        {
+          "anchor_id": "react",
+          "score": 1.0,
+          "components": {
+            "domain": 1.0,
+            "objects": 1.0,
+            "topology": 1.0,
+            "composition": 1.0
+          },
+          "matched": {
+            "objects": [
+              "document",
+              "graph",
+              "text",
+              "tool"
+            ],
+            "topology": [
+              "conditional_branch",
+              "feedback",
+              "search"
+            ],
+            "composition": [
+              "concrete_scenario",
+              "flow_loop",
+              "local_detail"
+            ]
+          },
+          "transfer": "用具体任务、动作载体和返回内容解释决策；反馈线具有明确起点和落点。",
+          "forbidden": "不把所有方法改为 Thought–Action–Observation，不迁移示例商店、价格或距离。"
+        },
+        {
+          "anchor_id": "diffdock",
+          "score": 0.125,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.25,
+            "topology": 0.0,
+            "composition": 0.3333333333333333
+          },
+          "matched": {
+            "objects": [
+              "graph"
+            ],
+            "topology": [],
+            "composition": [
+              "local_detail"
+            ]
+          },
+          "transfer": "分子/蛋白实体、同一构型的状态序列，以及局部几何解释形成密集科学叙事。",
+          "forbidden": "不迁移扭转扩散、置信网络或训练损失，除非新论文独立支持。"
+        },
+        {
+          "anchor_id": "neuralangelo",
+          "score": 0.05,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.0,
+            "topology": 0.0,
+            "composition": 0.3333333333333333
+          },
+          "matched": {
+            "objects": [],
+            "topology": [],
+            "composition": [
+              "local_detail"
+            ]
+          },
+          "transfer": "同一对象在图像、几何和局部细节中保持身份对应；大尺寸实体占据主要区域。",
+          "forbidden": "不迁移 hash-grid SDF、数值梯度、体渲染或七列固定流程。"
+        }
+      ],
+      "selected_anchor": "react",
+      "match_strength": "domain-and-structure",
+      "weak_match_requires_source_specific_layout": false,
+      "admission": "not_admitted",
+      "sealed_evaluation_eligible": false,
+      "pair_metadata": "restart-2026/pairs/autotool/case.json",
+      "source_visual_review": "Official PDF method text and Figure 2 caption inspected via web; original figure raster inspection remains pending because local PDF download failed and the web screenshot tool returned a citation without a model-visible image."
+    },
+    {
+      "id": "mobile-agent-rag",
+      "title": "Mobile-Agent-RAG: Driving Smart Multi-Agent Coordination with Contextual Knowledge Empowerment for Long-Horizon Mobile Automation",
+      "category": "agents-retrieval",
+      "venue": "AAAI",
+      "year": 2026,
+      "official_url": "https://ojs.aaai.org/index.php/AAAI/article/view/40241",
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/view/40241/44202",
+      "official_date_metadata": [
+        "2026-03-14"
+      ],
+      "official_page_sha256": null,
+      "evidence_transport": "web tool read official page and PDF; requests HTML download failed",
+      "main_track_verification": "AAAI-26 Technical Tracks; official OJS page Section field",
+      "preprint_first_date": null,
+      "pair_status": "candidate_only",
+      "user_approval": "pending",
+      "publication_allowed": false,
+      "objects": [
+        "tool",
+        "ui",
+        "document",
+        "text"
+      ],
+      "topology": [
+        "retrieval",
+        "hierarchy",
+        "feedback"
+      ],
+      "composition": [
+        "concrete_scenario",
+        "flow_loop",
+        "local_detail"
+      ],
+      "claim": "Manager-RAG 检索高层任务示范；Operator-RAG 检索与当前应用和子任务对应的原子动作指导。",
+      "layout": "两个知识库分别进入计划层和 UI 动作层；手机屏幕序列显示计划如何落到具体点击。",
+      "do_not_transfer": "不能把两个不同知识库合成一个无区别检索盒；生成 UI 不作为真实执行证据。",
+      "recency_basis": "Conference proceedings edition, not first arXiv posting",
+      "recency_window": [
+        "2025-09-13",
+        "2026-09-13"
+      ],
+      "conference_window_eligible": true,
+      "recency_precision": "AAAI exact issue publication date",
+      "figure_review": "pending method and visual inspection",
+      "conditional_matches": [
+        {
+          "anchor_id": "react",
+          "score": 1.0,
+          "components": {
+            "domain": 1.0,
+            "objects": 1.0,
+            "topology": 1.0,
+            "composition": 1.0
+          },
+          "matched": {
+            "objects": [
+              "document",
+              "text",
+              "tool",
+              "ui"
+            ],
+            "topology": [
+              "feedback",
+              "hierarchy",
+              "retrieval"
+            ],
+            "composition": [
+              "concrete_scenario",
+              "flow_loop",
+              "local_detail"
+            ]
+          },
+          "transfer": "用具体任务、动作载体和返回内容解释决策；反馈线具有明确起点和落点。",
+          "forbidden": "不把所有方法改为 Thought–Action–Observation，不迁移示例商店、价格或距离。"
+        },
+        {
+          "anchor_id": "diffdock",
+          "score": 0.05,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.0,
+            "topology": 0.0,
+            "composition": 0.3333333333333333
+          },
+          "matched": {
+            "objects": [],
+            "topology": [],
+            "composition": [
+              "local_detail"
+            ]
+          },
+          "transfer": "分子/蛋白实体、同一构型的状态序列，以及局部几何解释形成密集科学叙事。",
+          "forbidden": "不迁移扭转扩散、置信网络或训练损失，除非新论文独立支持。"
+        },
+        {
+          "anchor_id": "neuralangelo",
+          "score": 0.05,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.0,
+            "topology": 0.0,
+            "composition": 0.3333333333333333
+          },
+          "matched": {
+            "objects": [],
+            "topology": [],
+            "composition": [
+              "local_detail"
+            ]
+          },
+          "transfer": "同一对象在图像、几何和局部细节中保持身份对应；大尺寸实体占据主要区域。",
+          "forbidden": "不迁移 hash-grid SDF、数值梯度、体渲染或七列固定流程。"
+        }
+      ],
+      "selected_anchor": "react",
+      "match_strength": "domain-and-structure",
+      "weak_match_requires_source_specific_layout": false,
+      "admission": "not_admitted",
+      "sealed_evaluation_eligible": false
+    },
+    {
+      "id": "ai-researcher",
+      "title": "AI-Researcher: Autonomous Scientific Innovation",
+      "category": "agents-retrieval",
+      "venue": "NeurIPS",
+      "year": 2025,
+      "official_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/0d904d300a105809a2114d727851e759-Abstract-Conference.html",
+      "pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/0d904d300a105809a2114d727851e759-Paper-Conference.pdf",
+      "official_page_sha256": "09fb1881fefdf77bd6e9688d0870f2ccffc213961811e2e50100b6673d291131",
+      "official_date_metadata": [
+        "2026-04-23"
+      ],
+      "abstract": null,
+      "main_track_verification": "official proceedings page; track text retained",
+      "recency_basis": "Conference proceedings edition, not first arXiv posting",
+      "preprint_first_date": null,
+      "source_figure_review": "pending",
+      "pair_status": "candidate_only",
+      "user_approval": "pending",
+      "publication_allowed": false,
+      "objects": [
+        "text",
+        "document",
+        "tool",
+        "graph"
+      ],
+      "topology": [
+        "search",
+        "feedback",
+        "hierarchy"
+      ],
+      "composition": [
+        "concrete_scenario",
+        "flow_loop",
+        "local_detail"
+      ],
+      "claim": "以文献、研究想法、实现及实验迭代构成自主科学研究流程。",
+      "layout": "相连的研究产物作为视觉主体：论文卡、假设草图、代码单元与运行记录；局部迭代展开。",
+      "do_not_transfer": "未核对的代理角色名、实验成绩和发现不能写入图。",
+      "recency_window": [
+        "2025-09-13",
+        "2026-09-13"
+      ],
+      "conference_window_eligible": true,
+      "recency_precision": "conference edition; day not asserted",
+      "figure_review": "pending method and visual inspection",
+      "conditional_matches": [
+        {
+          "anchor_id": "react",
+          "score": 1.0,
+          "components": {
+            "domain": 1.0,
+            "objects": 1.0,
+            "topology": 1.0,
+            "composition": 1.0
+          },
+          "matched": {
+            "objects": [
+              "document",
+              "graph",
+              "text",
+              "tool"
+            ],
+            "topology": [
+              "feedback",
+              "hierarchy",
+              "search"
+            ],
+            "composition": [
+              "concrete_scenario",
+              "flow_loop",
+              "local_detail"
+            ]
+          },
+          "transfer": "用具体任务、动作载体和返回内容解释决策；反馈线具有明确起点和落点。",
+          "forbidden": "不把所有方法改为 Thought–Action–Observation，不迁移示例商店、价格或距离。"
+        },
+        {
+          "anchor_id": "diffdock",
+          "score": 0.125,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.25,
+            "topology": 0.0,
+            "composition": 0.3333333333333333
+          },
+          "matched": {
+            "objects": [
+              "graph"
+            ],
+            "topology": [],
+            "composition": [
+              "local_detail"
+            ]
+          },
+          "transfer": "分子/蛋白实体、同一构型的状态序列，以及局部几何解释形成密集科学叙事。",
+          "forbidden": "不迁移扭转扩散、置信网络或训练损失，除非新论文独立支持。"
+        },
+        {
+          "anchor_id": "neuralangelo",
+          "score": 0.05,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.0,
+            "topology": 0.0,
+            "composition": 0.3333333333333333
+          },
+          "matched": {
+            "objects": [],
+            "topology": [],
+            "composition": [
+              "local_detail"
+            ]
+          },
+          "transfer": "同一对象在图像、几何和局部细节中保持身份对应；大尺寸实体占据主要区域。",
+          "forbidden": "不迁移 hash-grid SDF、数值梯度、体渲染或七列固定流程。"
+        }
+      ],
+      "selected_anchor": "react",
+      "match_strength": "domain-and-structure",
+      "weak_match_requires_source_specific_layout": false,
+      "admission": "not_admitted",
+      "sealed_evaluation_eligible": false
+    },
+    {
+      "id": "mle-search",
+      "title": "AI Research Agents for Machine Learning: Search, Exploration, and Generalization in MLE-bench",
+      "category": "agents-retrieval",
+      "venue": "NeurIPS",
+      "year": 2025,
+      "official_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/328b81881da145412f2bc56c998dfb6a-Abstract-Conference.html",
+      "pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/328b81881da145412f2bc56c998dfb6a-Paper-Conference.pdf",
+      "official_page_sha256": "5ad52bcac64952a21553f36aa72d606e8d473da63754630175c0aba7d47df2b3",
+      "official_date_metadata": [
+        "2026-04-23"
+      ],
+      "abstract": null,
+      "main_track_verification": "official proceedings page; track text retained",
+      "recency_basis": "Conference proceedings edition, not first arXiv posting",
+      "preprint_first_date": null,
+      "source_figure_review": "pending",
+      "pair_status": "candidate_only",
+      "user_approval": "pending",
+      "publication_allowed": false,
+      "objects": [
+        "tool",
+        "graph",
+        "document",
+        "text"
+      ],
+      "topology": [
+        "search",
+        "feedback",
+        "conditional_branch"
+      ],
+      "composition": [
+        "concrete_scenario",
+        "local_detail",
+        "flow_loop"
+      ],
+      "claim": "比较研究代理对候选机器学习方案的搜索与探索机制。",
+      "layout": "候选代码/方案节点组成搜索树；展开、修改、选择三种动作围绕一个局部节点解释。",
+      "do_not_transfer": "搜索示意节点不能携带虚构验证分数或排行榜结果。",
+      "recency_window": [
+        "2025-09-13",
+        "2026-09-13"
+      ],
+      "conference_window_eligible": true,
+      "recency_precision": "conference edition; day not asserted",
+      "figure_review": "pending method and visual inspection",
+      "conditional_matches": [
+        {
+          "anchor_id": "react",
+          "score": 1.0,
+          "components": {
+            "domain": 1.0,
+            "objects": 1.0,
+            "topology": 1.0,
+            "composition": 1.0
+          },
+          "matched": {
+            "objects": [
+              "document",
+              "graph",
+              "text",
+              "tool"
+            ],
+            "topology": [
+              "conditional_branch",
+              "feedback",
+              "search"
+            ],
+            "composition": [
+              "concrete_scenario",
+              "flow_loop",
+              "local_detail"
+            ]
+          },
+          "transfer": "用具体任务、动作载体和返回内容解释决策；反馈线具有明确起点和落点。",
+          "forbidden": "不把所有方法改为 Thought–Action–Observation，不迁移示例商店、价格或距离。"
+        },
+        {
+          "anchor_id": "diffdock",
+          "score": 0.125,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.25,
+            "topology": 0.0,
+            "composition": 0.3333333333333333
+          },
+          "matched": {
+            "objects": [
+              "graph"
+            ],
+            "topology": [],
+            "composition": [
+              "local_detail"
+            ]
+          },
+          "transfer": "分子/蛋白实体、同一构型的状态序列，以及局部几何解释形成密集科学叙事。",
+          "forbidden": "不迁移扭转扩散、置信网络或训练损失，除非新论文独立支持。"
+        },
+        {
+          "anchor_id": "neuralangelo",
+          "score": 0.05,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.0,
+            "topology": 0.0,
+            "composition": 0.3333333333333333
+          },
+          "matched": {
+            "objects": [],
+            "topology": [],
+            "composition": [
+              "local_detail"
+            ]
+          },
+          "transfer": "同一对象在图像、几何和局部细节中保持身份对应；大尺寸实体占据主要区域。",
+          "forbidden": "不迁移 hash-grid SDF、数值梯度、体渲染或七列固定流程。"
+        }
+      ],
+      "selected_anchor": "react",
+      "match_strength": "domain-and-structure",
+      "weak_match_requires_source_specific_layout": false,
+      "admission": "not_admitted",
+      "sealed_evaluation_eligible": false
+    },
+    {
+      "id": "sigmadock",
+      "title": "SigmaDock: Untwisting Molecular Docking with Fragment-Based SE(3) Diffusion",
+      "category": "molecular-science",
+      "venue": "ICLR",
+      "year": 2026,
+      "official_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/4c1516dc8f1643c94d164a436ce8fe51-Abstract-Conference.html",
+      "pdf_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/4c1516dc8f1643c94d164a436ce8fe51-Paper-Conference.pdf",
+      "official_page_sha256": "c66dc8dfb21cead443a1401ee2ed74e5ff7502f81037bb23cff43e074df92b47",
+      "official_date_metadata": [
+        "2026-04-20"
+      ],
+      "abstract": null,
+      "main_track_verification": "official proceedings page; track text retained",
+      "recency_basis": "Conference proceedings edition, not first arXiv posting",
+      "preprint_first_date": null,
+      "source_figure_review": "pending",
+      "pair_status": "generated_draft_pending_review",
+      "user_approval": "pending",
+      "publication_allowed": false,
+      "objects": [
+        "molecule",
+        "protein",
+        "coordinate_frame",
+        "graph"
+      ],
+      "topology": [
+        "diffusion",
+        "conditioning",
+        "iteration",
+        "geometric_transform",
+        "sampling"
+      ],
+      "composition": [
+        "dense_3d",
+        "object_sequence",
+        "local_detail"
+      ],
+      "claim": "通过 FR3D 刚体片段与软三角化条件，在 SE(3)^m 上重组固定蛋白口袋中的配体。",
+      "layout": "左侧片段化与合并，中间同一口袋的重组序列，右侧跨片段三角化放大；短分支解释局部固定几何。",
+      "do_not_transfer": "不迁移 DiffDock 扭转分数和独立置信网络；软距离条件不能画成每步硬投影。",
+      "review_scope": "PDF p3 Fig.1, p6 Fig.3, §2.2.3–2.4",
+      "recency_window": [
+        "2025-09-13",
+        "2026-09-13"
+      ],
+      "conference_window_eligible": true,
+      "recency_precision": "conference edition; day not asserted",
+      "figure_review": "assistant inspected original PDF p3 Figure 1 and p6 Figure 3; read sections 2.2.3–2.4 and appendix FR3D algorithm",
+      "conditional_matches": [
+        {
+          "anchor_id": "diffdock",
+          "score": 1.0,
+          "components": {
+            "domain": 1.0,
+            "objects": 1.0,
+            "topology": 1.0,
+            "composition": 1.0
+          },
+          "matched": {
+            "objects": [
+              "coordinate_frame",
+              "graph",
+              "molecule",
+              "protein"
+            ],
+            "topology": [
+              "conditioning",
+              "diffusion",
+              "geometric_transform",
+              "iteration",
+              "sampling"
+            ],
+            "composition": [
+              "dense_3d",
+              "local_detail",
+              "object_sequence"
+            ]
+          },
+          "transfer": "分子/蛋白实体、同一构型的状态序列，以及局部几何解释形成密集科学叙事。",
+          "forbidden": "不迁移扭转扩散、置信网络或训练损失，除非新论文独立支持。"
+        },
+        {
+          "anchor_id": "neuralangelo",
+          "score": 0.325,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.25,
+            "topology": 0.4,
+            "composition": 1.0
+          },
+          "matched": {
+            "objects": [
+              "coordinate_frame"
+            ],
+            "topology": [
+              "geometric_transform",
+              "iteration"
+            ],
+            "composition": [
+              "dense_3d",
+              "local_detail",
+              "object_sequence"
+            ]
+          },
+          "transfer": "同一对象在图像、几何和局部细节中保持身份对应；大尺寸实体占据主要区域。",
+          "forbidden": "不迁移 hash-grid SDF、数值梯度、体渲染或七列固定流程。"
+        },
+        {
+          "anchor_id": "react",
+          "score": 0.125,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.25,
+            "topology": 0.0,
+            "composition": 0.3333333333333333
+          },
+          "matched": {
+            "objects": [
+              "graph"
+            ],
+            "topology": [],
+            "composition": [
+              "local_detail"
+            ]
+          },
+          "transfer": "用具体任务、动作载体和返回内容解释决策；反馈线具有明确起点和落点。",
+          "forbidden": "不把所有方法改为 Thought–Action–Observation，不迁移示例商店、价格或距离。"
+        }
+      ],
+      "selected_anchor": "diffdock",
+      "match_strength": "domain-and-structure",
+      "weak_match_requires_source_specific_layout": false,
+      "admission": "not_admitted",
+      "sealed_evaluation_eligible": false,
+      "pair_metadata": "restart-2026/pairs/sigmadock/case.json",
+      "source_visual_review": "assistant inspected original PDF p3 Figure 1 and p6 Figure 3; read sections 2.2.3–2.4 and appendix FR3D algorithm"
+    },
+    {
+      "id": "star-md",
+      "title": "Scalable Spatio-Temporal SE(3) Diffusion for Long-Horizon Protein Dynamics",
+      "category": "molecular-science",
+      "venue": "ICLR",
+      "year": 2026,
+      "official_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/f1f2ecd9db4c1faaa2ba9c716dc3e413-Abstract-Conference.html",
+      "pdf_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/f1f2ecd9db4c1faaa2ba9c716dc3e413-Paper-Conference.pdf",
+      "official_page_sha256": "aeb889b77ea54d7e1486ba924b833a893132f7ba9859ecb18ef454a0e6c8f8cc",
+      "official_date_metadata": [
+        "2026-04-20"
+      ],
+      "abstract": null,
+      "main_track_verification": "official proceedings page; track text retained",
+      "recency_basis": "Conference proceedings edition, not first arXiv posting",
+      "preprint_first_date": null,
+      "source_figure_review": "pending",
+      "pair_status": "candidate_only",
+      "user_approval": "pending",
+      "publication_allowed": false,
+      "objects": [
+        "protein",
+        "coordinate_frame"
+      ],
+      "topology": [
+        "diffusion",
+        "conditioning",
+        "iteration"
+      ],
+      "composition": [
+        "dense_3d",
+        "object_sequence",
+        "local_detail"
+      ],
+      "claim": "时空 SE(3) 扩散结合因果建模，逐段生成蛋白质动力学轨迹。",
+      "layout": "同一蛋白不同时间的结构带；局部时空注意力网格与自回归下一段生成相连。",
+      "do_not_transfer": "轨迹为机制示意，不能充当真实分子动力学采样或能量曲线。",
+      "recency_window": [
+        "2025-09-13",
+        "2026-09-13"
+      ],
+      "conference_window_eligible": true,
+      "recency_precision": "conference edition; day not asserted",
+      "figure_review": "pending method and visual inspection",
+      "conditional_matches": [
+        {
+          "anchor_id": "diffdock",
+          "score": 1.0,
+          "components": {
+            "domain": 1.0,
+            "objects": 1.0,
+            "topology": 1.0,
+            "composition": 1.0
+          },
+          "matched": {
+            "objects": [
+              "coordinate_frame",
+              "protein"
+            ],
+            "topology": [
+              "conditioning",
+              "diffusion",
+              "iteration"
+            ],
+            "composition": [
+              "dense_3d",
+              "local_detail",
+              "object_sequence"
+            ]
+          },
+          "transfer": "分子/蛋白实体、同一构型的状态序列，以及局部几何解释形成密集科学叙事。",
+          "forbidden": "不迁移扭转扩散、置信网络或训练损失，除非新论文独立支持。"
+        },
+        {
+          "anchor_id": "neuralangelo",
+          "score": 0.3833,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.5,
+            "topology": 0.3333333333333333,
+            "composition": 1.0
+          },
+          "matched": {
+            "objects": [
+              "coordinate_frame"
+            ],
+            "topology": [
+              "iteration"
+            ],
+            "composition": [
+              "dense_3d",
+              "local_detail",
+              "object_sequence"
+            ]
+          },
+          "transfer": "同一对象在图像、几何和局部细节中保持身份对应；大尺寸实体占据主要区域。",
+          "forbidden": "不迁移 hash-grid SDF、数值梯度、体渲染或七列固定流程。"
+        },
+        {
+          "anchor_id": "react",
+          "score": 0.05,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.0,
+            "topology": 0.0,
+            "composition": 0.3333333333333333
+          },
+          "matched": {
+            "objects": [],
+            "topology": [],
+            "composition": [
+              "local_detail"
+            ]
+          },
+          "transfer": "用具体任务、动作载体和返回内容解释决策；反馈线具有明确起点和落点。",
+          "forbidden": "不把所有方法改为 Thought–Action–Observation，不迁移示例商店、价格或距离。"
+        }
+      ],
+      "selected_anchor": "diffdock",
+      "match_strength": "domain-and-structure",
+      "weak_match_requires_source_specific_layout": false,
+      "admission": "not_admitted",
+      "sealed_evaluation_eligible": false
+    },
+    {
+      "id": "demodiff",
+      "title": "Graph Diffusion Transformers are In-Context Molecular Designers",
+      "category": "molecular-science",
+      "venue": "ICLR",
+      "year": 2026,
+      "official_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/a6b41bed7b8c1abfcf34591d7ae13424-Abstract-Conference.html",
+      "pdf_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/a6b41bed7b8c1abfcf34591d7ae13424-Paper-Conference.pdf",
+      "official_page_sha256": "8227e8e353bb8e2d4aef1a613e6fba021615b6eb8fa7bd9663b7fe901ab73b28",
+      "official_date_metadata": [
+        "2026-04-20"
+      ],
+      "abstract": null,
+      "main_track_verification": "official proceedings page; track text retained",
+      "recency_basis": "Conference proceedings edition, not first arXiv posting",
+      "preprint_first_date": null,
+      "source_figure_review": "pending",
+      "pair_status": "candidate_only",
+      "user_approval": "pending",
+      "publication_allowed": false,
+      "objects": [
+        "molecule",
+        "graph",
+        "text"
+      ],
+      "topology": [
+        "conditioning",
+        "diffusion",
+        "encode_decode"
+      ],
+      "composition": [
+        "dense_3d",
+        "object_sequence",
+        "local_detail"
+      ],
+      "claim": "将分子及其性质分数示范作为上下文，为图扩散生成提供任务条件。",
+      "layout": "示范分子对照组→上下文条件；节点对表示展开在去噪主链旁。",
+      "do_not_transfer": "示范分数需用符号而非捏造数值，不画蛋白口袋。",
+      "recency_window": [
+        "2025-09-13",
+        "2026-09-13"
+      ],
+      "conference_window_eligible": true,
+      "recency_precision": "conference edition; day not asserted",
+      "figure_review": "pending method and visual inspection",
+      "conditional_matches": [
+        {
+          "anchor_id": "diffdock",
+          "score": 0.8167,
+          "components": {
+            "domain": 1.0,
+            "objects": 0.6666666666666666,
+            "topology": 0.6666666666666666,
+            "composition": 1.0
+          },
+          "matched": {
+            "objects": [
+              "graph",
+              "molecule"
+            ],
+            "topology": [
+              "conditioning",
+              "diffusion"
+            ],
+            "composition": [
+              "dense_3d",
+              "local_detail",
+              "object_sequence"
+            ]
+          },
+          "transfer": "分子/蛋白实体、同一构型的状态序列，以及局部几何解释形成密集科学叙事。",
+          "forbidden": "不迁移扭转扩散、置信网络或训练损失，除非新论文独立支持。"
+        },
+        {
+          "anchor_id": "react",
+          "score": 0.25,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.6666666666666666,
+            "topology": 0.0,
+            "composition": 0.3333333333333333
+          },
+          "matched": {
+            "objects": [
+              "graph",
+              "text"
+            ],
+            "topology": [],
+            "composition": [
+              "local_detail"
+            ]
+          },
+          "transfer": "用具体任务、动作载体和返回内容解释决策；反馈线具有明确起点和落点。",
+          "forbidden": "不把所有方法改为 Thought–Action–Observation，不迁移示例商店、价格或距离。"
+        },
+        {
+          "anchor_id": "neuralangelo",
+          "score": 0.2333,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.0,
+            "topology": 0.3333333333333333,
+            "composition": 1.0
+          },
+          "matched": {
+            "objects": [],
+            "topology": [
+              "encode_decode"
+            ],
+            "composition": [
+              "dense_3d",
+              "local_detail",
+              "object_sequence"
+            ]
+          },
+          "transfer": "同一对象在图像、几何和局部细节中保持身份对应；大尺寸实体占据主要区域。",
+          "forbidden": "不迁移 hash-grid SDF、数值梯度、体渲染或七列固定流程。"
+        }
+      ],
+      "selected_anchor": "diffdock",
+      "match_strength": "domain-and-structure",
+      "weak_match_requires_source_specific_layout": false,
+      "admission": "not_admitted",
+      "sealed_evaluation_eligible": false
+    },
+    {
+      "id": "dynapharm",
+      "title": "DynaPhArM: Adaptive and Physics-Constrained Modeling for Target-Drug Complexes with Drug-Specific Adaptations",
+      "category": "molecular-science",
+      "venue": "NeurIPS",
+      "year": 2025,
+      "official_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/027af285dc29d3388002c2d223ab1772-Abstract-Conference.html",
+      "pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/027af285dc29d3388002c2d223ab1772-Paper-Conference.pdf",
+      "official_page_sha256": "0cdedd0501cb3f1015fe052a3c1233335f75312a4d3730d5dbb896cd5d246718",
+      "official_date_metadata": [
+        "2026-04-23"
+      ],
+      "abstract": null,
+      "main_track_verification": "official proceedings page; track text retained",
+      "recency_basis": "Conference proceedings edition, not first arXiv posting",
+      "preprint_first_date": null,
+      "source_figure_review": "pending",
+      "pair_status": "candidate_only",
+      "user_approval": "pending",
+      "publication_allowed": false,
+      "objects": [
+        "molecule",
+        "protein",
+        "graph"
+      ],
+      "topology": [
+        "conditioning",
+        "diffusion",
+        "geometric_transform"
+      ],
+      "composition": [
+        "dense_3d",
+        "object_sequence",
+        "local_detail"
+      ],
+      "claim": "对靶标—药物复合物采用药物特异适配及物理约束建模。",
+      "layout": "蛋白和药物实体并置；标量/向量几何特征及药物条件进入共同结构生成；物理约束局部展开。",
+      "do_not_transfer": "需核对论文具体约束的作用位置，不移植 DiffDock 的训练损失。",
+      "recency_window": [
+        "2025-09-13",
+        "2026-09-13"
+      ],
+      "conference_window_eligible": true,
+      "recency_precision": "conference edition; day not asserted",
+      "figure_review": "pending method and visual inspection",
+      "conditional_matches": [
+        {
+          "anchor_id": "diffdock",
+          "score": 1.0,
+          "components": {
+            "domain": 1.0,
+            "objects": 1.0,
+            "topology": 1.0,
+            "composition": 1.0
+          },
+          "matched": {
+            "objects": [
+              "graph",
+              "molecule",
+              "protein"
+            ],
+            "topology": [
+              "conditioning",
+              "diffusion",
+              "geometric_transform"
+            ],
+            "composition": [
+              "dense_3d",
+              "local_detail",
+              "object_sequence"
+            ]
+          },
+          "transfer": "分子/蛋白实体、同一构型的状态序列，以及局部几何解释形成密集科学叙事。",
+          "forbidden": "不迁移扭转扩散、置信网络或训练损失，除非新论文独立支持。"
+        },
+        {
+          "anchor_id": "neuralangelo",
+          "score": 0.2333,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.0,
+            "topology": 0.3333333333333333,
+            "composition": 1.0
+          },
+          "matched": {
+            "objects": [],
+            "topology": [
+              "geometric_transform"
+            ],
+            "composition": [
+              "dense_3d",
+              "local_detail",
+              "object_sequence"
+            ]
+          },
+          "transfer": "同一对象在图像、几何和局部细节中保持身份对应；大尺寸实体占据主要区域。",
+          "forbidden": "不迁移 hash-grid SDF、数值梯度、体渲染或七列固定流程。"
+        },
+        {
+          "anchor_id": "react",
+          "score": 0.15,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.3333333333333333,
+            "topology": 0.0,
+            "composition": 0.3333333333333333
+          },
+          "matched": {
+            "objects": [
+              "graph"
+            ],
+            "topology": [],
+            "composition": [
+              "local_detail"
+            ]
+          },
+          "transfer": "用具体任务、动作载体和返回内容解释决策；反馈线具有明确起点和落点。",
+          "forbidden": "不把所有方法改为 Thought–Action–Observation，不迁移示例商店、价格或距离。"
+        }
+      ],
+      "selected_anchor": "diffdock",
+      "match_strength": "domain-and-structure",
+      "weak_match_requires_source_specific_layout": false,
+      "admission": "not_admitted",
+      "sealed_evaluation_eligible": false
+    },
+    {
+      "id": "thinkgen",
+      "title": "ThinkGen: Generalized Thinking for Visual Generation",
+      "category": "visual-generation",
+      "venue": "CVPR",
+      "year": 2026,
+      "official_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Jiao_ThinkGen_Generalized_Thinking_for_Visual_Generation_CVPR_2026_paper.html",
+      "pdf_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Jiao_ThinkGen_Generalized_Thinking_for_Visual_Generation_CVPR_2026_paper.pdf",
+      "official_page_sha256": "c3fc4e12067925e575b12db59bc95e821448cfa830d1cbcb3d52ee23d86ad1bc",
+      "official_date_metadata": [
+        "2026"
+      ],
+      "abstract": "Recent progress in Multimodal Large Language Models (MLLMs) demonstrates that Chain-of-Thought (CoT) reasoning enables systematic solutions to complex understanding tasks. However, its extension to generation tasks remains nascent and limited by scenario-specific mechanisms that hinder generalization and adaptation. In this work, we present ThinkGen, the first think-driven visual generation framework that explicitly leverages MLLM's CoT reasoning in various generation scenarios. ThinkGen employs a decoupled architecture comprising a pretrained MLLM and a Diffusion Transformer (DiT), wherein the MLLM generates tailored instructions based on user intent, and DiT produces high-quality images guided by these instructions. We further propose a separable GRPO-based training paradigm (SepGRPO), alternating reinforcement learning between the MLLM and DiT modules. This flexible design enables joint training across diverse datasets, facilitating effective CoT reasoning for a wide range of generative scenarios. Extensive experiments demonstrate that ThinkGen achieves robust, state-of-the-art performance across multiple generation benchmarks.",
+      "main_track_verification": "official proceedings page; track text retained",
+      "recency_basis": "Conference proceedings edition, not first arXiv posting",
+      "preprint_first_date": null,
+      "source_figure_review": "pending",
+      "pair_status": "candidate_only",
+      "user_approval": "pending",
+      "publication_allowed": false,
+      "objects": [
+        "text",
+        "image",
+        "document"
+      ],
+      "topology": [
+        "conditioning",
+        "feedback",
+        "encode_decode"
+      ],
+      "composition": [
+        "concrete_scenario",
+        "object_sequence",
+        "local_detail"
+      ],
+      "claim": "多模态语言模型生成针对视觉任务的思考与指令，再由 DiT 生成图像。",
+      "layout": "同一视觉目标沿任务文本、结构化指令、局部图像条件、生成画面依次展开；训练交替更新另标范围。",
+      "do_not_transfer": "不把 CoT 当作图像特征，不把交替训练画成推理循环。",
+      "recency_window": [
+        "2025-09-13",
+        "2026-09-13"
+      ],
+      "conference_window_eligible": true,
+      "recency_precision": "conference edition; day not asserted",
+      "figure_review": "pending method and visual inspection",
+      "conditional_matches": [
+        {
+          "anchor_id": "react",
+          "score": 0.3833,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.6666666666666666,
+            "topology": 0.3333333333333333,
+            "composition": 0.6666666666666666
+          },
+          "matched": {
+            "objects": [
+              "document",
+              "text"
+            ],
+            "topology": [
+              "feedback"
+            ],
+            "composition": [
+              "concrete_scenario",
+              "local_detail"
+            ]
+          },
+          "transfer": "用具体任务、动作载体和返回内容解释决策；反馈线具有明确起点和落点。",
+          "forbidden": "不把所有方法改为 Thought–Action–Observation，不迁移示例商店、价格或距离。"
+        },
+        {
+          "anchor_id": "neuralangelo",
+          "score": 0.2833,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.3333333333333333,
+            "topology": 0.3333333333333333,
+            "composition": 0.6666666666666666
+          },
+          "matched": {
+            "objects": [
+              "image"
+            ],
+            "topology": [
+              "encode_decode"
+            ],
+            "composition": [
+              "local_detail",
+              "object_sequence"
+            ]
+          },
+          "transfer": "同一对象在图像、几何和局部细节中保持身份对应；大尺寸实体占据主要区域。",
+          "forbidden": "不迁移 hash-grid SDF、数值梯度、体渲染或七列固定流程。"
+        },
+        {
+          "anchor_id": "diffdock",
+          "score": 0.1833,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.0,
+            "topology": 0.3333333333333333,
+            "composition": 0.6666666666666666
+          },
+          "matched": {
+            "objects": [],
+            "topology": [
+              "conditioning"
+            ],
+            "composition": [
+              "local_detail",
+              "object_sequence"
+            ]
+          },
+          "transfer": "分子/蛋白实体、同一构型的状态序列，以及局部几何解释形成密集科学叙事。",
+          "forbidden": "不迁移扭转扩散、置信网络或训练损失，除非新论文独立支持。"
+        }
+      ],
+      "selected_anchor": null,
+      "match_strength": "partial-visual-grammar",
+      "weak_match_requires_source_specific_layout": true,
+      "admission": "not_admitted",
+      "sealed_evaluation_eligible": false
+    },
+    {
+      "id": "dynavid",
+      "title": "Learning to Generate Highly Dynamic Videos using Synthetic Motion Data",
+      "category": "visual-generation",
+      "venue": "CVPR",
+      "year": 2026,
+      "official_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Jin_Learning_to_Generate_Highly_Dynamic_Videos_using_Synthetic_Motion_Data_CVPR_2026_paper.html",
+      "pdf_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Jin_Learning_to_Generate_Highly_Dynamic_Videos_using_Synthetic_Motion_Data_CVPR_2026_paper.pdf",
+      "official_page_sha256": "fde86d3ad42dddbf837e2858435857861f42d8751b655914a21578ed953a3cf5",
+      "official_date_metadata": [
+        "2026"
+      ],
+      "abstract": "Despite recent progress, video diffusion models still struggle to synthesize realistic videos involving highly dynamic motions or requiring fine-grained motion controllability. A central limitation lies in the scarcity of such examples in commonly used training datasets. To address this, we introduce DynaVid, a video synthesis framework that leverages synthetic motion data in training, which is represented as optical flow and rendered using computer graphics pipelines. This approach offers two key advantages. First, synthetic motion offers diverse motion patterns and precise control signals that are difficult to obtain from real data. Second, unlike rendered videos with artificial appearances, rendered optical flow encodes only motion and is decoupled from appearance, thereby preventing models from reproducing the unnatural look of synthetic videos. Building on this idea, DynaVid adopts a two-stage generation framework: a motion generator first synthesizes motion, and then a motion-guided video generator produces video frames conditioned on that motion. This decoupled formulation enables the model to learn dynamic motion patterns from synthetic data while preserving visual realism from real-world videos. We validate our framework on two challenging scenarios, vigorous human motion generation and extreme camera motion control, where existing datasets are particularly limited. Extensive experiments demonstrate that DynaVid improves the realism and controllability in dynamic motion generation and camera motion control.",
+      "main_track_verification": "official proceedings page; track text retained",
+      "recency_basis": "Conference proceedings edition, not first arXiv posting",
+      "preprint_first_date": null,
+      "source_figure_review": "pending",
+      "pair_status": "candidate_only",
+      "user_approval": "pending",
+      "publication_allowed": false,
+      "objects": [
+        "video",
+        "image",
+        "coordinate_frame"
+      ],
+      "topology": [
+        "conditioning",
+        "encode_decode",
+        "correspondence"
+      ],
+      "composition": [
+        "object_sequence",
+        "local_detail",
+        "dense_3d"
+      ],
+      "claim": "使用合成运动数据学习运动生成，并以运动引导高动态视频生成。",
+      "layout": "连续运动轨迹与光流场形成主视觉；外观输入与运动条件在视频生成器会合。",
+      "do_not_transfer": "合成运动、预测运动和 RGB 视频须保持不同的表示与标签。",
+      "recency_window": [
+        "2025-09-13",
+        "2026-09-13"
+      ],
+      "conference_window_eligible": true,
+      "recency_precision": "conference edition; day not asserted",
+      "figure_review": "pending method and visual inspection",
+      "conditional_matches": [
+        {
+          "anchor_id": "neuralangelo",
+          "score": 0.6167,
+          "components": {
+            "domain": 0.0,
+            "objects": 1.0,
+            "topology": 0.6666666666666666,
+            "composition": 1.0
+          },
+          "matched": {
+            "objects": [
+              "coordinate_frame",
+              "image",
+              "video"
+            ],
+            "topology": [
+              "correspondence",
+              "encode_decode"
+            ],
+            "composition": [
+              "dense_3d",
+              "local_detail",
+              "object_sequence"
+            ]
+          },
+          "transfer": "同一对象在图像、几何和局部细节中保持身份对应；大尺寸实体占据主要区域。",
+          "forbidden": "不迁移 hash-grid SDF、数值梯度、体渲染或七列固定流程。"
+        },
+        {
+          "anchor_id": "diffdock",
+          "score": 0.3333,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.3333333333333333,
+            "topology": 0.3333333333333333,
+            "composition": 1.0
+          },
+          "matched": {
+            "objects": [
+              "coordinate_frame"
+            ],
+            "topology": [
+              "conditioning"
+            ],
+            "composition": [
+              "dense_3d",
+              "local_detail",
+              "object_sequence"
+            ]
+          },
+          "transfer": "分子/蛋白实体、同一构型的状态序列，以及局部几何解释形成密集科学叙事。",
+          "forbidden": "不迁移扭转扩散、置信网络或训练损失，除非新论文独立支持。"
+        },
+        {
+          "anchor_id": "react",
+          "score": 0.05,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.0,
+            "topology": 0.0,
+            "composition": 0.3333333333333333
+          },
+          "matched": {
+            "objects": [],
+            "topology": [],
+            "composition": [
+              "local_detail"
+            ]
+          },
+          "transfer": "用具体任务、动作载体和返回内容解释决策；反馈线具有明确起点和落点。",
+          "forbidden": "不把所有方法改为 Thought–Action–Observation，不迁移示例商店、价格或距离。"
+        }
+      ],
+      "selected_anchor": "neuralangelo",
+      "match_strength": "partial-visual-grammar",
+      "weak_match_requires_source_specific_layout": true,
+      "admission": "not_admitted",
+      "sealed_evaluation_eligible": false
+    },
+    {
+      "id": "seeu",
+      "title": "SeeU: Seeing the Unseen World via 4D Dynamics-aware Generation",
+      "category": "visual-generation",
+      "venue": "CVPR",
+      "year": 2026,
+      "official_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Yuan_SeeU_Seeing_the_Unseen_World_via_4D_Dynamics-aware_Generation_CVPR_2026_paper.html",
+      "pdf_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Yuan_SeeU_Seeing_the_Unseen_World_via_4D_Dynamics-aware_Generation_CVPR_2026_paper.pdf",
+      "official_page_sha256": "94de1475f9245ab749c9198332936874812bbe4182d7c7f5704cd95b3de41067",
+      "official_date_metadata": [
+        "2026"
+      ],
+      "abstract": "Images and videos are discrete 2D projections of the 4D world (3D space + time). Most visual understanding, prediction, and generation operate directly on 2D observations, leading to suboptimal performance. We propose SeeU, a novel approach that learns the continuous 4D dynamics and generate the unseen visual contents. The principle behind SeeU is a new 2D\\to4D\\to2D learning framework. SeeU first reconstructs the 4D world from sparse and monocular 2D frames (2D\\to4D). It then learns the continuous 4D dynamics on a low-rank representation and physical constraints (discrete 4D\\tocontinuous 4D). Finally, SeeU rolls the world forward in time, re-projects it back to 2D at sampled times and viewpoints, and generates unseen regions based on spatial-temporal context awareness (4D\\to2D). By modeling dynamics in 4D, SeeU achieves continuous and physically-consistent novel visual generation, demonstrating strong potentials in multiple tasks including unseen temporal generation, unseen spatial generation, and video editing. All data and code will be public at \\href https://yuyuanspace.com/SeeU/  here .",
+      "main_track_verification": "official proceedings page; track text retained",
+      "recency_basis": "Conference proceedings edition, not first arXiv posting",
+      "preprint_first_date": null,
+      "source_figure_review": "pending",
+      "pair_status": "candidate_only",
+      "user_approval": "pending",
+      "publication_allowed": false,
+      "objects": [
+        "video",
+        "image",
+        "point_cloud",
+        "camera"
+      ],
+      "topology": [
+        "conditioning",
+        "geometric_transform",
+        "correspondence"
+      ],
+      "composition": [
+        "dense_3d",
+        "object_sequence",
+        "local_detail"
+      ],
+      "claim": "利用四维动态结构支持未见视角或场景内容的生成。",
+      "layout": "已观测视角、动态三维载体和未见视角围绕同一场景连接；将可见与补全区域具体标出。",
+      "do_not_transfer": "原文机制和可生成自由度需在生产前逐项确认。",
+      "recency_window": [
+        "2025-09-13",
+        "2026-09-13"
+      ],
+      "conference_window_eligible": true,
+      "recency_precision": "conference edition; day not asserted",
+      "figure_review": "pending method and visual inspection",
+      "conditional_matches": [
+        {
+          "anchor_id": "neuralangelo",
+          "score": 0.6167,
+          "components": {
+            "domain": 0.0,
+            "objects": 1.0,
+            "topology": 0.6666666666666666,
+            "composition": 1.0
+          },
+          "matched": {
+            "objects": [
+              "camera",
+              "image",
+              "point_cloud",
+              "video"
+            ],
+            "topology": [
+              "correspondence",
+              "geometric_transform"
+            ],
+            "composition": [
+              "dense_3d",
+              "local_detail",
+              "object_sequence"
+            ]
+          },
+          "transfer": "同一对象在图像、几何和局部细节中保持身份对应；大尺寸实体占据主要区域。",
+          "forbidden": "不迁移 hash-grid SDF、数值梯度、体渲染或七列固定流程。"
+        },
+        {
+          "anchor_id": "diffdock",
+          "score": 0.3167,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.0,
+            "topology": 0.6666666666666666,
+            "composition": 1.0
+          },
+          "matched": {
+            "objects": [],
+            "topology": [
+              "conditioning",
+              "geometric_transform"
+            ],
+            "composition": [
+              "dense_3d",
+              "local_detail",
+              "object_sequence"
+            ]
+          },
+          "transfer": "分子/蛋白实体、同一构型的状态序列，以及局部几何解释形成密集科学叙事。",
+          "forbidden": "不迁移扭转扩散、置信网络或训练损失，除非新论文独立支持。"
+        },
+        {
+          "anchor_id": "react",
+          "score": 0.05,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.0,
+            "topology": 0.0,
+            "composition": 0.3333333333333333
+          },
+          "matched": {
+            "objects": [],
+            "topology": [],
+            "composition": [
+              "local_detail"
+            ]
+          },
+          "transfer": "用具体任务、动作载体和返回内容解释决策；反馈线具有明确起点和落点。",
+          "forbidden": "不把所有方法改为 Thought–Action–Observation，不迁移示例商店、价格或距离。"
+        }
+      ],
+      "selected_anchor": "neuralangelo",
+      "match_strength": "partial-visual-grammar",
+      "weak_match_requires_source_specific_layout": true,
+      "admission": "not_admitted",
+      "sealed_evaluation_eligible": false
+    },
+    {
+      "id": "ar-rag",
+      "title": "AR-RAG: Autoregressive Retrieval Augmentation for Image Generation",
+      "category": "visual-generation",
+      "venue": "NeurIPS",
+      "year": 2025,
+      "official_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/294fe7aabe8f67e8aca8c0eab2bcfbc4-Abstract-Conference.html",
+      "pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/294fe7aabe8f67e8aca8c0eab2bcfbc4-Paper-Conference.pdf",
+      "official_page_sha256": "ea5e3dd10c2eb6e5acb0fec5a2a91fe7b21497b2a8f5b7792bfef9ab580dde0a",
+      "official_date_metadata": [
+        "2026-04-23"
+      ],
+      "abstract": null,
+      "main_track_verification": "official proceedings page; track text retained",
+      "recency_basis": "Conference proceedings edition, not first arXiv posting",
+      "preprint_first_date": null,
+      "source_figure_review": "pending",
+      "pair_status": "candidate_only",
+      "user_approval": "pending",
+      "publication_allowed": false,
+      "objects": [
+        "image",
+        "document",
+        "graph"
+      ],
+      "topology": [
+        "retrieval",
+        "conditioning",
+        "encode_decode"
+      ],
+      "composition": [
+        "object_sequence",
+        "local_detail"
+      ],
+      "claim": "在自回归视觉生成中检索补充信息，分别通过分布混合或特征增强使用。",
+      "layout": "正在生成的 patch 网格、检索邻居和下一 patch 并排；DAiD 与 FAiD 分成替代路径。",
+      "do_not_transfer": "两个变体不是必须连续执行的两阶段。",
+      "recency_window": [
+        "2025-09-13",
+        "2026-09-13"
+      ],
+      "conference_window_eligible": true,
+      "recency_precision": "conference edition; day not asserted",
+      "figure_review": "pending method and visual inspection",
+      "conditional_matches": [
+        {
+          "anchor_id": "react",
+          "score": 0.3583,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.6666666666666666,
+            "topology": 0.3333333333333333,
+            "composition": 0.5
+          },
+          "matched": {
+            "objects": [
+              "document",
+              "graph"
+            ],
+            "topology": [
+              "retrieval"
+            ],
+            "composition": [
+              "local_detail"
+            ]
+          },
+          "transfer": "用具体任务、动作载体和返回内容解释决策；反馈线具有明确起点和落点。",
+          "forbidden": "不把所有方法改为 Thought–Action–Observation，不迁移示例商店、价格或距离。"
+        },
+        {
+          "anchor_id": "diffdock",
+          "score": 0.3333,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.3333333333333333,
+            "topology": 0.3333333333333333,
+            "composition": 1.0
+          },
+          "matched": {
+            "objects": [
+              "graph"
+            ],
+            "topology": [
+              "conditioning"
+            ],
+            "composition": [
+              "local_detail",
+              "object_sequence"
+            ]
+          },
+          "transfer": "分子/蛋白实体、同一构型的状态序列，以及局部几何解释形成密集科学叙事。",
+          "forbidden": "不迁移扭转扩散、置信网络或训练损失，除非新论文独立支持。"
+        },
+        {
+          "anchor_id": "neuralangelo",
+          "score": 0.3333,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.3333333333333333,
+            "topology": 0.3333333333333333,
+            "composition": 1.0
+          },
+          "matched": {
+            "objects": [
+              "image"
+            ],
+            "topology": [
+              "encode_decode"
+            ],
+            "composition": [
+              "local_detail",
+              "object_sequence"
+            ]
+          },
+          "transfer": "同一对象在图像、几何和局部细节中保持身份对应；大尺寸实体占据主要区域。",
+          "forbidden": "不迁移 hash-grid SDF、数值梯度、体渲染或七列固定流程。"
+        }
+      ],
+      "selected_anchor": null,
+      "match_strength": "partial-visual-grammar",
+      "weak_match_requires_source_specific_layout": true,
+      "admission": "not_admitted",
+      "sealed_evaluation_eligible": false
+    },
+    {
+      "id": "cosmos-policy",
+      "title": "Cosmos Policy: Fine-Tuning Video Models for Visuomotor Control and Planning",
+      "category": "embodied-control",
+      "venue": "ICLR",
+      "year": 2026,
+      "official_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/748becc400a57c0e31cfe6a2e7951467-Abstract-Conference.html",
+      "pdf_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/748becc400a57c0e31cfe6a2e7951467-Paper-Conference.pdf",
+      "official_page_sha256": "9f9fd707d262f025a3ffa8178dbc3fc14b445b79b2f4618109981b8970b213a3",
+      "official_date_metadata": [
+        "2026-04-20"
+      ],
+      "abstract": null,
+      "main_track_verification": "official proceedings page; track text retained",
+      "recency_basis": "Conference proceedings edition, not first arXiv posting",
+      "preprint_first_date": null,
+      "source_figure_review": "pending",
+      "pair_status": "candidate_only",
+      "user_approval": "pending",
+      "publication_allowed": false,
+      "objects": [
+        "robot",
+        "video",
+        "image",
+        "text"
+      ],
+      "topology": [
+        "conditioning",
+        "diffusion",
+        "feedback"
+      ],
+      "composition": [
+        "concrete_scenario",
+        "object_sequence",
+        "flow_loop"
+      ],
+      "claim": "把动作、未来图像和价值编码到视频模型的潜在帧中，用于机器人控制与规划。",
+      "layout": "机械臂与操作对象占主区域；潜在帧串中分别标记动作、预测未来和价值；候选计划指向动作执行。",
+      "do_not_transfer": "价值只是模型输出，不能标成实际任务成功。",
+      "recency_window": [
+        "2025-09-13",
+        "2026-09-13"
+      ],
+      "conference_window_eligible": true,
+      "recency_precision": "conference edition; day not asserted",
+      "figure_review": "pending method and visual inspection",
+      "conditional_matches": [
+        {
+          "anchor_id": "react",
+          "score": 0.3333,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.5,
+            "topology": 0.3333333333333333,
+            "composition": 0.6666666666666666
+          },
+          "matched": {
+            "objects": [
+              "robot",
+              "text"
+            ],
+            "topology": [
+              "feedback"
+            ],
+            "composition": [
+              "concrete_scenario",
+              "flow_loop"
+            ]
+          },
+          "transfer": "用具体任务、动作载体和返回内容解释决策；反馈线具有明确起点和落点。",
+          "forbidden": "不把所有方法改为 Thought–Action–Observation，不迁移示例商店、价格或距离。"
+        },
+        {
+          "anchor_id": "diffdock",
+          "score": 0.2167,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.0,
+            "topology": 0.6666666666666666,
+            "composition": 0.3333333333333333
+          },
+          "matched": {
+            "objects": [],
+            "topology": [
+              "conditioning",
+              "diffusion"
+            ],
+            "composition": [
+              "object_sequence"
+            ]
+          },
+          "transfer": "分子/蛋白实体、同一构型的状态序列，以及局部几何解释形成密集科学叙事。",
+          "forbidden": "不迁移扭转扩散、置信网络或训练损失，除非新论文独立支持。"
+        },
+        {
+          "anchor_id": "neuralangelo",
+          "score": 0.2,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.5,
+            "topology": 0.0,
+            "composition": 0.3333333333333333
+          },
+          "matched": {
+            "objects": [
+              "image",
+              "video"
+            ],
+            "topology": [],
+            "composition": [
+              "object_sequence"
+            ]
+          },
+          "transfer": "同一对象在图像、几何和局部细节中保持身份对应；大尺寸实体占据主要区域。",
+          "forbidden": "不迁移 hash-grid SDF、数值梯度、体渲染或七列固定流程。"
+        }
+      ],
+      "selected_anchor": null,
+      "match_strength": "partial-visual-grammar",
+      "weak_match_requires_source_specific_layout": true,
+      "admission": "not_admitted",
+      "sealed_evaluation_eligible": false
+    },
+    {
+      "id": "worldgym",
+      "title": "WorldGym: World Model as An Environment for Policy Evaluation",
+      "category": "embodied-control",
+      "venue": "ICLR",
+      "year": 2026,
+      "official_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/7f5e909ac0324db03506b380c695ffaf-Abstract-Conference.html",
+      "pdf_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/7f5e909ac0324db03506b380c695ffaf-Paper-Conference.pdf",
+      "official_page_sha256": "e972e724a99aebf7674f367979b244cfb3daa6965fc88138129fd81937e87bfb",
+      "official_date_metadata": [
+        "2026-04-20"
+      ],
+      "abstract": null,
+      "main_track_verification": "official proceedings page; track text retained",
+      "recency_basis": "Conference proceedings edition, not first arXiv posting",
+      "preprint_first_date": null,
+      "source_figure_review": "pending",
+      "pair_status": "candidate_only",
+      "user_approval": "pending",
+      "publication_allowed": false,
+      "objects": [
+        "robot",
+        "video",
+        "image",
+        "tool"
+      ],
+      "topology": [
+        "conditioning",
+        "feedback",
+        "sampling"
+      ],
+      "composition": [
+        "concrete_scenario",
+        "object_sequence",
+        "flow_loop"
+      ],
+      "claim": "动作条件视频世界模型提供仿真滚动，并以 VLM 奖励辅助策略评估。",
+      "layout": "同一起点分出多个模拟视频滚动，策略动作与世界模型反馈相接；评价模块另接模拟画面。",
+      "do_not_transfer": "生成滚动不可标记为真实机器人实测。",
+      "recency_window": [
+        "2025-09-13",
+        "2026-09-13"
+      ],
+      "conference_window_eligible": true,
+      "recency_precision": "conference edition; day not asserted",
+      "figure_review": "pending method and visual inspection",
+      "conditional_matches": [
+        {
+          "anchor_id": "react",
+          "score": 0.3333,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.5,
+            "topology": 0.3333333333333333,
+            "composition": 0.6666666666666666
+          },
+          "matched": {
+            "objects": [
+              "robot",
+              "tool"
+            ],
+            "topology": [
+              "feedback"
+            ],
+            "composition": [
+              "concrete_scenario",
+              "flow_loop"
+            ]
+          },
+          "transfer": "用具体任务、动作载体和返回内容解释决策；反馈线具有明确起点和落点。",
+          "forbidden": "不把所有方法改为 Thought–Action–Observation，不迁移示例商店、价格或距离。"
+        },
+        {
+          "anchor_id": "diffdock",
+          "score": 0.2167,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.0,
+            "topology": 0.6666666666666666,
+            "composition": 0.3333333333333333
+          },
+          "matched": {
+            "objects": [],
+            "topology": [
+              "conditioning",
+              "sampling"
+            ],
+            "composition": [
+              "object_sequence"
+            ]
+          },
+          "transfer": "分子/蛋白实体、同一构型的状态序列，以及局部几何解释形成密集科学叙事。",
+          "forbidden": "不迁移扭转扩散、置信网络或训练损失，除非新论文独立支持。"
+        },
+        {
+          "anchor_id": "neuralangelo",
+          "score": 0.2,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.5,
+            "topology": 0.0,
+            "composition": 0.3333333333333333
+          },
+          "matched": {
+            "objects": [
+              "image",
+              "video"
+            ],
+            "topology": [],
+            "composition": [
+              "object_sequence"
+            ]
+          },
+          "transfer": "同一对象在图像、几何和局部细节中保持身份对应；大尺寸实体占据主要区域。",
+          "forbidden": "不迁移 hash-grid SDF、数值梯度、体渲染或七列固定流程。"
+        }
+      ],
+      "selected_anchor": null,
+      "match_strength": "partial-visual-grammar",
+      "weak_match_requires_source_specific_layout": true,
+      "admission": "not_admitted",
+      "sealed_evaluation_eligible": false
+    },
+    {
+      "id": "memer",
+      "title": "Scaling up Memory for Robotic Control via Experience Retrieval",
+      "category": "embodied-control",
+      "venue": "ICLR",
+      "year": 2026,
+      "official_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/9da515b1ad19d032a7398f00f5ff9b0c-Abstract-Conference.html",
+      "pdf_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/9da515b1ad19d032a7398f00f5ff9b0c-Paper-Conference.pdf",
+      "official_page_sha256": "aa43c56ae8d12e4ed4441d37b67ef27d455188ab53cfc7b84b4902ffcf21b326",
+      "official_date_metadata": [
+        "2026-04-20"
+      ],
+      "abstract": null,
+      "main_track_verification": "official proceedings page; track text retained",
+      "recency_basis": "Conference proceedings edition, not first arXiv posting",
+      "preprint_first_date": null,
+      "source_figure_review": "pending",
+      "pair_status": "candidate_only",
+      "user_approval": "pending",
+      "publication_allowed": false,
+      "objects": [
+        "robot",
+        "image",
+        "text",
+        "document"
+      ],
+      "topology": [
+        "retrieval",
+        "hierarchy",
+        "feedback"
+      ],
+      "composition": [
+        "concrete_scenario",
+        "object_sequence",
+        "flow_loop"
+      ],
+      "claim": "高层检索并追踪关键帧，以文本子指令指导低层视觉语言动作模型。",
+      "layout": "关键帧记忆带与机器人当前观察对应；高层指令下发至低层动作闭环。",
+      "do_not_transfer": "记忆关键帧不是动作分布；高低层反馈不能混接。",
+      "recency_window": [
+        "2025-09-13",
+        "2026-09-13"
+      ],
+      "conference_window_eligible": true,
+      "recency_precision": "conference edition; day not asserted",
+      "figure_review": "pending method and visual inspection",
+      "conditional_matches": [
+        {
+          "anchor_id": "react",
+          "score": 0.575,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.75,
+            "topology": 1.0,
+            "composition": 0.6666666666666666
+          },
+          "matched": {
+            "objects": [
+              "document",
+              "robot",
+              "text"
+            ],
+            "topology": [
+              "feedback",
+              "hierarchy",
+              "retrieval"
+            ],
+            "composition": [
+              "concrete_scenario",
+              "flow_loop"
+            ]
+          },
+          "transfer": "用具体任务、动作载体和返回内容解释决策；反馈线具有明确起点和落点。",
+          "forbidden": "不把所有方法改为 Thought–Action–Observation，不迁移示例商店、价格或距离。"
+        },
+        {
+          "anchor_id": "neuralangelo",
+          "score": 0.125,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.25,
+            "topology": 0.0,
+            "composition": 0.3333333333333333
+          },
+          "matched": {
+            "objects": [
+              "image"
+            ],
+            "topology": [],
+            "composition": [
+              "object_sequence"
+            ]
+          },
+          "transfer": "同一对象在图像、几何和局部细节中保持身份对应；大尺寸实体占据主要区域。",
+          "forbidden": "不迁移 hash-grid SDF、数值梯度、体渲染或七列固定流程。"
+        },
+        {
+          "anchor_id": "diffdock",
+          "score": 0.05,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.0,
+            "topology": 0.0,
+            "composition": 0.3333333333333333
+          },
+          "matched": {
+            "objects": [],
+            "topology": [],
+            "composition": [
+              "object_sequence"
+            ]
+          },
+          "transfer": "分子/蛋白实体、同一构型的状态序列，以及局部几何解释形成密集科学叙事。",
+          "forbidden": "不迁移扭转扩散、置信网络或训练损失，除非新论文独立支持。"
+        }
+      ],
+      "selected_anchor": "react",
+      "match_strength": "partial-visual-grammar",
+      "weak_match_requires_source_specific_layout": true,
+      "admission": "not_admitted",
+      "sealed_evaluation_eligible": false
+    },
+    {
+      "id": "pcd",
+      "title": "Policy Contrastive Decoding for Robotic Foundation Models",
+      "category": "embodied-control",
+      "venue": "ICLR",
+      "year": 2026,
+      "official_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/b6d67c380f8bde2adc4247d0036c0c73-Abstract-Conference.html",
+      "pdf_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/b6d67c380f8bde2adc4247d0036c0c73-Paper-Conference.pdf",
+      "official_page_sha256": "b305f86475d5ae21ffe0e6a0afbbf3c1a975f305d7c37f7c7f9f455cc06efffb",
+      "official_date_metadata": [
+        "2026-04-20"
+      ],
+      "abstract": null,
+      "main_track_verification": "official proceedings page; track text retained",
+      "recency_basis": "Conference proceedings edition, not first arXiv posting",
+      "preprint_first_date": null,
+      "source_figure_review": "pending",
+      "pair_status": "candidate_only",
+      "user_approval": "pending",
+      "publication_allowed": false,
+      "objects": [
+        "robot",
+        "image",
+        "text"
+      ],
+      "topology": [
+        "conditional_branch",
+        "conditioning",
+        "feedback"
+      ],
+      "composition": [
+        "concrete_scenario",
+        "local_detail",
+        "object_sequence"
+      ],
+      "claim": "用原始与对象遮蔽观察的动作分布对照改善控制决策。",
+      "layout": "同一机械臂场景的原始/对象遮蔽视图对齐；两路动作分布在对比解码处会合。",
+      "do_not_transfer": "不能把遮蔽场景当作第二个真实环境，不捏造概率数值。",
+      "recency_window": [
+        "2025-09-13",
+        "2026-09-13"
+      ],
+      "conference_window_eligible": true,
+      "recency_precision": "conference edition; day not asserted",
+      "figure_review": "pending method and visual inspection",
+      "conditional_matches": [
+        {
+          "anchor_id": "react",
+          "score": 0.4667,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.6666666666666666,
+            "topology": 0.6666666666666666,
+            "composition": 0.6666666666666666
+          },
+          "matched": {
+            "objects": [
+              "robot",
+              "text"
+            ],
+            "topology": [
+              "conditional_branch",
+              "feedback"
+            ],
+            "composition": [
+              "concrete_scenario",
+              "local_detail"
+            ]
+          },
+          "transfer": "用具体任务、动作载体和返回内容解释决策；反馈线具有明确起点和落点。",
+          "forbidden": "不把所有方法改为 Thought–Action–Observation，不迁移示例商店、价格或距离。"
+        },
+        {
+          "anchor_id": "neuralangelo",
+          "score": 0.2,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.3333333333333333,
+            "topology": 0.0,
+            "composition": 0.6666666666666666
+          },
+          "matched": {
+            "objects": [
+              "image"
+            ],
+            "topology": [],
+            "composition": [
+              "local_detail",
+              "object_sequence"
+            ]
+          },
+          "transfer": "同一对象在图像、几何和局部细节中保持身份对应；大尺寸实体占据主要区域。",
+          "forbidden": "不迁移 hash-grid SDF、数值梯度、体渲染或七列固定流程。"
+        },
+        {
+          "anchor_id": "diffdock",
+          "score": 0.1833,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.0,
+            "topology": 0.3333333333333333,
+            "composition": 0.6666666666666666
+          },
+          "matched": {
+            "objects": [],
+            "topology": [
+              "conditioning"
+            ],
+            "composition": [
+              "local_detail",
+              "object_sequence"
+            ]
+          },
+          "transfer": "分子/蛋白实体、同一构型的状态序列，以及局部几何解释形成密集科学叙事。",
+          "forbidden": "不迁移扭转扩散、置信网络或训练损失，除非新论文独立支持。"
+        }
+      ],
+      "selected_anchor": null,
+      "match_strength": "partial-visual-grammar",
+      "weak_match_requires_source_specific_layout": true,
+      "admission": "not_admitted",
+      "sealed_evaluation_eligible": false
+    },
+    {
+      "id": "seggraph",
+      "title": "SegGraph: Leveraging Graphs of SAM Segments for Few-Shot 3D Part Segmentation",
+      "category": "visual-perception",
+      "venue": "NeurIPS",
+      "year": 2025,
+      "official_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/13388efc819c09564c66ab2dc8463809-Abstract-Conference.html",
+      "pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/13388efc819c09564c66ab2dc8463809-Paper-Conference.pdf",
+      "official_page_sha256": "2bd9ac07107bd903ca4973cfb182d72d72b2626add557cfc50d82dee4e6a6fb7",
+      "official_date_metadata": [
+        "2026-04-23"
+      ],
+      "abstract": null,
+      "main_track_verification": "official proceedings page; track text retained",
+      "recency_basis": "Conference proceedings edition, not first arXiv posting",
+      "preprint_first_date": null,
+      "source_figure_review": "pending",
+      "pair_status": "candidate_only",
+      "user_approval": "pending",
+      "publication_allowed": false,
+      "objects": [
+        "image",
+        "graph",
+        "point_cloud",
+        "camera"
+      ],
+      "topology": [
+        "correspondence",
+        "encode_decode",
+        "geometric_transform"
+      ],
+      "composition": [
+        "local_detail",
+        "object_sequence",
+        "dense_3d"
+      ],
+      "claim": "把图像分割区域转换为带关系的图，并融合多视角结构用于视觉理解。",
+      "layout": "区域着色图→区域节点和边→图更新→三维区域汇聚；放大相邻和重叠关系。",
+      "do_not_transfer": "节点是分割区域，不是像素或任意网格 token。",
+      "recency_window": [
+        "2025-09-13",
+        "2026-09-13"
+      ],
+      "conference_window_eligible": true,
+      "recency_precision": "conference edition; day not asserted",
+      "figure_review": "pending method and visual inspection",
+      "conditional_matches": [
+        {
+          "anchor_id": "neuralangelo",
+          "score": 0.625,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.75,
+            "topology": 1.0,
+            "composition": 1.0
+          },
+          "matched": {
+            "objects": [
+              "camera",
+              "image",
+              "point_cloud"
+            ],
+            "topology": [
+              "correspondence",
+              "encode_decode",
+              "geometric_transform"
+            ],
+            "composition": [
+              "dense_3d",
+              "local_detail",
+              "object_sequence"
+            ]
+          },
+          "transfer": "同一对象在图像、几何和局部细节中保持身份对应；大尺寸实体占据主要区域。",
+          "forbidden": "不迁移 hash-grid SDF、数值梯度、体渲染或七列固定流程。"
+        },
+        {
+          "anchor_id": "diffdock",
+          "score": 0.3083,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.25,
+            "topology": 0.3333333333333333,
+            "composition": 1.0
+          },
+          "matched": {
+            "objects": [
+              "graph"
+            ],
+            "topology": [
+              "geometric_transform"
+            ],
+            "composition": [
+              "dense_3d",
+              "local_detail",
+              "object_sequence"
+            ]
+          },
+          "transfer": "分子/蛋白实体、同一构型的状态序列，以及局部几何解释形成密集科学叙事。",
+          "forbidden": "不迁移扭转扩散、置信网络或训练损失，除非新论文独立支持。"
+        },
+        {
+          "anchor_id": "react",
+          "score": 0.125,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.25,
+            "topology": 0.0,
+            "composition": 0.3333333333333333
+          },
+          "matched": {
+            "objects": [
+              "graph"
+            ],
+            "topology": [],
+            "composition": [
+              "local_detail"
+            ]
+          },
+          "transfer": "用具体任务、动作载体和返回内容解释决策；反馈线具有明确起点和落点。",
+          "forbidden": "不把所有方法改为 Thought–Action–Observation，不迁移示例商店、价格或距离。"
+        }
+      ],
+      "selected_anchor": "neuralangelo",
+      "match_strength": "partial-visual-grammar",
+      "weak_match_requires_source_specific_layout": true,
+      "admission": "not_admitted",
+      "sealed_evaluation_eligible": false
+    },
+    {
+      "id": "roborefer",
+      "title": "RoboRefer: Towards Spatial Referring with Reasoning in Vision-Language Models for Robotics",
+      "category": "visual-perception",
+      "venue": "NeurIPS",
+      "year": 2025,
+      "official_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/29416b66c2149872b9d1415a3fd2c5e0-Abstract-Conference.html",
+      "pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/29416b66c2149872b9d1415a3fd2c5e0-Paper-Conference.pdf",
+      "official_page_sha256": "0c87081c2589806f27857debc43f0da08ad30eadd14c31314650ae600a76ea3a",
+      "official_date_metadata": [
+        "2026-04-23"
+      ],
+      "abstract": null,
+      "main_track_verification": "official proceedings page; track text retained",
+      "recency_basis": "Conference proceedings edition, not first arXiv posting",
+      "preprint_first_date": null,
+      "source_figure_review": "pending",
+      "pair_status": "candidate_only",
+      "user_approval": "pending",
+      "publication_allowed": false,
+      "objects": [
+        "robot",
+        "image",
+        "coordinate_frame",
+        "text"
+      ],
+      "topology": [
+        "geometric_transform",
+        "encode_decode",
+        "conditioning"
+      ],
+      "composition": [
+        "concrete_scenario",
+        "dense_3d",
+        "local_detail"
+      ],
+      "claim": "结合深度信息与视觉语言建模处理机器人所需的空间指代表达。",
+      "layout": "带多物体的操作场景、深度几何和指代表达联结；局部放大展示目标空间关系。",
+      "do_not_transfer": "深度图、预测目标与真实测量不能混称。",
+      "recency_window": [
+        "2025-09-13",
+        "2026-09-13"
+      ],
+      "conference_window_eligible": true,
+      "recency_precision": "conference edition; day not asserted",
+      "figure_review": "pending method and visual inspection",
+      "conditional_matches": [
+        {
+          "anchor_id": "neuralangelo",
+          "score": 0.4167,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.5,
+            "topology": 0.6666666666666666,
+            "composition": 0.6666666666666666
+          },
+          "matched": {
+            "objects": [
+              "coordinate_frame",
+              "image"
+            ],
+            "topology": [
+              "encode_decode",
+              "geometric_transform"
+            ],
+            "composition": [
+              "dense_3d",
+              "local_detail"
+            ]
+          },
+          "transfer": "同一对象在图像、几何和局部细节中保持身份对应；大尺寸实体占据主要区域。",
+          "forbidden": "不迁移 hash-grid SDF、数值梯度、体渲染或七列固定流程。"
+        },
+        {
+          "anchor_id": "diffdock",
+          "score": 0.3417,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.25,
+            "topology": 0.6666666666666666,
+            "composition": 0.6666666666666666
+          },
+          "matched": {
+            "objects": [
+              "coordinate_frame"
+            ],
+            "topology": [
+              "conditioning",
+              "geometric_transform"
+            ],
+            "composition": [
+              "dense_3d",
+              "local_detail"
+            ]
+          },
+          "transfer": "分子/蛋白实体、同一构型的状态序列，以及局部几何解释形成密集科学叙事。",
+          "forbidden": "不迁移扭转扩散、置信网络或训练损失，除非新论文独立支持。"
+        },
+        {
+          "anchor_id": "react",
+          "score": 0.25,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.5,
+            "topology": 0.0,
+            "composition": 0.6666666666666666
+          },
+          "matched": {
+            "objects": [
+              "robot",
+              "text"
+            ],
+            "topology": [],
+            "composition": [
+              "concrete_scenario",
+              "local_detail"
+            ]
+          },
+          "transfer": "用具体任务、动作载体和返回内容解释决策；反馈线具有明确起点和落点。",
+          "forbidden": "不把所有方法改为 Thought–Action–Observation，不迁移示例商店、价格或距离。"
+        }
+      ],
+      "selected_anchor": null,
+      "match_strength": "partial-visual-grammar",
+      "weak_match_requires_source_specific_layout": true,
+      "admission": "not_admitted",
+      "sealed_evaluation_eligible": false
+    },
+    {
+      "id": "ms-temba",
+      "title": "MS-Temba: Multi-Scale Temporal Mamba for Understanding Long Untrimmed Videos",
+      "category": "visual-perception",
+      "venue": "CVPR",
+      "year": 2026,
+      "official_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Sinha_MS-Temba_Multi-Scale_Temporal_Mamba_for_Understanding_Long_Untrimmed_Videos_CVPR_2026_paper.html",
+      "pdf_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Sinha_MS-Temba_Multi-Scale_Temporal_Mamba_for_Understanding_Long_Untrimmed_Videos_CVPR_2026_paper.pdf",
+      "official_page_sha256": "d7a54d99c2f90ba781b55074804f10be23b6b0a8b17ecf970f2db167b67e1000",
+      "official_date_metadata": [
+        "2026"
+      ],
+      "abstract": "Temporal Action Detection (TAD) in untrimmed videos poses significant challenges, particularly for Activities of Daily Living (ADL) requiring models to (1) process long-duration videos, (2) capture temporal variations in actions, and (3) simultaneously detect dense overlapping actions. Existing CNN and Transformer-based approaches, struggle to jointly capture fine-grained detail and long-range structure at scale. State-space Model (SSM) based Mamba offers powerful long-range modeling, but naive application to TAD collapses fine-grained temporal structure and fails to account for the challenges inherent to TAD. To this end, we propose Multi-Scale Temporal Mamba (MS-Temba), which extends Mamba to TAD with newly introduced dilated SSMs. Each Temba block, comprising dilated SSMs coupled with our proposed additional losses, enables the learning of discriminative representations across temporal scales. A lightweight Multi-scale Mamba Fuser then unifies these multi-scale features via SSM-based aggregation, yielding precise action-boundary localization. With only 17M parameters, MS-Temba achieves state-of-the-art performance on densely labeled ADL benchmarks TSU & Charades, and further generalizes to long-form video summarization, setting new state-of-the-art results on TVSum & SumMe.",
+      "main_track_verification": "official proceedings page; track text retained",
+      "recency_basis": "Conference proceedings edition, not first arXiv posting",
+      "preprint_first_date": null,
+      "source_figure_review": "pending",
+      "pair_status": "candidate_only",
+      "user_approval": "pending",
+      "publication_allowed": false,
+      "objects": [
+        "video",
+        "image",
+        "text"
+      ],
+      "topology": [
+        "encode_decode",
+        "correspondence",
+        "hierarchy"
+      ],
+      "composition": [
+        "object_sequence",
+        "local_detail"
+      ],
+      "claim": "多尺度时序 Mamba 建模长未剪辑视频的时间结构。",
+      "layout": "完整时间轴保留多个活动区段；尺度分解以对齐窗口和状态传播表示。",
+      "do_not_transfer": "生产前核实尺度构建、状态传播及融合顺序，不能套用空间扫描 Mamba 图。",
+      "recency_window": [
+        "2025-09-13",
+        "2026-09-13"
+      ],
+      "conference_window_eligible": true,
+      "recency_precision": "conference edition; day not asserted",
+      "figure_review": "pending method and visual inspection",
+      "conditional_matches": [
+        {
+          "anchor_id": "neuralangelo",
+          "score": 0.5167,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.6666666666666666,
+            "topology": 0.6666666666666666,
+            "composition": 1.0
+          },
+          "matched": {
+            "objects": [
+              "image",
+              "video"
+            ],
+            "topology": [
+              "correspondence",
+              "encode_decode"
+            ],
+            "composition": [
+              "local_detail",
+              "object_sequence"
+            ]
+          },
+          "transfer": "同一对象在图像、几何和局部细节中保持身份对应；大尺寸实体占据主要区域。",
+          "forbidden": "不迁移 hash-grid SDF、数值梯度、体渲染或七列固定流程。"
+        },
+        {
+          "anchor_id": "react",
+          "score": 0.2583,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.3333333333333333,
+            "topology": 0.3333333333333333,
+            "composition": 0.5
+          },
+          "matched": {
+            "objects": [
+              "text"
+            ],
+            "topology": [
+              "hierarchy"
+            ],
+            "composition": [
+              "local_detail"
+            ]
+          },
+          "transfer": "用具体任务、动作载体和返回内容解释决策；反馈线具有明确起点和落点。",
+          "forbidden": "不把所有方法改为 Thought–Action–Observation，不迁移示例商店、价格或距离。"
+        },
+        {
+          "anchor_id": "diffdock",
+          "score": 0.15,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.0,
+            "topology": 0.0,
+            "composition": 1.0
+          },
+          "matched": {
+            "objects": [],
+            "topology": [],
+            "composition": [
+              "local_detail",
+              "object_sequence"
+            ]
+          },
+          "transfer": "分子/蛋白实体、同一构型的状态序列，以及局部几何解释形成密集科学叙事。",
+          "forbidden": "不迁移扭转扩散、置信网络或训练损失，除非新论文独立支持。"
+        }
+      ],
+      "selected_anchor": "neuralangelo",
+      "match_strength": "partial-visual-grammar",
+      "weak_match_requires_source_specific_layout": true,
+      "admission": "not_admitted",
+      "sealed_evaluation_eligible": false
+    },
+    {
+      "id": "soft-boundaries",
+      "title": "Guardians of the Hair: Rescuing Soft Boundaries in Depth, Stereo, and Novel Views",
+      "category": "visual-perception",
+      "venue": "CVPR",
+      "year": 2026,
+      "official_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_Guardians_of_the_Hair_Rescuing_Soft_Boundaries_in_Depth_Stereo_CVPR_2026_paper.html",
+      "pdf_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhang_Guardians_of_the_Hair_Rescuing_Soft_Boundaries_in_Depth_Stereo_CVPR_2026_paper.pdf",
+      "official_page_sha256": "cd3602b65cc273c46b61774927d69f5d2be502fbe65a5895e40acb6d7205d0f7",
+      "official_date_metadata": [
+        "2026"
+      ],
+      "abstract": "Soft boundaries, like thin hairs, are commonly observed in natural and computer-generated imagery, but they remain challenging for 3D vision due to the ambiguous mixing of foreground and background cues. This paper introduces Guardians of the Hair (HairGuard), a framework designed to recover fine-grained soft boundary details in 3D vision tasks. Specifically, we first propose a novel data curation pipeline that leverages image matting datasets for training and design a depth fixer network to automatically identify soft boundary regions. With a gated residual module, the depth fixer refines depth precisely around soft boundaries while maintaining global depth quality, allowing plug-and-play integration with state-of-the-art depth models. For view synthesis, we perform depth-based forward warping to retain high-fidelity textures, followed by a generative scene painter that fills disoccluded regions and eliminates redundant background artifacts within soft boundaries. Finally, a color fuser adaptively combines warped and inpainted results to produce novel views with consistent geometry and fine-grained details. Extensive experiments demonstrate that HairGuard achieves state-of-the-art performance across monocular depth estimation, stereo image/video conversion, and novel view synthesis, with significant improvements in soft boundary regions.",
+      "main_track_verification": "official proceedings page; track text retained",
+      "recency_basis": "Conference proceedings edition, not first arXiv posting",
+      "preprint_first_date": null,
+      "source_figure_review": "pending",
+      "pair_status": "candidate_only",
+      "user_approval": "pending",
+      "publication_allowed": false,
+      "objects": [
+        "image",
+        "surface",
+        "camera"
+      ],
+      "topology": [
+        "correspondence",
+        "encode_decode",
+        "geometric_transform"
+      ],
+      "composition": [
+        "local_detail",
+        "object_sequence",
+        "dense_3d"
+      ],
+      "claim": "处理深度立体匹配中的发丝等软边界结构。",
+      "layout": "左右视图及发丝局部对应放大；软边界表示和深度结果紧密对照。",
+      "do_not_transfer": "未获得源像素时只能使用概念发丝场景，不伪装成论文预测结果。",
+      "recency_window": [
+        "2025-09-13",
+        "2026-09-13"
+      ],
+      "conference_window_eligible": true,
+      "recency_precision": "conference edition; day not asserted",
+      "figure_review": "pending method and visual inspection",
+      "conditional_matches": [
+        {
+          "anchor_id": "neuralangelo",
+          "score": 0.7,
+          "components": {
+            "domain": 0.0,
+            "objects": 1.0,
+            "topology": 1.0,
+            "composition": 1.0
+          },
+          "matched": {
+            "objects": [
+              "camera",
+              "image",
+              "surface"
+            ],
+            "topology": [
+              "correspondence",
+              "encode_decode",
+              "geometric_transform"
+            ],
+            "composition": [
+              "dense_3d",
+              "local_detail",
+              "object_sequence"
+            ]
+          },
+          "transfer": "同一对象在图像、几何和局部细节中保持身份对应；大尺寸实体占据主要区域。",
+          "forbidden": "不迁移 hash-grid SDF、数值梯度、体渲染或七列固定流程。"
+        },
+        {
+          "anchor_id": "diffdock",
+          "score": 0.2333,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.0,
+            "topology": 0.3333333333333333,
+            "composition": 1.0
+          },
+          "matched": {
+            "objects": [],
+            "topology": [
+              "geometric_transform"
+            ],
+            "composition": [
+              "dense_3d",
+              "local_detail",
+              "object_sequence"
+            ]
+          },
+          "transfer": "分子/蛋白实体、同一构型的状态序列，以及局部几何解释形成密集科学叙事。",
+          "forbidden": "不迁移扭转扩散、置信网络或训练损失，除非新论文独立支持。"
+        },
+        {
+          "anchor_id": "react",
+          "score": 0.05,
+          "components": {
+            "domain": 0.0,
+            "objects": 0.0,
+            "topology": 0.0,
+            "composition": 0.3333333333333333
+          },
+          "matched": {
+            "objects": [],
+            "topology": [],
+            "composition": [
+              "local_detail"
+            ]
+          },
+          "transfer": "用具体任务、动作载体和返回内容解释决策；反馈线具有明确起点和落点。",
+          "forbidden": "不把所有方法改为 Thought–Action–Observation，不迁移示例商店、价格或距离。"
+        }
+      ],
+      "selected_anchor": "neuralangelo",
+      "match_strength": "partial-visual-grammar",
+      "weak_match_requires_source_specific_layout": true,
+      "admission": "not_admitted",
+      "sealed_evaluation_eligible": false
+    }
+  ]
+}

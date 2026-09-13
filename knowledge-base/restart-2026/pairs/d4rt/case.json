@@ -1,0 +1,93 @@
+{
+  "id": "d4rt",
+  "title": "Efficiently Reconstructing Dynamic Scenes One D4RT at a Time",
+  "venue": "CVPR",
+  "year": 2026,
+  "category": "geometry-4d",
+  "selected_anchor": "neuralangelo",
+  "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_Efficiently_Reconstructing_Dynamic_Scenes_One_D4RT_at_a_Time_CVPR_2026_paper.html",
+  "source_pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhang_Efficiently_Reconstructing_Dynamic_Scenes_One_D4RT_at_a_Time_CVPR_2026_paper.pdf",
+  "source_visual_review": "assistant inspected original PDF p2 Figure 2 at rendered resolution",
+  "source_review_scope": "PDF p2 Fig.2, §2.1–2.2, p3 camera recovery",
+  "pair_status": "generated_draft_pending_review",
+  "admission": "not_admitted",
+  "user_approval": "pending",
+  "publication_allowed": false,
+  "prompt": "pairs/d4rt/prompt.txt",
+  "image": "pairs/d4rt/figure.png",
+  "prompt_sha256": "121c305e6fa01d781a4c5e05e3dd8459c4c336e8ec80244b2f94ffa1ffe47479",
+  "image_sha256": "c18d0b15c293673fb9f1fd2bbe7f96c83d7d076476706375a916e2de9b90859d",
+  "prompt_characters": 29741,
+  "prompt_nonwhitespace_characters": 24979,
+  "template": "../cases/neuralangelo/prompt.txt",
+  "template_sha256": "26cd1f2ded9cba261d2e5eea030e935c5e19582f1370430fa3928afcb4d21cd6",
+  "template_nonwhitespace_characters": 20509,
+  "tool_max_prompt_characters": 32000,
+  "exact_production_text_saved": true,
+  "generation_tool": "built-in image_gen",
+  "provider_model_id": null,
+  "seed": null,
+  "cost": null,
+  "successful_image_calls": 3,
+  "assistant_visual_review": "provisional; not human evaluation or admission",
+  "scientific_checks": [
+    "Independent query calls remain separate and reuse F.",
+    "Five embedding summands; source patch is not a sixth summand.",
+    "Both coordinate clouds feed Umeyama, whose output is relative camera pose."
+  ],
+  "remaining_review_notes": [
+    "Small labels require full-size viewing; schematic geometry is not a measured output."
+  ],
+  "density_diagnostic": {
+    "size": [
+      1585,
+      992
+    ],
+    "near_white_pixel_fraction": 0.6217468454258676,
+    "contrast_grid_occupied_fraction": 0.6933333333333334,
+    "largest_low_contrast_rectangle_fraction": 0.03833333333333333,
+    "grid": [
+      60,
+      40
+    ],
+    "contrast_threshold": 28,
+    "tile_edge_fraction_threshold": 0.035,
+    "role": "diagnostic only; flat fills excluded, text/borders/texture still contribute; no automatic quality/admission verdict"
+  },
+  "all_scientific_pixels": "generated conceptual illustration",
+  "sealed_evaluation_eligible": false,
+  "length_floor_pass": true,
+  "tool_length_pass": true,
+  "versions": [
+    {
+      "version": 1,
+      "prompt": "prompt.v1.txt",
+      "image": "figure.v1.png",
+      "prompt_sha256": "3ded873efc1cd825e09a47320ec700e9d8633db91743f0a63b70b58fc97cb66f",
+      "image_sha256": "481d9ab573830e2cc37ca026b2e961eadf4cbb5896c5d631bd8c4ba0f6eaf4f9",
+      "generated_original_filename": "exec-912a06cb-2a33-42f5-acd3-047149b76368.png",
+      "reference_image": "neuralangelo/figure.png",
+      "selected_for_review": false
+    },
+    {
+      "version": 2,
+      "prompt": "prompt.v2.txt",
+      "image": "figure.v2.png",
+      "prompt_sha256": "64350e5c3bf1c1d96ea237ed76d4dbc63d606658f7b49d84221a88a679553594",
+      "image_sha256": "c24df872c9b5e4780d7fcfe679e8f6c4a4d96b448e6f030a3d90cc964329c24b",
+      "generated_original_filename": "exec-af615861-0644-4131-8fbe-246ab8adf7ad.png",
+      "reference_image": "d4rt/figure.v1.png",
+      "selected_for_review": false
+    },
+    {
+      "version": 3,
+      "prompt": "prompt.txt",
+      "image": "figure.png",
+      "prompt_sha256": "121c305e6fa01d781a4c5e05e3dd8459c4c336e8ec80244b2f94ffa1ffe47479",
+      "image_sha256": "c18d0b15c293673fb9f1fd2bbe7f96c83d7d076476706375a916e2de9b90859d",
+      "generated_original_filename": "exec-1dd029f9-b1de-4389-8c3b-c20c32f765db.png",
+      "reference_image": "d4rt/figure.v2.png",
+      "selected_for_review": true
+    }
+  ]
+}

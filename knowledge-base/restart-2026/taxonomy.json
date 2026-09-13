@@ -1,0 +1,24 @@
+{
+  "categories": {
+    "geometry-4d": "三维重建与动态几何",
+    "agents-retrieval": "智能体、工具与检索",
+    "molecular-science": "分子建模与 AI for Science",
+    "visual-generation": "图像、视频生成与编辑",
+    "embodied-control": "具身控制与世界模型",
+    "visual-perception": "视觉理解、分割与空间定位"
+  },
+  "axes": [
+    "category",
+    "objects",
+    "topology",
+    "composition"
+  ],
+  "retrieval_weights": {
+    "domain": 0.3,
+    "objects": 0.3,
+    "topology": 0.25,
+    "composition": 0.15
+  },
+  "minimum_match": 0.5,
+  "score_role": "retrieval heuristic; not a quality score"
+}

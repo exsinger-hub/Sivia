@@ -1,122 +1,84 @@
-# Sivia 科研绘图知识库
+# 科研绘图知识库 · 条件匹配重启版
 
-本知识库现有 **42 对实际生成 PNG + 完整生产 prompt**：6 对早期整理案例、12 对先前论文来源案例，以及本轮新增的 24 对。36 对论文来源案例覆盖 ICLR、CVPR、ICCV、NeurIPS、ICML、AAAI、CoRL 与 RSS 等会议。
+本地审阅版，尚未推送。当前有效参考池是用户认可的 **Neuralangelo、ReAct、DiffDock 3 对**；其余 **39 对**保留为历史排除项。原先“42 对全部通过”的结论只代表旧数值筛查，不能代表用户认可或科学质量。
 
-## 纳入门槛
+[打开图文审阅页](restart-2026/gallery.html) · [机器索引](index.json) · [SQLite 条件匹配数据库](restart-2026/conditional.sqlite) · [24 篇候选](restart-2026/candidates.json) · [历史排除项](archive/excluded-39.json)
 
-所有 42 对均通过同一低空白率数值筛查：32×20 内容网格占用率不低于 78%，且最大连续空区不高于画布的 10%。数值筛查只用于发现空白布局问题；论文来源案例还经过实际 PNG 目视检查。完整指标见 [`audit/`](audit/)，机器可读总索引见 [`index.json`](index.json)。
+本轮已完成 3 个实际生成试配对；其余 21 篇尚未生成。新入库为 0，全部等待审阅。
 
-每个案例必须同时包含 `figure.png` 与生成它的完整 `prompt.txt`。论文来源图是重新设计并生成的概念示意，不是论文原图、实验结果或人工 gold。
+## 条件匹配
 
-## 按大类浏览
+[按新需求的条件直接查询：命令、词表与增广流程](restart-2026/retrieval-guide.md)
 
-<a id="multimodal-foundation"></a>
+按领域、科学对象、机制拓扑、构图形式四个维度匹配，仅检索用户认可的历史参考。默认权重 0.30 / 0.30 / 0.25 / 0.15；匹配值低于 0.5 时不自动选择参考。该值是可解释的检索启发式，不是视觉质量分数。
 
-### 多模态与基础表征
+```bash
+python scripts/restart_conditional_kb.py --query d4rt
+python scripts/validate_knowledge_base.py
+```
 
-Multimodal and foundation representations。共 7 对。
+每条记录保留借鉴内容、禁止迁移的科学内容和弱匹配提示。现有三个参考覆盖有限；弱匹配的生成、机器人等候选仍需新论文图形支持，不能强行套版。
 
-| 案例 | 来源层级 | 实际成图 | 完整 prompt |
+## 三个试配对
+
+| 新论文 | 匹配参考 | 完整 prompt | 状态 |
 | --- | --- | --- | --- |
-| [BLIP-2: Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models](cases/blip2/README.md) | 论文来源·新增 24 | [PNG](cases/blip2/figure.png) | [TXT](cases/blip2/prompt.txt) |
-| [Flamingo: a Visual Language Model for Few-Shot Learning](cases/flamingo/README.md) | 论文来源·新增 24 | [PNG](cases/flamingo/figure.png) | [TXT](cases/flamingo/prompt.txt) |
-| [Image BERT Pre-training with Online Tokenizer](cases/ibot/README.md) | 论文来源·先前批次 | [PNG](cases/ibot/figure.png) | [TXT](cases/ibot/prompt.txt) |
-| [InstructBLIP: Towards General-purpose Vision-Language Models with Instruction Tuning](cases/instructblip/README.md) | 论文来源·新增 24 | [PNG](cases/instructblip/figure.png) | [TXT](cases/instructblip/prompt.txt) |
-| [Visual Instruction Tuning](cases/llava/README.md) | 论文来源·新增 24 | [PNG](cases/llava/figure.png) | [TXT](cases/llava/prompt.txt) |
-| [TRACE](cases/trace/README.md) | 早期整理 | [PNG](cases/trace/figure.png) | [TXT](cases/trace/prompt.txt) |
-| [Visio Memory Routing](cases/visio-memory-routing/README.md) | 早期整理 | [PNG](cases/visio-memory-routing/figure.png) | [TXT](cases/visio-memory-routing/prompt.txt) |
+| [d4rt](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_Efficiently_Reconstructing_Dynamic_Scenes_One_D4RT_at_a_Time_CVPR_2026_paper.html) · CVPR 2026 | neuralangelo | [全文](restart-2026/pairs/d4rt/prompt.txt) · 24,979 非空白字符 | 实际草图，未入库 |
+| [autotool](https://ojs.aaai.org/index.php/AAAI/article/view/40389) · AAAI 2026 | react | [全文](restart-2026/pairs/autotool/prompt.txt) · 24,434 非空白字符 | 实际草图，未入库 |
+| [sigmadock](https://proceedings.iclr.cc/paper_files/paper/2026/hash/4c1516dc8f1643c94d164a436ce8fe51-Abstract-Conference.html) · ICLR 2026 | diffdock | [全文](restart-2026/pairs/sigmadock/prompt.txt) · 25,096 非空白字符 | 实际草图，未入库 |
 
-<a id="generative-control"></a>
+## 六大类候选
 
-### 生成建模与可控编辑
+近期范围按会议论文集版本为 **2025-09-13—2026-09-13**。原始预印本首次公开日期尚未逐篇核对；历史参考不计入近期新增。下面是候选，不是已评定的优秀源图名单。
 
-Generative modeling and control。共 6 对。
+### 三维重建与动态几何
 
-| 案例 | 来源层级 | 实际成图 | 完整 prompt |
-| --- | --- | --- | --- |
-| [Anywhere: A Multi-Agent Framework for User-Guided, Reliable, and Diverse Foreground-Conditioned Image Generation](cases/anywhere/README.md) | 论文来源·先前批次 | [PNG](cases/anywhere/figure.png) | [TXT](cases/anywhere/prompt.txt) |
-| [Adding Conditional Control to Text-to-Image Diffusion Models](cases/controlnet/README.md) | 论文来源·新增 24 | [PNG](cases/controlnet/figure.png) | [TXT](cases/controlnet/prompt.txt) |
-| [Scalable Diffusion Models with Transformers](cases/dit/README.md) | 论文来源·新增 24 | [PNG](cases/dit/figure.png) | [TXT](cases/dit/prompt.txt) |
-| [DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation](cases/dreambooth/README.md) | 论文来源·新增 24 | [PNG](cases/dreambooth/figure.png) | [TXT](cases/dreambooth/prompt.txt) |
-| [Leveraging RGB-D Data with Cross-Modal Context Mining for Glass Surface Detection](cases/glass/README.md) | 论文来源·先前批次 | [PNG](cases/glass/figure.png) | [TXT](cases/glass/prompt.txt) |
-| [High-Resolution Image Synthesis with Latent Diffusion Models](cases/latent-diffusion/README.md) | 论文来源·新增 24 | [PNG](cases/latent-diffusion/figure.png) | [TXT](cases/latent-diffusion/prompt.txt) |
+- [Efficiently Reconstructing Dynamic Scenes One D4RT at a Time](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_Efficiently_Reconstructing_Dynamic_Scenes_One_D4RT_at_a_Time_CVPR_2026_paper.html) — CVPR 2026；已生成试配对。
+- [FUSER: Feed-Forward Multiview 3D Registration Transformer and SE(3)$^N$ Diffusion Refinement](https://openaccess.thecvf.com/content/CVPR2026/html/Jiang_FUSER_Feed-Forward_Multiview_3D_Registration_Transformer_and_SE3N_Diffusion_Refinement_CVPR_2026_paper.html) — CVPR 2026；待源图审阅与生成。
+- [4D Primitive-Mache: Glueing Primitives for Persistent 4D Scene Reconstruction](https://openaccess.thecvf.com/content/CVPR2026/html/Mazur_4D_Primitive-Mache_Glueing_Primitives_for_Persistent_4D_Scene_Reconstruction_CVPR_2026_paper.html) — CVPR 2026；待源图审阅与生成。
+- [Residual Primitive Fitting of 3D Shapes with SuperFrusta](https://openaccess.thecvf.com/content/CVPR2026/html/Ganeshan_Residual_Primitive_Fitting_of_3D_Shapes_with_SuperFrusta_CVPR_2026_paper.html) — CVPR 2026；待源图审阅与生成。
 
-<a id="detection-segmentation"></a>
+### 智能体、工具与检索
 
-### 检测、分割与密集预测
+- [AutoTool: Efficient Tool Selection for Large Language Model Agents](https://ojs.aaai.org/index.php/AAAI/article/view/40389) — AAAI 2026；已生成试配对。
+- [Mobile-Agent-RAG: Driving Smart Multi-Agent Coordination with Contextual Knowledge Empowerment for Long-Horizon Mobile Automation](https://ojs.aaai.org/index.php/AAAI/article/view/40241) — AAAI 2026；待源图审阅与生成。
+- [AI-Researcher: Autonomous Scientific Innovation](https://proceedings.neurips.cc/paper_files/paper/2025/hash/0d904d300a105809a2114d727851e759-Abstract-Conference.html) — NeurIPS 2025；待源图审阅与生成。
+- [AI Research Agents for Machine Learning: Search, Exploration, and Generalization in MLE-bench](https://proceedings.neurips.cc/paper_files/paper/2025/hash/328b81881da145412f2bc56c998dfb6a-Abstract-Conference.html) — NeurIPS 2025；待源图审阅与生成。
 
-Detection, segmentation and dense prediction。共 7 对。
+### 分子建模与 AI for Science
 
-| 案例 | 来源层级 | 实际成图 | 完整 prompt |
-| --- | --- | --- | --- |
-| [Putting the Object Back into Video Object Segmentation](cases/cutie/README.md) | 论文来源·先前批次 | [PNG](cases/cutie/figure.png) | [TXT](cases/cutie/prompt.txt) |
-| [Divide, Conquer and Combine: A Training-Free Framework for High-Resolution Image Perception in Multimodal Large Language Models](cases/dc2/README.md) | 论文来源·先前批次 | [PNG](cases/dc2/figure.png) | [TXT](cases/dc2/prompt.txt) |
-| [Depth Anything: Unleashing the Power of Large-Scale Unlabeled Data](cases/depth-anything/README.md) | 论文来源·先前批次 | [PNG](cases/depth-anything/figure.png) | [TXT](cases/depth-anything/prompt.txt) |
-| [Masked-Attention Mask Transformer for Universal Image Segmentation](cases/mask2former/README.md) | 论文来源·新增 24 | [PNG](cases/mask2former/figure.png) | [TXT](cases/mask2former/prompt.txt) |
-| [Segment Anything](cases/segment-anything/README.md) | 论文来源·新增 24 | [PNG](cases/segment-anything/figure.png) | [TXT](cases/segment-anything/prompt.txt) |
-| [Tube-Link: A Flexible Cross Tube Framework for Universal Video Segmentation](cases/tube-link/README.md) | 论文来源·新增 24 | [PNG](cases/tube-link/figure.png) | [TXT](cases/tube-link/prompt.txt) |
-| [VideoGrounding-DINO: Towards Open-Vocabulary Spatio-Temporal Video Grounding](cases/video-grounding-dino/README.md) | 论文来源·新增 24 | [PNG](cases/video-grounding-dino/figure.png) | [TXT](cases/video-grounding-dino/prompt.txt) |
+- [SigmaDock: Untwisting Molecular Docking with Fragment-Based SE(3) Diffusion](https://proceedings.iclr.cc/paper_files/paper/2026/hash/4c1516dc8f1643c94d164a436ce8fe51-Abstract-Conference.html) — ICLR 2026；已生成试配对。
+- [Scalable Spatio-Temporal SE(3) Diffusion for Long-Horizon Protein Dynamics](https://proceedings.iclr.cc/paper_files/paper/2026/hash/f1f2ecd9db4c1faaa2ba9c716dc3e413-Abstract-Conference.html) — ICLR 2026；待源图审阅与生成。
+- [Graph Diffusion Transformers are In-Context Molecular Designers](https://proceedings.iclr.cc/paper_files/paper/2026/hash/a6b41bed7b8c1abfcf34591d7ae13424-Abstract-Conference.html) — ICLR 2026；待源图审阅与生成。
+- [DynaPhArM: Adaptive and Physics-Constrained Modeling for Target-Drug Complexes with Drug-Specific Adaptations](https://proceedings.neurips.cc/paper_files/paper/2025/hash/027af285dc29d3388002c2d223ab1772-Abstract-Conference.html) — NeurIPS 2025；待源图审阅与生成。
 
-<a id="three-d-reconstruction"></a>
+### 图像、视频生成与编辑
 
-### 三维表示、重建与分子空间
+- [ThinkGen: Generalized Thinking for Visual Generation](https://openaccess.thecvf.com/content/CVPR2026/html/Jiao_ThinkGen_Generalized_Thinking_for_Visual_Generation_CVPR_2026_paper.html) — CVPR 2026；待源图审阅与生成。
+- [Learning to Generate Highly Dynamic Videos using Synthetic Motion Data](https://openaccess.thecvf.com/content/CVPR2026/html/Jin_Learning_to_Generate_Highly_Dynamic_Videos_using_Synthetic_Motion_Data_CVPR_2026_paper.html) — CVPR 2026；待源图审阅与生成。
+- [SeeU: Seeing the Unseen World via 4D Dynamics-aware Generation](https://openaccess.thecvf.com/content/CVPR2026/html/Yuan_SeeU_Seeing_the_Unseen_World_via_4D_Dynamics-aware_Generation_CVPR_2026_paper.html) — CVPR 2026；待源图审阅与生成。
+- [AR-RAG: Autoregressive Retrieval Augmentation for Image Generation](https://proceedings.neurips.cc/paper_files/paper/2025/hash/294fe7aabe8f67e8aca8c0eab2bcfbc4-Abstract-Conference.html) — NeurIPS 2025；待源图审阅与生成。
 
-3D representation, reconstruction and molecular space。共 6 对。
+### 具身控制与世界模型
 
-| 案例 | 来源层级 | 实际成图 | 完整 prompt |
-| --- | --- | --- | --- |
-| [3DGStream: On-the-Fly Training of 3D Gaussians for Efficient Streaming of Photo-Realistic Free-Viewpoint Videos](cases/3dgstream/README.md) | 论文来源·新增 24 | [PNG](cases/3dgstream/figure.png) | [TXT](cases/3dgstream/prompt.txt) |
-| [DiffDock: Diffusion Steps, Twists, and Turns for Molecular Docking](cases/diffdock/README.md) | 论文来源·先前批次 | [PNG](cases/diffdock/figure.png) | [TXT](cases/diffdock/prompt.txt) |
-| [DUSt3R: Geometric 3D Vision Made Easy](cases/dust3r/README.md) | 论文来源·先前批次 | [PNG](cases/dust3r/figure.png) | [TXT](cases/dust3r/prompt.txt) |
-| [GaussianDreamer: Fast Generation from Text to 3D Gaussians by Bridging 2D and 3D Diffusion Models](cases/gaussian-dreamer/README.md) | 论文来源·新增 24 | [PNG](cases/gaussian-dreamer/figure.png) | [TXT](cases/gaussian-dreamer/prompt.txt) |
-| [Mip-NeRF 360: Unbounded Anti-Aliased Neural Radiance Fields](cases/mipnerf360/README.md) | 论文来源·新增 24 | [PNG](cases/mipnerf360/figure.png) | [TXT](cases/mipnerf360/prompt.txt) |
-| [Neuralangelo: High-Fidelity Neural Surface Reconstruction](cases/neuralangelo/README.md) | 论文来源·新增 24 | [PNG](cases/neuralangelo/figure.png) | [TXT](cases/neuralangelo/prompt.txt) |
+- [Cosmos Policy: Fine-Tuning Video Models for Visuomotor Control and Planning](https://proceedings.iclr.cc/paper_files/paper/2026/hash/748becc400a57c0e31cfe6a2e7951467-Abstract-Conference.html) — ICLR 2026；待源图审阅与生成。
+- [WorldGym: World Model as An Environment for Policy Evaluation](https://proceedings.iclr.cc/paper_files/paper/2026/hash/7f5e909ac0324db03506b380c695ffaf-Abstract-Conference.html) — ICLR 2026；待源图审阅与生成。
+- [Scaling up Memory for Robotic Control via Experience Retrieval](https://proceedings.iclr.cc/paper_files/paper/2026/hash/9da515b1ad19d032a7398f00f5ff9b0c-Abstract-Conference.html) — ICLR 2026；待源图审阅与生成。
+- [Policy Contrastive Decoding for Robotic Foundation Models](https://proceedings.iclr.cc/paper_files/paper/2026/hash/b6d67c380f8bde2adc4247d0036c0c73-Abstract-Conference.html) — ICLR 2026；待源图审阅与生成。
 
-<a id="agents-reasoning"></a>
+### 视觉理解、分割与空间定位
 
-### 智能体、工具使用与推理
+- [SegGraph: Leveraging Graphs of SAM Segments for Few-Shot 3D Part Segmentation](https://proceedings.neurips.cc/paper_files/paper/2025/hash/13388efc819c09564c66ab2dc8463809-Abstract-Conference.html) — NeurIPS 2025；待源图审阅与生成。
+- [RoboRefer: Towards Spatial Referring with Reasoning in Vision-Language Models for Robotics](https://proceedings.neurips.cc/paper_files/paper/2025/hash/29416b66c2149872b9d1415a3fd2c5e0-Abstract-Conference.html) — NeurIPS 2025；待源图审阅与生成。
+- [MS-Temba: Multi-Scale Temporal Mamba for Understanding Long Untrimmed Videos](https://openaccess.thecvf.com/content/CVPR2026/html/Sinha_MS-Temba_Multi-Scale_Temporal_Mamba_for_Understanding_Long_Untrimmed_Videos_CVPR_2026_paper.html) — CVPR 2026；待源图审阅与生成。
+- [Guardians of the Hair: Rescuing Soft Boundaries in Depth, Stereo, and Novel Views](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_Guardians_of_the_Hair_Rescuing_Soft_Boundaries_in_Depth_Stereo_CVPR_2026_paper.html) — CVPR 2026；待源图审阅与生成。
 
-Agents, tool use and reasoning。共 9 对。
+## 入库与长度要求
 
-| 案例 | 来源层级 | 实际成图 | 完整 prompt |
-| --- | --- | --- | --- |
-| [Agent Fleet](cases/agent-fleet/README.md) | 早期整理 | [PNG](cases/agent-fleet/figure.png) | [TXT](cases/agent-fleet/prompt.txt) |
-| [ReAct: Synergizing Reasoning and Acting in Language Models](cases/react/README.md) | 论文来源·新增 24 | [PNG](cases/react/figure.png) | [TXT](cases/react/prompt.txt) |
-| [Reasoning Between Words](cases/reasoning-between-words/README.md) | 早期整理 | [PNG](cases/reasoning-between-words/figure.png) | [TXT](cases/reasoning-between-words/prompt.txt) |
-| [Reflexion: Language Agents with Verbal Reinforcement Learning](cases/reflexion/README.md) | 论文来源·新增 24 | [PNG](cases/reflexion/figure.png) | [TXT](cases/reflexion/prompt.txt) |
-| [Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection](cases/self-rag/README.md) | 论文来源·先前批次 | [PNG](cases/self-rag/figure.png) | [TXT](cases/self-rag/prompt.txt) |
-| [Toolformer: Language Models Can Teach Themselves to Use Tools](cases/toolformer/README.md) | 论文来源·新增 24 | [PNG](cases/toolformer/figure.png) | [TXT](cases/toolformer/prompt.txt) |
-| [Tree of Thoughts: Deliberate Problem Solving with Large Language Models](cases/tree-of-thoughts/README.md) | 论文来源·新增 24 | [PNG](cases/tree-of-thoughts/figure.png) | [TXT](cases/tree-of-thoughts/prompt.txt) |
-| [Two-phase Trust / Repair](cases/two-phase-trust-repair/README.md) | 早期整理 | [PNG](cases/two-phase-trust-repair/figure.png) | [TXT](cases/two-phase-trust-repair/prompt.txt) |
-| [Visual Programming: Compositional Visual Reasoning Without Training](cases/visprog/README.md) | 论文来源·先前批次 | [PNG](cases/visprog/figure.png) | [TXT](cases/visprog/prompt.txt) |
+- 科学对象、细节和必要连线应充分占据画面；浅色底板、空框、边框和大标题不能代替有效内容。
+- 长度下限为匹配参考完整 prompt 的非空白 Unicode 字符数，接口上限为 32,000 总字符；提交前两项都检查，实际提交全文必须与保存文件一致。
+- 自动对比度网格只辅助找空白，不能判定科学正确性、图形美学或用户认可。
+- 标签、端点、对象身份及训练/推理范围需单独核对。所有草图保留修订历史和剩余问题。
+- 用户确认后才允许新条目入库和推送；当前 publication_allowed=false。不启动模型实验。
 
-<a id="structured-robotics"></a>
-
-### 时序、图学习、世界模型与机器人
-
-Time series, graphs, world models and robotics。共 7 对。
-
-| 案例 | 来源层级 | 实际成图 | 完整 prompt |
-| --- | --- | --- | --- |
-| [Diffusion Policy: Visuomotor Policy Learning via Action Diffusion](cases/diffusion-policy/README.md) | 论文来源·新增 24 | [PNG](cases/diffusion-policy/figure.png) | [TXT](cases/diffusion-policy/prompt.txt) |
-| [EventBridge-RL](cases/eventbridge-rl/README.md) | 早期整理 | [PNG](cases/eventbridge-rl/figure.png) | [TXT](cases/eventbridge-rl/prompt.txt) |
-| [Recipe for a General, Powerful, Scalable Graph Transformer](cases/graphgps/README.md) | 论文来源·新增 24 | [PNG](cases/graphgps/figure.png) | [TXT](cases/graphgps/prompt.txt) |
-| [A Time Series is Worth 64 Words: Long-term Forecasting with Transformers](cases/patchtst/README.md) | 论文来源·新增 24 | [PNG](cases/patchtst/figure.png) | [TXT](cases/patchtst/prompt.txt) |
-| [PDFormer: Propagation Delay-Aware Dynamic Long-Range Transformer for Traffic Flow Prediction](cases/pdformer/README.md) | 论文来源·先前批次 | [PNG](cases/pdformer/figure.png) | [TXT](cases/pdformer/prompt.txt) |
-| [RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control](cases/rt2/README.md) | 论文来源·新增 24 | [PNG](cases/rt2/figure.png) | [TXT](cases/rt2/prompt.txt) |
-| [Learning Interactive Real-World Simulators](cases/unisim/README.md) | 论文来源·先前批次 | [PNG](cases/unisim/figure.png) | [TXT](cases/unisim/prompt.txt) |
-
-## 使用方式
-
-1. 先按任务大类选择结构接近的案例，同时查看 PNG 与完整 prompt。
-2. 借鉴版式、信息密度、对象层级、配色和连线约束；不要照搬案例的方法名、公式、示意数值或实验结论。
-3. 用目标论文的真实贡献、模块与依赖关系重写完整 prompt，并保留明确的低空白率约束。
-4. 生成后先检查空白占比、裁切、文字、箭头、输入输出与科学关系，再决定是否入库。
-
-## 数据与评测边界
-
-36 个论文来源家族及其衍生图只用于学习和开发，必须排除在未来封闭评测之外；列表见 [`evaluation-exclusions.json`](evaluation-exclusions.json)。详细生成调用说明见 [`generation-summary.json`](generation-summary.json)。生成图不能充当定量曲线、消融、基准结果、用户研究或人工标注。
-
-## 共建
-
-欢迎通过 [Issue](https://github.com/exsinger-hub/Sivia/issues/new?template=knowledge-base.md) 或 [Pull Request](CONTRIBUTING.md) 提交有权公开的图文配对案例。投稿应包含最终 PNG、对应完整 prompt、来源与有价值的修改记录。代码的 MIT 许可不会自动覆盖第三方来源素材。
+源论文 PDF/网页的本地检查缓存不纳入发布包；保留官方链接和已取得的校验散列。所有已接触源论文家族和衍生物均排除未来封闭评测。生成概念图不能作为实测结果或人类金标准。

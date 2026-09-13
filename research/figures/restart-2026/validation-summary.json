@@ -1,0 +1,18 @@
+{
+  "date": "2026-09-13",
+  "structural_provenance_checks": {"passed": 179, "failed": 0, "report": "structural-validation.json"},
+  "retrieval_checks": {"passed": 11, "failed": 0, "read_only_database_bytes_preserved": true, "report": "review-validation.json"},
+  "prompt_length_unit_tests": {"command": "python -m unittest discover -s tests -p test_prompt_length.py", "passed": 7, "failed": 0},
+  "repository_node_tests": {"command": "node --test", "passed": 40, "failed": 0, "skipped": 0},
+  "git_staged_pair_byte_checks": {"passed": 32, "failed": 0, "command": "python research/figures/restart-2026/verify_staged_pairs.py"},
+  "gallery": {"static_links_checked": 16, "exact_full_prompt_embeds": 3, "browser_render_test": "not executed; Browser Use URL policy blocked the local file URL"},
+  "scientific_quality": "Draft visual review only. AutoTool maintenance arrow direction and source-figure visual assessment remain pending; SigmaDock angle annotations require precision correction.",
+  "actual_current_pairs": 3,
+  "new_admitted_pairs": 0,
+  "source_candidates": 24,
+  "remaining_pairs_to_generate": 21,
+  "successful_image_generation_calls": 13,
+  "failed_image_generation_calls": 2,
+  "experimental_model_calls": 0,
+  "scope": "Engineering validation and conceptual illustration production, not experimental performance or human evaluation."
+}

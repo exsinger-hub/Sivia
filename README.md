@@ -18,9 +18,9 @@ Sivia is a scientific-figure plugin for **Codex and Claude Code**. It reads your
 
 **The default first delivery is an image, its complete prompt and a short design explanation—not a presentation.**
 
-![Agent Fleet — an ImageGen knowledge-base example](knowledge-base/cases/agent-fleet/figure.png)
+![Neuralangelo — an ImageGen knowledge-base example](knowledge-base/cases/neuralangelo/figure.png)
 
-<p align="center">Knowledge-base example, not a claim that every pixel is native-editable. <a href="knowledge-base/cases/agent-fleet/prompt.txt">Full prompt</a> · <a href="knowledge-base/cases/agent-fleet/README.md">Case notes</a></p>
+<p align="center">Knowledge-base example, not a claim that every pixel is native-editable. <a href="knowledge-base/cases/neuralangelo/prompt.txt">Full prompt</a> · <a href="knowledge-base/cases/neuralangelo/README.md">Case notes</a></p>
 
 ## Why Sivia?
 
@@ -128,18 +128,11 @@ Run from the plugin root. Add `--crop-px LEFT TOP RIGHT BOTTOM` to evaluate a cr
 
 ## Knowledge base
 
-The knowledge base now contains **42 actual image–prompt pairs**, including **36 paper-sourced conceptual examples** and 24 new pairs from major AI conferences. Every pair passes the low-whitespace admission screen; paper-sourced examples also received visual review.
+The active reference pool has **3 user-approved historical pairs**: Neuralangelo, ReAct and DiffDock. The other 39 of the previous 42 pairs are archived as excluded references. The earlier density screen did not establish visual acceptance.
 
-| Category | Pairs |
-| --- | ---: |
-| [Multimodal and foundation representations](knowledge-base/README.md#multimodal-foundation) | 7 |
-| [Generative modeling and control](knowledge-base/README.md#generative-control) | 6 |
-| [Detection, segmentation and dense prediction](knowledge-base/README.md#detection-segmentation) | 7 |
-| [3D representation, reconstruction and molecular space](knowledge-base/README.md#three-d-reconstruction) | 6 |
-| [Agents, tool use and reasoning](knowledge-base/README.md#agents-reasoning) | 9 |
-| [Time series, graphs, world models and robotics](knowledge-base/README.md#structured-robotics) | 7 |
+This local restart contains **24 recent main-conference candidates in six categories** and **3 actual generated calibration pairs**, all pending review; 21 candidates have not yet been generated. No new pair is admitted and nothing from this restart has been pushed. Conference-edition window: 2025-09-13 through 2026-09-13; first-preprint dates remain unverified.
 
-Browse the complete categorized [knowledge-base index](knowledge-base/README.md), or use the machine-readable [`index.json`](knowledge-base/index.json). Each case includes the generated PNG, the exact full prompt and source/quality notes. Source families and derivatives are learning assets and are excluded from future sealed evaluation.
+Conditional retrieval uses domain, scientific objects, topology and composition, with explicit transfer boundaries and a no-match outcome. Browse the [review gallery](knowledge-base/restart-2026/gallery.html), [classified knowledge base](knowledge-base/README.md) or [active index](knowledge-base/index.json). Full submitted prompts, reference bindings and revision notes accompany each draft.
 
 ## Limitations
 

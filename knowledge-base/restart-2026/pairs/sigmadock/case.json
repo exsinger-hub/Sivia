@@ -1,0 +1,104 @@
+{
+  "id": "sigmadock",
+  "title": "SigmaDock: Untwisting Molecular Docking with Fragment-Based SE(3) Diffusion",
+  "venue": "ICLR",
+  "year": 2026,
+  "category": "molecular-science",
+  "selected_anchor": "diffdock",
+  "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/4c1516dc8f1643c94d164a436ce8fe51-Abstract-Conference.html",
+  "source_pdf": "https://proceedings.iclr.cc/paper_files/paper/2026/file/4c1516dc8f1643c94d164a436ce8fe51-Paper-Conference.pdf",
+  "source_visual_review": "assistant inspected original PDF p3 Figure 1 and p6 Figure 3; read sections 2.2.3–2.4 and appendix FR3D algorithm",
+  "source_review_scope": "PDF p3 Fig.1, p6 Fig.3, §2.2.3–2.4",
+  "pair_status": "generated_draft_pending_review",
+  "admission": "not_admitted",
+  "user_approval": "pending",
+  "publication_allowed": false,
+  "prompt": "pairs/sigmadock/prompt.txt",
+  "image": "pairs/sigmadock/figure.png",
+  "prompt_sha256": "6259396c2f38c17cef40940a82ed947a3b36491404668f887d93ea870bd74a25",
+  "image_sha256": "f9bfb45cd96528b2a802e6d53374bd1395046de5fbbe169a98c7d1717b5eacd5",
+  "prompt_characters": 29697,
+  "prompt_nonwhitespace_characters": 25096,
+  "template": "../cases/diffdock/prompt.txt",
+  "template_sha256": "9e7e5e37f1809f98189ea8511be21e2c14efc46f729a5ccb7b0213713e14ccfb",
+  "template_nonwhitespace_characters": 23963,
+  "tool_max_prompt_characters": 32000,
+  "exact_production_text_saved": true,
+  "generation_tool": "built-in image_gen",
+  "provider_model_id": null,
+  "seed": null,
+  "cost": null,
+  "successful_image_calls": 4,
+  "assistant_visual_review": "provisional; not human evaluation or admission",
+  "scientific_checks": [
+    "Protein pocket remains fixed; reverse direction is T to 0.",
+    "Local geometry uses A–C and B–D distance associations with a B–C dihedral axis.",
+    "Fragment score and reverse-step roles remain distinct; current-state dependence is labeled."
+  ],
+  "remaining_review_notes": [
+    "Small angle-label artifacts remain in the lower construction; publication typography needs another precision pass.",
+    "Generic molecular graphics were not validated as a chemical structure."
+  ],
+  "density_diagnostic": {
+    "size": [
+      1448,
+      1086
+    ],
+    "near_white_pixel_fraction": 0.6976963208286275,
+    "contrast_grid_occupied_fraction": 0.6983333333333334,
+    "largest_low_contrast_rectangle_fraction": 0.017083333333333332,
+    "grid": [
+      60,
+      40
+    ],
+    "contrast_threshold": 28,
+    "tile_edge_fraction_threshold": 0.035,
+    "role": "diagnostic only; flat fills excluded, text/borders/texture still contribute; no automatic quality/admission verdict"
+  },
+  "all_scientific_pixels": "generated conceptual illustration",
+  "sealed_evaluation_eligible": false,
+  "length_floor_pass": true,
+  "tool_length_pass": true,
+  "versions": [
+    {
+      "version": 1,
+      "prompt": "prompt.v1.txt",
+      "image": "figure.v1.png",
+      "prompt_sha256": "78009695001a271ef0825504ef9cd9d23a06ad068c7cce17abfa3fabb1820465",
+      "image_sha256": "44111115be6f96b479e877f1d45ab5236c504d31bec948815f7c967081c29a39",
+      "generated_original_filename": "exec-331ff9aa-d5e9-42fd-bea9-8dd37cbcaac4.png",
+      "reference_image": "diffdock/figure.png",
+      "selected_for_review": false
+    },
+    {
+      "version": 2,
+      "prompt": "prompt.v2.txt",
+      "image": "figure.v2.png",
+      "prompt_sha256": "a0b73c904a48118db870ed0ddd6d84f9315c4639e7e20a04502b2d19a4bc6d92",
+      "image_sha256": "a0b7515a950b19cdeaccf89781ae0339709b6a1aeaf0d24cccc1053a5512f7f2",
+      "generated_original_filename": "exec-68400a8d-c3a7-4fea-b5a7-d9adde4500ca.png",
+      "reference_image": "sigmadock/figure.v1.png",
+      "selected_for_review": false
+    },
+    {
+      "version": 3,
+      "prompt": "prompt.v3.txt",
+      "image": "figure.v3.png",
+      "prompt_sha256": "cd818a581dc3c9f54f25c3b9213479a498332b36f77bd161b79479954220d575",
+      "image_sha256": "28dcdf28078895cae3770f38eeec44e626507fbb0079e9870fa6a17f3d3e1da1",
+      "generated_original_filename": "exec-8861166a-c3bc-4eea-a9c8-2d31ce5dd2ba.png",
+      "reference_image": "sigmadock/figure.v1.png",
+      "selected_for_review": false
+    },
+    {
+      "version": 4,
+      "prompt": "prompt.txt",
+      "image": "figure.png",
+      "prompt_sha256": "6259396c2f38c17cef40940a82ed947a3b36491404668f887d93ea870bd74a25",
+      "image_sha256": "f9bfb45cd96528b2a802e6d53374bd1395046de5fbbe169a98c7d1717b5eacd5",
+      "generated_original_filename": "exec-4371ce07-1094-4ca9-bf54-c1e853a2b906.png",
+      "reference_image": "sigmadock/figure.v3.png",
+      "selected_for_review": true
+    }
+  ]
+}
