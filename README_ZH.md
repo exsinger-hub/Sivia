@@ -18,9 +18,74 @@ Sivia 是面向 **Codex 与 Claude Code** 的科研绘图插件。它先理解�
 
 **默认第一轮交付图片、完整 prompt 和简短设计说明，不直接制作演示文稿。**
 
-![Neuralangelo：ImageGen 知识库示例](knowledge-base/cases/neuralangelo/figure.png)
+## 科研绘图知识库
 
-<p align="center">知识库成图示例，不代表其中每个像素都是原生可编辑对象。<a href="knowledge-base/cases/neuralangelo/prompt.txt">完整 prompt</a> · <a href="knowledge-base/cases/neuralangelo/README.md">案例说明</a></p>
+当前参考池仅有用户认可的 **Neuralangelo、ReAct、DiffDock 3 对**。上一版 42 对中的其余 39 对已转为历史排除项，旧空白率筛查不代表质量认可。
+
+本地重启版按六大类整理 **24 篇近期主会候选**，完成 **3 个实际生成试配对**，均待审阅；其余 21 篇尚未生成。新入库为 0，本轮尚未推送。近期口径为 2025-09-13—2026-09-13 的会议论文集版本，首次预印本日期尚未逐篇核验。
+
+条件匹配按领域、科学对象、机制拓扑、构图形式检索，记录借鉴与禁止迁移的内容，弱匹配不强行套版。查看[图文审阅页](knowledge-base/restart-2026/gallery.html)、[分类知识库](knowledge-base/README.md)和[有效索引](knowledge-base/index.json)。每张草图附完整实际提交 prompt、参考绑定及修订记录。
+
+### 逐条图片展示
+
+每个条目展示一张对应的当前图片；点击图片可查看原图。
+
+#### 三维重建与动态几何
+
+<table>
+<tr>
+<td width="50%" valign="top" align="center">
+<strong>Neuralangelo</strong><br>
+<sub>已认可参考</sub><br>
+<a href="knowledge-base/cases/neuralangelo/figure.png"><img src="knowledge-base/cases/neuralangelo/figure.png" alt="Neuralangelo — 已认可参考" width="440"></a><br>
+<a href="knowledge-base/cases/neuralangelo/figure.png">查看原图</a> · <a href="knowledge-base/cases/neuralangelo/prompt.txt">完整 prompt</a> · <a href="knowledge-base/cases/neuralangelo/README.md">案例详情</a>
+</td>
+<td width="50%" valign="top" align="center">
+<strong>D4RT</strong><br>
+<sub>待审阅草图 · 未入库</sub><br>
+<a href="knowledge-base/restart-2026/pairs/d4rt/figure.png"><img src="knowledge-base/restart-2026/pairs/d4rt/figure.png" alt="D4RT — 待审阅草图 · 未入库" width="440"></a><br>
+<a href="knowledge-base/restart-2026/pairs/d4rt/figure.png">查看原图</a> · <a href="knowledge-base/restart-2026/pairs/d4rt/prompt.txt">完整 prompt</a> · <a href="knowledge-base/restart-2026/pairs/d4rt/README.md">案例详情</a>
+</td>
+</tr>
+</table>
+
+#### 智能体、工具与检索
+
+<table>
+<tr>
+<td width="50%" valign="top" align="center">
+<strong>ReAct</strong><br>
+<sub>已认可参考</sub><br>
+<a href="knowledge-base/cases/react/figure.png"><img src="knowledge-base/cases/react/figure.png" alt="ReAct — 已认可参考" width="440"></a><br>
+<a href="knowledge-base/cases/react/figure.png">查看原图</a> · <a href="knowledge-base/cases/react/prompt.txt">完整 prompt</a> · <a href="knowledge-base/cases/react/README.md">案例详情</a>
+</td>
+<td width="50%" valign="top" align="center">
+<strong>AutoTool</strong><br>
+<sub>待审阅草图 · 未入库</sub><br>
+<a href="knowledge-base/restart-2026/pairs/autotool/figure.png"><img src="knowledge-base/restart-2026/pairs/autotool/figure.png" alt="AutoTool — 待审阅草图 · 未入库" width="440"></a><br>
+<a href="knowledge-base/restart-2026/pairs/autotool/figure.png">查看原图</a> · <a href="knowledge-base/restart-2026/pairs/autotool/prompt.txt">完整 prompt</a> · <a href="knowledge-base/restart-2026/pairs/autotool/README.md">案例详情</a>
+</td>
+</tr>
+</table>
+
+#### 分子建模与 AI for Science
+
+<table>
+<tr>
+<td width="50%" valign="top" align="center">
+<strong>DiffDock</strong><br>
+<sub>已认可参考</sub><br>
+<a href="knowledge-base/cases/diffdock/figure.png"><img src="knowledge-base/cases/diffdock/figure.png" alt="DiffDock — 已认可参考" width="440"></a><br>
+<a href="knowledge-base/cases/diffdock/figure.png">查看原图</a> · <a href="knowledge-base/cases/diffdock/prompt.txt">完整 prompt</a> · <a href="knowledge-base/cases/diffdock/README.md">案例详情</a>
+</td>
+<td width="50%" valign="top" align="center">
+<strong>SigmaDock</strong><br>
+<sub>待审阅草图 · 未入库</sub><br>
+<a href="knowledge-base/restart-2026/pairs/sigmadock/figure.png"><img src="knowledge-base/restart-2026/pairs/sigmadock/figure.png" alt="SigmaDock — 待审阅草图 · 未入库" width="440"></a><br>
+<a href="knowledge-base/restart-2026/pairs/sigmadock/figure.png">查看原图</a> · <a href="knowledge-base/restart-2026/pairs/sigmadock/prompt.txt">完整 prompt</a> · <a href="knowledge-base/restart-2026/pairs/sigmadock/README.md">案例详情</a>
+</td>
+</tr>
+</table>
 
 ## 为什么使用 Sivia？
 
@@ -124,14 +189,6 @@ python skills/design-scientific-figure/scripts/inspect_raster_asset.py --image r
 ```
 
 在插件根目录运行；加 `--crop-px LEFT TOP RIGHT BOTTOM` 可估算裁图。[素材生产规则](skills/design-scientific-figure/references/asset-production.md)包含像素规划和获授权后的轮廓遮罩后备方案。
-
-## 科研绘图知识库
-
-当前参考池仅有用户认可的 **Neuralangelo、ReAct、DiffDock 3 对**。上一版 42 对中的其余 39 对已转为历史排除项，旧空白率筛查不代表质量认可。
-
-本地重启版按六大类整理 **24 篇近期主会候选**，完成 **3 个实际生成试配对**，均待审阅；其余 21 篇尚未生成。新入库为 0，本轮尚未推送。近期口径为 2025-09-13—2026-09-13 的会议论文集版本，首次预印本日期尚未逐篇核验。
-
-条件匹配按领域、科学对象、机制拓扑、构图形式检索，记录借鉴与禁止迁移的内容，弱匹配不强行套版。查看[图文审阅页](knowledge-base/restart-2026/gallery.html)、[分类知识库](knowledge-base/README.md)和[有效索引](knowledge-base/index.json)。每张草图附完整实际提交 prompt、参考绑定及修订记录。
 
 ## Limitations
 

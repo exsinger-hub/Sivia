@@ -84,8 +84,77 @@ def gallery(records):
     parts.append('''</div><p id="empty">没有符合条件的候选。</p><p class="muted">源论文家族、历史图及其衍生物只用于学习/开发，排除未来封闭评测。本页没有触发 GitHub 推送或入库操作。</p></main><script>const cat=document.getElementById('category'),q=document.getElementById('search');function filter(){let n=0;for(const c of document.querySelectorAll('.candidate')){const show=(!cat.value||c.dataset.category===cat.value)&&c.dataset.search.includes(q.value.trim().toLowerCase());c.hidden=!show;if(show)n++}document.getElementById('empty').style.display=n?'none':'block'}cat.addEventListener('change',filter);q.addEventListener('input',filter);</script></html>''')
     (OUT/'gallery.html').write_text(''.join(parts),encoding='utf-8')
 
+def showcase_entries(records):
+    """Choose one current image per active reference or generated review entry."""
+    index=json.loads((KB/'index.json').read_text(encoding='utf-8'))
+    names={'neuralangelo':'Neuralangelo','react':'ReAct','diffdock':'DiffDock',
+           'd4rt':'D4RT','autotool':'AutoTool','sigmadock':'SigmaDock'}
+    entries=[]
+    for r in index['records']:
+        entries.append({'id':r['id'],'name':names.get(r['id'],r.get('title',r['id'])),
+                        'category':r['category'],'image':r['image'],'prompt':r['prompt'],
+                        'details':r['readme'],'status':'approved_reference',
+                        'selection_reason':'Current image bound to the user-approved reference record.'})
+    seen={e['id'] for e in entries}
+    for r in records:
+        if r['id'] in seen:continue
+        entries.append({'id':r['id'],'name':names.get(r['id'],r.get('title',r['id'])),
+                        'category':r['category'],'image':'restart-2026/'+r['image'],
+                        'prompt':'restart-2026/'+r['prompt'],
+                        'details':f"restart-2026/pairs/{r['id']}/README.md",
+                        'status':'draft_pending_review',
+                        'selection_reason':'Current actual generated review image; remaining quality notes stay in case details.'})
+        seen.add(r['id'])
+    for entry in entries:
+        for key in ['image','prompt','details']:
+            if not (KB/entry[key]).is_file():raise FileNotFoundError(entry[key])
+        entry['image_sha256']=digest(KB/entry['image'])
+    dump(OUT/'readme-showcase.json',{'schema_version':'sivia.readme_showcase.v1',
+         'selection_policy':'One current image per active or generated review entry; excluded history and ungenerated candidates are not showcase entries.',
+         'entries':entries})
+    return entries
+
+def showcase_markup(entries,categories,prefix='',language='zh'):
+    english=language=='en'
+    category_names={
+        'geometry-4d':'3D reconstruction and dynamic geometry',
+        'agents-retrieval':'Agents, tools and retrieval',
+        'molecular-science':'Molecular modeling and AI for Science',
+        'visual-generation':'Image and video generation',
+        'embodied-control':'Embodied control and world models',
+        'visual-perception':'Visual understanding and spatial perception'}
+    status_names={'approved_reference':'Approved reference' if english else '已认可参考',
+                  'draft_pending_review':'Review draft · not admitted' if english else '待审阅草图 · 未入库'}
+    links=['Full-size image','Full prompt','Case details'] if english else ['查看原图','完整 prompt','案例详情']
+    title='### Image gallery' if english else '### 逐条图片展示'
+    intro=('Each entry has its own current image. Click an image to inspect it at full size.' if english else
+           '每个条目展示一张对应的当前图片；点击图片可查看原图。')
+    parts=[title+'\n\n'+intro+'\n\n']
+    for cid,label in categories.items():
+        group=[entry for entry in entries if entry['category']==cid]
+        if not group:continue
+        parts.append('#### '+(category_names.get(cid,label) if english else label)+'\n\n<table>\n')
+        for start in range(0,len(group),2):
+            row=group[start:start+2]
+            parts.append('<tr>\n')
+            for entry in row:
+                span=' colspan="2"' if len(row)==1 else ' width="50%"'
+                name=html.escape(entry['name']);status=html.escape(status_names[entry['status']])
+                image_url=html.escape(prefix+entry['image'],quote=True)
+                prompt_url=html.escape(prefix+entry['prompt'],quote=True)
+                detail_url=html.escape(prefix+entry['details'],quote=True)
+                parts.append(f'<td{span} valign="top" align="center">\n<strong>{name}</strong><br>\n'
+                             f'<sub>{status}</sub><br>\n'
+                             f'<a href="{image_url}"><img src="{image_url}" alt="{name} — {status}" width="440"></a><br>\n'
+                             f'<a href="{image_url}">{links[0]}</a> · <a href="{prompt_url}">{links[1]}</a> · '
+                             f'<a href="{detail_url}">{links[2]}</a>\n</td>\n')
+            parts.append('</tr>\n')
+        parts.append('</table>\n\n')
+    return ''.join(parts)
+
 def readmes(records):
     candidates=json.loads((OUT/'candidates.json').read_text(encoding='utf-8'))['records'];cats=json.loads((OUT/'taxonomy.json').read_text(encoding='utf-8'))['categories']
+    entries=showcase_entries(records)
     text='''# 科研绘图知识库 · 条件匹配重启版\n\n本地审阅版，尚未推送。当前有效参考池是用户认可的 **Neuralangelo、ReAct、DiffDock 3 对**；其余 **39 对**保留为历史排除项。原先“42 对全部通过”的结论只代表旧数值筛查，不能代表用户认可或科学质量。\n\n[打开图文审阅页](restart-2026/gallery.html) · [机器索引](index.json) · [SQLite 条件匹配数据库](restart-2026/conditional.sqlite) · [24 篇候选](restart-2026/candidates.json) · [历史排除项](archive/excluded-39.json)\n\n本轮已完成 3 个实际生成试配对；其余 21 篇尚未生成。新入库为 0，全部等待审阅。\n\n## 条件匹配\n\n按领域、科学对象、机制拓扑、构图形式四个维度匹配，仅检索用户认可的历史参考。默认权重 0.30 / 0.30 / 0.25 / 0.15；匹配值低于 0.5 时不自动选择参考。该值是可解释的检索启发式，不是视觉质量分数。\n\n```bash\npython scripts/restart_conditional_kb.py --query d4rt\npython scripts/validate_knowledge_base.py\n```\n\n每条记录保留借鉴内容、禁止迁移的科学内容和弱匹配提示。现有三个参考覆盖有限；弱匹配的生成、机器人等候选仍需新论文图形支持，不能强行套版。\n\n## 三个试配对\n\n| 新论文 | 匹配参考 | 完整 prompt | 状态 |\n| --- | --- | --- | --- |\n'''
     for r in records:text+=f"| [{r['id']}]({r['source_url']}) · {r['venue']} {r['year']} | {r['selected_anchor']} | [全文](restart-2026/{r['prompt']}) · {r['prompt_nonwhitespace_characters']:,} 非空白字符 | 实际草图，未入库 |\n"
     text+='\n## 六大类候选\n\n近期范围按会议论文集版本为 **2025-09-13—2026-09-13**。原始预印本首次公开日期尚未逐篇核对；历史参考不计入近期新增。下面是候选，不是已评定的优秀源图名单。\n'
@@ -95,17 +164,29 @@ def readmes(records):
             if c['category']==cid:text+=f"- [{c['title']}]({c['official_url']}) — {c['venue']} {c['year']}；{'已生成试配对' if c['id'] in DETAILS else '待源图审阅与生成'}。\n"
     text+='''\n## 入库与长度要求\n\n- 科学对象、细节和必要连线应充分占据画面；浅色底板、空框、边框和大标题不能代替有效内容。\n- 长度下限为匹配参考完整 prompt 的非空白 Unicode 字符数，接口上限为 32,000 总字符；提交前两项都检查，实际提交全文必须与保存文件一致。\n- 自动对比度网格只辅助找空白，不能判定科学正确性、图形美学或用户认可。\n- 标签、端点、对象身份及训练/推理范围需单独核对。所有草图保留修订历史和剩余问题。\n- 用户确认后才允许新条目入库和推送；当前 publication_allowed=false。不启动模型实验。\n\n源论文 PDF/网页的本地检查缓存不纳入发布包；保留官方链接和已取得的校验散列。所有已接触源论文家族和衍生物均排除未来封闭评测。生成概念图不能作为实测结果或人类金标准。\n'''
     text=text.replace('## 条件匹配\n','## 条件匹配\n\n[按新需求的条件直接查询：命令、词表与增广流程](restart-2026/retrieval-guide.md)\n')
+    text=text.replace('## 条件匹配\n',showcase_markup(entries,cats)+'## 条件匹配\n',1)
     (KB/'README.md').write_text(text,encoding='utf-8')
     for filename,heading,new in [
       ('README.md','## Knowledge base','''## Knowledge base\n\nThe active reference pool has **3 user-approved historical pairs**: Neuralangelo, ReAct and DiffDock. The other 39 of the previous 42 pairs are archived as excluded references. The earlier density screen did not establish visual acceptance.\n\nThis local restart contains **24 recent main-conference candidates in six categories** and **3 actual generated calibration pairs**, all pending review; 21 candidates have not yet been generated. No new pair is admitted and nothing from this restart has been pushed. Conference-edition window: 2025-09-13 through 2026-09-13; first-preprint dates remain unverified.\n\nConditional retrieval uses domain, scientific objects, topology and composition, with explicit transfer boundaries and a no-match outcome. Browse the [review gallery](knowledge-base/restart-2026/gallery.html), [classified knowledge base](knowledge-base/README.md) or [active index](knowledge-base/index.json). Full submitted prompts, reference bindings and revision notes accompany each draft.\n\n'''),
       ('README_ZH.md','## 科研绘图知识库','''## 科研绘图知识库\n\n当前参考池仅有用户认可的 **Neuralangelo、ReAct、DiffDock 3 对**。上一版 42 对中的其余 39 对已转为历史排除项，旧空白率筛查不代表质量认可。\n\n本地重启版按六大类整理 **24 篇近期主会候选**，完成 **3 个实际生成试配对**，均待审阅；其余 21 篇尚未生成。新入库为 0，本轮尚未推送。近期口径为 2025-09-13—2026-09-13 的会议论文集版本，首次预印本日期尚未逐篇核验。\n\n条件匹配按领域、科学对象、机制拓扑、构图形式检索，记录借鉴与禁止迁移的内容，弱匹配不强行套版。查看[图文审阅页](knowledge-base/restart-2026/gallery.html)、[分类知识库](knowledge-base/README.md)和[有效索引](knowledge-base/index.json)。每张草图附完整实际提交 prompt、参考绑定及修订记录。\n\n''')]:
         p=ROOT/filename;s=p.read_text(encoding='utf-8');a=s.index(heading);b=s.index('\n## ',a+3)
-        s=s[:a]+new+s[b+1:];s=s.replace('Agent Fleet','Neuralangelo').replace('knowledge-base/cases/agent-fleet/','knowledge-base/cases/neuralangelo/')
+        s=s[:a]+s[b+1:]
+        s=re.sub(r'!\[Neuralangelo[^\]]*\]\(knowledge-base/cases/neuralangelo/figure\.png\)\n\n<p align="center">[^\n]*</p>\n\n','',s)
+        new+=showcase_markup(entries,cats,prefix='knowledge-base/',language='en' if filename=='README.md' else 'zh')
+        insertion='## Why Sivia?' if filename=='README.md' else '## 为什么使用 Sivia？'
+        position=s.index(insertion);s=s[:position]+new+s[position:]
         p.write_text(s,encoding='utf-8')
     oldsummary=KB/'archive/generation-summary.before-restart.json'
     if not oldsummary.exists():oldsummary.write_bytes((KB/'generation-summary.json').read_bytes())
     dump(KB/'generation-summary.json',{'current':'restart-2026/generation-summary.json','historical':'archive/generation-summary.before-restart.json','note':'Historical 24-pair wave is excluded from the current reference pool except the three specifically approved anchors.'})
 
 if __name__=='__main__':
-    records=package();gallery(records);readmes(records)
-    print(json.dumps({'actual_drafts':len(records),'approved_new':0,'generated_images':sum(d['versions'] for d in DETAILS.values()),'density':{r['id']:r['density_diagnostic'] for r in records}},indent=2))
+    import argparse
+    parser=argparse.ArgumentParser();parser.add_argument('--readmes-only',action='store_true');args=parser.parse_args()
+    if args.readmes_only:
+        records=json.loads((OUT/'pairs.json').read_text(encoding='utf-8'))['records'];readmes(records)
+        print(json.dumps({'readmes_updated':['README.md','README_ZH.md','knowledge-base/README.md'],
+                          'showcase_entries':len(json.loads((OUT/'readme-showcase.json').read_text(encoding='utf-8'))['entries'])}))
+    else:
+        records=package();gallery(records);readmes(records)
+        print(json.dumps({'actual_drafts':len(records),'approved_new':0,'generated_images':sum(d['versions'] for d in DETAILS.values()),'density':{r['id']:r['density_diagnostic'] for r in records}},indent=2))

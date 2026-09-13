@@ -6,6 +6,67 @@
 
 本轮已完成 3 个实际生成试配对；其余 21 篇尚未生成。新入库为 0，全部等待审阅。
 
+### 逐条图片展示
+
+每个条目展示一张对应的当前图片；点击图片可查看原图。
+
+#### 三维重建与动态几何
+
+<table>
+<tr>
+<td width="50%" valign="top" align="center">
+<strong>Neuralangelo</strong><br>
+<sub>已认可参考</sub><br>
+<a href="cases/neuralangelo/figure.png"><img src="cases/neuralangelo/figure.png" alt="Neuralangelo — 已认可参考" width="440"></a><br>
+<a href="cases/neuralangelo/figure.png">查看原图</a> · <a href="cases/neuralangelo/prompt.txt">完整 prompt</a> · <a href="cases/neuralangelo/README.md">案例详情</a>
+</td>
+<td width="50%" valign="top" align="center">
+<strong>D4RT</strong><br>
+<sub>待审阅草图 · 未入库</sub><br>
+<a href="restart-2026/pairs/d4rt/figure.png"><img src="restart-2026/pairs/d4rt/figure.png" alt="D4RT — 待审阅草图 · 未入库" width="440"></a><br>
+<a href="restart-2026/pairs/d4rt/figure.png">查看原图</a> · <a href="restart-2026/pairs/d4rt/prompt.txt">完整 prompt</a> · <a href="restart-2026/pairs/d4rt/README.md">案例详情</a>
+</td>
+</tr>
+</table>
+
+#### 智能体、工具与检索
+
+<table>
+<tr>
+<td width="50%" valign="top" align="center">
+<strong>ReAct</strong><br>
+<sub>已认可参考</sub><br>
+<a href="cases/react/figure.png"><img src="cases/react/figure.png" alt="ReAct — 已认可参考" width="440"></a><br>
+<a href="cases/react/figure.png">查看原图</a> · <a href="cases/react/prompt.txt">完整 prompt</a> · <a href="cases/react/README.md">案例详情</a>
+</td>
+<td width="50%" valign="top" align="center">
+<strong>AutoTool</strong><br>
+<sub>待审阅草图 · 未入库</sub><br>
+<a href="restart-2026/pairs/autotool/figure.png"><img src="restart-2026/pairs/autotool/figure.png" alt="AutoTool — 待审阅草图 · 未入库" width="440"></a><br>
+<a href="restart-2026/pairs/autotool/figure.png">查看原图</a> · <a href="restart-2026/pairs/autotool/prompt.txt">完整 prompt</a> · <a href="restart-2026/pairs/autotool/README.md">案例详情</a>
+</td>
+</tr>
+</table>
+
+#### 分子建模与 AI for Science
+
+<table>
+<tr>
+<td width="50%" valign="top" align="center">
+<strong>DiffDock</strong><br>
+<sub>已认可参考</sub><br>
+<a href="cases/diffdock/figure.png"><img src="cases/diffdock/figure.png" alt="DiffDock — 已认可参考" width="440"></a><br>
+<a href="cases/diffdock/figure.png">查看原图</a> · <a href="cases/diffdock/prompt.txt">完整 prompt</a> · <a href="cases/diffdock/README.md">案例详情</a>
+</td>
+<td width="50%" valign="top" align="center">
+<strong>SigmaDock</strong><br>
+<sub>待审阅草图 · 未入库</sub><br>
+<a href="restart-2026/pairs/sigmadock/figure.png"><img src="restart-2026/pairs/sigmadock/figure.png" alt="SigmaDock — 待审阅草图 · 未入库" width="440"></a><br>
+<a href="restart-2026/pairs/sigmadock/figure.png">查看原图</a> · <a href="restart-2026/pairs/sigmadock/prompt.txt">完整 prompt</a> · <a href="restart-2026/pairs/sigmadock/README.md">案例详情</a>
+</td>
+</tr>
+</table>
+
 ## 条件匹配
 
 [按新需求的条件直接查询：命令、词表与增广流程](restart-2026/retrieval-guide.md)

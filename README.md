@@ -18,9 +18,74 @@ Sivia is a scientific-figure plugin for **Codex and Claude Code**. It reads your
 
 **The default first delivery is an image, its complete prompt and a short design explanation—not a presentation.**
 
-![Neuralangelo — an ImageGen knowledge-base example](knowledge-base/cases/neuralangelo/figure.png)
+## Knowledge base
 
-<p align="center">Knowledge-base example, not a claim that every pixel is native-editable. <a href="knowledge-base/cases/neuralangelo/prompt.txt">Full prompt</a> · <a href="knowledge-base/cases/neuralangelo/README.md">Case notes</a></p>
+The active reference pool has **3 user-approved historical pairs**: Neuralangelo, ReAct and DiffDock. The other 39 of the previous 42 pairs are archived as excluded references. The earlier density screen did not establish visual acceptance.
+
+This local restart contains **24 recent main-conference candidates in six categories** and **3 actual generated calibration pairs**, all pending review; 21 candidates have not yet been generated. No new pair is admitted and nothing from this restart has been pushed. Conference-edition window: 2025-09-13 through 2026-09-13; first-preprint dates remain unverified.
+
+Conditional retrieval uses domain, scientific objects, topology and composition, with explicit transfer boundaries and a no-match outcome. Browse the [review gallery](knowledge-base/restart-2026/gallery.html), [classified knowledge base](knowledge-base/README.md) or [active index](knowledge-base/index.json). Full submitted prompts, reference bindings and revision notes accompany each draft.
+
+### Image gallery
+
+Each entry has its own current image. Click an image to inspect it at full size.
+
+#### 3D reconstruction and dynamic geometry
+
+<table>
+<tr>
+<td width="50%" valign="top" align="center">
+<strong>Neuralangelo</strong><br>
+<sub>Approved reference</sub><br>
+<a href="knowledge-base/cases/neuralangelo/figure.png"><img src="knowledge-base/cases/neuralangelo/figure.png" alt="Neuralangelo — Approved reference" width="440"></a><br>
+<a href="knowledge-base/cases/neuralangelo/figure.png">Full-size image</a> · <a href="knowledge-base/cases/neuralangelo/prompt.txt">Full prompt</a> · <a href="knowledge-base/cases/neuralangelo/README.md">Case details</a>
+</td>
+<td width="50%" valign="top" align="center">
+<strong>D4RT</strong><br>
+<sub>Review draft · not admitted</sub><br>
+<a href="knowledge-base/restart-2026/pairs/d4rt/figure.png"><img src="knowledge-base/restart-2026/pairs/d4rt/figure.png" alt="D4RT — Review draft · not admitted" width="440"></a><br>
+<a href="knowledge-base/restart-2026/pairs/d4rt/figure.png">Full-size image</a> · <a href="knowledge-base/restart-2026/pairs/d4rt/prompt.txt">Full prompt</a> · <a href="knowledge-base/restart-2026/pairs/d4rt/README.md">Case details</a>
+</td>
+</tr>
+</table>
+
+#### Agents, tools and retrieval
+
+<table>
+<tr>
+<td width="50%" valign="top" align="center">
+<strong>ReAct</strong><br>
+<sub>Approved reference</sub><br>
+<a href="knowledge-base/cases/react/figure.png"><img src="knowledge-base/cases/react/figure.png" alt="ReAct — Approved reference" width="440"></a><br>
+<a href="knowledge-base/cases/react/figure.png">Full-size image</a> · <a href="knowledge-base/cases/react/prompt.txt">Full prompt</a> · <a href="knowledge-base/cases/react/README.md">Case details</a>
+</td>
+<td width="50%" valign="top" align="center">
+<strong>AutoTool</strong><br>
+<sub>Review draft · not admitted</sub><br>
+<a href="knowledge-base/restart-2026/pairs/autotool/figure.png"><img src="knowledge-base/restart-2026/pairs/autotool/figure.png" alt="AutoTool — Review draft · not admitted" width="440"></a><br>
+<a href="knowledge-base/restart-2026/pairs/autotool/figure.png">Full-size image</a> · <a href="knowledge-base/restart-2026/pairs/autotool/prompt.txt">Full prompt</a> · <a href="knowledge-base/restart-2026/pairs/autotool/README.md">Case details</a>
+</td>
+</tr>
+</table>
+
+#### Molecular modeling and AI for Science
+
+<table>
+<tr>
+<td width="50%" valign="top" align="center">
+<strong>DiffDock</strong><br>
+<sub>Approved reference</sub><br>
+<a href="knowledge-base/cases/diffdock/figure.png"><img src="knowledge-base/cases/diffdock/figure.png" alt="DiffDock — Approved reference" width="440"></a><br>
+<a href="knowledge-base/cases/diffdock/figure.png">Full-size image</a> · <a href="knowledge-base/cases/diffdock/prompt.txt">Full prompt</a> · <a href="knowledge-base/cases/diffdock/README.md">Case details</a>
+</td>
+<td width="50%" valign="top" align="center">
+<strong>SigmaDock</strong><br>
+<sub>Review draft · not admitted</sub><br>
+<a href="knowledge-base/restart-2026/pairs/sigmadock/figure.png"><img src="knowledge-base/restart-2026/pairs/sigmadock/figure.png" alt="SigmaDock — Review draft · not admitted" width="440"></a><br>
+<a href="knowledge-base/restart-2026/pairs/sigmadock/figure.png">Full-size image</a> · <a href="knowledge-base/restart-2026/pairs/sigmadock/prompt.txt">Full prompt</a> · <a href="knowledge-base/restart-2026/pairs/sigmadock/README.md">Case details</a>
+</td>
+</tr>
+</table>
 
 ## Why Sivia?
 
@@ -125,14 +190,6 @@ python skills/design-scientific-figure/scripts/inspect_raster_asset.py --image r
 ```
 
 Run from the plugin root. Add `--crop-px LEFT TOP RIGHT BOTTOM` to evaluate a crop. See [asset production](skills/design-scientific-figure/references/asset-production.md) for source-resolution planning and authorized contour-mask recovery.
-
-## Knowledge base
-
-The active reference pool has **3 user-approved historical pairs**: Neuralangelo, ReAct and DiffDock. The other 39 of the previous 42 pairs are archived as excluded references. The earlier density screen did not establish visual acceptance.
-
-This local restart contains **24 recent main-conference candidates in six categories** and **3 actual generated calibration pairs**, all pending review; 21 candidates have not yet been generated. No new pair is admitted and nothing from this restart has been pushed. Conference-edition window: 2025-09-13 through 2026-09-13; first-preprint dates remain unverified.
-
-Conditional retrieval uses domain, scientific objects, topology and composition, with explicit transfer boundaries and a no-match outcome. Browse the [review gallery](knowledge-base/restart-2026/gallery.html), [classified knowledge base](knowledge-base/README.md) or [active index](knowledge-base/index.json). Full submitted prompts, reference bindings and revision notes accompany each draft.
 
 ## Limitations
 

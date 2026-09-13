@@ -13,6 +13,7 @@
 - 完整 prompt 的非空白字符数达到对应已认可案例全文下限，总字符数不超过工具上限。最终工具实参已逐字与保存文件比较，3/3 相同。
 - 独立保留源忠实度、低无效空白、标签与端点检查、用户认可状态。所有新图均未入库。
 - 更新中英文根 README、知识库 README、活动索引、候选分类、历史排除清单和封闭评测排除清单。
+- 根据后续反馈，将三个 README 改为按类别逐条配图；活动参考和已生成草图各选当前版本一张，共 6 张，并标注认可状态、原图、完整 prompt 和详情入口。展示清单保存为 `knowledge-base/restart-2026/readme-showcase.json`；未生成候选不使用占位图。
 
 ## 质量口径修正
 
@@ -39,6 +40,12 @@ python scripts/restart_conditional_kb.py
 python research/figures/restart-2026/package_review.py
 python scripts/validate_knowledge_base.py
 python research/figures/restart-2026/validate_review.py
+```
+
+只更新 README 的逐条图片展示，无需重新生成或重算图片诊断：
+
+```bash
+python research/figures/restart-2026/package_review.py --readmes-only
 ```
 
 构建审阅包依赖 numpy、Pillow、BeautifulSoup；索引构建和数据校验使用 Python 标准库。验证报告区分结构正确与视觉认可。自动浏览器打开 file:// 审阅页被 URL 安全策略阻止；未使用代理服务器或替代浏览器绕过，未声称浏览器渲染测试通过。

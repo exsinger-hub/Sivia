@@ -1,0 +1,24 @@
+{
+  "valid": true,
+  "readmes": [
+    {
+      "file": "README.md",
+      "unique_entry_images": 6,
+      "full_image_prompt_detail_links": "valid"
+    },
+    {
+      "file": "README_ZH.md",
+      "unique_entry_images": 6,
+      "full_image_prompt_detail_links": "valid"
+    },
+    {
+      "file": "knowledge-base/README.md",
+      "unique_entry_images": 6,
+      "full_image_prompt_detail_links": "valid"
+    }
+  ],
+  "regeneration_idempotent": true,
+  "documentation_tests_passed": 12,
+  "visual_browser_render": "not run; local file URL was previously blocked by Browser Use policy",
+  "source_images_modified": false
+}

@@ -1,0 +1,72 @@
+{
+  "schema_version": "sivia.readme_showcase.v1",
+  "selection_policy": "One current image per active or generated review entry; excluded history and ungenerated candidates are not showcase entries.",
+  "entries": [
+    {
+      "id": "diffdock",
+      "name": "DiffDock",
+      "category": "molecular-science",
+      "image": "cases/diffdock/figure.png",
+      "prompt": "cases/diffdock/prompt.txt",
+      "details": "cases/diffdock/README.md",
+      "status": "approved_reference",
+      "selection_reason": "Current image bound to the user-approved reference record.",
+      "image_sha256": "e180ba87fa4b18a9328c2ea4e1ec56799790322a58671572dc6662060986e874"
+    },
+    {
+      "id": "neuralangelo",
+      "name": "Neuralangelo",
+      "category": "geometry-4d",
+      "image": "cases/neuralangelo/figure.png",
+      "prompt": "cases/neuralangelo/prompt.txt",
+      "details": "cases/neuralangelo/README.md",
+      "status": "approved_reference",
+      "selection_reason": "Current image bound to the user-approved reference record.",
+      "image_sha256": "45e4e448ba4add51ce3bc52300f096d2d77cc0061030770d98757a266be8386e"
+    },
+    {
+      "id": "react",
+      "name": "ReAct",
+      "category": "agents-retrieval",
+      "image": "cases/react/figure.png",
+      "prompt": "cases/react/prompt.txt",
+      "details": "cases/react/README.md",
+      "status": "approved_reference",
+      "selection_reason": "Current image bound to the user-approved reference record.",
+      "image_sha256": "568cc20fda23ccdf51a28d9e5e96fe103f5792ead6012a23189e5b34674091cc"
+    },
+    {
+      "id": "d4rt",
+      "name": "D4RT",
+      "category": "geometry-4d",
+      "image": "restart-2026/pairs/d4rt/figure.png",
+      "prompt": "restart-2026/pairs/d4rt/prompt.txt",
+      "details": "restart-2026/pairs/d4rt/README.md",
+      "status": "draft_pending_review",
+      "selection_reason": "Current actual generated review image; remaining quality notes stay in case details.",
+      "image_sha256": "c18d0b15c293673fb9f1fd2bbe7f96c83d7d076476706375a916e2de9b90859d"
+    },
+    {
+      "id": "autotool",
+      "name": "AutoTool",
+      "category": "agents-retrieval",
+      "image": "restart-2026/pairs/autotool/figure.png",
+      "prompt": "restart-2026/pairs/autotool/prompt.txt",
+      "details": "restart-2026/pairs/autotool/README.md",
+      "status": "draft_pending_review",
+      "selection_reason": "Current actual generated review image; remaining quality notes stay in case details.",
+      "image_sha256": "0480de639aca6c28ca617831f941c6b5c96913e70e801959544b11dccc334ca6"
+    },
+    {
+      "id": "sigmadock",
+      "name": "SigmaDock",
+      "category": "molecular-science",
+      "image": "restart-2026/pairs/sigmadock/figure.png",
+      "prompt": "restart-2026/pairs/sigmadock/prompt.txt",
+      "details": "restart-2026/pairs/sigmadock/README.md",
+      "status": "draft_pending_review",
+      "selection_reason": "Current actual generated review image; remaining quality notes stay in case details.",
+      "image_sha256": "f9bfb45cd96528b2a802e6d53374bd1395046de5fbbe169a98c7d1717b5eacd5"
+    }
+  ]
+}
