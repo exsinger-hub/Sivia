@@ -1,0 +1,25 @@
+{
+  "id": "d4rt",
+  "name": "D4RT",
+  "title": "Efficiently Reconstructing Dynamic Scenes One D4RT at a Time",
+  "category": "geometry-4d",
+  "status": "draft_pending_review",
+  "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_Efficiently_Reconstructing_Dynamic_Scenes_One_D4RT_at_a_Time_CVPR_2026_paper.html",
+  "venue": "CVPR",
+  "year": 2026,
+  "image_sha256": "c18d0b15c293673fb9f1fd2bbe7f96c83d7d076476706375a916e2de9b90859d",
+  "prompt_sha256": "121c305e6fa01d781a4c5e05e3dd8459c4c336e8ec80244b2f94ffa1ffe47479",
+  "prompt_characters": 29741,
+  "prompt_nonwhitespace_characters": 24979,
+  "asset_kind": "generated_conceptual_illustration",
+  "showcase_publication_authorized": true,
+  "sealed_evaluation_eligible": false,
+  "source_snapshot_commit": "6b4d2f9b3e6bdc44595538573db0ffa821759a1a",
+  "remaining_review_notes": [
+    "Small labels require full-size viewing; schematic geometry is not a measured output."
+  ],
+  "source_visual_review": "assistant inspected original PDF p2 Figure 2 at rendered resolution",
+  "selected_anchor": "neuralangelo",
+  "actual_generation_reference_image": "reference.png",
+  "actual_generation_reference_sha256": "c24df872c9b5e4780d7fcfe679e8f6c4a4d96b448e6f030a3d90cc964329c24b"
+}

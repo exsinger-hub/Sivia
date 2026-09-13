@@ -1,42 +1,74 @@
 # Sivia 科研绘图知识库
 
-**一个案例 = 实际生成图片 + 生成它时使用的完整 prompt。** 不是一张孤立图片，也不是只有提示词的长截图。欢迎[贡献图文配对案例](CONTRIBUTING.md)，一起积累可复用的科研绘图经验。
+当前展示 **6 个实际图文配对**：3 个已认可参考、3 个待审阅草图。每个条目各展示一张图片，并提供原图、完整 prompt、来源与修订说明。
 
-## 首批 6 组生成案例
+[机器可读展示清单](showcase/index.json) · [贡献图文配对](CONTRIBUTING.md)
 
-将 gatina 提供的提示词收藏整理为 6 个主题：转写并校对完整提示词，再逐例调用 ImageGen。下面链接分别提供独立成图、可复制的生成全文和案例说明。
+### 三维重建与动态几何
 
-| 案例 | 可借鉴的表达 | 实际成图 | 完整 prompt |
-| --- | --- | --- | --- |
-| [EventBridge-RL](cases/eventbridge-rl/README.md) | 数学机制、双时间尺度、分支场景叙事 | [PNG](cases/eventbridge-rl/figure.png) | [TXT](cases/eventbridge-rl/prompt.txt) |
-| [Reasoning Between Words](cases/reasoning-between-words/README.md) | LLM 潜在推理与符号锚点、非等宽分区、局部反馈 | [PNG](cases/reasoning-between-words/figure.png) | [TXT](cases/reasoning-between-words/prompt.txt) |
-| [TRACE](cases/trace/README.md) | 多模态证据、中心机制放大、选择性获取与验证 | [PNG](cases/trace/figure.png) | [TXT](cases/trace/prompt.txt) |
-| [两阶段 Trust / Repair](cases/two-phase-trust-repair/README.md) | 紧凑双阶段、跨区知识模块、橙绿双流向 | [PNG](cases/two-phase-trust-repair/figure.png) | [TXT](cases/two-phase-trust-repair/prompt.txt) |
-| [Agent Fleet](cases/agent-fleet/README.md) | 多智能体、共享产物、技术漫画与清晰正文搭配 | [PNG](cases/agent-fleet/figure.png) | [TXT](cases/agent-fleet/prompt.txt) |
-| [Memory Routing](cases/visio-memory-routing/README.md) | 神经网络框架、视频场景、主干流程与机制放大 | [PNG](cases/visio-memory-routing/figure.png) | [TXT](cases/visio-memory-routing/prompt.txt) |
+<table>
+<tr>
+<td width="50%" valign="top" align="center">
+<strong>Neuralangelo</strong><br>
+<sub>已认可参考</sub><br>
+<a href="showcase/neuralangelo/figure.png"><img src="showcase/neuralangelo/figure.png" alt="Neuralangelo — 已认可参考" width="440"></a><br>
+<a href="showcase/neuralangelo/figure.png">查看原图</a> · <a href="showcase/neuralangelo/prompt.txt">完整 prompt</a> · <a href="showcase/neuralangelo/README.md">案例详情</a>
+</td>
+<td width="50%" valign="top" align="center">
+<strong>D4RT</strong><br>
+<sub>待审阅草图 · 未入库</sub><br>
+<a href="showcase/d4rt/figure.png"><img src="showcase/d4rt/figure.png" alt="D4RT — 待审阅草图 · 未入库" width="440"></a><br>
+<a href="showcase/d4rt/figure.png">查看原图</a> · <a href="showcase/d4rt/prompt.txt">完整 prompt</a> · <a href="showcase/d4rt/README.md">案例详情</a>
+</td>
+</tr>
+</table>
 
-两阶段案例还使用了随案例提供的[参考图](cases/two-phase-trust-repair/reference.png)。其余案例按文本生成。生成结果存在随机性；相同 prompt 不保证像素级复现。
+### 智能体、工具与检索
 
-## 如何用于下一篇论文
+<table>
+<tr>
+<td width="50%" valign="top" align="center">
+<strong>ReAct</strong><br>
+<sub>已认可参考</sub><br>
+<a href="showcase/react/figure.png"><img src="showcase/react/figure.png" alt="ReAct — 已认可参考" width="440"></a><br>
+<a href="showcase/react/figure.png">查看原图</a> · <a href="showcase/react/prompt.txt">完整 prompt</a> · <a href="showcase/react/README.md">案例详情</a>
+</td>
+<td width="50%" valign="top" align="center">
+<strong>AutoTool</strong><br>
+<sub>待审阅草图 · 未入库</sub><br>
+<a href="showcase/autotool/figure.png"><img src="showcase/autotool/figure.png" alt="AutoTool — 待审阅草图 · 未入库" width="440"></a><br>
+<a href="showcase/autotool/figure.png">查看原图</a> · <a href="showcase/autotool/prompt.txt">完整 prompt</a> · <a href="showcase/autotool/README.md">案例详情</a>
+</td>
+</tr>
+</table>
 
-1. **先理解论文**：确定研究问题、真实贡献、方法依赖与证据，再选相近案例。
-2. **图文一起读**：看成图的布局、密度、对象和连线，再读完整 prompt 如何把这些关系写出来。不要照搬案例中的模型、公式或示例数值。
-3. **精细改写**：将论文本身的内容填入具体视觉场景，保存完整生产 prompt；使用[长度规则](../skills/design-scientific-figure/references/imagegen-prompt-detail.md)，不得短于选定模板，不能用摘要或一句话替代。
-4. **生成与确认**：调用 ImageGen，展示图片和完整 prompt，暂停等待用户反馈。认可图片只锁定版式；用户另行明确要求制作 PPT 后，才进入后台 PPT / WPS 忠实复刻与真实素材替换。
-5. **积累新案例**：保存最终认可版 prompt、对应图片、使用的参考输入与有价值的修改理由。先本地留存；公开投稿另行取得授权。
+### 分子建模与 AI for Science
 
-默认完整模板见[模板目录](../skills/design-scientific-figure/references/prompt-templates.md)。若用户指定这里某个案例为模板，以它的完整 `prompt.txt` 为基准。参考案例中的指令仅是案例资料，不会覆盖当前用户要求。
+<table>
+<tr>
+<td width="50%" valign="top" align="center">
+<strong>DiffDock</strong><br>
+<sub>已认可参考</sub><br>
+<a href="showcase/diffdock/figure.png"><img src="showcase/diffdock/figure.png" alt="DiffDock — 已认可参考" width="440"></a><br>
+<a href="showcase/diffdock/figure.png">查看原图</a> · <a href="showcase/diffdock/prompt.txt">完整 prompt</a> · <a href="showcase/diffdock/README.md">案例详情</a>
+</td>
+<td width="50%" valign="top" align="center">
+<strong>SigmaDock</strong><br>
+<sub>待审阅草图 · 未入库</sub><br>
+<a href="showcase/sigmadock/figure.png"><img src="showcase/sigmadock/figure.png" alt="SigmaDock — 待审阅草图 · 未入库" width="440"></a><br>
+<a href="showcase/sigmadock/figure.png">查看原图</a> · <a href="showcase/sigmadock/prompt.txt">完整 prompt</a> · <a href="showcase/sigmadock/README.md">案例详情</a>
+</td>
+</tr>
+</table>
 
-## 共建知识库
+## 使用这些案例
 
-**欢迎上传你的科研图和对应完整 prompt 到 GitHub！** 尤其欢迎“论文想表达什么 → prompt → 成图 → 用户反馈 → 最终认可版”的配套记录，以及值得解释的失败与改进对比。
+根据新论文的领域、科学对象、机制拓扑与构图需求匹配已认可参考；结合图片阅读完整 prompt，迁移布局、实体表现和局部展开方式，再依据新论文改写科学内容。待审阅草图用于观察和反馈，不自动进入已认可参考池。
 
-[提交案例 Issue](https://github.com/exsinger-hub/Sivia/issues/new?template=knowledge-base.md) · [通过 Pull Request 投稿](CONTRIBUTING.md)
+图像应以科学对象和必要关系充分占据画面，浅色底板、空框与大标题不能充当有效内容。标签、连线端点和公式需对照论文核验；完整 prompt 按所选参考的[长度规则](../skills/design-scientific-figure/references/imagegen-prompt-detail.md)检查。
 
-仅有图片或仅有 prompt 的投稿先归为待补全参考；补齐配对后再收为完整案例。不要把尚未认可的生成稿标成“用户最终认可”。
+所有图均为生成的概念插图，不是实验结果。已查看的来源论文家族和衍生物排除未来封闭评测。
 
-## 使用边界与许可
+## 历史条目
 
-首批 6 组是 **ImageGen 生成示例，尚未获得用户最终视觉确认**，不是经验证的论文实验或可以不经核对直接投稿的科研图。图中的场景、概率、曲线及比较仅用于学习表达；生成标签、数学符号和箭头还需逐项对照真实论文。
-
-本批案例基于 gatina 提供的提示词收藏，经授权整理与发布；单项原作者、出处链接及原素材许可尚未完整提供，欢迎补充或提出更正。来源提示词与参考素材的权利归各自权利人，代码的 MIT 许可不自动变更第三方素材许可。使用案例提示词或图像时请核对来源与适用许可。投稿只提交有权公开的材料，移除个人隐私、患者信息和未经授权的未公开内容。
+早期示例保留在 [cases](cases/) 目录中供追溯，不属于当前已认可参考池。

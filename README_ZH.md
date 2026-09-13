@@ -18,9 +18,70 @@ Sivia 是面向 **Codex 与 Claude Code** 的科研绘图插件。它先理解�
 
 **默认第一轮交付图片、完整 prompt 和简短设计说明，不直接制作演示文稿。**
 
-![Agent Fleet：ImageGen 知识库示例](knowledge-base/cases/agent-fleet/figure.png)
+## 科研绘图知识库
 
-<p align="center">知识库成图示例，不代表其中每个像素都是原生可编辑对象。<a href="knowledge-base/cases/agent-fleet/prompt.txt">完整 prompt</a> · <a href="knowledge-base/cases/agent-fleet/README.md">案例说明</a></p>
+**6 个图文条目：3 个已认可参考、3 个待审阅草图。** 每个条目都直接展示对应图片；点击图片可查看原图，也可打开完整生产 prompt 和案例详情。
+
+Neuralangelo、ReAct、DiffDock 是已认可的历史参考；D4RT、AutoTool、SigmaDock 是近期论文增广草图，附有待修订说明。图片均为生成的概念插图。
+
+[浏览分类知识库](knowledge-base/README.md)
+
+### 三维重建与动态几何
+
+<table>
+<tr>
+<td width="50%" valign="top" align="center">
+<strong>Neuralangelo</strong><br>
+<sub>已认可参考</sub><br>
+<a href="knowledge-base/showcase/neuralangelo/figure.png"><img src="knowledge-base/showcase/neuralangelo/figure.png" alt="Neuralangelo — 已认可参考" width="440"></a><br>
+<a href="knowledge-base/showcase/neuralangelo/figure.png">查看原图</a> · <a href="knowledge-base/showcase/neuralangelo/prompt.txt">完整 prompt</a> · <a href="knowledge-base/showcase/neuralangelo/README.md">案例详情</a>
+</td>
+<td width="50%" valign="top" align="center">
+<strong>D4RT</strong><br>
+<sub>待审阅草图 · 未入库</sub><br>
+<a href="knowledge-base/showcase/d4rt/figure.png"><img src="knowledge-base/showcase/d4rt/figure.png" alt="D4RT — 待审阅草图 · 未入库" width="440"></a><br>
+<a href="knowledge-base/showcase/d4rt/figure.png">查看原图</a> · <a href="knowledge-base/showcase/d4rt/prompt.txt">完整 prompt</a> · <a href="knowledge-base/showcase/d4rt/README.md">案例详情</a>
+</td>
+</tr>
+</table>
+
+### 智能体、工具与检索
+
+<table>
+<tr>
+<td width="50%" valign="top" align="center">
+<strong>ReAct</strong><br>
+<sub>已认可参考</sub><br>
+<a href="knowledge-base/showcase/react/figure.png"><img src="knowledge-base/showcase/react/figure.png" alt="ReAct — 已认可参考" width="440"></a><br>
+<a href="knowledge-base/showcase/react/figure.png">查看原图</a> · <a href="knowledge-base/showcase/react/prompt.txt">完整 prompt</a> · <a href="knowledge-base/showcase/react/README.md">案例详情</a>
+</td>
+<td width="50%" valign="top" align="center">
+<strong>AutoTool</strong><br>
+<sub>待审阅草图 · 未入库</sub><br>
+<a href="knowledge-base/showcase/autotool/figure.png"><img src="knowledge-base/showcase/autotool/figure.png" alt="AutoTool — 待审阅草图 · 未入库" width="440"></a><br>
+<a href="knowledge-base/showcase/autotool/figure.png">查看原图</a> · <a href="knowledge-base/showcase/autotool/prompt.txt">完整 prompt</a> · <a href="knowledge-base/showcase/autotool/README.md">案例详情</a>
+</td>
+</tr>
+</table>
+
+### 分子建模与 AI for Science
+
+<table>
+<tr>
+<td width="50%" valign="top" align="center">
+<strong>DiffDock</strong><br>
+<sub>已认可参考</sub><br>
+<a href="knowledge-base/showcase/diffdock/figure.png"><img src="knowledge-base/showcase/diffdock/figure.png" alt="DiffDock — 已认可参考" width="440"></a><br>
+<a href="knowledge-base/showcase/diffdock/figure.png">查看原图</a> · <a href="knowledge-base/showcase/diffdock/prompt.txt">完整 prompt</a> · <a href="knowledge-base/showcase/diffdock/README.md">案例详情</a>
+</td>
+<td width="50%" valign="top" align="center">
+<strong>SigmaDock</strong><br>
+<sub>待审阅草图 · 未入库</sub><br>
+<a href="knowledge-base/showcase/sigmadock/figure.png"><img src="knowledge-base/showcase/sigmadock/figure.png" alt="SigmaDock — 待审阅草图 · 未入库" width="440"></a><br>
+<a href="knowledge-base/showcase/sigmadock/figure.png">查看原图</a> · <a href="knowledge-base/showcase/sigmadock/prompt.txt">完整 prompt</a> · <a href="knowledge-base/showcase/sigmadock/README.md">案例详情</a>
+</td>
+</tr>
+</table>
 
 ## 为什么使用 Sivia？
 
@@ -124,21 +185,6 @@ python skills/design-scientific-figure/scripts/inspect_raster_asset.py --image r
 ```
 
 在插件根目录运行；加 `--crop-px LEFT TOP RIGHT BOTTOM` 可估算裁图。[素材生产规则](skills/design-scientific-figure/references/asset-production.md)包含像素规划和获授权后的轮廓遮罩后备方案。
-
-## 科研绘图知识库
-
-每个案例包含**实际生成图片与对应完整 prompt**，用于借鉴表达方式，不作为本文模型结构或实验结果的证据。
-
-| 案例 | 表达任务 | 资源 |
-| --- | --- | --- |
-| Agent Fleet | 多智能体协作 |  [成图](knowledge-base/cases/agent-fleet/figure.png)|
-| Reasoning Between Words | 潜在推理与符号锚点 | [成图](knowledge-base/cases/reasoning-between-words/figure.png) · [Prompt](knowledge-base/cases/reasoning-between-words/prompt.txt) |
-| TRACE | 多模态证据路由 | [成图](knowledge-base/cases/trace/figure.png) · [Prompt](knowledge-base/cases/trace/prompt.txt) |
-| EventBridge-RL | 双时间尺度世界模型 | [成图](knowledge-base/cases/eventbridge-rl/figure.png) · [Prompt](knowledge-base/cases/eventbridge-rl/prompt.txt) |
-| Trust / Repair | 紧凑两阶段智能体框架 | [成图](knowledge-base/cases/two-phase-trust-repair/figure.png) · [Prompt](knowledge-base/cases/two-phase-trust-repair/prompt.txt) |
-| Memory Routing | 长视频记忆框架 | [成图](knowledge-base/cases/visio-memory-routing/figure.png) · [Prompt](knowledge-base/cases/visio-memory-routing/prompt.txt) |
-
-用户认可状态与观察记录见各[案例说明](knowledge-base/README.md)。欢迎[贡献案例](knowledge-base/CONTRIBUTING.md)：最终成图、完整 prompt，以及有价值的修改反馈应配套提交。公开论文或私有素材需要所有者授权。
 
 ## Limitations
 

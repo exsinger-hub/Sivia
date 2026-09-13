@@ -18,9 +18,70 @@ Sivia is a scientific-figure plugin for **Codex and Claude Code**. It reads your
 
 **The default first delivery is an image, its complete prompt and a short design explanation—not a presentation.**
 
-![Agent Fleet — an ImageGen knowledge-base example](knowledge-base/cases/agent-fleet/figure.png)
+## Knowledge base
 
-<p align="center">Knowledge-base example, not a claim that every pixel is native-editable. <a href="knowledge-base/cases/agent-fleet/prompt.txt">Full prompt</a> · <a href="knowledge-base/cases/agent-fleet/README.md">Case notes</a></p>
+**6 illustrated entries: 3 approved references and 3 review drafts.** Every entry displays its own image below. Click an image for the full-size version, or open its complete production prompt and case notes.
+
+Neuralangelo, ReAct and DiffDock are the approved historical references. D4RT, AutoTool and SigmaDock are recent-paper augmentation drafts with review notes. These are generated conceptual illustrations.
+
+[Browse the classified knowledge base](knowledge-base/README.md)
+
+### 3D reconstruction and dynamic geometry
+
+<table>
+<tr>
+<td width="50%" valign="top" align="center">
+<strong>Neuralangelo</strong><br>
+<sub>Approved reference</sub><br>
+<a href="knowledge-base/showcase/neuralangelo/figure.png"><img src="knowledge-base/showcase/neuralangelo/figure.png" alt="Neuralangelo — Approved reference" width="440"></a><br>
+<a href="knowledge-base/showcase/neuralangelo/figure.png">Full-size image</a> · <a href="knowledge-base/showcase/neuralangelo/prompt.txt">Full prompt</a> · <a href="knowledge-base/showcase/neuralangelo/README.md">Case details</a>
+</td>
+<td width="50%" valign="top" align="center">
+<strong>D4RT</strong><br>
+<sub>Review draft · not admitted</sub><br>
+<a href="knowledge-base/showcase/d4rt/figure.png"><img src="knowledge-base/showcase/d4rt/figure.png" alt="D4RT — Review draft · not admitted" width="440"></a><br>
+<a href="knowledge-base/showcase/d4rt/figure.png">Full-size image</a> · <a href="knowledge-base/showcase/d4rt/prompt.txt">Full prompt</a> · <a href="knowledge-base/showcase/d4rt/README.md">Case details</a>
+</td>
+</tr>
+</table>
+
+### Agents, tools and retrieval
+
+<table>
+<tr>
+<td width="50%" valign="top" align="center">
+<strong>ReAct</strong><br>
+<sub>Approved reference</sub><br>
+<a href="knowledge-base/showcase/react/figure.png"><img src="knowledge-base/showcase/react/figure.png" alt="ReAct — Approved reference" width="440"></a><br>
+<a href="knowledge-base/showcase/react/figure.png">Full-size image</a> · <a href="knowledge-base/showcase/react/prompt.txt">Full prompt</a> · <a href="knowledge-base/showcase/react/README.md">Case details</a>
+</td>
+<td width="50%" valign="top" align="center">
+<strong>AutoTool</strong><br>
+<sub>Review draft · not admitted</sub><br>
+<a href="knowledge-base/showcase/autotool/figure.png"><img src="knowledge-base/showcase/autotool/figure.png" alt="AutoTool — Review draft · not admitted" width="440"></a><br>
+<a href="knowledge-base/showcase/autotool/figure.png">Full-size image</a> · <a href="knowledge-base/showcase/autotool/prompt.txt">Full prompt</a> · <a href="knowledge-base/showcase/autotool/README.md">Case details</a>
+</td>
+</tr>
+</table>
+
+### Molecular modeling and AI for Science
+
+<table>
+<tr>
+<td width="50%" valign="top" align="center">
+<strong>DiffDock</strong><br>
+<sub>Approved reference</sub><br>
+<a href="knowledge-base/showcase/diffdock/figure.png"><img src="knowledge-base/showcase/diffdock/figure.png" alt="DiffDock — Approved reference" width="440"></a><br>
+<a href="knowledge-base/showcase/diffdock/figure.png">Full-size image</a> · <a href="knowledge-base/showcase/diffdock/prompt.txt">Full prompt</a> · <a href="knowledge-base/showcase/diffdock/README.md">Case details</a>
+</td>
+<td width="50%" valign="top" align="center">
+<strong>SigmaDock</strong><br>
+<sub>Review draft · not admitted</sub><br>
+<a href="knowledge-base/showcase/sigmadock/figure.png"><img src="knowledge-base/showcase/sigmadock/figure.png" alt="SigmaDock — Review draft · not admitted" width="440"></a><br>
+<a href="knowledge-base/showcase/sigmadock/figure.png">Full-size image</a> · <a href="knowledge-base/showcase/sigmadock/prompt.txt">Full prompt</a> · <a href="knowledge-base/showcase/sigmadock/README.md">Case details</a>
+</td>
+</tr>
+</table>
 
 ## Why Sivia?
 
@@ -125,21 +186,6 @@ python skills/design-scientific-figure/scripts/inspect_raster_asset.py --image r
 ```
 
 Run from the plugin root. Add `--crop-px LEFT TOP RIGHT BOTTOM` to evaluate a crop. See [asset production](skills/design-scientific-figure/references/asset-production.md) for source-resolution planning and authorized contour-mask recovery.
-
-## Knowledge base
-
-Every case pairs an **actual generated image with its full prompt**. These are visual references, not evidence for your paper's architecture or results.
-
-| Case | Communication task | Resources |
-| --- | --- | --- |
-| Agent Fleet | Multi-agent coordination | [Image](knowledge-base/cases/agent-fleet/figure.png) · [Prompt](knowledge-base/cases/agent-fleet/prompt.txt) |
-| Reasoning Between Words | Latent reasoning and symbolic anchors | [Image](knowledge-base/cases/reasoning-between-words/figure.png) · [Prompt](knowledge-base/cases/reasoning-between-words/prompt.txt) |
-| TRACE | Multimodal evidence routing | [Image](knowledge-base/cases/trace/figure.png) · [Prompt](knowledge-base/cases/trace/prompt.txt) |
-| EventBridge-RL | Two-timescale world models | [Image](knowledge-base/cases/eventbridge-rl/figure.png) · [Prompt](knowledge-base/cases/eventbridge-rl/prompt.txt) |
-| Trust / Repair | Compact two-stage agent framework | [Image](knowledge-base/cases/two-phase-trust-repair/figure.png) · [Prompt](knowledge-base/cases/two-phase-trust-repair/prompt.txt) |
-| Memory Routing | Long-video memory framework | [Image](knowledge-base/cases/visio-memory-routing/figure.png) · [Prompt](knowledge-base/cases/visio-memory-routing/prompt.txt) |
-
-See individual [case notes](knowledge-base/README.md) for approval state and observations. [Contribute a case](knowledge-base/CONTRIBUTING.md) with the final image, complete prompt and useful revision feedback. Publishing a manuscript or private asset requires its owner's authorization.
 
 ## Limitations
 

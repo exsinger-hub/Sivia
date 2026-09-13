@@ -1,0 +1,19 @@
+{
+  "id": "neuralangelo",
+  "name": "Neuralangelo",
+  "title": "Neuralangelo: High-Fidelity Neural Surface Reconstruction",
+  "category": "geometry-4d",
+  "status": "approved_reference",
+  "source_url": "https://openaccess.thecvf.com/content/CVPR2023/html/Li_Neuralangelo_High-Fidelity_Neural_Surface_Reconstruction_CVPR_2023_paper.html",
+  "venue": "CVPR",
+  "year": 2023,
+  "image_sha256": "45e4e448ba4add51ce3bc52300f096d2d77cc0061030770d98757a266be8386e",
+  "prompt_sha256": "26cd1f2ded9cba261d2e5eea030e935c5e19582f1370430fa3928afcb4d21cd6",
+  "prompt_characters": 23971,
+  "prompt_nonwhitespace_characters": 20509,
+  "asset_kind": "generated_conceptual_illustration",
+  "showcase_publication_authorized": true,
+  "sealed_evaluation_eligible": false,
+  "source_snapshot_commit": "6b4d2f9b3e6bdc44595538573db0ffa821759a1a",
+  "remaining_review_notes": []
+}

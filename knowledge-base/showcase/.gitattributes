@@ -1,0 +1,3 @@
+**/prompt.txt -text -whitespace
+**/*.png binary
+*.json -text
