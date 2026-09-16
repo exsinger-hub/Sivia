@@ -1,5 +1,11 @@
 # Changelog / 更新日志
 
+## 1.1.3 — 2026-09-17
+
+- Removed the Star `SessionStart` hook. Startup, resumption and normal figure workflows never solicit Stars.
+- Limited the optional invitation to an assistant-led, verified first successful installation. A local marker shared across clients prevents repeat invitations; updates, reinstalls and uncertain installation history skip it.
+- 删除 Star 启动钩子；仅安装助手在确认首次安装成功后询问一次，使用阶段不询问、不补问。升级、重装和无法确认安装历史时跳过。
+
 ## 1.1.2 — 2026-09-16
 
 - Added one optional welcome invitation for Codex and Claude Code through a shared `SessionStart` hook. It only writes a local notice marker and displays a message; it does not contact GitHub or change an account.

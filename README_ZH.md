@@ -4,7 +4,7 @@
 
 ### 从论文到科研视觉稿，从确认稿到可编辑图件。
 
-[![版本](https://img.shields.io/badge/version-1.1.2-blue)](.codex-plugin/plugin.json)
+[![版本](https://img.shields.io/badge/version-1.1.3-blue)](.codex-plugin/plugin.json)
 [![客户端](https://img.shields.io/badge/clients-Codex%20%7C%20Claude%20Code-orange)](#安装)
 [![许可证](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
@@ -116,9 +116,9 @@ codex plugin add sivia@sivia
 
 ### 自愿 Star 邀请
 
-安装后，在钩子已启用并受信任的首次启动时，Sivia 会显示一次邀请。如果愿意支持项目，可回复 **“给 Sivia 点 Star”**：助手收到你的明确请求后，可使用你的 GitHub 账号为 [exsinger-hub/Sivia](https://github.com/exsinger-hub/Sivia) 点 Star。也可以自行在 GitHub 点击 **Star**。跳过邀请不影响任何功能。
+助手协助你**首次安装成功时**，可以在安装完成消息中询问一次，是否愿意给 [exsinger-hub/Sivia](https://github.com/exsinger-hub/Sivia) 点 Star；仅在你同意后执行。升级、重装、启动和日常使用都不询问，跳过不影响任何功能。
 
-启动钩子只显示邀请、保存一个本地提示标记，不登录账号，也不连接 GitHub。设置 `SIVIA_STAR_INVITE=0` 可关闭提示。Codex 需要先[审阅并信任钩子](https://learn.chatgpt.com/docs/hooks)；未启用钩子的客户端可直接使用项目链接。详见 [Star 协助规则](skills/support-sivia/SKILL.md)。
+安装助手须遵循[首次安装规则](skills/support-sivia/SKILL.md)，通过本地标记避免重复询问；设置 `SIVIA_STAR_INVITE=0` 可跳过。直接使用客户端原生插件管理器安装时，不弹出 Sivia 的 Star 询问，也不会留到第一次使用时补问。你仍可随时主动要求**“给 Sivia 点 Star”**。
 
 ### 运行条件
 
