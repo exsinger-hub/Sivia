@@ -1,0 +1,13 @@
+Design one publication-ready research overview figure inspired by the paper 'MegaSaM: Accurate, Fast, and Robust Structure and Motion from Casual Dynamic Videos'. This is an original, source-grounded redraw for a Sivia knowledge-base example, not a reproduction of the publisher's artwork and not a scientific result. Domain: dynamic-video structure from motion. Core claim: A deep visual-SLAM system estimates camera motion and depth robustly from casual monocular videos with dynamic content, weak parallax and uncontrolled camera paths.
+
+The source is a recent top-conference paper with a method overview that should read as a compact visual argument: casual dynamic video → visual-SLAM feature stream → camera trajectory and depth map with temporal consistency. Use one 16:9 white-paper composition and one dominant causal path: input → representation or module → transformation → output/use. Use crisp flat editorial vector linework, small meaningful thumbnails, deliberate alignment, charcoal text and at most three accent colours. Keep the content hull compact.
+
+Do not use gradients, glow, drop shadows, glossy 3-D blobs, photorealistic robots, rounded dashboard cards, oversized title banners, rainbow palettes, decorative icons, fake benchmark charts, invented numbers or generic AI pipeline boxes. Draw only the source-grounded objects below, connect every arrow to a visible start and end, and make the representation change explicit. Use short labels and consistent stroke weights; the figure must read as an authored conference overview rather than an AI infographic.
+
+Build these source-grounded elements:
+1. A handheld monocular video strip containing a moving subject and a changing camera path, with motion regions marked subtly.
+2. A temporal encoder or SLAM loop that separates camera motion from scene motion using a compact recurrent arrow, without invented module names.
+3. Two aligned outputs: a smooth camera trajectory in a simple 3D coordinate frame and a dense depth map that preserves moving regions.
+4. A small before/after visual comparison showing failure under static-scene assumptions versus robust dynamic estimation, with no metrics.
+
+Use only these labels when needed: casual video, dynamic scene, camera motion, temporal features, trajectory, depth. Do not invent architectures, losses, datasets, performance values, sensors or downstream tasks beyond the source note. Show qualitative results as relations or state changes, never fabricated plots. Add a small footer reading 'conceptual illustration; source-grounded method'. Check thumbnail legibility, low whitespace, balanced ink density, clear hierarchy, unambiguous arrows and one coherent overview narrative.

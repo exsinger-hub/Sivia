@@ -1,10 +1,10 @@
 # 科研绘图知识库 · 条件匹配重启版
 
-本地审阅版，尚未推送。当前有效参考池是用户认可的 **Neuralangelo、ReAct、DiffDock 3 对**；其余 **39 对**保留为历史排除项。原先“42 对全部通过”的结论只代表旧数值筛查，不能代表用户认可或科学质量。
+当前有效参考池包含用户认可的 **Neuralangelo、ReAct、DiffDock 3 对历史参考**，以及本次明确选定的 **7 对近期顶会 overview 扩充条目**；其余历史条目仍保留为排除项。所有新增图像均为概念性科研插图，不是实验结果。
 
 [打开图文审阅页](restart-2026/gallery.html) · [机器索引](index.json) · [SQLite 条件匹配数据库](restart-2026/conditional.sqlite) · [24 篇候选](restart-2026/candidates.json) · [历史排除项](archive/excluded-39.json)
 
-本轮已完成 3 个实际生成试配对；其余 21 篇尚未生成。新入库为 0，全部等待审阅。
+本次已将 7 对近期顶会图像—prompt 配对正式纳入知识库；另外 5 对仍保留在本地审阅候选中。
 
 ### 逐条图片展示
 
@@ -67,18 +67,88 @@
 </tr>
 </table>
 
+## 近期顶会 overview 扩充（已选 7 对）
+
+本轮从 12 张审阅稿中选定 7 对，按三类知识库整理。每个条目都展示对应图片、完整 prompt 与案例详情。
+
+#### 3D 几何与神经渲染
+
+<table>
+<tr>
+<td width="50%" valign="top" align="center">
+<strong>VGGT: Visual Geometry Grounded Transformer</strong><br>
+<sub>已确认纳入</sub><br>
+<a href="overview-hot-domains-2025-26/pairs/cvpr25-vggt/figure.png"><img src="overview-hot-domains-2025-26/pairs/cvpr25-vggt/figure.png" alt="VGGT: Visual Geometry Grounded Transformer" width="440"></a><br>
+<a href="overview-hot-domains-2025-26/pairs/cvpr25-vggt/figure.png">查看原图</a> · <a href="overview-hot-domains-2025-26/pairs/cvpr25-vggt/prompt.txt">完整 prompt</a> · <a href="overview-hot-domains-2025-26/pairs/cvpr25-vggt/README.md">案例详情</a>
+</td>
+<td width="50%" valign="top" align="center">
+<strong>MegaSaM: Accurate, Fast, and Robust Structure and Motion from Casual Dynamic Videos</strong><br>
+<sub>已确认纳入</sub><br>
+<a href="overview-hot-domains-2025-26/pairs/cvpr25-megasam/figure.png"><img src="overview-hot-domains-2025-26/pairs/cvpr25-megasam/figure.png" alt="MegaSaM: Accurate, Fast, and Robust Structure and Motion from Casual Dynamic Videos" width="440"></a><br>
+<a href="overview-hot-domains-2025-26/pairs/cvpr25-megasam/figure.png">查看原图</a> · <a href="overview-hot-domains-2025-26/pairs/cvpr25-megasam/prompt.txt">完整 prompt</a> · <a href="overview-hot-domains-2025-26/pairs/cvpr25-megasam/README.md">案例详情</a>
+</td>
+</tr>
+</table>
+
+#### 世界模型与具身感知
+
+<table>
+<tr>
+<td width="50%" valign="top" align="center">
+<strong>Learning View-invariant World Models for Visual Robotic Manipulation</strong><br>
+<sub>已确认纳入</sub><br>
+<a href="overview-hot-domains-2025-26/pairs/iclr25-reviwo/figure.png"><img src="overview-hot-domains-2025-26/pairs/iclr25-reviwo/figure.png" alt="Learning View-invariant World Models for Visual Robotic Manipulation" width="440"></a><br>
+<a href="overview-hot-domains-2025-26/pairs/iclr25-reviwo/figure.png">查看原图</a> · <a href="overview-hot-domains-2025-26/pairs/iclr25-reviwo/prompt.txt">完整 prompt</a> · <a href="overview-hot-domains-2025-26/pairs/iclr25-reviwo/README.md">案例详情</a>
+</td>
+<td width="50%" valign="top" align="center">
+<strong>RoboSpatial: Teaching Spatial Understanding to 2D and 3D Vision-Language Models for Robotics</strong><br>
+<sub>已确认纳入</sub><br>
+<a href="overview-hot-domains-2025-26/pairs/cvpr25-robospatial/figure.png"><img src="overview-hot-domains-2025-26/pairs/cvpr25-robospatial/figure.png" alt="RoboSpatial: Teaching Spatial Understanding to 2D and 3D Vision-Language Models for Robotics" width="440"></a><br>
+<a href="overview-hot-domains-2025-26/pairs/cvpr25-robospatial/figure.png">查看原图</a> · <a href="overview-hot-domains-2025-26/pairs/cvpr25-robospatial/prompt.txt">完整 prompt</a> · <a href="overview-hot-domains-2025-26/pairs/cvpr25-robospatial/README.md">案例详情</a>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top" align="center">
+<strong>Reconstructing People, Places, and Cameras</strong><br>
+<sub>已确认纳入</sub><br>
+<a href="overview-hot-domains-2025-26/pairs/cvpr25-people-places-cameras/figure.png"><img src="overview-hot-domains-2025-26/pairs/cvpr25-people-places-cameras/figure.png" alt="Reconstructing People, Places, and Cameras" width="440"></a><br>
+<a href="overview-hot-domains-2025-26/pairs/cvpr25-people-places-cameras/figure.png">查看原图</a> · <a href="overview-hot-domains-2025-26/pairs/cvpr25-people-places-cameras/prompt.txt">完整 prompt</a> · <a href="overview-hot-domains-2025-26/pairs/cvpr25-people-places-cameras/README.md">案例详情</a>
+</td>
+<td width="50%" valign="top" align="center"></td>
+</tr>
+</table>
+
+#### 多模态与运动感知学习
+
+<table>
+<tr>
+<td width="50%" valign="top" align="center">
+<strong>Efficient Motion-Aware Video MLLM</strong><br>
+<sub>已确认纳入</sub><br>
+<a href="overview-hot-domains-2025-26/pairs/cvpr25-motion-aware-video-mllm/figure.png"><img src="overview-hot-domains-2025-26/pairs/cvpr25-motion-aware-video-mllm/figure.png" alt="Efficient Motion-Aware Video MLLM" width="440"></a><br>
+<a href="overview-hot-domains-2025-26/pairs/cvpr25-motion-aware-video-mllm/figure.png">查看原图</a> · <a href="overview-hot-domains-2025-26/pairs/cvpr25-motion-aware-video-mllm/prompt.txt">完整 prompt</a> · <a href="overview-hot-domains-2025-26/pairs/cvpr25-motion-aware-video-mllm/README.md">案例详情</a>
+</td>
+<td width="50%" valign="top" align="center">
+<strong>Dense-SfM: Structure from Motion with Dense Consistent Matching</strong><br>
+<sub>已确认纳入</sub><br>
+<a href="overview-hot-domains-2025-26/pairs/cvpr25-dense-sfm/figure.png"><img src="overview-hot-domains-2025-26/pairs/cvpr25-dense-sfm/figure.png" alt="Dense-SfM: Structure from Motion with Dense Consistent Matching" width="440"></a><br>
+<a href="overview-hot-domains-2025-26/pairs/cvpr25-dense-sfm/figure.png">查看原图</a> · <a href="overview-hot-domains-2025-26/pairs/cvpr25-dense-sfm/prompt.txt">完整 prompt</a> · <a href="overview-hot-domains-2025-26/pairs/cvpr25-dense-sfm/README.md">案例详情</a>
+</td>
+</tr>
+</table>
+
 ## 条件匹配
 
 [按新需求的条件直接查询：命令、词表与增广流程](restart-2026/retrieval-guide.md)
 
-按领域、科学对象、机制拓扑、构图形式四个维度匹配，仅检索用户认可的历史参考。默认权重 0.30 / 0.30 / 0.25 / 0.15；匹配值低于 0.5 时不自动选择参考。该值是可解释的检索启发式，不是视觉质量分数。
+按领域、科学对象、机制拓扑、构图形式四个维度匹配，现已纳入 3 对历史锚点与 7 对近期用户选定 overview 条目。默认权重 0.30 / 0.30 / 0.25 / 0.15；匹配值低于 0.5 时不自动选择参考。该值是可解释的检索启发式，不是视觉质量分数。
 
 ```bash
 python scripts/restart_conditional_kb.py --query d4rt
 python scripts/validate_knowledge_base.py
 ```
 
-每条记录保留借鉴内容、禁止迁移的科学内容和弱匹配提示。现有三个参考覆盖有限；弱匹配的生成、机器人等候选仍需新论文图形支持，不能强行套版。
+每条记录保留借鉴内容、禁止迁移的科学内容和弱匹配提示。新增 overview 只作为来源明确的概念性参考，不能替代真实实验结果，也不能强行套用到科学内容不同的论文。
 
 ## 三个试配对
 

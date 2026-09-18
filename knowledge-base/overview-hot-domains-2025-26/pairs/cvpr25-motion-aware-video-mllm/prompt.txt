@@ -1,0 +1,13 @@
+Design one publication-ready research overview figure inspired by the paper 'Efficient Motion-Aware Video MLLM'. This is an original, source-grounded redraw for a Sivia knowledge-base example, not a reproduction of the publisher's artwork and not a scientific result. Domain: video-language models and motion-aware tokenization. Core claim: A compressed-video encoder combines dense RGB keyframes with sparse motion vectors in a slow-fast input structure to produce motion-aware tokens for video language reasoning.
+
+The source is a recent top-conference paper with a method overview that should read as a compact visual argument: compressed video GOP → RGB and motion-vector streams → motion-aware GOP encoder → compact video tokens → language model. Use one 16:9 white-paper composition and one dominant causal path: input → representation or module → transformation → output/use. Use crisp flat editorial vector linework, small meaningful thumbnails, deliberate alignment, charcoal text and at most three accent colours. Keep the content hull compact.
+
+Do not use gradients, glow, drop shadows, glossy 3-D blobs, photorealistic robots, rounded dashboard cards, oversized title banners, rainbow palettes, decorative icons, fake benchmark charts, invented numbers or generic AI pipeline boxes. Draw only the source-grounded objects below, connect every arrow to a visible start and end, and make the representation change explicit. Use short labels and consistent stroke weights; the figure must read as an authored conference overview rather than an AI infographic.
+
+Build these source-grounded elements:
+1. A short compressed-video strip split into GOP units, with one dense RGB keyframe row and a sparser motion-vector row.
+2. A motion-aware GOP encoder that fuses spatial appearance and motion direction within each unit, shown as two lanes merging once.
+3. A compact token sequence whose density is visibly lower than the raw frame stream, without any invented compression ratio.
+4. A language-model block answering a motion question through four qualitative motion types: linear, curved, rotational and contact-based.
+
+Use only these labels when needed: GOP, RGB frame, motion vector, motion-aware encoder, video tokens, language model, motion query. Do not invent architectures, losses, datasets, performance values, sensors or downstream tasks beyond the source note. Show qualitative results as relations or state changes, never fabricated plots. Add a small footer reading 'conceptual illustration; source-grounded method'. Check thumbnail legibility, low whitespace, balanced ink density, clear hierarchy, unambiguous arrows and one coherent overview narrative.

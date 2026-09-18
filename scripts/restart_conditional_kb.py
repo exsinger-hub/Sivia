@@ -144,8 +144,13 @@ def query_conditions(category,objects,topology,composition):
     split=lambda value: sorted({x.strip() for x in (value or '').split(',') if x.strip()})
     conditions={'category':category,'objects':split(objects),'topology':split(topology),'composition':split(composition)}
     with open_readonly() as db:
-        anchors=[json.loads(row[0]) for row in db.execute('SELECT metadata FROM anchors WHERE approval=?',('user_approved',))]
-    anchors=[a for a in anchors if a['id'] in APPROVED]
+    anchors=[json.loads(row[0]) for row in db.execute('SELECT metadata FROM anchors WHERE approval=?',('user_approved',))]
+    # The published index may contain the three legacy anchors plus explicitly
+    # approved recent overview pairs. Query all eligible references in that
+    # index; the build path still protects the original review-plan contract.
+    published = json.loads((KB/'index.json').read_text(encoding='utf-8'))
+    allowed={r['id'] for r in published['records'] if r.get('eligible_reference')}
+    anchors=[a for a in anchors if a['id'] in allowed]
     matches=rank(conditions,anchors)
     selected=matches[0]['anchor_id'] if matches and matches[0]['score']>=MINIMUM_MATCH else None
     print(json.dumps({'conditions':conditions,'selected_anchor':selected,'minimum_match':MINIMUM_MATCH,

@@ -13,6 +13,12 @@
     "controlnet",
     "cosmos-policy",
     "cutie",
+    "cvpr25-dense-sfm",
+    "cvpr25-megasam",
+    "cvpr25-motion-aware-video-mllm",
+    "cvpr25-people-places-cameras",
+    "cvpr25-robospatial",
+    "cvpr25-vggt",
     "d4rt",
     "dc2",
     "demodiff",
@@ -31,6 +37,7 @@
     "glass",
     "graphgps",
     "ibot",
+    "iclr25-reviwo",
     "instructblip",
     "latent-diffusion",
     "llava",
@@ -69,5 +76,6 @@
     "visprog",
     "worldgym"
   ],
-  "restart_note": "Rejected history remains excluded from sealed evaluation; rejection does not undo exposure."
+  "restart_note": "Rejected history remains excluded from sealed evaluation; rejection does not undo exposure.",
+  "recent_selected_note": "Seven user-selected overview source families and derivatives remain excluded from sealed evaluation."
 }

@@ -1,0 +1,14 @@
+Design one publication-ready research overview figure inspired by the paper 'VGGT: Visual Geometry Grounded Transformer'. This is an original, source-grounded redraw for a Sivia knowledge-base example, not a reproduction of the publisher's artwork and not a scientific result. Domain: 3D scene geometry and feed-forward reconstruction. Core claim: A feed-forward transformer predicts camera parameters, point maps, depth maps and point tracks from one to hundreds of views in a single unified model.
+
+The source is a recent top-conference paper with a method overview that should read as a compact visual argument: multi-view images → alternating attention transformer → camera, depth, point-map and track heads. Use one 16:9 white-paper composition and one dominant causal path: input → representation or module → transformation → output/use. Use crisp flat editorial vector linework, small meaningful thumbnails, deliberate alignment, charcoal text and at most three accent colours. Keep the content hull compact.
+
+Do not use gradients, glow, drop shadows, glossy 3-D blobs, photorealistic robots, rounded dashboard cards, oversized title banners, rainbow palettes, decorative icons, fake benchmark charts, invented numbers or generic AI pipeline boxes. Draw only the source-grounded objects below, connect every arrow to a visible start and end, and make the representation change explicit. Use short labels and consistent stroke weights; the figure must read as an authored conference overview rather than an AI infographic.
+
+Build these source-grounded elements:
+1. A compact strip of one, a few and many input views, each shown as a small scene thumbnail with a shared camera-reference marker.
+2. One central transformer body with two clearly separated attention lanes: within-view processing and global cross-view fusion.
+3. Four output branches drawn as geometry-bearing symbols: camera frustums, depth planes, aligned point maps and 3D point tracks.
+4. A single scene reconstruction at the right that reuses the same reference frame and visually ties all four outputs together.
+5. A narrow correspondence inset beneath the output heads aligning one tracked scene point across an input view, its depth pixel and its point-map or 3D-track location, with a shared reference-axis marker.
+
+Use only these labels when needed: input views, intra-frame attention, global attention, camera, depth, point map, point tracks. Do not invent architectures, losses, datasets, performance values, sensors or downstream tasks beyond the source note. Show qualitative results as relations or state changes, never fabricated plots. Add a small footer reading 'conceptual illustration; source-grounded method'. Check thumbnail legibility, low whitespace, balanced ink density, clear hierarchy, unambiguous arrows and one coherent overview narrative.

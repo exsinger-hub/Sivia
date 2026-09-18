@@ -20,176 +20,93 @@ Sivia is a scientific-figure plugin for **Codex and Claude Code**. It reads your
 
 ## Knowledge base
 
-The active reference pool has **3 user-approved historical pairs**: Neuralangelo, ReAct and DiffDock. The other 39 of the previous 42 pairs are archived as excluded references. The earlier density screen did not establish visual acceptance.
+The active reference pool now contains **10 user-approved image–prompt pairs**: the historical Neuralangelo, ReAct and DiffDock anchors plus **7 recent top-conference overview additions** selected from the 12-image review round. The remaining five review drafts stay outside the active pool.
 
-This local restart contains **24 recent main-conference candidates in six categories** and **3 actual generated calibration pairs**, all pending review; 21 candidates have not yet been generated. No new pair is admitted and nothing from this restart has been pushed. Conference-edition window: 2025-09-13 through 2026-09-13; first-preprint dates remain unverified.
+Browse the [classified knowledge base](knowledge-base/README.md), the [selected recent-overview ledger](knowledge-base/overview-hot-domains-2025-26/selected-ledger.json), or the [machine-readable active index](knowledge-base/index.json). Every selected entry includes its own image, exact prompt and case notes. All source families and derivatives remain excluded from future sealed evaluation.
 
-Conditional retrieval uses domain, scientific objects, topology and composition, with explicit transfer boundaries and a no-match outcome. Browse the [review gallery](knowledge-base/restart-2026/gallery.html), [classified knowledge base](knowledge-base/README.md) or [active index](knowledge-base/index.json). Full submitted prompts, reference bindings and revision notes accompany each draft.
+### Selected recent overview gallery
 
-### Image gallery
-
-Each entry has its own current image. Click an image to inspect it at full size.
-
-#### 3D reconstruction and dynamic geometry
+#### 3D geometry and neural rendering
 
 <table>
 <tr>
 <td width="50%" valign="top" align="center">
-<strong>Neuralangelo</strong><br>
-<sub>Approved reference</sub><br>
-<a href="knowledge-base/cases/neuralangelo/figure.png"><img src="knowledge-base/cases/neuralangelo/figure.png" alt="Neuralangelo — Approved reference" width="440"></a><br>
-<a href="knowledge-base/cases/neuralangelo/figure.png">Full-size image</a> · <a href="knowledge-base/cases/neuralangelo/prompt.txt">Full prompt</a> · <a href="knowledge-base/cases/neuralangelo/README.md">Case details</a>
+<strong>VGGT: Visual Geometry Grounded Transformer</strong><br>
+<sub>User-selected and published</sub><br>
+<a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-vggt/figure.png"><img src="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-vggt/figure.png" alt="VGGT: Visual Geometry Grounded Transformer" width="440"></a><br>
+<a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-vggt/figure.png">Full-size image</a> · <a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-vggt/prompt.txt">Full prompt</a> · <a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-vggt/README.md">Case details</a>
 </td>
 <td width="50%" valign="top" align="center">
-<strong>D4RT</strong><br>
-<sub>Review draft · not admitted</sub><br>
-<a href="knowledge-base/restart-2026/pairs/d4rt/figure.png"><img src="knowledge-base/restart-2026/pairs/d4rt/figure.png" alt="D4RT — Review draft · not admitted" width="440"></a><br>
-<a href="knowledge-base/restart-2026/pairs/d4rt/figure.png">Full-size image</a> · <a href="knowledge-base/restart-2026/pairs/d4rt/prompt.txt">Full prompt</a> · <a href="knowledge-base/restart-2026/pairs/d4rt/README.md">Case details</a>
+<strong>MegaSaM: Accurate, Fast, and Robust Structure and Motion from Casual Dynamic Videos</strong><br>
+<sub>User-selected and published</sub><br>
+<a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-megasam/figure.png"><img src="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-megasam/figure.png" alt="MegaSaM: Accurate, Fast, and Robust Structure and Motion from Casual Dynamic Videos" width="440"></a><br>
+<a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-megasam/figure.png">Full-size image</a> · <a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-megasam/prompt.txt">Full prompt</a> · <a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-megasam/README.md">Case details</a>
 </td>
 </tr>
 </table>
 
-#### Agents, tools and retrieval
+#### World models and embodied perception
 
 <table>
 <tr>
 <td width="50%" valign="top" align="center">
-<strong>ReAct</strong><br>
-<sub>Approved reference</sub><br>
-<a href="knowledge-base/cases/react/figure.png"><img src="knowledge-base/cases/react/figure.png" alt="ReAct — Approved reference" width="440"></a><br>
-<a href="knowledge-base/cases/react/figure.png">Full-size image</a> · <a href="knowledge-base/cases/react/prompt.txt">Full prompt</a> · <a href="knowledge-base/cases/react/README.md">Case details</a>
+<strong>Learning View-invariant World Models for Visual Robotic Manipulation</strong><br>
+<sub>User-selected and published</sub><br>
+<a href="knowledge-base/overview-hot-domains-2025-26/pairs/iclr25-reviwo/figure.png"><img src="knowledge-base/overview-hot-domains-2025-26/pairs/iclr25-reviwo/figure.png" alt="Learning View-invariant World Models for Visual Robotic Manipulation" width="440"></a><br>
+<a href="knowledge-base/overview-hot-domains-2025-26/pairs/iclr25-reviwo/figure.png">Full-size image</a> · <a href="knowledge-base/overview-hot-domains-2025-26/pairs/iclr25-reviwo/prompt.txt">Full prompt</a> · <a href="knowledge-base/overview-hot-domains-2025-26/pairs/iclr25-reviwo/README.md">Case details</a>
 </td>
 <td width="50%" valign="top" align="center">
-<strong>AutoTool</strong><br>
-<sub>Review draft · not admitted</sub><br>
-<a href="knowledge-base/restart-2026/pairs/autotool/figure.png"><img src="knowledge-base/restart-2026/pairs/autotool/figure.png" alt="AutoTool — Review draft · not admitted" width="440"></a><br>
-<a href="knowledge-base/restart-2026/pairs/autotool/figure.png">Full-size image</a> · <a href="knowledge-base/restart-2026/pairs/autotool/prompt.txt">Full prompt</a> · <a href="knowledge-base/restart-2026/pairs/autotool/README.md">Case details</a>
+<strong>RoboSpatial: Teaching Spatial Understanding to 2D and 3D Vision-Language Models for Robotics</strong><br>
+<sub>User-selected and published</sub><br>
+<a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-robospatial/figure.png"><img src="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-robospatial/figure.png" alt="RoboSpatial: Teaching Spatial Understanding to 2D and 3D Vision-Language Models for Robotics" width="440"></a><br>
+<a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-robospatial/figure.png">Full-size image</a> · <a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-robospatial/prompt.txt">Full prompt</a> · <a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-robospatial/README.md">Case details</a>
 </td>
+</tr>
+<tr>
+<td width="50%" valign="top" align="center">
+<strong>Reconstructing People, Places, and Cameras</strong><br>
+<sub>User-selected and published</sub><br>
+<a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-people-places-cameras/figure.png"><img src="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-people-places-cameras/figure.png" alt="Reconstructing People, Places, and Cameras" width="440"></a><br>
+<a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-people-places-cameras/figure.png">Full-size image</a> · <a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-people-places-cameras/prompt.txt">Full prompt</a> · <a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-people-places-cameras/README.md">Case details</a>
+</td>
+<td width="50%" valign="top" align="center"></td>
 </tr>
 </table>
 
-#### Molecular modeling and AI for Science
+#### Multimodal and motion-aware learning
 
 <table>
 <tr>
 <td width="50%" valign="top" align="center">
-<strong>DiffDock</strong><br>
-<sub>Approved reference</sub><br>
-<a href="knowledge-base/cases/diffdock/figure.png"><img src="knowledge-base/cases/diffdock/figure.png" alt="DiffDock — Approved reference" width="440"></a><br>
-<a href="knowledge-base/cases/diffdock/figure.png">Full-size image</a> · <a href="knowledge-base/cases/diffdock/prompt.txt">Full prompt</a> · <a href="knowledge-base/cases/diffdock/README.md">Case details</a>
+<strong>Efficient Motion-Aware Video MLLM</strong><br>
+<sub>User-selected and published</sub><br>
+<a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-motion-aware-video-mllm/figure.png"><img src="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-motion-aware-video-mllm/figure.png" alt="Efficient Motion-Aware Video MLLM" width="440"></a><br>
+<a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-motion-aware-video-mllm/figure.png">Full-size image</a> · <a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-motion-aware-video-mllm/prompt.txt">Full prompt</a> · <a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-motion-aware-video-mllm/README.md">Case details</a>
 </td>
 <td width="50%" valign="top" align="center">
-<strong>SigmaDock</strong><br>
-<sub>Review draft · not admitted</sub><br>
-<a href="knowledge-base/restart-2026/pairs/sigmadock/figure.png"><img src="knowledge-base/restart-2026/pairs/sigmadock/figure.png" alt="SigmaDock — Review draft · not admitted" width="440"></a><br>
-<a href="knowledge-base/restart-2026/pairs/sigmadock/figure.png">Full-size image</a> · <a href="knowledge-base/restart-2026/pairs/sigmadock/prompt.txt">Full prompt</a> · <a href="knowledge-base/restart-2026/pairs/sigmadock/README.md">Case details</a>
+<strong>Dense-SfM: Structure from Motion with Dense Consistent Matching</strong><br>
+<sub>User-selected and published</sub><br>
+<a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-dense-sfm/figure.png"><img src="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-dense-sfm/figure.png" alt="Dense-SfM: Structure from Motion with Dense Consistent Matching" width="440"></a><br>
+<a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-dense-sfm/figure.png">Full-size image</a> · <a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-dense-sfm/prompt.txt">Full prompt</a> · <a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-dense-sfm/README.md">Case details</a>
 </td>
 </tr>
 </table>
-
-## Why Sivia?
-
-- **A scientific story before a layout.** Ground the figure in the manuscript, equations and supplied implementation; identify what belongs in the overview and what belongs in the paper.
-- **Templates with their actual outputs.** Learn composition and graphic language from paired images and complete prompts, without importing another method's scientific claims.
-- **Your approval controls the next stage.** Generate → review → revise. Start editable reconstruction only when you ask for it.
-- **Edit the structure that matters.** Text, modules, operators, arrows and reconstructable charts stay native; complex illustrations remain independent assets.
-- **Failures lead to a changed action.** Recover from inadequate crops, false transparency, ineffective setters and stalled backends within the authorized scope.
-- **Evidence-backed delivery.** Distinguish file validity, editability, exact-file preview, target-application rendering and final-size readability.
 
 ## Installation
 
 ### Codex
-
-Run in a terminal:
 
 ```bash
 codex plugin marketplace add exsinger-hub/Sivia --ref main
 codex plugin add sivia@sivia
 ```
 
-The first command registers the repository marketplace; the second installs Sivia. Start a new task after installation. See [OpenAI's plugin packaging documentation](https://developers.openai.com/plugins/build/plugins); use `codex plugin add --help` to check your local CLI. Disable an older differently named copy if both expose the same skills.
-
 ### Claude Code
-
-Run inside Claude Code:
 
 ```text
 /plugin marketplace add exsinger-hub/Sivia
 /plugin install sivia@sivia
 ```
-
-### What you need
-
-| Stage | Requirements |
-| --- | --- |
-| Read a paper and prepare a prompt | A client that can read your PDF/manuscript; Python 3 for prompt-length checks. |
-| Generate or revise images | An image-generation tool available in the session. Sivia does not bundle a model, API key or paid image service. Claude Code needs an appropriate connected tool/MCP. |
-| Inspect or mask artwork | Python 3 + Pillow. Local masking is used only when authorized and appropriate for the artwork. |
-| Editable reconstruction | Node.js for the MCP servers, plus the selected drawing backend. File-backed PPTX requires Python and python-pptx; preview rendering is a separate capability. |
-
-Backend availability is detected at runtime: Windows PowerPoint COM, connected macOS PowerPoint Office.js, native OOXML working copies, and the draw.io adapter have different capabilities. An installed application does not prove a connected document or successful rendering. Image-only work does not open presentation software.
-
-## Quick start
-
-### 1. Make a paper overview
-
-Attach the paper. Code, real experiment assets, target figure width and style references are useful when available, not mandatory template-selection homework.
-
-```text
-Use Sivia to design and generate a scientific method overview from my attached paper.
-Ground the content in the manuscript, equations and supplied implementation. Explain the main
-message and proposed regions first. Select a relevant knowledge-base image and its complete
-prompt, then write and validate the full region-specific ImageGen prompt against that template.
-Generate and inspect the image. Deliver the actual image, full prompt and short design notes.
-Ask for my revisions and whether I want an editable PPT, then stop. Do not open PowerPoint/WPS.
-```
-
-Sivia expands this **user request** into the actual production prompt. Before generation, the exact submitted prompt must contain at least as many non-whitespace characters as its bound template. Detailed production instructions do not mean verbose labels inside the figure.
-
-### 2. Revise only what you name
-
-```text
-Use Sivia to revise the current visual draft according to my attached comments.
-Keep the approved ratio, regions, palette and reading path outside the affected objects.
-Integrate the changes into the complete prompt, validate its length, generate and inspect
-the revised image, and retain the previous version. Show me the result and wait; no PPT yet.
-```
-
-Add your actual comments or annotated image. “This image looks good” approves the image; it does not authorize a deck.
-
-### 3. Reconstruct the approved image
-
-```text
-Use Sivia to faithfully reconstruct this explicitly approved visual draft as an editable PPTX.
-Preserve its layout, wording and visible connections. Create a separate file; do not modify
-other open documents. Rebuild text, geometry, diagrams and arrows as native objects; retain
-only irreducible artwork as independent pictures. Keep work in the background.
-If a backend fails, recover within this scope using an available isolated native-file route.
-Inspect the actual saved PPTX and its rendered preview. Deliver the PPTX, preview and concise
-notes about fonts, assets, editability and any pending target-application verification.
-```
-
-Specify **WPS**, **Microsoft PowerPoint**, **draw.io**, or a required live document when that choice matters. A constrained backend is not silently replaced. Real-data substitution is a separate adaptation request: a faithful-copy request preserves the approved visible content and identifies schematic values as schematic.
-
-## What stays editable?
-
-| Content | Representation |
-| --- | --- |
-| Labels, boxes, grids, token strips, simple icons | Native text/shapes or meaningful editable groups. |
-| Custom line art and connectors | Native paths/primitives where supported; distinguish attached connectors from manually adjustable curves. |
-| Quantitative plots | Original measurements → native charts or editable geometry with exact values and scales. |
-| Medical images, predictions and feature maps | Individual exports from the real source; separate editable overlays. |
-| Detailed robots and textured illustrations | Suitable source artwork, or separately generated assets when permitted; independent pictures with no baked-in labels. |
-
-No stock PPT icon? Build the geometry or choose an appropriate independent asset. Cropping alone does not blur pixels; enlarging a small crop exposes its limited sampling. SVG can scale cleanly without offering native subobject editing.
-
-Inspect retained pixels and real alpha with the bundled read-only helper:
-
-```bash
-python skills/design-scientific-figure/scripts/inspect_raster_asset.py --image robot.png --width-mm 30 --require-transparent
-```
-
-Run from the plugin root. Add `--crop-px LEFT TOP RIGHT BOTTOM` to evaluate a crop. See [asset production](skills/design-scientific-figure/references/asset-production.md) for source-resolution planning and authorized contour-mask recovery.
 
 ## Limitations
 
