@@ -226,23 +226,6 @@ codex plugin add sivia@sivia
 /plugin install sivia@sivia
 ```
 
-### 自愿 Star 邀请
-
-助手协助你**首次安装成功时**，可以在安装完成消息中询问一次，是否愿意给 [exsinger-hub/Sivia](https://github.com/exsinger-hub/Sivia) 点 Star；仅在你同意后执行。升级、重装、启动和日常使用都不询问，跳过不影响任何功能。
-
-安装助手须遵循[首次安装规则](skills/support-sivia/SKILL.md)，通过本地标记避免重复询问；设置 `SIVIA_STAR_INVITE=0` 可跳过。直接使用客户端原生插件管理器安装时，不弹出 Sivia 的 Star 询问，也不会留到第一次使用时补问。你仍可随时主动要求**“给 Sivia 点 Star”**。
-
-### 运行条件
-
-| 阶段 | 需要的能力 |
-| --- | --- |
-| 阅读论文、编写 prompt | 客户端能够读取 PDF/手稿；Python 3 用于 prompt 长度检查。 |
-| 生成或修订图片 | 当前会话有可调用的生图工具。Sivia 不内置模型、API 密钥或付费生图服务；Claude Code 需连接相应工具或 MCP。 |
-| 检查或遮罩处理插画 | Python 3＋Pillow。仅在本地处理获授权且适合该素材时使用遮罩。 |
-| 可编辑复刻 | Node.js 运行 MCP 服务，并具备所选绘图后端。文件式 PPTX 需要 Python 与 python-pptx；预览渲染是独立能力。 |
-
-后端能力以实际检测为准：Windows PowerPoint COM、已连接的 macOS PowerPoint Office.js、原生 OOXML 工作副本及 draw.io 适配器并不完全相同。安装了软件，不代表文档已连接或渲染已验证。仅图片阶段不打开演示软件。
-
 ## 哪些内容可以编辑？
 
 | 内容 | 表示方式 |
