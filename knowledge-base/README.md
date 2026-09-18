@@ -10,7 +10,7 @@
 
 `paper.pdf / method text → overview image + complete prompt`
 
-[机器索引](index.json) · [近期选定清单](overview-hot-domains-2025-26/selected-ledger.json) · [审阅候选](restart-2026/candidates.json) · [条件匹配数据库](restart-2026/conditional.sqlite)
+[机器索引](index.json) · [近期选定清单](overview-hot-domains-2025-26/selected-ledger.json) · [审阅候选](restart-2026/candidates.json) · [条件匹配数据库](restart-2026/conditional.sqlite) · [机器可读展示清单](showcase/index.json) · [贡献图文配对](CONTRIBUTING.md)
 
 ## 知识库图片总览
 

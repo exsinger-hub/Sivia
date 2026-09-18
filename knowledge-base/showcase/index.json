@@ -1,0 +1,65 @@
+{
+  "schema_version": "sivia.public_showcase.v1",
+  "records": [
+    {
+      "id": "diffdock",
+      "name": "DiffDock",
+      "category": "molecular-science",
+      "status": "approved_reference",
+      "image": "showcase/diffdock/figure.png",
+      "prompt": "showcase/diffdock/prompt.txt",
+      "details": "showcase/diffdock/README.md",
+      "metadata": "showcase/diffdock/metadata.json"
+    },
+    {
+      "id": "neuralangelo",
+      "name": "Neuralangelo",
+      "category": "geometry-4d",
+      "status": "approved_reference",
+      "image": "showcase/neuralangelo/figure.png",
+      "prompt": "showcase/neuralangelo/prompt.txt",
+      "details": "showcase/neuralangelo/README.md",
+      "metadata": "showcase/neuralangelo/metadata.json"
+    },
+    {
+      "id": "react",
+      "name": "ReAct",
+      "category": "agents-retrieval",
+      "status": "approved_reference",
+      "image": "showcase/react/figure.png",
+      "prompt": "showcase/react/prompt.txt",
+      "details": "showcase/react/README.md",
+      "metadata": "showcase/react/metadata.json"
+    },
+    {
+      "id": "d4rt",
+      "name": "D4RT",
+      "category": "geometry-4d",
+      "status": "draft_pending_review",
+      "image": "showcase/d4rt/figure.png",
+      "prompt": "showcase/d4rt/prompt.txt",
+      "details": "showcase/d4rt/README.md",
+      "metadata": "showcase/d4rt/metadata.json"
+    },
+    {
+      "id": "autotool",
+      "name": "AutoTool",
+      "category": "agents-retrieval",
+      "status": "draft_pending_review",
+      "image": "showcase/autotool/figure.png",
+      "prompt": "showcase/autotool/prompt.txt",
+      "details": "showcase/autotool/README.md",
+      "metadata": "showcase/autotool/metadata.json"
+    },
+    {
+      "id": "sigmadock",
+      "name": "SigmaDock",
+      "category": "molecular-science",
+      "status": "draft_pending_review",
+      "image": "showcase/sigmadock/figure.png",
+      "prompt": "showcase/sigmadock/prompt.txt",
+      "details": "showcase/sigmadock/README.md",
+      "metadata": "showcase/sigmadock/metadata.json"
+    }
+  ]
+}

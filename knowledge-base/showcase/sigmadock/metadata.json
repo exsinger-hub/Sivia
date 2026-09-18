@@ -1,0 +1,26 @@
+{
+  "id": "sigmadock",
+  "name": "SigmaDock",
+  "title": "SigmaDock: Untwisting Molecular Docking with Fragment-Based SE(3) Diffusion",
+  "category": "molecular-science",
+  "status": "draft_pending_review",
+  "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/4c1516dc8f1643c94d164a436ce8fe51-Abstract-Conference.html",
+  "venue": "ICLR",
+  "year": 2026,
+  "image_sha256": "f9bfb45cd96528b2a802e6d53374bd1395046de5fbbe169a98c7d1717b5eacd5",
+  "prompt_sha256": "6259396c2f38c17cef40940a82ed947a3b36491404668f887d93ea870bd74a25",
+  "prompt_characters": 29697,
+  "prompt_nonwhitespace_characters": 25096,
+  "asset_kind": "generated_conceptual_illustration",
+  "showcase_publication_authorized": true,
+  "sealed_evaluation_eligible": false,
+  "source_snapshot_commit": "6b4d2f9b3e6bdc44595538573db0ffa821759a1a",
+  "remaining_review_notes": [
+    "Small angle-label artifacts remain in the lower construction; publication typography needs another precision pass.",
+    "Generic molecular graphics were not validated as a chemical structure."
+  ],
+  "source_visual_review": "assistant inspected original PDF p3 Figure 1 and p6 Figure 3; read sections 2.2.3–2.4 and appendix FR3D algorithm",
+  "selected_anchor": "diffdock",
+  "actual_generation_reference_image": "reference.png",
+  "actual_generation_reference_sha256": "28dcdf28078895cae3770f38eeec44e626507fbb0079e9870fa6a17f3d3e1da1"
+}

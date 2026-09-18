@@ -1,0 +1,19 @@
+{
+  "id": "diffdock",
+  "name": "DiffDock",
+  "title": "DiffDock: Diffusion Steps, Twists, and Turns for Molecular Docking",
+  "category": "molecular-science",
+  "status": "approved_reference",
+  "source_url": "https://iclr.cc/virtual/2023/papers.html",
+  "venue": "ICLR",
+  "year": 2023,
+  "image_sha256": "e180ba87fa4b18a9328c2ea4e1ec56799790322a58671572dc6662060986e874",
+  "prompt_sha256": "9e7e5e37f1809f98189ea8511be21e2c14efc46f729a5ccb7b0213713e14ccfb",
+  "prompt_characters": 28380,
+  "prompt_nonwhitespace_characters": 23963,
+  "asset_kind": "generated_conceptual_illustration",
+  "showcase_publication_authorized": true,
+  "sealed_evaluation_eligible": false,
+  "source_snapshot_commit": "6b4d2f9b3e6bdc44595538573db0ffa821759a1a",
+  "remaining_review_notes": []
+}

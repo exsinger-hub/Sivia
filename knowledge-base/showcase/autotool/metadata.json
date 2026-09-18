@@ -1,0 +1,26 @@
+{
+  "id": "autotool",
+  "name": "AutoTool",
+  "title": "AutoTool: Efficient Tool Selection for Large Language Model Agents",
+  "category": "agents-retrieval",
+  "status": "draft_pending_review",
+  "source_url": "https://ojs.aaai.org/index.php/AAAI/article/view/40389",
+  "venue": "AAAI",
+  "year": 2026,
+  "image_sha256": "0480de639aca6c28ca617831f941c6b5c96913e70e801959544b11dccc334ca6",
+  "prompt_sha256": "b937d5ef848d093025828ad62e4439b7642c13781d7951513c44f8dad94ae88c",
+  "prompt_characters": 28941,
+  "prompt_nonwhitespace_characters": 24434,
+  "asset_kind": "generated_conceptual_illustration",
+  "showcase_publication_authorized": true,
+  "sealed_evaluation_eligible": false,
+  "source_snapshot_commit": "6b4d2f9b3e6bdc44595538573db0ffa821759a1a",
+  "remaining_review_notes": [
+    "The history-to-graph maintenance line is continuous, but an extra arrowhead near Add to history makes its direction ambiguous and still needs correction.",
+    "Original source figure visual assessment is still pending."
+  ],
+  "source_visual_review": "Official PDF method text and Figure 2 caption inspected via web; original figure raster inspection remains pending because local PDF download failed and the web screenshot tool returned a citation without a model-visible image.",
+  "selected_anchor": "react",
+  "actual_generation_reference_image": "reference.png",
+  "actual_generation_reference_sha256": "bcc55ca3c9af65dcaefb449fecef2ac4a95e6f3cd5e69fd5ec603e2866690e35"
+}

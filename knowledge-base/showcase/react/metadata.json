@@ -1,0 +1,19 @@
+{
+  "id": "react",
+  "name": "ReAct",
+  "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+  "category": "agents-retrieval",
+  "status": "approved_reference",
+  "source_url": "https://openreview.net/pdf?id=WE_vluYUL-X",
+  "venue": "ICLR",
+  "year": 2023,
+  "image_sha256": "568cc20fda23ccdf51a28d9e5e96fe103f5792ead6012a23189e5b34674091cc",
+  "prompt_sha256": "f9176650fb728cff67e0899f0b8ce3763931ba6bf75dd0d427ec33cf5e665fd0",
+  "prompt_characters": 23934,
+  "prompt_nonwhitespace_characters": 20426,
+  "asset_kind": "generated_conceptual_illustration",
+  "showcase_publication_authorized": true,
+  "sealed_evaluation_eligible": false,
+  "source_snapshot_commit": "6b4d2f9b3e6bdc44595538573db0ffa821759a1a",
+  "remaining_review_notes": []
+}
