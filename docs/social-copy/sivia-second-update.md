@@ -1,52 +1,77 @@
-# Sivia 第二弹更新｜多领域科研知识库扩容｜严谨功能说明
+# Sivia 第二弹更新｜把顶会论文的 Overview 结构，变成可复用科研绘图 Prompt
 
-本次为开源项目 Sivia 正式第二弹知识库更新，重点扩容近期顶会论文的科研 Overview 图像与 Prompt 配对，面向高门槛交叉视觉科研场景，补齐输入—表示—变换—输出的完整学术绘图范式，所有原有核心能力完整保留。
+## 抖音 / 视频号主文案
 
-在原有 Neuralangelo、ReAct、DiffDock 等通用科研绘图案例基础上，本次从 12 张审阅稿中选定 7 对，正式纳入三类高频科研场景模板与标准化 Prompt 范式：
+论文内容很清楚，为什么一到 AI 作图就变成：大面积空白、几个漂浮卡片、箭头没有起点终点？
 
-1. 三维几何与神经渲染
-   纳入 VGGT、MegaSaM 两组近期顶会 Overview，适配多视角几何、动态视频结构与运动、相机轨迹、深度图、点轨迹、三维场景重建等科研示意图标准构图，解决普通 AI 难以稳定表达空间层级、动态对应关系和三维坐标逻辑的问题。
-2. 世界模型与具身感知
-   纳入 ReViWo、RoboSpatial、Reconstructing People, Places, and Cameras 三组近期顶会 Overview，适配视角不变表示、世界模型预测、2D/3D 空间关系、机器人操作、人物—场景—相机联合重建与重投影一致性等体系化架构图，严格贴合 AI 与机器人领域顶会常见绘图规范。
-3. 多模态与运动感知学习
-   纳入 Efficient Motion-Aware Video MLLM 与 Dense-SfM 两组近期顶会 Overview，覆盖 RGB 与运动向量融合、视频 token 压缩、运动语言理解、稠密匹配、轨迹扩展、几何一致性优化与三维重建等科研绘图需求。
+Sivia 第二弹，专门补上这块。
 
-本次每个入库条目均包含：
-- 对应的完整科研 Overview 图片
-- 可直接复用的完整 Prompt
-- 官方论文来源链接
-- 分类标签与方法结构说明
-- 图像哈希和 Prompt 字符数校验
+我们从近期 CVPR、ICLR 等顶会论文中整理了 12 张高质量 Overview 审阅稿，最终精选 7 对正式加入知识库。每一对都不是只放一张图，而是完整绑定：
 
-所有图片均为基于论文方法结构绘制的概念性科研插图，不是实验结果、性能证据或人类金标准；来源论文家族及其衍生物继续排除在未来封闭评测之外。
+- 一张对应的科研 Overview 图片
+- 一条可直接复用的完整 Prompt
+- 官方论文来源
+- 方法结构与分类标签
+- 图像哈希和 Prompt 长度校验
 
-知识库入口：[https://github.com/exsinger-hub/Sivia/tree/codex/knowledge-base-restart-2026/knowledge-base](https://github.com/exsinger-hub/Sivia/tree/codex/knowledge-base-restart-2026/knowledge-base)
+这次新增三类高频科研场景：
 
-开源地址：[https://github.com/exsinger-hub/Sivia](https://github.com/exsinger-hub/Sivia)
+1. **3D 几何与神经渲染**
+   VGGT、MegaSaM：多视角几何、动态视频、相机轨迹、深度和三维重建。
+2. **世界模型与具身感知**
+   ReViWo、RoboSpatial、People–Places–Cameras：视角不变表示、世界模型、2D/3D 空间关系和人物—场景—相机联合重建。
+3. **多模态与运动感知学习**
+   Motion-Aware Video MLLM、Dense-SfM：RGB 与运动向量融合、视频 token、稠密匹配和几何一致性优化。
 
-#科研工具 #开源更新 #AI科研绘图 #三维重建 #世界模型 #具身智能 #多模态学习 #运动感知 #ClaudeCode插件 #学术可视化 #科研知识库
-
-## 抖音 / 视频号短版
-
-Sivia 第二弹更新！这次把 12 张近期顶会科研 Overview 审阅稿，精选 7 对正式加入知识库。
-
-三大方向：
-1. 3D 几何与神经渲染：VGGT、MegaSaM
-2. 世界模型与具身感知：ReViWo、RoboSpatial、People-Places-Cameras
-3. 多模态与运动感知：Motion-Aware Video MLLM、Dense-SfM
-
-每组都配有实际图片、完整 Prompt、论文来源和分类索引，重点解决三维空间、动态关系、2D/3D 对齐和运动信息表达不清的问题。
+Sivia 的目标很简单：让 AI 先把论文的方法关系画明白，再考虑风格；让图片、Prompt 和论文来源始终对应起来。
 
 开源地址：https://github.com/exsinger-hub/Sivia
 
-#科研工具 #AI科研绘图 #开源项目 #三维重建 #世界模型 #具身智能 #多模态学习 #学术可视化
+#科研工具 #开源项目 #AI科研绘图 #科研知识库 #三维重建 #世界模型 #具身智能 #多模态学习 #学术可视化 #ClaudeCode插件
 
-## 小红书 / 公众号版
+## 小红书标题与正文
 
-Sivia 第二弹知识库扩容完成。我们从近期 CVPR、ICLR 等顶会论文的 Overview 结构中筛选并生成了 12 组图像—Prompt 配对，最终选定 7 组进入正式知识库。
+### 标题备选
 
-本次更新集中在三类科研视觉范式：三维几何与神经渲染、世界模型与具身感知、多模态与运动感知学习。每个条目都保留对应图片、完整 Prompt、论文来源和方法结构说明，可直接作为后续科研绘图的结构参考。
+1. 顶会论文 Overview 怎么画？Sivia 把 7 组完整 Prompt 直接整理好了
+2. 告别科研图大空白：Sivia 第二弹知识库更新
+3. 从论文方法到科研配图，7 组顶会 Overview 进入 Sivia
 
-这些图片是论文方法结构的概念性表达，不是实验结果；Prompt 也明确限制了空白布局、虚构指标、无依据模块和泛化式 AI 流程框。
+### 正文
 
-查看知识库：https://github.com/exsinger-hub/Sivia/tree/codex/knowledge-base-restart-2026/knowledge-base
+科研图最难的地方，往往不是“画得好看”，而是把输入、表示、变换、输出和监督关系画准确。
+
+Sivia 第二弹更新，精选 7 组近期顶会论文 Overview，全部配套图片、完整 Prompt、来源链接和方法结构说明。
+
+新增内容覆盖：
+
+- 多视角几何、动态 SLAM、神经渲染
+- 世界模型、机器人空间理解、人物与场景重建
+- 视频运动感知、视觉语言模型、稠密 SfM
+
+每个条目都能直接点开查看对应图片和 Prompt。剩余 5 张审阅稿继续保留在候选区，不混入正式知识库。
+
+知识库入口：
+https://github.com/exsinger-hub/Sivia/tree/codex/knowledge-base-restart-2026/knowledge-base
+
+## 公众号 / GitHub Release 长文案
+
+**Sivia 第二弹更新：近期顶会科研 Overview 知识库扩容**
+
+科研绘图中最常见的问题，不是缺少颜色，而是缺少结构：方法模块之间的关系没有被画出来，箭头缺少明确端点，动态过程被压成静态卡片，最终留下大面积空白和泛化式 AI 流程框。
+
+本次更新围绕“论文方法结构可复用”扩容知识库。我们从 12 张近期顶会 Overview 审阅稿中选定 7 对，正式发布三类科研绘图范式：
+
+- **3D 几何与神经渲染**：VGGT、MegaSaM
+- **世界模型与具身感知**：ReViWo、RoboSpatial、Reconstructing People, Places, and Cameras
+- **多模态与运动感知学习**：Efficient Motion-Aware Video MLLM、Dense-SfM
+
+每组条目包含实际生成图片、完整提交 Prompt、官方论文来源、分类标签、方法结构说明以及文件校验信息。Prompt 对空白比例、虚构指标、无依据模块、卡片化布局和泛化式流程框进行了明确约束。
+
+这些图片是来源于论文方法结构的概念性科研插图，不是实验结果或人类金标准；相关论文家族及其衍生物继续排除在未来封闭评测之外。
+
+开源地址：
+https://github.com/exsinger-hub/Sivia
+
+知识库目录：
+https://github.com/exsinger-hub/Sivia/tree/codex/knowledge-base-restart-2026/knowledge-base
