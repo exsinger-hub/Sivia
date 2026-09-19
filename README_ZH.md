@@ -2,7 +2,9 @@
 
 # Sivia
 
-### 从论文到科研视觉稿，从确认稿到可编辑图件。
+### 论文 → 科研 Overview → 可编辑 PPT
+
+**把论文里的方法，变成能继续修改的 PPT。**
 
 [![版本](https://img.shields.io/badge/version-1.1.3-blue)](.codex-plugin/plugin.json)
 [![客户端](https://img.shields.io/badge/clients-Codex%20%7C%20Claude%20Code-orange)](#安装)
@@ -10,34 +12,33 @@
 
 [English](README.md) | 简体中文
 
-[快速开始](#快速开始) · [知识库](knowledge-base/README.md) · [更新日志](CHANGELOG.md)
+[知识库与效果展示](#科研绘图知识库) · [快速开始](#快速开始) · [RSI](#rsi) · [安装](#安装)
 
 </div>
 
-Sivia 是面向 **Codex 与 Claude Code** 的科研绘图插件。核心链路很直接：**输入论文，输出 overview**。它先理解论文，从“成图＋完整 prompt”知识库中选择合适参考，再围绕方法的真实贡献编写精细 ImageGen prompt。
+Sivia 是面向 **Codex 与 Claude Code** 的科研绘图插件，服务于论文插图、组会汇报与答辩中的方法展示。上传论文，Sivia 梳理方法与贡献，结合**外挂知识库**生成 Overview；确认设计并要求制作 PPT 后，交付可在 **PowerPoint / WPS** 中继续修改的 **PPTX**。
 
-**默认第一轮交付图片、完整 prompt 和简短设计说明，不直接制作演示文稿。**
+改标签、移动模块、调整箭头、替换实验图片，都可以在交付文件中继续完成。同一张方法图，也能按论文版面和汇报场景调整。
 
-## 使用方法：paper 输入 → overview 输出
+| 能力 | 对你的用途 |
+| --- | --- |
+| **可编辑 PPT 交付** | 文字、模块和箭头按原生对象重建，复杂插画与实验图片独立放置，方便后续修改与复用。 |
+| **外挂知识库** | 按领域、科学对象、方法关系与构图需求选择参考，也可使用你提供的课题组案例和风格素材。 |
+| **局部修改与经验积累** | 根据反馈修改指定区域，保留已确认的布局；把认可案例与修订经验留作后续参考。 |
 
-1. **输入 paper**：提供论文 PDF、正文，或方法部分的完整描述；同时说明希望突出的方法贡献、模块关系和实验对象。
-2. **解析方法**：Sivia 提取输入、核心模块、数据流、训练/推理阶段、关键中间表示和输出，将其与知识库中的高质量 overview 案例匹配。
-3. **生成 overview**：返回一张紧凑、信息密度高、可用于论文附录或方法概览的科研插图，并同时给出可复用的完整 prompt 与设计说明。
-4. **继续编辑（可选）**：确认 overview 后，再明确要求制作可编辑的 PowerPoint、WPS 或 draw.io 图件。
+**交付链路：Paper → Overview 预览 → 确认并生成 PPT → 可编辑 PPTX + 预览。**
 
-可以把它理解为：`paper.pdf / method text → structured overview image + complete prompt`。
+也支持将已有科研图复刻为可编辑图件，以及按需输出 draw.io 源文件。Sivia 进一步以 [RSI](#rsi) 为研究方向，探索让作图技能及其改进方法持续演进。
 
 ## 科研绘图知识库
 
-当前有效参考池包含 **10 对用户认可的图像—prompt 配对**：3 对历史参考和 7 对近期顶会 overview 扩充条目。每个条目都以独立图片卡片展示，并提供完整 Prompt 与案例详情。
+**给科研绘图接上可扩充的外挂知识库。** Sivia 自带精选的科研图案例，也可结合你提供的论文参考图、课题组风格和已认可作品。知识库为新任务提供构图、层级、空间关系与图形表达的参考，具体科学内容由当前论文决定。
 
-D4RT、AutoTool、SigmaDock 三个校准草稿仍保留为“审阅草稿 · 未入库”，不会混入正式参考池。
+当前收录 **10 个已认可案例**，覆盖下方五类方向；另有 **3 个审阅草稿**，在卡片中单独标记。以下展示 Overview 图片，制作记录与来源可以逐项查看。
 
-请查看[分类知识库](knowledge-base/README.md)、[近期选定清单](knowledge-base/overview-hot-domains-2025-26/selected-ledger.json)和[机器索引](knowledge-base/index.json)。
+[浏览分类知识库](knowledge-base/README.md) · [扩充自己的案例库](knowledge-base/CONTRIBUTING.md)
 
-### 知识库图片总览
-
-#### 三维重建与动态几何
+### 三维重建与动态几何
 
 <table>
 <tr>
@@ -45,13 +46,13 @@ D4RT、AutoTool、SigmaDock 三个校准草稿仍保留为“审阅草稿 · 未
 <strong>Neuralangelo: High-Fidelity Neural Surface Reconstruction</strong><br>
 <sub>已确认纳入</sub><br>
 <a href="knowledge-base/cases/neuralangelo/figure.png"><img src="knowledge-base/cases/neuralangelo/figure.png" alt="Neuralangelo: High-Fidelity Neural Surface Reconstruction — 已确认纳入" width="440"></a><br>
-<a href="knowledge-base/cases/neuralangelo/figure.png">查看原图</a> · <a href="knowledge-base/cases/neuralangelo/prompt.txt">完整 prompt</a> · <a href="knowledge-base/cases/neuralangelo/README.md">案例详情</a>
+<a href="knowledge-base/cases/neuralangelo/figure.png">查看原图</a> · <a href="knowledge-base/cases/neuralangelo/prompt.txt">制作记录</a> · <a href="knowledge-base/cases/neuralangelo/README.md">案例详情</a>
 </td>
 <td width="50%" valign="top" align="center">
 <strong>VGGT: Visual Geometry Grounded Transformer</strong><br>
 <sub>已确认纳入</sub><br>
 <a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-vggt/figure.png"><img src="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-vggt/figure.png" alt="VGGT: Visual Geometry Grounded Transformer — 已确认纳入" width="440"></a><br>
-<a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-vggt/figure.png">查看原图</a> · <a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-vggt/prompt.txt">完整 prompt</a> · <a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-vggt/README.md">案例详情</a>
+<a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-vggt/figure.png">查看原图</a> · <a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-vggt/prompt.txt">制作记录</a> · <a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-vggt/README.md">案例详情</a>
 </td>
 </tr>
 <tr>
@@ -59,18 +60,18 @@ D4RT、AutoTool、SigmaDock 三个校准草稿仍保留为“审阅草稿 · 未
 <strong>MegaSaM: Accurate, Fast, and Robust Structure and Motion from Casual Dynamic Videos</strong><br>
 <sub>已确认纳入</sub><br>
 <a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-megasam/figure.png"><img src="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-megasam/figure.png" alt="MegaSaM: Accurate, Fast, and Robust Structure and Motion from Casual Dynamic Videos — 已确认纳入" width="440"></a><br>
-<a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-megasam/figure.png">查看原图</a> · <a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-megasam/prompt.txt">完整 prompt</a> · <a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-megasam/README.md">案例详情</a>
+<a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-megasam/figure.png">查看原图</a> · <a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-megasam/prompt.txt">制作记录</a> · <a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-megasam/README.md">案例详情</a>
 </td>
 <td width="50%" valign="top" align="center">
 <strong>D4RT</strong><br>
 <sub>审阅草稿 · 未入库</sub><br>
 <a href="knowledge-base/restart-2026/pairs/d4rt/figure.png"><img src="knowledge-base/restart-2026/pairs/d4rt/figure.png" alt="D4RT — 审阅草稿 · 未入库" width="440"></a><br>
-<a href="knowledge-base/restart-2026/pairs/d4rt/figure.png">查看原图</a> · <a href="knowledge-base/restart-2026/pairs/d4rt/prompt.txt">完整 prompt</a> · <a href="knowledge-base/restart-2026/pairs/d4rt/README.md">案例详情</a>
+<a href="knowledge-base/restart-2026/pairs/d4rt/figure.png">查看原图</a> · <a href="knowledge-base/restart-2026/pairs/d4rt/prompt.txt">制作记录</a> · <a href="knowledge-base/restart-2026/pairs/d4rt/README.md">案例详情</a>
 </td>
 </tr>
 </table>
 
-#### 代理、工具与检索
+### 代理、工具与检索
 
 <table>
 <tr>
@@ -78,18 +79,18 @@ D4RT、AutoTool、SigmaDock 三个校准草稿仍保留为“审阅草稿 · 未
 <strong>ReAct: Synergizing Reasoning and Acting in Language Models</strong><br>
 <sub>已确认纳入</sub><br>
 <a href="knowledge-base/cases/react/figure.png"><img src="knowledge-base/cases/react/figure.png" alt="ReAct: Synergizing Reasoning and Acting in Language Models — 已确认纳入" width="440"></a><br>
-<a href="knowledge-base/cases/react/figure.png">查看原图</a> · <a href="knowledge-base/cases/react/prompt.txt">完整 prompt</a> · <a href="knowledge-base/cases/react/README.md">案例详情</a>
+<a href="knowledge-base/cases/react/figure.png">查看原图</a> · <a href="knowledge-base/cases/react/prompt.txt">制作记录</a> · <a href="knowledge-base/cases/react/README.md">案例详情</a>
 </td>
 <td width="50%" valign="top" align="center">
 <strong>AutoTool</strong><br>
 <sub>审阅草稿 · 未入库</sub><br>
 <a href="knowledge-base/restart-2026/pairs/autotool/figure.png"><img src="knowledge-base/restart-2026/pairs/autotool/figure.png" alt="AutoTool — 审阅草稿 · 未入库" width="440"></a><br>
-<a href="knowledge-base/restart-2026/pairs/autotool/figure.png">查看原图</a> · <a href="knowledge-base/restart-2026/pairs/autotool/prompt.txt">完整 prompt</a> · <a href="knowledge-base/restart-2026/pairs/autotool/README.md">案例详情</a>
+<a href="knowledge-base/restart-2026/pairs/autotool/figure.png">查看原图</a> · <a href="knowledge-base/restart-2026/pairs/autotool/prompt.txt">制作记录</a> · <a href="knowledge-base/restart-2026/pairs/autotool/README.md">案例详情</a>
 </td>
 </tr>
 </table>
 
-#### 分子建模与科学人工智能
+### 分子建模与科学人工智能
 
 <table>
 <tr>
@@ -97,18 +98,18 @@ D4RT、AutoTool、SigmaDock 三个校准草稿仍保留为“审阅草稿 · 未
 <strong>DiffDock: Diffusion Steps, Twists, and Turns for Molecular Docking</strong><br>
 <sub>已确认纳入</sub><br>
 <a href="knowledge-base/cases/diffdock/figure.png"><img src="knowledge-base/cases/diffdock/figure.png" alt="DiffDock: Diffusion Steps, Twists, and Turns for Molecular Docking — 已确认纳入" width="440"></a><br>
-<a href="knowledge-base/cases/diffdock/figure.png">查看原图</a> · <a href="knowledge-base/cases/diffdock/prompt.txt">完整 prompt</a> · <a href="knowledge-base/cases/diffdock/README.md">案例详情</a>
+<a href="knowledge-base/cases/diffdock/figure.png">查看原图</a> · <a href="knowledge-base/cases/diffdock/prompt.txt">制作记录</a> · <a href="knowledge-base/cases/diffdock/README.md">案例详情</a>
 </td>
 <td width="50%" valign="top" align="center">
 <strong>SigmaDock</strong><br>
 <sub>审阅草稿 · 未入库</sub><br>
 <a href="knowledge-base/restart-2026/pairs/sigmadock/figure.png"><img src="knowledge-base/restart-2026/pairs/sigmadock/figure.png" alt="SigmaDock — 审阅草稿 · 未入库" width="440"></a><br>
-<a href="knowledge-base/restart-2026/pairs/sigmadock/figure.png">查看原图</a> · <a href="knowledge-base/restart-2026/pairs/sigmadock/prompt.txt">完整 prompt</a> · <a href="knowledge-base/restart-2026/pairs/sigmadock/README.md">案例详情</a>
+<a href="knowledge-base/restart-2026/pairs/sigmadock/figure.png">查看原图</a> · <a href="knowledge-base/restart-2026/pairs/sigmadock/prompt.txt">制作记录</a> · <a href="knowledge-base/restart-2026/pairs/sigmadock/README.md">案例详情</a>
 </td>
 </tr>
 </table>
 
-#### 世界模型与具身感知
+### 世界模型与具身感知
 
 <table>
 <tr>
@@ -116,13 +117,13 @@ D4RT、AutoTool、SigmaDock 三个校准草稿仍保留为“审阅草稿 · 未
 <strong>Learning View-invariant World Models for Visual Robotic Manipulation</strong><br>
 <sub>已确认纳入</sub><br>
 <a href="knowledge-base/overview-hot-domains-2025-26/pairs/iclr25-reviwo/figure.png"><img src="knowledge-base/overview-hot-domains-2025-26/pairs/iclr25-reviwo/figure.png" alt="Learning View-invariant World Models for Visual Robotic Manipulation — 已确认纳入" width="440"></a><br>
-<a href="knowledge-base/overview-hot-domains-2025-26/pairs/iclr25-reviwo/figure.png">查看原图</a> · <a href="knowledge-base/overview-hot-domains-2025-26/pairs/iclr25-reviwo/prompt.txt">完整 prompt</a> · <a href="knowledge-base/overview-hot-domains-2025-26/pairs/iclr25-reviwo/README.md">案例详情</a>
+<a href="knowledge-base/overview-hot-domains-2025-26/pairs/iclr25-reviwo/figure.png">查看原图</a> · <a href="knowledge-base/overview-hot-domains-2025-26/pairs/iclr25-reviwo/prompt.txt">制作记录</a> · <a href="knowledge-base/overview-hot-domains-2025-26/pairs/iclr25-reviwo/README.md">案例详情</a>
 </td>
 <td width="50%" valign="top" align="center">
 <strong>RoboSpatial: Teaching Spatial Understanding to 2D and 3D Vision-Language Models for Robotics</strong><br>
 <sub>已确认纳入</sub><br>
 <a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-robospatial/figure.png"><img src="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-robospatial/figure.png" alt="RoboSpatial: Teaching Spatial Understanding to 2D and 3D Vision-Language Models for Robotics — 已确认纳入" width="440"></a><br>
-<a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-robospatial/figure.png">查看原图</a> · <a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-robospatial/prompt.txt">完整 prompt</a> · <a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-robospatial/README.md">案例详情</a>
+<a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-robospatial/figure.png">查看原图</a> · <a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-robospatial/prompt.txt">制作记录</a> · <a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-robospatial/README.md">案例详情</a>
 </td>
 </tr>
 <tr>
@@ -130,13 +131,13 @@ D4RT、AutoTool、SigmaDock 三个校准草稿仍保留为“审阅草稿 · 未
 <strong>Reconstructing People, Places, and Cameras</strong><br>
 <sub>已确认纳入</sub><br>
 <a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-people-places-cameras/figure.png"><img src="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-people-places-cameras/figure.png" alt="Reconstructing People, Places, and Cameras — 已确认纳入" width="440"></a><br>
-<a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-people-places-cameras/figure.png">查看原图</a> · <a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-people-places-cameras/prompt.txt">完整 prompt</a> · <a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-people-places-cameras/README.md">案例详情</a>
+<a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-people-places-cameras/figure.png">查看原图</a> · <a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-people-places-cameras/prompt.txt">制作记录</a> · <a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-people-places-cameras/README.md">案例详情</a>
 </td>
 <td width="50%" valign="top" align="center"></td>
 </tr>
 </table>
 
-#### 多模态与运动感知学习
+### 多模态与运动感知学习
 
 <table>
 <tr>
@@ -144,119 +145,87 @@ D4RT、AutoTool、SigmaDock 三个校准草稿仍保留为“审阅草稿 · 未
 <strong>Efficient Motion-Aware Video MLLM</strong><br>
 <sub>已确认纳入</sub><br>
 <a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-motion-aware-video-mllm/figure.png"><img src="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-motion-aware-video-mllm/figure.png" alt="Efficient Motion-Aware Video MLLM — 已确认纳入" width="440"></a><br>
-<a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-motion-aware-video-mllm/figure.png">查看原图</a> · <a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-motion-aware-video-mllm/prompt.txt">完整 prompt</a> · <a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-motion-aware-video-mllm/README.md">案例详情</a>
+<a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-motion-aware-video-mllm/figure.png">查看原图</a> · <a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-motion-aware-video-mllm/prompt.txt">制作记录</a> · <a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-motion-aware-video-mllm/README.md">案例详情</a>
 </td>
 <td width="50%" valign="top" align="center">
 <strong>Dense-SfM: Structure from Motion with Dense Consistent Matching</strong><br>
 <sub>已确认纳入</sub><br>
 <a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-dense-sfm/figure.png"><img src="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-dense-sfm/figure.png" alt="Dense-SfM: Structure from Motion with Dense Consistent Matching — 已确认纳入" width="440"></a><br>
-<a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-dense-sfm/figure.png">查看原图</a> · <a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-dense-sfm/prompt.txt">完整 prompt</a> · <a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-dense-sfm/README.md">案例详情</a>
+<a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-dense-sfm/figure.png">查看原图</a> · <a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-dense-sfm/prompt.txt">制作记录</a> · <a href="knowledge-base/overview-hot-domains-2025-26/pairs/cvpr25-dense-sfm/README.md">案例详情</a>
 </td>
 </tr>
 </table>
 
 ## 快速开始
 
-### 1. 从论文生成 Overview
+安装后，在 Codex 或 Claude Code 中上传论文，直接说明你需要的图即可。
 
-上传论文即可开始。项目代码、真实实验素材、目标版面宽度与风格参考有助于提高准确性，但不要求你先自行寻找模板。
-
-```text
-使用 Sivia，根据我上传的论文设计并生成科研方法总览图。
-以正文、公式及我提供的项目实现为科学依据，先简述核心图意和分区安排。
-选择表达任务相近的知识库成图及其完整 prompt，编写逐区域完整 ImageGen prompt，
-并按所选模板核验实际提交文本的长度。生成后检查方法关系、标签和最终尺寸可读性。
-交付实际图片、完整 prompt 和简短设计说明；询问修改意见及是否需要可编辑 PPT，
-然后暂停等待回复。本阶段不连接 PowerPoint/WPS，不创建演示文稿。
-```
-
-这是**用户需求示例**，不是直接提交给 ImageGen 的生产 prompt。Sivia 会展开具体对象、位置、比例、连接、标签和视觉规范；实际提交文本按非空白字符计，不得短于所绑定模板。制作说明可以详细，图内标签仍应简洁。
-
-### 2. 只修改你指出的部分
+### 1. 上传 Paper，生成 Overview
 
 ```text
-使用 Sivia，根据我附带的审阅意见局部修订当前视觉稿。
-保留未涉及的画布比例、分区、配色和阅读路径；把修改整合进完整 prompt 并检查长度，
-再生成并检查修订图片，保留上一版供比较。展示结果后等待我确认，暂不制作 PPT。
+使用 Sivia，为这篇论文生成一张科研 Overview。
+突出核心创新、关键模块和输入输出关系，构图紧凑，适合论文展示。
 ```
 
-请附上具体意见或标注图。“这张图可以”仅表示图片获得认可，不等于授权制作 PPT。
+Sivia 负责理解论文、选择参考、设计构图并生成图片。你先看效果，再决定需要修改哪里。
 
-### 3. 将确认稿复刻为可编辑图件
+### 2. 确认设计，生成可编辑 PPT
 
 ```text
-使用 Sivia，将我明确确认的这张视觉稿忠实复刻为可编辑 PPTX。
-保留布局、文字和可见连接关系；新建独立文件，不修改其他已打开文档。
-文字、几何结构、图解和箭头使用原生对象；仅把不可进一步拆分的插画保留为独立图片。
-后台执行；后端失败时，在上述范围内使用可用的独立原生文件路径继续推进。
-检查实际保存的 PPTX 及其渲染预览，交付 PPTX、预览和简短的字体、素材、可编辑性说明，
-明确标注尚未完成的目标软件显示核验。
+这版 Overview 已确认。请用 Sivia 生成可编辑 PPTX，保留当前布局和内容。
+文字、模块和箭头使用原生对象，插画与实验图片独立保留，方便我后续修改。
 ```
 
-需要 **WPS 演示**、**Microsoft PowerPoint**、**draw.io** 或指定文档的实时编辑时，请明确说明，不会静默改用其他软件。真实数据替换属于内容适配，需单独提出；忠实复刻保留确认稿可见内容，并将示意数值继续标识为示意。
+交付 **PPTX + 预览**。打开 PowerPoint 或 WPS 后，可以继续调整文字、模块位置与素材；已有满意的科研图，也可以直接从这一步开始。
 
-## 为什么使用 Sivia？
+### 3. 按反馈局部修改
 
-- **先讲清研究，再决定布局。** 依据正文、公式与项目实现梳理图意，区分主图内容与正文细节。
-- **参考成图，也参考完整 prompt。** 借鉴构图与图形语言，不借用其他方法的科学结论。
-- **由你的确认控制下一阶段。** 生成、审阅、局部修订；明确要求后才进入可编辑复刻。
-- **让关键结构真正可编辑。** 文字、模块、运算符、箭头和可重建图表使用原生对象，复杂插画独立保留。
-- **失败后改变有效操作。** 面对低清裁图、假透明、无效属性设置或后端阻塞，在授权范围内寻找替代路径。
-- **交付结论对应实际证据。** 分开说明文件有效、对象可编辑、实际文件预览、目标软件显示与最终尺寸可读性。
+```text
+把右侧输出模块移到下方，调整对应箭头，增大图内标签。
+保留其他区域的布局、内容与配色，更新可编辑 PPT 和预览。
+```
+
+**使用自己的外挂知识库：** 把参考图或案例目录一并提供，并告诉 Sivia：“优先参考这些案例的构图和配色，用当前论文的方法内容重新设计。”
+
+## RSI
+
+**Recursive Self-Improvement · 递归自我改进（研究方向）**
+
+一次修订的价值，可以延续到下一次作图。Sivia 当前通过设计、绘制、审阅与修正流程改进图件，并将认可的作品、参考素材和有用反馈保存为本地案例；你可以在后续任务中继续使用这些经验。
+
+RSI 的下一步是同时研究**作图技能**与**更新技能的方法**：从修订反馈中提出规则，在新任务上检验，再探索如何递归改进规则的更新策略。这是 Sivia 的演进路线；当前开源版提供可编辑绘图与案例积累，递归更新策略属于后续研究。
 
 ## 安装
 
 ### Codex
 
-在终端执行：
+在终端执行，安装后新开任务：
 
 ```bash
 codex plugin marketplace add exsinger-hub/Sivia --ref main
 codex plugin add sivia@sivia
 ```
 
-第一条注册仓库中的插件市场，第二条安装 Sivia。安装后新开任务使用。市场机制见 [OpenAI 官方插件说明](https://developers.openai.com/plugins/build/plugins)，本机命令可用 `codex plugin add --help` 核对。若安装过其他名称的旧版，请停用重复插件，避免同一组 skills 同时加载。
-
 ### Claude Code
 
-在 Claude Code 对话内执行：
+在 Claude Code 中执行：
 
 ```text
 /plugin marketplace add exsinger-hub/Sivia
 /plugin install sivia@sivia
 ```
 
-## 哪些内容可以编辑？
+## 开发与文档
 
-| 内容 | 表示方式 |
-| --- | --- |
-| 标签、框线、网格、序列单元、简单图标 | 原生文字、形状或语义清晰的可编辑组合。 |
-| 自定义线条图形与连线 | 后端支持的原生路径或基本图形；区分附着连接线与需手动调整端点的自由曲线。 |
-| 定量曲线与图表 | 从原始测量值重绘为原生图表或具有准确数值和坐标的可编辑几何。 |
-| 医学影像、预测和特征图 | 从真实来源分别导出，标签与标注单独可编辑。 |
-| 复杂机器人、带纹理插画 | 优先合适的原始素材；获许可时独立生成，作为不带标签的单独图片。 |
+[完整工作流程](docs/workflow_ZH.md) · [更新日志](CHANGELOG.md) · [知识库贡献指南](knowledge-base/CONTRIBUTING.md)
 
-PPT 没有现成图标时，可以用原生线条构建，或使用适合的独立素材。裁切本身不损失保留像素，放大低像素裁图才会暴露采样不足。SVG 可无损缩放，但不自动等于内部对象原生可编辑。
-
-使用内置只读工具检查保留像素和真实透明通道：
-
-```bash
-python skills/design-scientific-figure/scripts/inspect_raster_asset.py --image robot.png --width-mm 30 --require-transparent
-```
-
-在插件根目录运行；加 `--crop-px LEFT TOP RIGHT BOTTOM` 可估算裁图。[素材生产规则](skills/design-scientific-figure/references/asset-production.md)包含像素规划和获授权后的轮廓遮罩后备方案。
-
-## 开发与测试
-
-在仓库根目录运行，需要 Node.js、Python 3/Pillow 与 PowerShell 7：
+在仓库根目录运行检查：
 
 ```bash
 node scripts/sync-plugin-metadata.mjs --check
 node --test tests/*.test.mjs
 python -m unittest discover -s tests -p "test_*.py"
 ```
-
-测试覆盖打包、焦点策略、操作参数、箭头映射、prompt、素材检查与审阅副本生成，不代替真实软件显示和视觉审阅。见 [v1.1.3 更新](CHANGELOG.md)。
 
 ## 致谢
 
