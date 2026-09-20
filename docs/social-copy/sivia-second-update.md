@@ -25,9 +25,9 @@ Sivia 第二弹，专门补上这块。
 
 Sivia 的目标很简单：让 AI 先把论文的方法关系画明白，再考虑风格；让图片、Prompt 和论文来源始终对应起来。
 
-开源地址：https://github.com/exsinger-hub/Sivia
+项目地址：https://github.com/exsinger-hub/Sivia
 
-#科研工具 #开源项目 #AI科研绘图 #科研知识库 #三维重建 #世界模型 #具身智能 #多模态学习 #学术可视化 #ClaudeCode插件
+#科研工具 #源码公开 #AI科研绘图 #科研知识库 #三维重建 #世界模型 #具身智能 #多模态学习 #学术可视化 #ClaudeCode插件
 
 ## 小红书标题与正文
 
@@ -70,8 +70,10 @@ https://github.com/exsinger-hub/Sivia/tree/codex/knowledge-base-restart-2026/kno
 
 这些图片是来源于论文方法结构的概念性科研插图，不是实验结果或人类金标准；相关论文家族及其衍生物继续排除在未来封闭评测之外。
 
-开源地址：
+项目地址：
 https://github.com/exsinger-hub/Sivia
 
 知识库目录：
 https://github.com/exsinger-hub/Sivia/tree/codex/knowledge-base-restart-2026/knowledge-base
+
+许可：非商业使用免费，商业使用须事先获得作者书面授权；上游及第三方许可单独适用。

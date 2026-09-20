@@ -1,5 +1,12 @@
 # Changelog / 更新日志
 
+## 1.2.0 — 2026-09-20
+
+- License change: Sivia-authored contributions now use the Sivia Non-Commercial License 1.0. Commercial use requires gatina's prior written authorization.
+- Preserve upstream MIT copyright and license text in `LICENSES/MIT.txt`; third-party rights and earlier MIT releases remain under their original terms. Scope is documented in `NOTICE`.
+- Updated Codex/Claude Code license metadata and bilingual README notices. No drawing or installation behavior changed.
+- 许可变更：Sivia 自有内容采用非商业许可证；商用须经作者书面授权。保留上游 MIT 与历史版本许可，同步插件元数据及双语说明。
+
 ## 1.1.3 — 2026-09-17
 
 - Removed the Star `SessionStart` hook. Startup, resumption and normal figure workflows never solicit Stars.

@@ -219,7 +219,7 @@ lines += [
     "## 数据与评测边界", "",
     "36 个论文来源家族及其衍生图只用于学习和开发，必须排除在未来封闭评测之外；列表见 [`evaluation-exclusions.json`](evaluation-exclusions.json)。详细生成调用说明见 [`generation-summary.json`](generation-summary.json)。生成图不能充当定量曲线、消融、基准结果、用户研究或人工标注。", "",
     "## 共建", "",
-    "欢迎通过 [Issue](https://github.com/exsinger-hub/Sivia/issues/new?template=knowledge-base.md) 或 [Pull Request](CONTRIBUTING.md) 提交有权公开的图文配对案例。投稿应包含最终 PNG、对应完整 prompt、来源与有价值的修改记录。代码的 MIT 许可不会自动覆盖第三方来源素材。", "",
+    "欢迎通过 [Issue](https://github.com/exsinger-hub/Sivia/issues/new?template=knowledge-base.md) 或 [Pull Request](CONTRIBUTING.md) 提交有权公开的图文配对案例。投稿应包含最终 PNG、对应完整 prompt、来源与有价值的修改记录。项目的非商业许可证仅适用于有权授权的自有内容；第三方来源素材仍遵循各自许可。", "",
 ]
 (KB / "README.md").write_text("\n".join(lines), encoding="utf-8", newline="\n")
 

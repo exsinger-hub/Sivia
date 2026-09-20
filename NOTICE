@@ -1,0 +1,29 @@
+# Third-party and historical license notices
+
+Sivia is based on Scientific Illustrator by 一个地质博士 (icebird1998):
+https://github.com/icebird1998/scientific-illustrator
+
+Original upstream work remains under its MIT license. The complete prior MIT
+notice, including both the upstream copyright and the former Sivia-modification
+copyright notice, is preserved without alteration in LICENSES/MIT.txt.
+
+Sivia-authored contributions distributed under the current LICENSE are offered
+for non-commercial use; commercial use requires gatina's prior written
+authorization. This restriction applies only to rights the maintainer controls.
+It does not restrict independent use of MIT-licensed upstream components, change
+third-party terms, or revoke rights in earlier Sivia releases distributed under
+MIT. Git history records those earlier distributions.
+
+Paper citations, author names and paper-derived example concepts do not imply
+endorsement. Source papers, reference images, datasets, fonts and dependencies
+retain their respective licenses. Refer to per-case source and licensing notes
+and to any dependency's own license before reusing third-party material.
+
+## 中文说明
+
+Sivia 基于 icebird1998 的 Scientific Illustrator。上游作品继续适用 MIT，
+原许可证及版权声明完整保存在 LICENSES/MIT.txt。
+
+新版非商业许可证仅适用于维护者有权授权的 Sivia 自有内容。商业使用须事先
+获得 gatina 的书面授权；此前已按 MIT 发布的版本及上游独立许可权利不受影响。
+第三方论文、参考图、数据集、字体和依赖仍按其各自许可使用。

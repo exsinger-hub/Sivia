@@ -6,9 +6,11 @@
 
 **把论文里的方法，变成能继续修改的 PPT。**
 
-[![版本](https://img.shields.io/badge/version-1.1.3-blue)](.codex-plugin/plugin.json)
+[![版本](https://img.shields.io/badge/version-1.2.0-blue)](.codex-plugin/plugin.json)
 [![客户端](https://img.shields.io/badge/clients-Codex%20%7C%20Claude%20Code-orange)](#安装)
-[![许可证](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![许可证](https://img.shields.io/badge/license-NonCommercial-orange)](LICENSE)
+
+**仅限非商业使用；商用须事先获得作者书面授权。**
 
 [English](README.md) | 简体中文
 
@@ -193,7 +195,7 @@ Sivia 负责理解论文、选择参考、设计构图并生成图片。你先�
 
 一次修订的价值，可以延续到下一次作图。Sivia 当前通过设计、绘制、审阅与修正流程改进图件，并将认可的作品、参考素材和有用反馈保存为本地案例；你可以在后续任务中继续使用这些经验。
 
-RSI 的下一步是同时研究**作图技能**与**更新技能的方法**：从修订反馈中提出规则，在新任务上检验，再探索如何递归改进规则的更新策略。这是 Sivia 的演进路线；当前开源版提供可编辑绘图与案例积累，递归更新策略属于后续研究。
+RSI 的下一步是同时研究**作图技能**与**更新技能的方法**：从修订反馈中提出规则，在新任务上检验，再探索如何递归改进规则的更新策略。这是 Sivia 的演进路线；当前源码公开版本提供可编辑绘图与案例积累，递归更新策略属于后续研究。
 
 ## 安装
 
@@ -227,9 +229,17 @@ node --test tests/*.test.mjs
 python -m unittest discover -s tests -p "test_*.py"
 ```
 
+## 使用许可与商业授权
+
+**允许非商业使用；商业使用须事先获得作者 gatina 的书面授权。**
+
+Sivia 自有内容采用 [Sivia 非商业许可证 1.0](LICENSE)，允许个人学习、教学及非商业学术研究。企业内部使用、收费服务、商业产品集成等场景，须先[申请商业授权](https://github.com/exsinger-hub/Sivia/issues/new?title=Commercial%20license%20request)。
+
+上游组件继续保留 [MIT 许可](LICENSES/MIT.txt)，此前按 MIT 发布的版本仍遵循原许可。范围说明见[第三方与历史许可声明](NOTICE)。
+
 ## 致谢
 
-Sivia 基于 [Scientific Illustrator](https://github.com/icebird1998/scientific-illustrator) 改造与扩展。感谢原作者 **一个地质博士（icebird1998）** 提供的可编辑绘图后端，以及设计、绘制、审阅、修正的协作流程。Sivia 增加了论文理解、模板化 ImageGen 视觉稿和确认后的忠实复刻流程，保留原项目的 [MIT 许可证与版权声明](LICENSE)。
+Sivia 基于 [Scientific Illustrator](https://github.com/icebird1998/scientific-illustrator) 改造与扩展。感谢原作者 **一个地质博士（icebird1998）** 提供的可编辑绘图后端，以及设计、绘制、审阅、修正的协作流程。Sivia 增加了论文理解、模板化 ImageGen 视觉稿和确认后的忠实复刻流程，保留原项目的 [上游 MIT 许可证与版权声明](LICENSES/MIT.txt)。
 
 双语 README 的语言导航与产品介绍结构参考 [CC Switch](https://github.com/farion1231/cc-switch)，未复用其产品声明与推广文案。
 

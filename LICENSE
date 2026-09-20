@@ -1,22 +1,105 @@
-MIT License
+Sivia Non-Commercial License 1.0
+License identifier: LicenseRef-Sivia-NonCommercial-1.0
+Effective for distributions carrying this license from 2026-09-20.
 
-Copyright (c) 2026 一个地质博士 (icebird1998)
-Copyright (c) 2026 gatina (Sivia modifications)
+Copyright (c) 2026 gatina (Sivia contributions)
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+1. Scope
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+"Licensor" means gatina, the Sivia maintainer at
+https://github.com/exsinger-hub/Sivia.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+"Covered Materials" means the copyrightable Sivia-authored code, modifications,
+documentation, instructions, templates and other materials provided under this
+license, only to the extent Licensor owns or is authorized to license them.
+Third-party materials and existing rights under earlier licenses are excluded
+as described in section 5 and NOTICE. This is a source-available license for
+non-commercial use, not an OSI-approved open-source license.
+
+2. Permission for non-commercial use
+
+Subject to these terms, Licensor grants you a worldwide, royalty-free,
+non-exclusive permission to use, copy, study, modify and distribute the Covered
+Materials solely for non-commercial purposes. Personal learning, teaching and
+non-commercial academic research are permitted. Academic publication does not
+by itself make an otherwise non-commercial activity commercial merely because
+the publisher is a commercial organization.
+
+3. Commercial use requires prior written authorization
+
+Commercial use is not permitted under this license. You must obtain a separate
+written commercial authorization from Licensor before commencing such use.
+
+Commercial use includes use primarily intended for commercial advantage or
+monetary compensation, and use as part of a for-profit organization's business
+operations, including internal research and development. Examples include:
+
+- selling, licensing or commercially distributing the Covered Materials or
+  products incorporating them;
+- providing paid drawing, consulting, training, hosted, API or SaaS services
+  using the Covered Materials;
+- integrating the Covered Materials into commercial products or services;
+- using the Covered Materials to prepare paid client deliverables, advertising
+  or other business outputs, even if recipients never receive the software.
+
+For commercial authorization, contact gatina through the project at
+https://github.com/exsinger-hub/Sivia/issues/new with a request titled
+"Commercial license request". A request, donation, Star, download or lack of
+response does not constitute permission. Written authorization must expressly
+identify the permitted commercial use; its terms control that use.
+
+4. Conditions for copying, modification and distribution
+
+You must retain this license, NOTICE, all applicable copyright notices and
+third-party license texts in copies or substantial portions you distribute.
+Identify your modifications and preserve the non-commercial restriction on
+the Covered Materials. You may not purport to grant commercial rights to
+Licensor's Covered Materials without Licensor's written authorization.
+This license grants no permission to imply endorsement or to use trademarks
+except to identify the project and provide attribution.
+
+5. Upstream components, third-party materials and earlier releases
+
+Scientific Illustrator and other components received under MIT or another
+license retain their respective licenses. The MIT text and original copyright
+notices are preserved in LICENSES/MIT.txt. This license neither replaces nor
+restricts rights independently granted by those third-party licenses.
+
+Sivia copies previously distributed under MIT remain available under those
+original terms. This change does not revoke any rights already granted under
+earlier MIT releases, nor any permission or right available independently of
+this license. The former Sivia MIT copyright notice is preserved in
+LICENSES/MIT.txt for that historical scope; it is not a blanket MIT grant for
+new Sivia contributions distributed solely under this license.
+
+Source papers, reference images, datasets, fonts, dependencies and other
+third-party materials retain their own terms. Licensor grants only rights
+Licensor controls. You remain responsible for obtaining any additional rights
+needed for your particular use.
+
+6. Inputs and generated outputs
+
+This license does not claim ownership of your inputs or independently created
+outputs merely because Sivia processes or produces them. Portions of Covered
+Materials or third-party works incorporated in an output retain their own
+terms. Using the Covered Materials to generate commercial deliverables is
+commercial use and requires the authorization specified in section 3.
+
+7. Termination
+
+The permissions in this license terminate automatically if you violate its
+terms. Upon termination you must stop exercising permissions granted by this
+license unless Licensor reinstates them in writing. Rights under independent
+third-party licenses and earlier MIT releases are unaffected.
+
+8. Warranty and liability
+
+To the fullest extent permitted by applicable law, the Covered Materials are
+provided as is, without warranties of any kind, express or implied, including
+merchantability, fitness for a particular purpose and non-infringement.
+Licensor is not liable for any claim, damages or other liability arising from
+the Covered Materials or their use, whether in contract, tort or otherwise,
+except to the extent liability cannot lawfully be excluded.
+
+No permissions are granted beyond those expressly stated in this license or
+in a separate written authorization from Licensor.

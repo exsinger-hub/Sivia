@@ -6,9 +6,11 @@
 
 **Turn the method in your paper into a PowerPoint figure you can keep editing.**
 
-[![Version](https://img.shields.io/badge/version-1.1.3-blue)](.codex-plugin/plugin.json)
+[![Version](https://img.shields.io/badge/version-1.2.0-blue)](.codex-plugin/plugin.json)
 [![Clients](https://img.shields.io/badge/clients-Codex%20%7C%20Claude%20Code-orange)](#installation)
-[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![License](https://img.shields.io/badge/license-NonCommercial-orange)](LICENSE)
+
+**Non-commercial use only. Commercial use requires the author's prior written authorization.**
 
 English | [简体中文](README_ZH.md)
 
@@ -193,7 +195,7 @@ Preserve the other regions, content and colors. Update the editable PowerPoint a
 
 A revision can contribute to the next drawing task. Sivia currently uses a design, drawing, review and correction workflow, and retains approved work, reference assets and useful feedback as local cases that can be reused in later tasks.
 
-The RSI direction studies both **drawing skills** and **the methods that update those skills**: propose rules from revision feedback, evaluate them on new tasks, then explore recursive improvement of the updating strategy itself. The current open-source release provides editable figure production and case accumulation; recursive updater development is a research direction.
+The RSI direction studies both **drawing skills** and **the methods that update those skills**: propose rules from revision feedback, evaluate them on new tasks, then explore recursive improvement of the updating strategy itself. The current source-available release provides editable figure production and case accumulation; recursive updater development is a research direction.
 
 ## Installation
 
@@ -227,9 +229,17 @@ node --test tests/*.test.mjs
 python -m unittest discover -s tests -p "test_*.py"
 ```
 
+## License and commercial use
+
+**Non-commercial use is permitted. Commercial use requires prior written authorization from gatina.**
+
+Sivia-authored contributions are available under the [Sivia Non-Commercial License 1.0](LICENSE). This includes personal learning, teaching and non-commercial academic research. Business use, paid services and commercial product integration require a [commercial license request](https://github.com/exsinger-hub/Sivia/issues/new?title=Commercial%20license%20request).
+
+Upstream components retain their [MIT license](LICENSES/MIT.txt); earlier MIT releases keep their original terms. See [third-party and historical notices](NOTICE).
+
 ## Acknowledgments
 
-Built on [Scientific Illustrator](https://github.com/icebird1998/scientific-illustrator) by **icebird1998（一个地质博士）**, retaining its [MIT license and copyright](LICENSE). Sivia extends its editable drawing backends and Designer–Drawer–Reviewer–Corrector process with manuscript understanding, template-led ImageGen drafts and approval-locked reconstruction.
+Built on [Scientific Illustrator](https://github.com/icebird1998/scientific-illustrator) by **icebird1998（一个地质博士）**, retaining its [upstream MIT license and copyright](LICENSES/MIT.txt). Sivia extends its editable drawing backends and Designer–Drawer–Reviewer–Corrector process with manuscript understanding, template-led ImageGen drafts and approval-locked reconstruction.
 
 The bilingual README navigation and product-oriented organization take inspiration from [CC Switch](https://github.com/farion1231/cc-switch); its product claims and promotional content are not reused.
 
