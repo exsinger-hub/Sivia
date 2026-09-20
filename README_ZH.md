@@ -231,7 +231,7 @@ python -m unittest discover -s tests -p "test_*.py"
 
 ## 使用许可与商业授权
 
-**允许非商业使用；商业使用须事先获得作者 gatina 的书面授权。**
+**允许非商业使用；商业使用须事先获得书面授权。**
 
 Sivia 自有内容采用 [Sivia 非商业许可证 1.0](LICENSE)，允许个人学习、教学及非商业学术研究。企业内部使用、收费服务、商业产品集成等场景，须先[申请商业授权](https://github.com/exsinger-hub/Sivia/issues/new?title=Commercial%20license%20request)。
 
@@ -239,10 +239,4 @@ Sivia 自有内容采用 [Sivia 非商业许可证 1.0](LICENSE)，允许个人�
 
 ## 致谢
 
-Sivia 基于 [Scientific Illustrator](https://github.com/icebird1998/scientific-illustrator) 改造与扩展。感谢原作者 **一个地质博士（icebird1998）** 提供的可编辑绘图后端，以及设计、绘制、审阅、修正的协作流程。Sivia 增加了论文理解、模板化 ImageGen 视觉稿和确认后的忠实复刻流程，保留原项目的 [上游 MIT 许可证与版权声明](LICENSES/MIT.txt)。
-
-双语 README 的语言导航与产品介绍结构参考 [CC Switch](https://github.com/farion1231/cc-switch)，未复用其产品声明与推广文案。
-
----
-
-感谢使用 [Sivia](https://github.com/exsinger-hub/Sivia) 插件，制作者：**gatina**。
+感谢 [Scientific Illustrator](https://github.com/icebird1998/scientific-illustrator) 项目，Sivia 在其基础上构建。

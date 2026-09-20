@@ -231,7 +231,7 @@ python -m unittest discover -s tests -p "test_*.py"
 
 ## License and commercial use
 
-**Non-commercial use is permitted. Commercial use requires prior written authorization from gatina.**
+**Non-commercial use is permitted. Commercial use requires prior written authorization.**
 
 Sivia-authored contributions are available under the [Sivia Non-Commercial License 1.0](LICENSE). This includes personal learning, teaching and non-commercial academic research. Business use, paid services and commercial product integration require a [commercial license request](https://github.com/exsinger-hub/Sivia/issues/new?title=Commercial%20license%20request).
 
@@ -239,10 +239,4 @@ Upstream components retain their [MIT license](LICENSES/MIT.txt); earlier MIT re
 
 ## Acknowledgments
 
-Built on [Scientific Illustrator](https://github.com/icebird1998/scientific-illustrator) by **icebird1998（一个地质博士）**, retaining its [upstream MIT license and copyright](LICENSES/MIT.txt). Sivia extends its editable drawing backends and Designer–Drawer–Reviewer–Corrector process with manuscript understanding, template-led ImageGen drafts and approval-locked reconstruction.
-
-The bilingual README navigation and product-oriented organization take inspiration from [CC Switch](https://github.com/farion1231/cc-switch); its product claims and promotional content are not reused.
-
----
-
-Thank you for using [Sivia](https://github.com/exsinger-hub/Sivia). Created by **gatina**.
+Thanks to [Scientific Illustrator](https://github.com/icebird1998/scientific-illustrator), on which Sivia is built.
