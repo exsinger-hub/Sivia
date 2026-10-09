@@ -2,8 +2,9 @@ import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
 import { readFileSync } from "node:fs";
 import test from "node:test";
+import { requiresPwsh } from "./pwsh.mjs";
 
-test("COM arrow names produce the Office MsoArrowheadStyle values", () => {
+test("COM arrow names produce the Office MsoArrowheadStyle values", requiresPwsh, () => {
   const source = readFileSync(new URL("../scripts/powerpoint-bridge.ps1", import.meta.url), "utf8");
   // Execute the real pure mapper without loading the bridge or starting Office.
   const match = /^function Get-ArrowStyle \{[\s\S]*?^\}/m.exec(source);

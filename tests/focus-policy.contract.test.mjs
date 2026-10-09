@@ -4,6 +4,7 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import test from "node:test";
 import { fileURLToPath } from "node:url";
+import { requiresPwsh } from "./pwsh.mjs";
 
 const testDirectory = path.dirname(fileURLToPath(import.meta.url));
 const repositoryRoot = path.resolve(testDirectory, "..");
@@ -117,7 +118,7 @@ $json = @($script:Events) | ConvertTo-Json -Compress -AsArray
 `);
 }
 
-test("preserve Show-Slide performs no navigation or activation", () => {
+test("preserve Show-Slide performs no navigation or activation", requiresPwsh, () => {
   assert.deepEqual(
     runShowSlide({ policy: "preserve" }),
     [],
@@ -125,11 +126,11 @@ test("preserve Show-Slide performs no navigation or activation", () => {
   );
 });
 
-test("foreground Show-Slide navigates and activates exactly once", () => {
+test("foreground Show-Slide navigates and activates exactly once", requiresPwsh, () => {
   assert.deepEqual(runShowSlide({ policy: "foreground" }), ["GotoSlide:7", "Activate"]);
 });
 
-test("a standalone explicit activate_slide request may foreground under preserve policy", () => {
+test("a standalone explicit activate_slide request may foreground under preserve policy", requiresPwsh, () => {
   assert.deepEqual(
     runShowSlide({ policy: "preserve", forceForeground: true }),
     ["GotoSlide:7", "Activate"],
@@ -175,11 +176,11 @@ test("native chart-data activation immediately invokes conditional focus recover
   );
 });
 
-test("ordinary COM preserve calls avoid SetForegroundWindow when focus did not change", () => {
+test("ordinary COM preserve calls avoid SetForegroundWindow when focus did not change", requiresPwsh, () => {
   assert.deepEqual(runPreserveRestore({ currentHandle: 41, preservedHandle: 41 }), []);
 });
 
-test("preserve fallback restores only when controlled PowerPoint took foreground", () => {
+test("preserve fallback restores only when controlled PowerPoint took foreground", requiresPwsh, () => {
   assert.deepEqual(
     runPreserveRestore({ currentHandle: 99, preservedHandle: 41 }),
     ["SetForegroundWindow:41"],
