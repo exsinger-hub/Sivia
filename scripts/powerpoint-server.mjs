@@ -647,7 +647,7 @@ const tools = [
   },
   {
     name: "powerpoint_export_slide_image",
-    description: "Export one slide through PowerPoint's renderer to PNG or JPG and return it for visual inspection.",
+    description: "Export one slide to PNG or JPG and return it for visual inspection. COM and Office.js use PowerPoint's renderer; the file-backed OOXML backend uses a local LibreOffice or ONLYOFFICE renderer and names it in the result.",
     inputSchema: {
       type: "object",
       required: ["slide_index", "output_path"],

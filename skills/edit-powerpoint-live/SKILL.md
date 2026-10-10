@@ -48,7 +48,7 @@ If the user requests inspection only, call `powerpoint_status`, `powerpoint_get_
 6. After a WPS launch, require `open_dispatched=true`; on macOS also require `document_open_verified=true`. If verification is false, stop and report the failed open. If it is `null`, continue only as file generation and disclose that application-open state is unverified.
 7. Preserve an input deck by default and save an edited copy unless in-place save is explicit.
 8. Use absolute paths and never use operating-system mouse, keyboard, or screen automation.
-9. In file-backed mode, treat the managed working copy as authoritative. The bundled automated preview uses LibreOffice/Poppler, not WPS or PowerPoint. If that renderer is unavailable, use another already available exact-PPTX import renderer under the recovery reference; name it and retain application-specific font/chart uncertainty unless the target application is separately inspected.
+9. In file-backed mode, treat the managed working copy as authoritative. The bundled automated preview converts the working copy with a local LibreOffice or, on Linux, ONLYOFFICE installation and rasterizes it with Poppler; it is not WPS or PowerPoint, and the export result names the renderer used. If that renderer is unavailable, use another already available exact-PPTX import renderer under the recovery reference; name it and retain application-specific font/chart uncertainty unless the target application is separately inspected.
 10. In Office.js mode, use an absolute `.pptx` output path with `powerpoint_save`; PowerPointApi 1.10 exports the current editable presentation through the task pane.
 
 Do not close a presentation unless explicitly requested. Closing and quitting require their tool safeguards.
