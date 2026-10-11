@@ -221,9 +221,10 @@ codex plugin add sivia@sivia
 
 [完整工作流程](docs/workflow_ZH.md) · [更新日志](CHANGELOG.md) · [知识库贡献指南](knowledge-base/CONTRIBUTING.md)
 
-在仓库根目录运行检查：
+在仓库根目录运行检查。Python 测试依赖 [requirements.txt](requirements.txt) 中的包，请先在虚拟环境中安装：
 
 ```bash
+python -m pip install -r requirements.txt
 node scripts/sync-plugin-metadata.mjs --check
 node --test tests/*.test.mjs
 python -m unittest discover -s tests -p "test_*.py"

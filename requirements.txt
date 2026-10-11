@@ -1,0 +1,4 @@
+# Python packages used by the PowerPoint/WPS OOXML backend, helper scripts and tests.
+python-pptx
+Pillow
+defusedxml

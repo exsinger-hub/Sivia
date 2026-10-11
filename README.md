@@ -221,9 +221,10 @@ Run inside Claude Code:
 
 [Full workflow](docs/workflow.md) · [Changelog](CHANGELOG.md) · [Contribute to the knowledge base](knowledge-base/CONTRIBUTING.md)
 
-Run checks from the repository root:
+Run checks from the repository root. The Python tests need the packages in [requirements.txt](requirements.txt); install them in a virtual environment first:
 
 ```bash
+python -m pip install -r requirements.txt
 node scripts/sync-plugin-metadata.mjs --check
 node --test tests/*.test.mjs
 python -m unittest discover -s tests -p "test_*.py"

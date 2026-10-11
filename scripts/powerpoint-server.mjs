@@ -8,6 +8,7 @@ import { createInterface } from "node:readline";
 import { fileURLToPath } from "node:url";
 import { promisify } from "node:util";
 import { getOfficeJsBridge } from "./officejs-bridge.mjs";
+import { ooxmlPythonCandidates, ooxmlPythonSetupHint } from "./python-runtime.mjs";
 
 const execFileAsync = promisify(execFile);
 const SERVER_NAME = "powerpoint-live";
@@ -734,25 +735,7 @@ let cachedOoxmlPython;
 
 async function ooxmlPythonExecutable() {
   if (cachedOoxmlPython) return cachedOoxmlPython;
-  const candidates = [
-    { executable: process.env.YOU_ONLY_FIGURE_ONCE_PYTHON, args: [] },
-    { executable: path.join(SCRIPT_DIR, ".venv", process.platform === "win32" ? "Scripts/python.exe" : "bin/python3"), args: [] },
-    {
-      executable: process.platform === "win32"
-        ? path.join(os.homedir(), ".cache", "codex-runtimes", "codex-primary-runtime", "dependencies", "python", "python.exe")
-        : path.join(os.homedir(), ".cache", "codex-runtimes", "codex-primary-runtime", "dependencies", "python", "bin", "python3"),
-      args: [],
-    },
-    {
-      executable: process.platform === "win32"
-        ? path.join(os.homedir(), ".cache", "codex-runtimes", "codex-primary-runtime", "dependencies", "python", "bin", "python.exe")
-        : null,
-      args: [],
-    },
-    { executable: process.platform === "win32" ? "python.exe" : "python3", args: [] },
-    { executable: process.platform === "win32" ? "py.exe" : "/opt/homebrew/bin/python3", args: process.platform === "win32" ? ["-3"] : [] },
-    { executable: process.platform === "win32" ? null : "/usr/local/bin/python3", args: [] },
-  ].filter((candidate) => candidate.executable);
+  const candidates = ooxmlPythonCandidates({ scriptDir: SCRIPT_DIR });
   const failures = [];
   for (const candidate of candidates) {
     try {
@@ -763,7 +746,7 @@ async function ooxmlPythonExecutable() {
       failures.push(`${candidate.executable}${candidate.args.length ? ` ${candidate.args.join(" ")}` : ""}: ${String(error.message || error).split("\n")[0]}`);
     }
   }
-  throw new Error(`The PowerPoint/WPS OOXML backend requires Python with python-pptx. Install it with python -m pip install python-pptx or set YOU_ONLY_FIGURE_ONCE_PYTHON. Checked: ${failures.join("; ")}`);
+  throw new Error(`The PowerPoint/WPS OOXML backend requires Python with python-pptx. ${ooxmlPythonSetupHint({ scriptDir: SCRIPT_DIR })} Checked: ${failures.join("; ")}`);
 }
 
 async function runOoxmlBridge(action, args = {}) {
