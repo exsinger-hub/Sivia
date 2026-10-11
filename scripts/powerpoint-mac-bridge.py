@@ -28,6 +28,7 @@ import sys
 import tempfile
 import time
 import uuid
+from xml.sax.saxutils import escape as xml_escape
 
 from pptx import Presentation
 from pptx.chart.data import CategoryChartData
@@ -67,6 +68,13 @@ MAC_HOST_ENV = {
     "powerpoint": "POWERPOINT_PRESENTATION_PATH",
     "wps": "WPS_PRESENTATION_PATH",
 }
+PDF_RENDERER_ENV = "YOU_ONLY_FIGURE_ONCE_RENDERER"
+LIBREOFFICE_FLATPAK_ID = "org.libreoffice.LibreOffice"
+ONLYOFFICE_FLATPAK_ID = "org.onlyoffice.desktopeditors"
+ONLYOFFICE_RENDER_NOTE = (
+    "In ONLYOFFICE exports, semi-transparent gradient fills may render incorrectly and gradient line fills "
+    "may be missing; confirm such effects in the target application."
+)
 
 
 def _requested_host(args: dict | None = None, state: dict | None = None) -> str:
@@ -943,8 +951,9 @@ def action_capabilities(args: dict) -> dict:
             "PowerPoint for Mac and WPS Presentation use an isolated file-backed working copy because they do not expose the Windows PowerPoint COM automation server used by this plugin.",
             "File-backed drawing cannot claim in-memory attachment to an arbitrary current WPS document. The managed working copy is authoritative and application refresh is checkpointed to avoid repeated focus and reload requests.",
             "WPS does not expose a reliable reload acknowledgement. Status distinguishes an accepted open request, a verified open file, and an unverified refresh instead of reporting false success.",
-            "Renderer exports use local LibreOffice/Poppler when available and remain separate from the editable PPTX.",
+            "Renderer exports convert the managed PPTX with a local LibreOffice or, on Linux, ONLYOFFICE installation and rasterize it with Poppler. They remain separate from the editable PPTX, name the renderer used, and are not PowerPoint or WPS renders.",
         ],
+        "pdf_renderer": _pdf_renderer_summary(),
     }
 
 
@@ -1991,18 +2000,148 @@ def _find_binary(name: str) -> str:
     return binary
 
 
-def _render_pdf(source: Path, destination: Path) -> None:
+def _flatpak_app_installed(app_id: str) -> bool:
+    flatpak = shutil.which("flatpak")
+    if not flatpak:
+        return False
+    try:
+        return _run([flatpak, "info", app_id], check=False, timeout=15).returncode == 0
+    except (OSError, subprocess.TimeoutExpired):
+        return False
+
+
+def _onlyoffice_renderer(name: str, launch: dict, fonts_dir: Path, exists) -> dict:
+    renderer = {"name": name, "family": "onlyoffice", **launch, "fonts_dir": fonts_dir, "note": ONLYOFFICE_RENDER_NOTE}
+    if not exists(str(fonts_dir / "AllFonts.js")):
+        renderer["unavailable"] = f"font index {fonts_dir / 'AllFonts.js'} is missing; launch ONLYOFFICE Desktop Editors once to create it"
+    return renderer
+
+
+def _pdf_renderers(*, platform: str | None = None, env=None, home: Path | None = None,
+                   which=shutil.which, exists=os.path.exists, flatpak_installed=_flatpak_app_installed) -> list[dict]:
+    """Return local PPTX-to-PDF renderers in preference order; unusable ones carry an `unavailable` reason."""
+    platform = platform or sys.platform
+    env = os.environ if env is None else env
+    home = home or Path.home()
+    renderers: list[dict] = []
+
+    soffice = which("soffice") or which("libreoffice")
+    if not soffice and platform == "darwin" and exists("/Applications/LibreOffice.app/Contents/MacOS/soffice"):
+        soffice = "/Applications/LibreOffice.app/Contents/MacOS/soffice"
+    if not soffice and platform == "win32":
+        installed = [f"{root}\\LibreOffice\\program\\soffice.exe" for root in (env.get("ProgramFiles"), env.get("ProgramFiles(x86)")) if root]
+        soffice = next((candidate for candidate in installed if exists(candidate)), None)
+    if soffice:
+        renderers.append({"name": "LibreOffice", "family": "libreoffice", "executable": soffice})
+
+    if platform.startswith("linux"):
+        if flatpak_installed(LIBREOFFICE_FLATPAK_ID):
+            renderers.append({"name": "LibreOffice (Flatpak)", "family": "libreoffice", "flatpak": LIBREOFFICE_FLATPAK_ID})
+        data_home = Path(env.get("XDG_DATA_HOME") or home / ".local" / "share")
+        if exists("/opt/onlyoffice/desktopeditors/converter/x2t"):
+            renderers.append(_onlyoffice_renderer(
+                "ONLYOFFICE",
+                {"executable": "/opt/onlyoffice/desktopeditors/converter/x2t"},
+                data_home / "onlyoffice" / "desktopeditors" / "data" / "fonts",
+                exists,
+            ))
+        if flatpak_installed(ONLYOFFICE_FLATPAK_ID):
+            renderers.append(_onlyoffice_renderer(
+                "ONLYOFFICE (Flatpak)",
+                {"flatpak": ONLYOFFICE_FLATPAK_ID, "flatpak_command": "/app/bin/opt/onlyoffice/desktopeditors/converter/x2t"},
+                home / ".var" / "app" / ONLYOFFICE_FLATPAK_ID / "data" / "onlyoffice" / "desktopeditors" / "data" / "fonts",
+                exists,
+            ))
+
+    selected = str(env.get(PDF_RENDERER_ENV, "")).strip().lower()
+    if selected:
+        if selected not in {"libreoffice", "onlyoffice"}:
+            raise ValueError(f"{PDF_RENDERER_ENV} must be libreoffice or onlyoffice, not {selected!r}.")
+        renderers = [renderer for renderer in renderers if renderer["family"] == selected]
+    return renderers
+
+
+def _pdf_renderer_hint(platform: str | None = None) -> str:
+    if (platform or sys.platform).startswith("linux"):
+        return ("Install LibreOffice (a distribution package, or `flatpak install flathub org.libreoffice.LibreOffice`), "
+                "or ONLYOFFICE Desktop Editors and launch it once.")
+    return "Install LibreOffice."
+
+
+def _pdf_renderer_summary() -> dict:
+    try:
+        renderers = _pdf_renderers()
+    except ValueError as exc:
+        return {"available": False, "error": str(exc), "renderers": []}
+    listed = [
+        {"name": item["name"], "available": "unavailable" not in item, **({"reason": item["unavailable"]} if "unavailable" in item else {})}
+        for item in renderers
+    ]
+    summary = {"available": any(item["available"] for item in listed), "renderers": listed}
+    if not summary["available"]:
+        summary["hint"] = _pdf_renderer_hint()
+    return summary
+
+
+def _renderer_argv(renderer: dict, work: Path) -> list[str]:
+    if "flatpak" not in renderer:
+        return [renderer["executable"]]
+    # Flatpak apps see only granted paths; the private temporary work directory holds every input and output.
+    argv = ["flatpak", "run", f"--filesystem={work}"]
+    if renderer.get("flatpak_command"):
+        argv.append(f"--command={renderer['flatpak_command']}")
+    return [*argv, renderer["flatpak"]]
+
+
+def _convert_to_pdf(renderer: dict, deck: Path, work: Path) -> Path:
+    if renderer["family"] == "libreoffice":
+        generated = work / "out" / f"{deck.stem}.pdf"
+        # A private profile keeps an already running LibreOffice instance from swallowing the request.
+        argv = [*_renderer_argv(renderer, work), f"-env:UserInstallation={(work / 'profile').as_uri()}",
+                "--headless", "--convert-to", "pdf", "--outdir", str(generated.parent), str(deck)]
+    else:
+        generated = work / f"{deck.stem}.pdf"
+        fonts = renderer["fonts_dir"]
+        task = work / "x2t-task.xml"
+        task.write_text(
+            '<?xml version="1.0" encoding="utf-8"?><TaskQueueDataConvert>'
+            f"<m_sFileFrom>{xml_escape(str(deck))}</m_sFileFrom><m_sFileTo>{xml_escape(str(generated))}</m_sFileTo>"
+            "<m_nFormatTo>513</m_nFormatTo>"
+            f"<m_sAllFontsPath>{xml_escape(str(fonts / 'AllFonts.js'))}</m_sAllFontsPath><m_sFontDir>{xml_escape(str(fonts))}</m_sFontDir>"
+            "<m_bIsNoBase64>true</m_bIsNoBase64></TaskQueueDataConvert>",
+            "utf-8",
+        )
+        argv = [*_renderer_argv(renderer, work), str(task)]
+    completed = _run(argv, check=False, timeout=180)
+    # Both converters can exit successfully without writing anything, so the output file is the only proof.
+    if not generated.exists():
+        output = (completed.stderr or completed.stdout or "").strip().splitlines()
+        detail = f": {output[-1].strip()}" if output else ""
+        raise RuntimeError(f"exited with code {completed.returncode} without producing a PDF{detail}")
+    return generated
+
+
+def _render_pdf(source: Path, destination: Path) -> dict:
+    """Convert the deck to PDF with the first local renderer that succeeds and return that renderer."""
     destination.parent.mkdir(parents=True, exist_ok=True)
-    with tempfile.TemporaryDirectory(prefix="you-only-figure-once-pdf-") as tmp:
-        tmp_path = Path(tmp)
-        _run([_find_binary("soffice"), "--headless", "--convert-to", "pdf", "--outdir", str(tmp_path), str(source)], timeout=180)
-        generated = tmp_path / f"{source.stem}.pdf"
-        if not generated.exists():
-            candidates = list(tmp_path.glob("*.pdf"))
-            if not candidates:
-                raise RuntimeError("LibreOffice did not produce a PDF.")
-            generated = candidates[0]
-        shutil.copy2(generated, destination)
+    attempts = []
+    for renderer in _pdf_renderers():
+        if "unavailable" in renderer:
+            attempts.append(f"{renderer['name']}: {renderer['unavailable']}")
+            continue
+        with tempfile.TemporaryDirectory(prefix="you-only-figure-once-pdf-") as tmp:
+            work = Path(tmp)
+            deck = work / f"deck{source.suffix}"
+            shutil.copy2(source, deck)
+            try:
+                generated = _convert_to_pdf(renderer, deck, work)
+            except (OSError, RuntimeError, subprocess.TimeoutExpired) as exc:
+                attempts.append(f"{renderer['name']}: {exc}")
+                continue
+            shutil.copy2(generated, destination)
+            return renderer
+    tried = f" Tried: {'; '.join(attempts)}." if attempts else ""
+    raise RuntimeError(f"No local renderer could convert the presentation to PDF. {_pdf_renderer_hint()}{tried}")
 
 
 def _render_dimensions(path: Path, args: dict) -> tuple[int, int, int, int, bool]:
@@ -2032,7 +2171,7 @@ def action_export_slide_image(args: dict) -> dict:
     slide_index = int(args["slide_index"])
     with tempfile.TemporaryDirectory(prefix="you-only-figure-once-render-") as tmp:
         pdf_path = Path(tmp) / "deck.pdf"
-        _render_pdf(path, pdf_path)
+        renderer = _render_pdf(path, pdf_path)
         jpeg = output.suffix.lower() in (".jpg", ".jpeg")
         rendered = Path(tmp) / ("slide.jpg" if jpeg else "slide.png")
         format_flag = "-jpeg" if jpeg else "-png"
@@ -2048,7 +2187,8 @@ def action_export_slide_image(args: dict) -> dict:
         "height": height,
         "aspect_ratio_preserved": preserved,
         "mime_type": mime,
-        "renderer": "LibreOffice+Poppler",
+        "renderer": f"{renderer['name']}+Poppler",
+        **({"renderer_note": renderer["note"]} if renderer.get("note") else {}),
     }
 
 
@@ -2068,11 +2208,11 @@ def action_save(args: dict) -> dict:
         raise ValueError(f"format '{fmt}' requires an {expected_suffix} output_path.")
     output.parent.mkdir(parents=True, exist_ok=True)
     if fmt == "pdf":
-        _render_pdf(path, output)
-    else:
-        shutil.copy2(path, output)
-        state["last_saved_output"] = str(output)
-        _write_state(state)
+        renderer = _render_pdf(path, output)
+        return {"output_path": str(output), "format": fmt, "saved": True, "renderer": renderer["name"]}
+    shutil.copy2(path, output)
+    state["last_saved_output"] = str(output)
+    _write_state(state)
     return {"output_path": str(output), "format": fmt, "saved": True}
 
 

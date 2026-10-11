@@ -37,7 +37,7 @@ Custom path editability is not automatic reattachment. Declare whether a route i
 
 ## Inspect the exact file and package it honestly
 
-Save the candidate and import/render **that PPTX**, including after final grouping and the last correction. A separately drawn SVG/PNG with matching coordinates is a design view, not evidence of PPTX rendering. Prefer the requested application's export; when unavailable, an available LibreOffice/Poppler or Artifact Tool import renderer can support a preview verdict with the actual renderer named. Neither establishes PowerPoint/WPS fidelity. Do not acquire an unprovided renderer merely because it appears here.
+Save the candidate and import/render **that PPTX**, including after final grouping and the last correction. A separately drawn SVG/PNG with matching coordinates is a design view, not evidence of PPTX rendering. Prefer the requested application's export; when unavailable, an available LibreOffice/ONLYOFFICE (with Poppler) or Artifact Tool import renderer can support a preview verdict with the actual renderer named. Neither establishes PowerPoint/WPS fidelity. Do not acquire an unprovided renderer merely because it appears here.
 
 Use native/package checks for relevant failures: missing or changed text, broken picture relationships, dangling attached endpoints, slide dimensions, accidental whole-panel rasterization, and group membership. Visually classify bounding-box warnings: an intentional title underline can overlap its text box without crossing glyphs; a flow arrow through a paragraph is a defect. Counts do not establish faithful appearance.
 
