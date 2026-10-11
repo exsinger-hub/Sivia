@@ -1,12 +1,13 @@
 """Collect official main-track candidates; candidate does not mean accepted image."""
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
-from urllib.parse import urljoin
+from urllib.parse import urljoin, urlparse
 import hashlib, json
 import requests
 from bs4 import BeautifulSoup
 
 ROOT = Path(__file__).resolve().parent
+ALLOWED_DOMAINS = {'openaccess.thecvf.com', 'proceedings.iclr.cc', 'proceedings.neurips.cc', 'ojs.aaai.org'}
 CVF = 'https://openaccess.thecvf.com/content/CVPR2026/html/'
 ICLR = 'https://proceedings.iclr.cc/paper_files/paper/2026/hash/'
 NEURIPS = 'https://proceedings.neurips.cc/paper_files/paper/2025/hash/'
