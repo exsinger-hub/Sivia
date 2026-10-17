@@ -51,6 +51,7 @@ Classify assets before cropping:
 - Rebuild labels, shapes, operators, grids, simple icons and diagrams as native objects or meaningful composites.
 - Build plots from original values. Export experimental images and learned features from their actual sources; keep paired samples and display conditions consistent.
 - Retain a detailed illustration as one independent asset with separate native labels and arrows. Reuse approved character artwork when regeneration would change its identity. Generate a standalone replacement only when permitted.
+- Produce illustration assets with [generate-figure-elements](../skills/generate-figure-elements/SKILL.md): a flat key-color sheet from the image model, a local cut-out, one tight transparent picture per element, quality checks (alpha, clipping, key spill, effective dpi) and ready `drawio_live_add_image` / `powerpoint_add_image` arguments for the Drawer.
 
 For a crop, calculate `effective_dpi = retained_pixels × 25.4 / placed_size_mm`. A 30 mm image at a 300 dpi planning target needs 355 pixels across; increasing its DPI tag cannot supply missing information. Check real alpha as well as edges on light/dark backgrounds. The [asset-production reference](../skills/design-scientific-figure/references/asset-production.md) covers authorized local masking when generation fails to produce usable transparency.
 
