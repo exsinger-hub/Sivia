@@ -7,6 +7,11 @@ description: Review a scientific figure or overview in draw.io, PowerPoint or WP
 
 Act as the Reviewer. Review read-only evidence and issue findings; do not draw during the review phase. A successful MCP call is not evidence that the figure is visually or structurally correct.
 
+## Host notes
+
+- Other Sivia skills are loaded by name: Codex mentions `$name`, Claude Code uses `/sivia:<name>`, OpenCode and OpenWork call the `skill` tool with `{ name }`.
+- MCP tools are written by bare name (`drawio_live_add_shape`). Some hosts prefix the server name, for example `sivia-drawio-live_drawio_live_add_shape` in OpenCode; use the tool whose name ends with the bare name.
+- Sivia-wide paths (`scripts/`, `knowledge-base/`) are relative to the Sivia root, the directory that contains `skills/`. When this skill was installed as a link (OpenCode and OpenWork do this), `..` from the link's location is not the Sivia root: resolve the link first (`realpath`, or `(Get-Item <skill-dir>).Target` in PowerShell). A copied skill records its origin in `.sivia-installed.json` next to `SKILL.md`. Paths inside a skill are relative to that skill's directory.
 ## Resolve review scope
 
 Distinguish a new/full-publication review from scoped regression after an approved micro-edit. In scoped regression, inspect changed objects, their interfaces and a fresh whole-figure render for collateral changes; compare unchanged layout and style with the accepted baseline. Apply the categories below to that scope. Do not require fresh masked-view reading of an unchanged narrative just to approve a label or image replacement. Report inherited/out-of-scope defects separately without silently authorizing their repair; a scoped pass is not renewed whole-figure publication approval. A structural change or explicit full-publication review uses all applicable gates below.

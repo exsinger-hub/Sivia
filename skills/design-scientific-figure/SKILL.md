@@ -7,6 +7,11 @@ description: Translate a research brief or manuscript into an overview, architec
 
 Act as the Designer in the four-role Sivia protocol. Produce a backend-neutral design specification before the Drawer adds any object. The selected backend affects object mapping, not the design quality or acceptance gate.
 
+## Host notes
+
+- Other Sivia skills are loaded by name: Codex mentions `$name`, Claude Code uses `/sivia:<name>`, OpenCode and OpenWork call the `skill` tool with `{ name }`.
+- MCP tools are written by bare name (`drawio_live_add_shape`). Some hosts prefix the server name, for example `sivia-drawio-live_drawio_live_add_shape` in OpenCode; use the tool whose name ends with the bare name.
+- Sivia-wide paths (`scripts/`, `knowledge-base/`) are relative to the Sivia root, the directory that contains `skills/`. When this skill was installed as a link (OpenCode and OpenWork do this), `..` from the link's location is not the Sivia root: resolve the link first (`realpath`, or `(Get-Item <skill-dir>).Target` in PowerShell). A copied skill records its origin in `.sivia-installed.json` next to `SKILL.md`. Paths inside a skill are relative to that skill's directory.
 ## Start from the paper, not a workflow-shaped user prompt
 
 A request such as "Use Sivia to read this PDF and generate an overview image for me to review" is sufficient. Read the paper before choosing a template: identify the research problem, prior limitation, distinctive method, input/output and supporting evidence, then decide what this figure should explain. Users do not have to supply a production prompt, template file, length rule or list of internal stages.
@@ -19,7 +24,7 @@ For a new ImageGen-led figure without an explicitly selected template, read [Bun
 
 For new manuscript overviews, prefer the [ImageGen-first workflow](references/imagegen-first-workflow.md) when the image-generation tool is available. Read that reference completely when using this route or continuing an already approved visual draft. Respect explicit native-only, prompt-only, reference-reconstruction and read-only requests; do not insert generation into those tasks. If ImageGen-first is requested but unavailable, continue source/prompt preparation and report the missing rendering capability rather than silently switching production methods.
 
-On either Codex or Claude Code, discover the tools actually available; Sivia does not itself provide a raster-generation model. Do not invent a Codex ImageGen tool in Claude Code or claim that a prompt alone is a generated image. Claude Code exposes the shared skill under `/sivia:design-scientific-figure`; references to other skills below mean the matching installed Sivia skill, not a mandatory Codex-only command syntax.
+On Codex, Claude Code, OpenCode or OpenWork, discover the tools actually available; Sivia does not itself provide a raster-generation model. Do not invent a Codex ImageGen tool elsewhere or claim that a prompt alone is a generated image. Claude Code exposes the shared skill under `/sivia:design-scientific-figure`; references to other skills below mean the matching installed Sivia skill, not a mandatory Codex-only command syntax.
 
 Record `execution` in the existing `design_spec`: requested deliverable, renderer, output path and whether editability is required. For editable PowerPoint/draw.io requests, use the native Drawer and its fresh renderer export. A PNG, including one inserted into a slide, does not satisfy that contract.
 

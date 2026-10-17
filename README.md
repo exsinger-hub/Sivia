@@ -18,7 +18,7 @@ English | [简体中文](README_ZH.md)
 
 </div>
 
-Sivia is a scientific-figure plugin for **Codex and Claude Code**, built for method illustrations in papers, lab meetings and thesis defenses. Give it a paper: Sivia maps the method and contribution, draws on an **extensible external knowledge base**, and generates an overview. After you approve the design and request the PowerPoint, it delivers an **editable PPTX** for **PowerPoint or WPS**.
+Sivia is a scientific-figure plugin for **Codex, Claude Code and OpenCode / OpenWork**, built for method illustrations in papers, lab meetings and thesis defenses. Give it a paper: Sivia maps the method and contribution, draws on an **extensible external knowledge base**, and generates an overview. After you approve the design and request the PowerPoint, it delivers an **editable PPTX** for **PowerPoint or WPS**.
 
 Keep editing the result: change labels, move modules, adjust arrows and replace experiment images. Adapt the same method figure to a paper layout or a presentation.
 
@@ -216,6 +216,20 @@ Run inside Claude Code:
 /plugin marketplace add exsinger-hub/Sivia
 /plugin install sivia@sivia
 ```
+
+### OpenCode / OpenWork
+
+OpenCode, and OpenWork which embeds it, read skills from `<config>/skills/` and MCP servers from `opencode.json`. From a checkout of this repository:
+
+```bash
+git clone https://github.com/exsinger-hub/Sivia.git && cd Sivia
+node scripts/install-opencode.mjs                                  # all workspaces (~/.config/opencode)
+node scripts/install-opencode.mjs --scope project --project <dir>   # one project or OpenWork workspace only
+```
+
+The installer links every skill to this checkout (a junction on Windows, so `git pull` updates them), adds the `sivia-drawio-live`, `sivia-drawio-file-utils` and `sivia-powerpoint-live` MCP servers to `opencode.json` and leaves every other setting alone; a config that contains comments is never rewritten silently. Use `--profile drawio` or `--profile powerpoint` to register only one family, `--dry-run` to preview, and `status` / `uninstall` to inspect or remove. Restart the app, then check with `opencode debug skill` and `opencode mcp list`. `--mode copy` copies the skill folders instead of linking them; each copy records where it came from in `.sivia-installed.json`, which is how a skill finds `scripts/` and `knowledge-base/` in the checkout.
+
+The repository root also carries a vendor-neutral [Agent Plugins](https://agent-plugins.org) package (`plugin.json`, `mcp.json`, `skills/`) for clients that import that format. Codex and Claude Code installation is unchanged.
 
 ## Development and documentation
 
