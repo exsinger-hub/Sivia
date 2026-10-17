@@ -7,6 +7,11 @@ description: Recreate, design, inspect, refine, or export scientific figures liv
 
 Act as the draw.io Drawer in the four-role Sivia protocol. Use MCP tools beginning with `drawio_live_`. Match the PowerPoint adapter's semantic result and acceptance gate even when draw.io represents tables and charts as editable composites.
 
+## Host notes
+
+- Other Sivia skills are loaded by name: Codex mentions `$name`, Claude Code uses `/sivia:<name>`, OpenCode and OpenWork call the `skill` tool with `{ name }`.
+- MCP tools are written by bare name (`drawio_live_add_shape`). Some hosts prefix the server name, for example `sivia-drawio-live_drawio_live_add_shape` in OpenCode; use the tool whose name ends with the bare name.
+- Sivia-wide paths (`scripts/`, `knowledge-base/`) are relative to the Sivia root, the directory that contains `skills/`. When this skill was installed as a link (OpenCode and OpenWork do this), `..` from the link's location is not the Sivia root: resolve the link first (`realpath`, or `(Get-Item <skill-dir>).Target` in PowerShell). A copied skill records its origin in `.sivia-installed.json` next to `SKILL.md`. Paths inside a skill are relative to that skill's directory.
 ## Respect read-only requests
 
 If the user requests inspection only, call `drawio_live_get_capabilities`, connect only when needed to read the current canvas, then call `drawio_live_status` and `drawio_live_inspect`. Do not clear, add, update, save, or close anything.

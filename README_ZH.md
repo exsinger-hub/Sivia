@@ -18,7 +18,7 @@
 
 </div>
 
-Sivia 是面向 **Codex 与 Claude Code** 的科研绘图插件，服务于论文插图、组会汇报与答辩中的方法展示。上传论文，Sivia 梳理方法与贡献，结合**外挂知识库**生成 Overview；确认设计并要求制作 PPT 后，交付可在 **PowerPoint / WPS** 中继续修改的 **PPTX**。
+Sivia 是面向 **Codex、Claude Code 与 OpenCode / OpenWork** 的科研绘图插件，服务于论文插图、组会汇报与答辩中的方法展示。上传论文，Sivia 梳理方法与贡献，结合**外挂知识库**生成 Overview；确认设计并要求制作 PPT 后，交付可在 **PowerPoint / WPS** 中继续修改的 **PPTX**。
 
 改标签、移动模块、调整箭头、替换实验图片，都可以在交付文件中继续完成。同一张方法图，也能按论文版面和汇报场景调整。
 
@@ -216,6 +216,20 @@ codex plugin add sivia@sivia
 /plugin marketplace add exsinger-hub/Sivia
 /plugin install sivia@sivia
 ```
+
+### OpenCode / OpenWork
+
+OpenCode 及内置它的 OpenWork 从 `<config>/skills/` 读取技能，从 `opencode.json` 读取 MCP 服务。在本仓库的检出目录中执行：
+
+```bash
+git clone https://github.com/exsinger-hub/Sivia.git && cd Sivia
+node scripts/install-opencode.mjs                                  # 所有工作区（~/.config/opencode）
+node scripts/install-opencode.mjs --scope project --project <目录>   # 仅某个项目或 OpenWork 工作区
+```
+
+安装器把每个技能链接到本检出目录（Windows 上为 junction，`git pull` 即可更新），向 `opencode.json` 添加 `sivia-drawio-live`、`sivia-drawio-file-utils`、`sivia-powerpoint-live` 三个 MCP 服务，其余设置不动；含注释的配置文件不会被静默改写。`--profile drawio` 或 `--profile powerpoint` 只注册其中一类，`--dry-run` 先预览，`status` / `uninstall` 查看或移除。重启应用后，用 `opencode debug skill` 与 `opencode mcp list` 确认。`--mode copy` 改为复制技能目录；每份副本在 `.sivia-installed.json` 中记录来源，技能据此找到检出目录里的 `scripts/` 与 `knowledge-base/`。
+
+仓库根目录同时提供厂商中立的 [Agent Plugins](https://agent-plugins.org) 包（`plugin.json`、`mcp.json`、`skills/`），供支持该格式的客户端导入。Codex 与 Claude Code 的安装方式不变。
 
 ## 开发与文档
 

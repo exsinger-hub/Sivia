@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-// Keep the public Codex/Claude catalogs and Claude manifest aligned with Sivia's source manifest.
+// Keep the public Codex/Claude catalogs, the Claude manifest and the portable Agent Plugins package
+// (plugin.json + mcp.json, https://agent-plugins.org) aligned with Sivia's source manifest.
 // This never edits installed marketplaces or user configuration.
 import assert from "node:assert/strict";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
@@ -35,7 +36,26 @@ claude.mcpServers = Object.fromEntries(Object.entries(manifest.mcpServers).map((
   }];
 }));
 
+// Agent Plugins 1.0.0 is the vendor-neutral package format that OpenWork's importer and other clients read.
+// Its manifest is a closed schema, so only the permitted fields are copied; skills live in the fixed skills/ directory.
+const AGENT_PLUGINS_SCHEMA = "https://agent-plugins.org/schemas/1.0.0";
+const portable = { $schema: `${AGENT_PLUGINS_SCHEMA}/plugin.schema.json` };
+for (const key of ["name", "version", "description", "author", "homepage", "repository", "license", "keywords"]) {
+  portable[key] = manifest[key];
+}
+const portableMcp = {
+  $schema: `${AGENT_PLUGINS_SCHEMA}/mcp.schema.json`,
+  mcpServers: Object.fromEntries(Object.entries(manifest.mcpServers).map(([name, server]) => [name, {
+    type: "stdio",
+    command: "node",
+    args: [`\${PLUGIN_ROOT}/${server.args[0].slice(2)}`],
+    cwd: "${PLUGIN_ROOT}",
+  }])),
+};
+
 const outputs = {
+  "plugin.json": portable,
+  "mcp.json": portableMcp,
   [codexCatalogPath]: catalog,
   ".claude-plugin/plugin.json": claude,
   ".claude-plugin/marketplace.json": {
@@ -55,4 +75,4 @@ for (const [relativePath, payload] of Object.entries(outputs)) {
     await writeFile(target, expected, "utf8");
   }
 }
-console.log(`${process.argv.includes("--check") ? "Verified" : "Updated"} Sivia metadata for Codex and Claude Code.`);
+console.log(`${process.argv.includes("--check") ? "Verified" : "Updated"} Sivia metadata for Codex, Claude Code and Agent Plugins clients.`);

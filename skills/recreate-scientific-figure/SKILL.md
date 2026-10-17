@@ -5,6 +5,11 @@ description: Recreate a supplied scientific figure, graphical abstract, workflow
 
 # Recreate Scientific Figure
 
+## Host notes
+
+- Other Sivia skills are loaded by name: Codex mentions `$name`, Claude Code uses `/sivia:<name>`, OpenCode and OpenWork call the `skill` tool with `{ name }`.
+- MCP tools are written by bare name (`drawio_live_add_shape`). Some hosts prefix the server name, for example `sivia-drawio-live_drawio_live_add_shape` in OpenCode; use the tool whose name ends with the bare name.
+- Sivia-wide paths (`scripts/`, `knowledge-base/`) are relative to the Sivia root, the directory that contains `skills/`. When this skill was installed as a link (OpenCode and OpenWork do this), `..` from the link's location is not the Sivia root: resolve the link first (`realpath`, or `(Get-Item <skill-dir>).Target` in PowerShell). A copied skill records its origin in `.sivia-installed.json` next to `SKILL.md`. Paths inside a skill are relative to that skill's directory.
 ## Resolve the requested rendition
 
 Distinguish faithful reproduction from content adaptation. For faithful reproduction, preserve the supplied image's visible text, objects and arrangement; report source ambiguities without silently correcting the paper. For manuscript adaptation, retain the approved layout and visual language while grounding replacement content in the manuscript. When both are requested, save separately named versions.

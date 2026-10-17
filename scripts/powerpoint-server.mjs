@@ -9,6 +9,7 @@ import { fileURLToPath } from "node:url";
 import { promisify } from "node:util";
 import { getOfficeJsBridge } from "./officejs-bridge.mjs";
 import { ooxmlPythonCandidates, ooxmlPythonSetupHint } from "./python-runtime.mjs";
+import { siviaStateSubdirectory } from "./sivia-paths.mjs";
 
 const execFileAsync = promisify(execFile);
 const SERVER_NAME = "powerpoint-live";
@@ -17,8 +18,8 @@ const SUPPORTED_PROTOCOLS = new Set(["2024-11-05", "2025-03-26", "2025-06-18"]);
 const SCRIPT_DIR = path.dirname(fileURLToPath(import.meta.url));
 const BRIDGE_PATH = path.join(SCRIPT_DIR, "powerpoint-bridge.ps1");
 const OOXML_BRIDGE_PATH = path.join(SCRIPT_DIR, "powerpoint-mac-bridge.py");
-const OOXML_STATE_DIR = String(process.env.YOU_ONLY_FIGURE_ONCE_STATE_DIR || process.env.YOU_ONLY_FIGURE_ONCE_MAC_DIR || "").trim()
-  || path.join(os.homedir(), ".codex", "you-only-figure-once", "presentations", "sessions", `${process.pid}-${Date.now().toString(36)}`);
+const OOXML_STATE_DIR = String(process.env.SIVIA_STATE_DIR || process.env.YOU_ONLY_FIGURE_ONCE_STATE_DIR || process.env.YOU_ONLY_FIGURE_ONCE_MAC_DIR || "").trim()
+  || path.join(siviaStateSubdirectory("presentations"), "sessions", `${process.pid}-${Date.now().toString(36)}`);
 const MAX_BUFFER = 20 * 1024 * 1024;
 const officeJsBridge = getOfficeJsBridge();
 const VALID_BACKENDS = new Set(["auto", "officejs", "com", "ooxml"]);
@@ -905,10 +906,10 @@ async function resolveBackend(action, args = {}) {
   const host = requestedHost(args);
   if (lockedBackend) {
     if (host !== "auto" && lockedHost && host !== lockedHost) {
-      throw new Error(`This presentation session is locked to ${lockedHost} through ${lockedBackend}, but ${host} was requested. Start a new Codex task before switching target applications.`);
+      throw new Error(`This presentation session is locked to ${lockedHost} through ${lockedBackend}, but ${host} was requested. Start a new session before switching target applications.`);
     }
     if (host === "wps" && lockedBackend !== "ooxml") {
-      throw new Error(`This presentation session is locked to ${lockedBackend}, which cannot control WPS Presentation. Start a new Codex task and select host_application=wps before editing.`);
+      throw new Error(`This presentation session is locked to ${lockedBackend}, which cannot control WPS Presentation. Start a new session and select host_application=wps before editing.`);
     }
     if (args.host_application !== undefined) hostPreference = host;
     return lockedBackend;
@@ -974,7 +975,7 @@ async function runBridge(action, args = {}, forcedBackend = null) {
         ? "powerpoint"
         : requested === "auto" ? null : requested;
     if (lockedHost && selectedHost && lockedHost !== selectedHost) {
-      throw new Error(`Backend response targeted ${selectedHost}, but this session is locked to ${lockedHost}. Start a new Codex task; no further edits will be dispatched.`);
+      throw new Error(`Backend response targeted ${selectedHost}, but this session is locked to ${lockedHost}. Start a new session; no further edits will be dispatched.`);
     }
     lockedHost = lockedHost || selectedHost;
   }
@@ -1229,7 +1230,7 @@ async function handleTool(name, args = {}) {
     const requested = String(args.backend || "auto").toLowerCase();
     if (!VALID_BACKENDS.has(requested)) throw new Error(`Unknown backend: ${requested}`);
     if (lockedBackend && requested !== lockedBackend && requested !== backendPreference) {
-      throw new Error(`This presentation session is already locked to ${lockedBackend}. Start a new Codex task before switching backends so live and file-backed objects are never mixed.`);
+      throw new Error(`This presentation session is already locked to ${lockedBackend}. Start a new session before switching backends so live and file-backed objects are never mixed.`);
     }
     if (requested === "officejs") {
       const status = await officeJsStatus(Number(args.wait_for_connection_ms || 0));

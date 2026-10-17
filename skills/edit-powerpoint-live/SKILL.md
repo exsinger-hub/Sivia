@@ -9,6 +9,11 @@ Act as the presentation Drawer in the four-role Sivia protocol. Use MCP tools be
 
 For approved-reference PPTX reconstruction, read [Reconstruction Recovery](references/reconstruction-recovery.md) completely. It covers verified host identity, stalled/no-op operations, isolated native-file recovery, post-grouping routes and exact-file delivery evidence. Reuse that reference when a backend fails; do not retry unchanged mutations indefinitely.
 
+## Host notes
+
+- Other Sivia skills are loaded by name: Codex mentions `$name`, Claude Code uses `/sivia:<name>`, OpenCode and OpenWork call the `skill` tool with `{ name }`.
+- MCP tools are written by bare name (`drawio_live_add_shape`). Some hosts prefix the server name, for example `sivia-drawio-live_drawio_live_add_shape` in OpenCode; use the tool whose name ends with the bare name.
+- Sivia-wide paths (`scripts/`, `knowledge-base/`) are relative to the Sivia root, the directory that contains `skills/`. When this skill was installed as a link (OpenCode and OpenWork do this), `..` from the link's location is not the Sivia root: resolve the link first (`realpath`, or `(Get-Item <skill-dir>).Target` in PowerShell). A copied skill records its origin in `.sivia-installed.json` next to `SKILL.md`. Paths inside a skill are relative to that skill's directory.
 ## Select the host backend
 
 Call `powerpoint_status` and `powerpoint_get_capabilities` with `host_application=auto` unless the user explicitly chooses `powerpoint` or `wps`. Apply these backend rules:
