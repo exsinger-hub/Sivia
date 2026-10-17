@@ -1,0 +1,17 @@
+Create a single flat asset sheet containing {{count}} separate, self-contained illustrations for a scientific paper figure. This is a production sheet that software will cut apart. It is not a finished figure.
+
+BACKGROUND (the most important rule)
+Fill the whole {{width}}x{{height}} px canvas, edge to edge, with ONE perfectly uniform solid color {{key_hex}} (RGB {{key_rgb}}). No gradient, vignette, texture, noise, paper grain, floor, ground line, cast shadow, contact shadow, glow, reflection, halo or checkerboard. The color {{key_hex}} must not appear anywhere inside any illustration, including highlights, outlines, clothing, screens and shadows.
+
+LAYOUT
+Imagine an invisible grid of {{cols}} columns by {{rows}} rows; every cell is {{cell_w}}x{{cell_h}} px. Put exactly one illustration in each cell, centered, filling roughly 65-75% of the cell's shorter side, with at least 12% empty background on every side. Nothing may touch, cross or overlap a cell border or another illustration. Do not draw grid lines, cell frames, panels, cards, numbering or captions. {{empty_cells_rule}}
+
+CONTENT, in reading order (row by row, left to right)
+{{element_list}}
+
+STYLE LOCK (identical for every illustration)
+{{style_block}}
+
+HARD EXCLUSIONS
+No text, letters, digits, words, labels, captions, logos, watermarks, arrows, connectors, legends, axes, panel frames or borders anywhere on the sheet. Each illustration is a single self-contained object or character with a clean, closed silhouette. Do not add decorative background elements, confetti, sparkles, floor patches or shadows on the background.
+{{extra_rules}}
