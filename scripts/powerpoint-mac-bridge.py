@@ -40,10 +40,19 @@ from pptx.oxml.xmlchemy import OxmlElement
 from pptx.util import Pt
 
 
+def _sivia_home():
+    """State root: SIVIA_HOME when set, otherwise the long-standing ~/.codex/you-only-figure-once."""
+    configured = os.environ.get("SIVIA_HOME", "").strip()
+    if configured:
+        return Path(configured).expanduser()
+    return Path.home() / ".codex" / "you-only-figure-once"
+
+
 STATE_DIR = Path(
-    os.environ.get("YOU_ONLY_FIGURE_ONCE_STATE_DIR")
+    os.environ.get("SIVIA_STATE_DIR")
+    or os.environ.get("YOU_ONLY_FIGURE_ONCE_STATE_DIR")
     or os.environ.get("YOU_ONLY_FIGURE_ONCE_MAC_DIR")  # Backward compatibility with <= 1.5.2.
-    or str(Path.home() / ".codex" / "you-only-figure-once" / "presentations")
+    or str(_sivia_home() / "presentations")
 ).expanduser()
 STATE_PATH = STATE_DIR / "session.json"
 MAC_HOSTS = {

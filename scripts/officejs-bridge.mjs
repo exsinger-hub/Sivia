@@ -6,11 +6,12 @@ import https from "node:https";
 import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { siviaStateSubdirectory } from "./sivia-paths.mjs";
 
 const SCRIPT_DIR = path.dirname(fileURLToPath(import.meta.url));
 const PLUGIN_DIR = path.resolve(SCRIPT_DIR, "..");
 const OFFICEJS_DIR = path.join(PLUGIN_DIR, "officejs");
-const DEFAULT_STATE_DIR = path.join(os.homedir(), ".codex", "you-only-figure-once", "officejs");
+const DEFAULT_STATE_DIR = siviaStateSubdirectory("officejs");
 const DEFAULT_PORT = 17645;
 const DEFAULT_HOST = "127.0.0.1";
 const DEFAULT_COMMAND_TIMEOUT_MS = 45_000;

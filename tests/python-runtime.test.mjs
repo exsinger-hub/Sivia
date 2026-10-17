@@ -50,3 +50,10 @@ test("the setup hint points at a venv and the repository requirements file", () 
   assert.doesNotMatch(windows, /python3-venv/);
   assert.equal(siviaVenvDirectory({ platform: "win32", env: {}, homeDir: "C:\\Users\\u" }), "C:\\Users\\u\\AppData\\Local\\sivia\\venv");
 });
+
+test("SIVIA_PYTHON is tried first, ahead of the legacy variable", () => {
+  const env = { SIVIA_PYTHON: "/opt/sivia/bin/python3", YOU_ONLY_FIGURE_ONCE_PYTHON: "/opt/old/bin/python3" };
+  const found = executables({ platform: "linux", env, homeDir: "/home/u", scriptDir: "/plugin/scripts" });
+  assert.equal(found[0], "/opt/sivia/bin/python3");
+  assert.equal(found[1], "/opt/old/bin/python3");
+});

@@ -25,6 +25,7 @@ export function ooxmlPythonCandidates({ platform = process.platform, env = proce
   const platformPath = pathApi(platform);
   const codexPython = platformPath.join(homeDir, ".cache", "codex-runtimes", "codex-primary-runtime", "dependencies", "python");
   const candidates = [
+    { executable: env.SIVIA_PYTHON, args: [] },
     { executable: env.YOU_ONLY_FIGURE_ONCE_PYTHON, args: [] },
     { executable: venvPython(platformPath.join(scriptDir, ".venv"), platform), args: [] },
     { executable: venvPython(siviaVenvDirectory({ platform, env, homeDir }), platform), args: [] },
@@ -58,6 +59,6 @@ export function ooxmlPythonSetupHint({ platform = process.platform, env = proces
   if (platform === "linux") {
     hints.push("On Debian/Ubuntu, install the python3-venv package first if venv creation fails.");
   }
-  hints.push("Or set YOU_ONLY_FIGURE_ONCE_PYTHON to a Python interpreter that already has python-pptx.");
+  hints.push("Or set SIVIA_PYTHON (legacy: YOU_ONLY_FIGURE_ONCE_PYTHON) to a Python interpreter that already has python-pptx.");
   return hints.join(" ");
 }
