@@ -555,6 +555,12 @@ function xmlEscape(value = "") {
     .replaceAll(">", "&gt;");
 }
 
+// In a draw.io style string ";" separates key=value pairs, so "data:image/png;base64,..." is cut off at ";base64" and the
+// cell renders draw.io's broken-image placeholder. draw.io stores style data URIs as "data:<mime>,<payload>" and restores
+// ";base64" itself when it loads them. Apply this only where a data URI enters a style, not inside SVG href attributes.
+function styleSafeDataUri(dataUri) {
+  return String(dataUri).replace(/^(data:[^;,]+);base64,/, "$1,");
+}
 function ensureStyle(style = "") {
   return style && !style.endsWith(";") ? `${style};` : style;
 }
@@ -901,7 +907,7 @@ async function addImage(args) {
     const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${wrapperWidth}" height="${wrapperHeight}" viewBox="0 0 ${wrapperWidth} ${wrapperHeight}"><image href="${imageDataUrl}" x="${imageX}" y="${imageY}" width="${imageWidth}" height="${imageHeight}" preserveAspectRatio="none"/></svg>`;
     imageDataUrl = `data:image/svg+xml;base64,${Buffer.from(svg, "utf8").toString("base64")}`;
   }
-  const style = ensureStyle(`shape=image;html=1;imageAspect=${args.preserve_aspect === false ? 0 : 1};aspect=${args.preserve_aspect === false ? "" : "fixed"};image=${imageDataUrl};verticalLabelPosition=bottom;verticalAlign=top;`);
+  const style = ensureStyle(`shape=image;html=1;imageAspect=${args.preserve_aspect === false ? 0 : 1};aspect=${args.preserve_aspect === false ? "" : "fixed"};image=${styleSafeDataUri(imageDataUrl)};verticalLabelPosition=bottom;verticalAlign=top;`);
   const payload = JSON.stringify({ ...args, image_path: imagePath, style });
   const value = await graphEval(`
     const a = ${payload};

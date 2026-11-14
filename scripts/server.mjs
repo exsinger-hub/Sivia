@@ -315,6 +315,12 @@ function xmlEscape(value = "") {
     .replaceAll("\r", "&#xa;");
 }
 
+// In a draw.io style string ";" separates key=value pairs, so "data:image/png;base64,..." is cut off at ";base64" and the
+// cell renders draw.io's broken-image placeholder. draw.io stores style data URIs as "data:<mime>,<payload>" and restores
+// ";base64" itself when it loads them. Apply this only where a data URI enters a style, not inside SVG href attributes.
+function styleSafeDataUri(dataUri) {
+  return String(dataUri).replace(/^(data:[^;,]+);base64,/, "$1,");
+}
 function ensureStyle(style) {
   if (!style) return "";
   return style.endsWith(";") ? style : `${style};`;
@@ -729,7 +735,7 @@ async function vertexXml(v) {
   let auditAttributes = "";
   if (v.image_path) {
     const { dataUri, audit, sourceName } = await auditedImageDataUri(v);
-    style = setStyle(style, "image", dataUri);
+    style = setStyle(style, "image", styleSafeDataUri(dataUri));
     auditAttributes = [
       ` scientificIllustratorRasterReason="${xmlEscape(audit.reason)}"`,
       ` scientificIllustratorSourceTightlyCropped="${audit.sourceIsTightlyCropped}"`,
@@ -831,7 +837,7 @@ async function createTraceDocument(args) {
   const pageWidth = width + 80;
   const pageHeight = height + 140;
   const opacity = args.opacity ?? 25;
-  const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<mxfile host="Electron" modified="${new Date().toISOString()}" version="30.3.6">\n  <diagram id="trace-page" name="Trace">\n    <mxGraphModel grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="${pageWidth}" pageHeight="${pageHeight}" math="0" shadow="0">\n      <root>\n        <mxCell id="0" />\n        <mxCell id="1" parent="0" />\n        <mxCell id="reference-layer" value="Reference (${opacity}% opacity)" parent="0" />\n        <mxCell id="drawing-layer" value="Editable drawing" parent="0" />\n        <mxCell id="trace-title" value="Trace and rebuild on the Editable drawing layer" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;html=1;fontSize=20;fontStyle=1;fontColor=#111827;" vertex="1" parent="drawing-layer">\n          <mxGeometry x="40" y="20" width="${width}" height="40" as="geometry" />\n        </mxCell>\n        <mxCell id="reference-image" value="" style="shape=image;imageAspect=0;aspect=fixed;html=1;image=${xmlEscape(dataUri)};opacity=${opacity};locked=1;movable=0;resizable=0;rotatable=0;deletable=0;selectable=0;" vertex="1" parent="reference-layer">\n          <mxGeometry x="40" y="80" width="${width}" height="${height}" as="geometry" />\n        </mxCell>\n      </root>\n    </mxGraphModel>\n  </diagram>\n</mxfile>\n`;
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<mxfile host="Electron" modified="${new Date().toISOString()}" version="30.3.6">\n  <diagram id="trace-page" name="Trace">\n    <mxGraphModel grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="${pageWidth}" pageHeight="${pageHeight}" math="0" shadow="0">\n      <root>\n        <mxCell id="0" />\n        <mxCell id="1" parent="0" />\n        <mxCell id="reference-layer" value="Reference (${opacity}% opacity)" parent="0" />\n        <mxCell id="drawing-layer" value="Editable drawing" parent="0" />\n        <mxCell id="trace-title" value="Trace and rebuild on the Editable drawing layer" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;html=1;fontSize=20;fontStyle=1;fontColor=#111827;" vertex="1" parent="drawing-layer">\n          <mxGeometry x="40" y="20" width="${width}" height="40" as="geometry" />\n        </mxCell>\n        <mxCell id="reference-image" value="" style="shape=image;imageAspect=0;aspect=fixed;html=1;image=${xmlEscape(styleSafeDataUri(dataUri))};opacity=${opacity};locked=1;movable=0;resizable=0;rotatable=0;deletable=0;selectable=0;" vertex="1" parent="reference-layer">\n          <mxGeometry x="40" y="80" width="${width}" height="${height}" as="geometry" />\n        </mxCell>\n      </root>\n    </mxGraphModel>\n  </diagram>\n</mxfile>\n`;
   const auditedXml = xml.replace(
     ' vertex="1" parent="reference-layer">',
     ` vertex="1" parent="reference-layer" scientificIllustratorRasterRole="reference-overlay" scientificIllustratorRasterReason="Reference-only tracing overlay; not final deliverable content." scientificIllustratorSourceTightlyCropped="false" scientificIllustratorSourceName="${xmlEscape(path.basename(reference))}">`,
