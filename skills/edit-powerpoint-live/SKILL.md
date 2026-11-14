@@ -86,6 +86,8 @@ An approved ImageGen draft is a composition authority, not an empirical-data sou
 
 When the inventory contains non-native artwork, empirical fields or cropped assets, read [Asset Production](../design-scientific-figure/references/asset-production.md) completely before inserting them. Use supported native primitives/freeforms for reconstructable geometry; SVG insertion alone is not native editability. Apply its original-data, standalone-illustration and final-size resolution rules without changing this adapter's background batching policy.
 
+Generated illustrations come from `$generate-figure-elements`: its `place --backend pptx --slide-index N --canvas WxH` output is a list of ready `powerpoint_add_image` arguments with every declaration below already filled and the slide size matched to the approved reference. Pass them unchanged, in order, after the native panels and before labels and arrows.
+
 Use `powerpoint_add_image` only for one tightly scoped irreducible visual field. Require:
 
 - a specific `raster_reason`;

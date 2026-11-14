@@ -1,0 +1,4 @@
+interface:
+  display_name: "Figure Element Generator"
+  short_description: "Make transparent, consistent illustration assets for editable figures"
+  default_prompt: "Use $generate-figure-elements to turn the illustrations in this approved overview into separate transparent assets and give me the placement arguments for the editable figure."

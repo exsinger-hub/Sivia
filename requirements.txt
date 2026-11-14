@@ -1,4 +1,6 @@
 # Python packages used by the PowerPoint/WPS OOXML backend, helper scripts and tests.
+# numpy is used by the element pipeline (skills/generate-figure-elements); scipy is optional there.
 python-pptx
 Pillow
 defusedxml
+numpy

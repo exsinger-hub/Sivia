@@ -51,6 +51,7 @@
 - 标签、形状、运算符、网格、简单图标与图解，用原生对象或语义清楚的组合重建。
 - 定量图表来自原始数值；实验影像和特征图来自真实来源，配对样本与显示条件保持一致。
 - 复杂插画保留为独立素材，标签和箭头另外绘制。重新生成会改变已确认角色时优先保留原图；仅在许可范围内生成独立替换素材。
+- 插画素材用 [generate-figure-elements](../skills/generate-figure-elements/SKILL.md) 生产：让生图模型在纯色键控底上出一张元素表，本地抠图后每个元素切成一张紧裁的透明图片，检查 alpha、裁切、键色残留与有效 DPI，并输出可直接交给 Drawer 的 `drawio_live_add_image` / `powerpoint_add_image` 参数。
 
 裁图按 `有效 DPI＝保留像素数×25.4÷放置尺寸 mm` 计算。30 mm 宽、以 300 dpi 为规划目标时至少需要 355 像素，修改 DPI 标签不能补充信息。检查实际 alpha，并在深浅背景下观察边缘。[素材生产规则](../skills/design-scientific-figure/references/asset-production.md)说明生图无法提供可用透明度时，如何使用获授权的本地遮罩。
 

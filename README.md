@@ -25,6 +25,7 @@ Keep editing the result: change labels, move modules, adjust arrows and replace 
 | Capability | What you can do with it |
 | --- | --- |
 | **Editable PowerPoint delivery** | Work with native text, modules and arrows, with complex artwork and experiment images kept as separate assets. |
+| **Independent illustration elements** | Generate one flat key-color sheet with your image model, cut it out locally and place each transparent, quality-checked element beside native text and arrows in draw.io or PowerPoint ([Generate Figure Elements](skills/generate-figure-elements/SKILL.md)). |
 | **External knowledge base** | Draw on examples matched by domain, scientific objects, method relationships and composition, including your own lab references. |
 | **Local revisions and reusable experience** | Revise the requested region while preserving approved layout choices; retain accepted cases and useful feedback for later work. |
 

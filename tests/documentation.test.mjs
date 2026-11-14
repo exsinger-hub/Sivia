@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 import test from "node:test";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const docs = ["README.md", "README_ZH.md", "docs/workflow.md", "docs/workflow_ZH.md", "CHANGELOG.md", "skills/edit-powerpoint-live/references/reconstruction-recovery.md", "skills/edit-powerpoint-live/SKILL.md", "skills/recreate-scientific-figure/SKILL.md", "skills/audit-scientific-figure/SKILL.md", "skills/audit-scientific-figure/references/review-copies.md", "skills/design-scientific-figure/references/imagegen-first-workflow.md"];
+const docs = ["README.md", "README_ZH.md", "docs/workflow.md", "docs/workflow_ZH.md", "CHANGELOG.md", "skills/edit-powerpoint-live/references/reconstruction-recovery.md", "skills/edit-powerpoint-live/SKILL.md", "skills/recreate-scientific-figure/SKILL.md", "skills/audit-scientific-figure/SKILL.md", "skills/audit-scientific-figure/references/review-copies.md", "skills/design-scientific-figure/references/imagegen-first-workflow.md", "skills/design-scientific-figure/references/asset-production.md", "skills/generate-figure-elements/SKILL.md", "skills/generate-figure-elements/references/element-plan.md", "skills/generate-figure-elements/references/sheet-prompting.md", "skills/generate-figure-elements/references/placement.md"];
 
 for (const file of docs) {
   test(`${file}: local links resolve`, async () => {
