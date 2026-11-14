@@ -238,6 +238,22 @@ Sivia-authored contributions are available under the [Sivia Non-Commercial Licen
 
 Upstream components retain their [MIT license](LICENSES/MIT.txt); earlier MIT releases keep their original terms. See [third-party and historical notices](NOTICE).
 
+## Citation
+
+If you use Sivia in your research, please cite the [Sivia paper](https://arxiv.org/abs/2609.33386v2):
+
+```bibtex
+@misc{yuan2026sivia,
+  title={Sivia: Learning to Draw, Learning to Learn},
+  author={Yuan, Feng and Gao, Xinyi and Sun, Zijun and Li, Haoyue and Hua, Menglei and Li, Xiao and Gao, Yifan},
+  year={2026},
+  eprint={2609.33386},
+  archivePrefix={arXiv},
+  primaryClass={cs.GR},
+  url={https://arxiv.org/abs/2609.33386v2}
+}
+```
+
 ## Acknowledgments
 
 Thanks to [Scientific Illustrator](https://github.com/icebird1998/scientific-illustrator), on which Sivia is built.
